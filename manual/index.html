@@ -50,13 +50,13 @@ td p{margin:0px;}
 body{width:600px;margin:auto;padding-top:20px;text-align: justify;}
 </style>
 <title>User Manual 
-libcppa version 0.5.4
+libcppa version 0.5.5
 </title>
 </head>
 <body >
 <!--HEVEA command line is: hevea -I .. manual.tex -->
 <!--CUT STYLE article--><!--CUT DEF section 1 --><table class="title"><tr><td><h1 class="titlemain">User Manual<br>
-<span style="font-family:monospace">libcppa</span> version 0.5.4</h1><h3 class="titlerest">Dominik Charousset</h3></td></tr>
+<span style="font-family:monospace">libcppa</span> version 0.5.5</h1><h3 class="titlerest">Dominik Charousset</h3></td></tr>
 </table><!--TOC section id=sec1 Contents-->
 <h2 id="sec1" class="section">Contents</h2><!--SEC END --><ul class="toc"><li class="li-toc">
 <a href="#sec2">1  First Steps</a>
@@ -144,21 +144,23 @@ libcppa version 0.5.4
 </li><li class="li-toc"><a href="#sec55">11.2  Local Groups</a>
 </li><li class="li-toc"><a href="#sec56">11.3  Spawn Actors in Groups</a>
 </li></ul>
-</li><li class="li-toc"><a href="#sec57">12  Common Pitfalls</a>
+</li><li class="li-toc"><a href="#sec57">12  Platform-Independent Type System</a>
 <ul class="toc"><li class="li-toc">
-<a href="#sec58">12.1  Event-Based API</a>
-</li><li class="li-toc"><a href="#sec59">12.2  Mixing Event-Based and Blocking API</a>
-</li><li class="li-toc"><a href="#sec60">12.3  Synchronous Messages</a>
-</li><li class="li-toc"><a href="#sec61">12.4  Sending Messages</a>
-</li><li class="li-toc"><a href="#sec62">12.5  Sharing</a>
+<a href="#sec58">12.1  User-Defined Data Types in Messages</a>
 </li></ul>
-</li><li class="li-toc"><a href="#sec63">13  Platform-Independent Type System</a>
+</li><li class="li-toc"><a href="#sec59">13  Common Pitfalls</a>
 <ul class="toc"><li class="li-toc">
-<a href="#sec64">13.1  User-Defined Data Types in Messages</a>
+<a href="#sec60">13.1  Event-Based API</a>
+</li><li class="li-toc"><a href="#sec61">13.2  Mixing Event-Based and Blocking API</a>
+</li><li class="li-toc"><a href="#sec62">13.3  Synchronous Messages</a>
+</li><li class="li-toc"><a href="#sec63">13.4  Sending Messages</a>
+</li><li class="li-toc"><a href="#sec64">13.5  Sharing</a>
+</li><li class="li-toc"><a href="#sec65">13.6  Constructors of Class-based Actors</a>
 </li></ul>
-</li><li class="li-toc"><a href="#sec65">14  Appendix</a>
+</li><li class="li-toc"><a href="#sec66">14  Appendix</a>
 <ul class="toc"><li class="li-toc">
-<a href="#sec66">14.1  Class <code>option</code></a>
+<a href="#sec67">14.1  Class <span style="font-family:monospace">option</span></a>
+</li><li class="li-toc"><a href="#sec68">14.2  Using <span style="font-family:monospace">aout</span> – A Thread-Safe Wrapper for <span style="font-family:monospace">cout</span></a>
 </li></ul>
 </li></ul>
 <!--TOC section id=sec2 First Steps-->
@@ -233,7 +235,7 @@ We will support this platform as soon as Microsoft’s compiler implements all r
 <!--TOC section id=sec7 Copy-On-Write Tuples-->
 <h2 id="sec7" class="section">2  Copy-On-Write Tuples</h2><!--SEC END --><p>
 <a id="Sec::Tuples"></a></p><p>The message passing implementation of <span style="font-family:monospace">libcppa</span> uses tuples with call-by-value semantic.
-Hence, it is not necessary to declare message types, though, <span style="font-family:monospace">libcppa</span> allows users to use user-defined types in messages (see Section <a href="#Sec%3A%3ATypeSystem%3A%3AUserDefined">13.1</a>).
+Hence, it is not necessary to declare message types, though, <span style="font-family:monospace">libcppa</span> allows users to use user-defined types in messages (see Section <a href="#Sec%3A%3ATypeSystem%3A%3AUserDefined">12.1</a>).
 A call-by-value semantic would cause multiple copies of a tuple if it is send to multiple actors.
 To avoid unnecessary copying overhead, <span style="font-family:monospace">libcppa</span> uses a copy-on-write tuple implementation.
 A tuple is implicitly shared between any number of actors, as long as all actors demand only read access.
@@ -755,12 +757,14 @@ An actor has to set a new behavior calling <code>become</code> with the <code>ke
 </span><span style="font-size:small">  }</span><span style="font-size:small">
 </span><span style="font-size:small">};</span></div><p>An event-based actor finishes execution with normal exit reason if the behavior stack is empty after calling <code>unbecome</code>.
 The default policy of <code>become</code> is <code>discard_behavior</code> that causes an actor to override its current behavior.
-The policy flag must be the first argument of <code>become</code>.</p>
+The policy flag must be the first argument of <code>become</code>.</p><p><span style="font-weight:bold">Note</span>: the message handling in <span style="font-family:monospace">libcppa</span> is consistent among all actor implementations, i.e., unmatched messages are <span style="font-style:italic">never</span> implicitly discarded if no suitable handler was found.
+Hence, the order of arrival is not important in the example above.
+This is unlike other event-based implementations of the actor model such as Akka.</p>
 <!--TOC subsubsection id=sec37 Using a Factory to Define Event-Based Actors-->
 <h4 id="sec37" class="subsubsection">6.2.3  Using a Factory to Define Event-Based Actors</h4><!--SEC END --><p>
 <a id="Sec::Receive::EventBased::Factory"></a></p><p>The previously introduced ways to define event-based actors always required a class definition.
 A factory provides an ad-hoc way to define event-based actors using lambda expressions or other functors.
-The factory <code>factory</code><code>::</code><code>event_based</code> takes a functor that is used as <code>event_based_actor</code><code>::</code><code>init</code> implementation.
+The factory <code>factory</code><code>::</code><code>event_based</code> takes a functor that is used as implementation for <code>event_based_actor</code><code>::</code><code>init</code>.
 Hence, the functor should call <code>become</code> to set an initial behavior.
 Note that you have to call <code>self</code><code>-&gt;</code><code>become</code>, since <code>become</code> is not available via the <code><span style="color:blue">this</span></code> pointer.</p><p>Though <code>event_based_actor</code><code>::</code><code>init</code> has zero arguments, the functor can take any number of pointer arguments.
 The factory then creates an actor with a member variable for each of those arguments and calls the functor with pointers to the actor’s member variables.
@@ -1067,52 +1071,15 @@ The group handle is always the first argument, as shown in the examples below.</
 </span><span style="font-size:small"><span style="color:blue">auto</span></span><span style="font-size:small"> </span><span style="font-size:small">a2</span><span style="font-size:small"> = </span><span style="font-size:small">spawn_in_group</span><span style="font-size:small">(</span><span style="font-size:small">grp</span><span style="font-size:small">, </span><span style="font-size:small">fun2</span><span style="font-size:small">, 1, 2.0</span><span style="font-size:small">f</span><span style="font-size:small">);</span><span style="font-size:small">
 </span><span style="font-size:small"><span style="color:blue">auto</span></span><span style="font-size:small"> </span><span style="font-size:small">a3</span><span style="font-size:small"> = </span><span style="font-size:small">spawn_in_group</span><span style="font-size:small">&lt;</span><span style="font-size:small">my_actor1</span><span style="font-size:small">&gt;(</span><span style="font-size:small">grp</span><span style="font-size:small">);</span><span style="font-size:small">
 </span><span style="font-size:small"><span style="color:blue">auto</span></span><span style="font-size:small"> </span><span style="font-size:small">a4</span><span style="font-size:small"> = </span><span style="font-size:small">spawn_in_group</span><span style="font-size:small">&lt;</span><span style="font-size:small">my_actor2</span><span style="font-size:small">&gt;(</span><span style="font-size:small">grp</span><span style="font-size:small">, </span><span style="font-size:small"><span style="color:#007F00"><span style="font-size:small">"hello my_actor2!"</span></span></span><span style="font-size:small">);</span></div>
-<!--TOC section id=sec57 Common Pitfalls-->
-<h2 id="sec57" class="section">12  Common Pitfalls</h2><!--SEC END --><p>
-<a id="Sec::Pitfalls"></a></p>
-<!--TOC subsection id=sec58 Event-Based API-->
-<h3 id="sec58" class="subsection">12.1  Event-Based API</h3><!--SEC END --><ul class="itemize"><li class="li-itemize">
-The functions <code>become</code> and <code>handle_response</code> do not block, i.e., always return immediately.
-Thus, you should <span style="font-style:italic">always</span> capture by value in event-based actors, because all references on the stack will cause undefined behavior if a lambda is executed.
-</li></ul>
-<!--TOC subsection id=sec59 Mixing Event-Based and Blocking API-->
-<h3 id="sec59" class="subsection">12.2  Mixing Event-Based and Blocking API</h3><!--SEC END --><ul class="itemize"><li class="li-itemize">
-Blocking <span style="font-family:monospace">libcppa</span> function such as <code>receive</code> will <span style="font-weight:bold">throw an exception</span> if accessed from an event-based actor.
-To catch as many errors as possible at compile-time, <span style="font-family:monospace">libcppa</span> will produce an error if <code>receive</code> is called and the <code><span style="color:blue">this</span></code> pointer is set and points to an event-based actor.</li><li class="li-itemize">Context-switching and thread-mapped actors <span style="font-style:italic">can</span> use the <code>become</code> API, <span style="font-weight:bold">but</span> they should use it either exclusively or not at all.
-Whenever a non-event-based actor calls <code>become</code><code>()</code> for the first time, it will create a behavior stack and execute it until the behavior stack is empty.
-Thus, the <span style="font-style:italic">initial</span> <code>become</code> <span style="font-style:italic">blocks</span> until the behavior stack is empty, whereas all subsequent calls to <code>become</code> will return immediately.
-Related functions, e.g., <code>sync_send</code><code>(...).</code><code>then</code><code>(...)</code>, behave the same, as they manipulate the behavior as well.
-</li></ul>
-<!--TOC subsection id=sec60 Synchronous Messages-->
-<h3 id="sec60" class="subsection">12.3  Synchronous Messages</h3><!--SEC END --><ul class="itemize"><li class="li-itemize"><code>send</code><code>(</code><code>self</code><code>-&gt;</code><code>last_sender</code><code>(), ...)</code> is <span style="font-weight:bold">not</span> equal to <code>reply</code><code>(...)</code>.
-The two functions <code>receive_response</code> and <code>handle_response</code> will only recognize messages send via either <code>reply</code> or <code>reply_tuple</code>.</li><li class="li-itemize">A future returned by <code>sync_send</code> represents <em>exactly one</em> response message.
-Therefore, it is not possible to receive more than one response message.
-Calling <code>reply</code> more than once will result in lost messages and calling <code>handle_response</code> or <code>receive_response</code> more than once on a future will throw an exception.</li><li class="li-itemize">The future returned by <code>sync_send</code> is bound to the calling actor.
-It is not possible to transfer such a future to another actor.
-Calling <code>receive_response</code> or <code>handle_response</code> for a future bound to another actor is undefined behavior.</li></ul>
-<!--TOC subsection id=sec61 Sending Messages-->
-<h3 id="sec61" class="subsection">12.4  Sending Messages</h3><!--SEC END --><ul class="itemize"><li class="li-itemize"><code>send</code><code>(</code><code>whom</code><code>, ...)</code> is syntactic sugar for <code>whom</code><code> &lt;&lt; </code><code>make_any_tuple</code><code>(...)</code>.
-Hence, a message sent via <code>send</code><code>(</code><code>whom</code><code>, </code><code>self</code><code>-&gt;</code><code>last_dequeued</code><code>())</code> will not yield the expected result, since it wraps <code>self</code><code>-&gt;</code><code>last_dequeued</code><code>()</code> into another <code>any_tuple</code> instance.
-The correct way of forwarding messages is <code>self</code><code>-&gt;</code><code>forward_to</code><code>(</code><code>whom</code><code>)</code>.</li></ul>
-<!--TOC subsection id=sec62 Sharing-->
-<h3 id="sec62" class="subsection">12.5  Sharing</h3><!--SEC END --><ul class="itemize"><li class="li-itemize">
-It is strongly recommended to <span style="font-weight:bold">not</span> share states between actors.
-In particular, no actor shall ever access member variables or member functions of another actor.
-Accessing shared memory segments concurrently can cause undefined behavior that is incredibly hard to find and debug.
-However, sharing <span style="font-style:italic">data</span> between actors is fine, as long as the data is <span style="font-style:italic">immutable</span> and all actors access the data only via smart pointers such as <code>std</code><code>::</code><code>shared_ptr</code>.
-Nevertheless, the recommended way of sharing informations is message passing.
-Sending data to multiple actors does <span style="font-style:italic">not</span> result in copying the data several times.
-Read Section <a href="#Sec%3A%3ATuples">2</a> to learn more about <span style="font-family:monospace">libcppa</span>’s copy-on-write optimization for tuples.
-</li></ul>
-<!--TOC section id=sec63 Platform-Independent Type System-->
-<h2 id="sec63" class="section">13  Platform-Independent Type System</h2><!--SEC END --><p>
+<!--TOC section id=sec57 Platform-Independent Type System-->
+<h2 id="sec57" class="section">12  Platform-Independent Type System</h2><!--SEC END --><p>
 <a id="Sec::TypeSystem"></a></p><p><span style="font-family:monospace">libcppa</span> provides a fully network transparent communication between actors.
 Thus, <span style="font-family:monospace">libcppa</span> needs to serialize and deserialize messages.
 Unfortunately, this is not possible using the RTTI system of C++.
 <span style="font-family:monospace">libcppa</span> uses its own RTTI based on the class <code>uniform_type_info</code>, since it is not possible to extend <code>std</code><code>::</code><code><span style="color:blue">type_info</span></code>.</p><p>Unlike <code>std</code><code>::</code><code><span style="color:blue">type_info</span></code><code>::</code><code>name</code><code>()</code>, <code>uniform_type_info</code><code>::</code><code>name</code><code>()</code> is guaranteed to return the same name on all supported platforms. Furthermore, it allows to create an instance of a type by name.</p><div class="lstlisting"><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">// creates a signed, 32 bit integer</span></span></span><span style="font-size:small">
 </span><span style="font-size:small">cppa</span><span style="font-size:small">::</span><span style="font-size:small">object</span><span style="font-size:small"> </span><span style="font-size:small">i</span><span style="font-size:small"> = </span><span style="font-size:small">cppa</span><span style="font-size:small">::</span><span style="font-size:small">uniform_typeid</span><span style="font-size:small">&lt;</span><span style="font-size:small"><span style="color:blue">int</span></span><span style="font-size:small">&gt;()-&gt;</span><span style="font-size:small">create</span><span style="font-size:small">();</span></div><p>However, you should rarely if ever need to use <code>object</code> or <code>uniform_type_info</code>.</p>
-<!--TOC subsection id=sec64 User-Defined Data Types in Messages-->
-<h3 id="sec64" class="subsection">13.1  User-Defined Data Types in Messages</h3><!--SEC END --><p>
+<!--TOC subsection id=sec58 User-Defined Data Types in Messages-->
+<h3 id="sec58" class="subsection">12.1  User-Defined Data Types in Messages</h3><!--SEC END --><p>
 <a id="Sec::TypeSystem::UserDefined"></a></p><p>All user-defined types must be explicitly “announced” so that <span style="font-family:monospace">libcppa</span> can (de)serialize them correctly, as shown in the example below.</p><div class="lstlisting"><span style="font-size:small"><span style="color:blue">#include</span></span><span style="font-size:small"> </span><span style="font-size:small"><span style="color:#007F00"><span style="font-size:small">"cppa/cppa.hpp"</span></span></span><span style="font-size:small">
 </span><span style="font-size:small"><span style="color:blue">using</span></span><span style="font-size:small"> </span><span style="font-size:small"><span style="color:blue">namespace</span></span><span style="font-size:small"> </span><span style="font-size:small">cppa</span><span style="font-size:small">;</span><span style="font-size:small">
 </span><span style="font-size:small">
@@ -1128,10 +1095,52 @@ See the announce examples 1 – 4 of the standard distribution for more details.
 You have to implement serialize/deserialize by yourself if your class does implement an unsupported data structure.
 See <code>announce_example_5</code><code>.</code><code>cpp</code> in the examples folder.
 </p>
-<!--TOC section id=sec65 Appendix-->
-<h2 id="sec65" class="section">14  Appendix</h2><!--SEC END -->
-<!--TOC subsection id=sec66 Class <code>option</code>-->
-<h3 id="sec66" class="subsection">14.1  Class <code>option</code></h3><!--SEC END --><p>
+<!--TOC section id=sec59 Common Pitfalls-->
+<h2 id="sec59" class="section">13  Common Pitfalls</h2><!--SEC END --><p>
+<a id="Sec::Pitfalls"></a></p>
+<!--TOC subsection id=sec60 Event-Based API-->
+<h3 id="sec60" class="subsection">13.1  Event-Based API</h3><!--SEC END --><ul class="itemize"><li class="li-itemize">
+The functions <code>become</code> and <code>handle_response</code> do not block, i.e., always return immediately.
+Thus, you should <span style="font-style:italic">always</span> capture by value in event-based actors, because all references on the stack will cause undefined behavior if a lambda is executed.
+</li></ul>
+<!--TOC subsection id=sec61 Mixing Event-Based and Blocking API-->
+<h3 id="sec61" class="subsection">13.2  Mixing Event-Based and Blocking API</h3><!--SEC END --><ul class="itemize"><li class="li-itemize">
+Blocking <span style="font-family:monospace">libcppa</span> function such as <code>receive</code> will <span style="font-weight:bold">throw an exception</span> if accessed from an event-based actor.
+To catch as many errors as possible at compile-time, <span style="font-family:monospace">libcppa</span> will produce an error if <code>receive</code> is called and the <code><span style="color:blue">this</span></code> pointer is set and points to an event-based actor.</li><li class="li-itemize">Context-switching and thread-mapped actors <span style="font-style:italic">can</span> use the <code>become</code> API, <span style="font-weight:bold">but</span> they should use it either exclusively or not at all.
+Whenever a non-event-based actor calls <code>become</code><code>()</code> for the first time, it will create a behavior stack and execute it until the behavior stack is empty.
+Thus, the <span style="font-style:italic">initial</span> <code>become</code> <span style="font-style:italic">blocks</span> until the behavior stack is empty, whereas all subsequent calls to <code>become</code> will return immediately.
+Related functions, e.g., <code>sync_send</code><code>(...).</code><code>then</code><code>(...)</code>, behave the same, as they manipulate the behavior as well.
+</li></ul>
+<!--TOC subsection id=sec62 Synchronous Messages-->
+<h3 id="sec62" class="subsection">13.3  Synchronous Messages</h3><!--SEC END --><ul class="itemize"><li class="li-itemize"><code>send</code><code>(</code><code>self</code><code>-&gt;</code><code>last_sender</code><code>(), ...)</code> is <span style="font-weight:bold">not</span> equal to <code>reply</code><code>(...)</code>.
+The two functions <code>receive_response</code> and <code>handle_response</code> will only recognize messages send via either <code>reply</code> or <code>reply_tuple</code>.</li><li class="li-itemize">A future returned by <code>sync_send</code> represents <em>exactly one</em> response message.
+Therefore, it is not possible to receive more than one response message.
+Calling <code>reply</code> more than once will result in lost messages and calling <code>handle_response</code> or <code>receive_response</code> more than once on a future will throw an exception.</li><li class="li-itemize">The future returned by <code>sync_send</code> is bound to the calling actor.
+It is not possible to transfer such a future to another actor.
+Calling <code>receive_response</code> or <code>handle_response</code> for a future bound to another actor is undefined behavior.</li></ul>
+<!--TOC subsection id=sec63 Sending Messages-->
+<h3 id="sec63" class="subsection">13.4  Sending Messages</h3><!--SEC END --><ul class="itemize"><li class="li-itemize"><code>send</code><code>(</code><code>whom</code><code>, ...)</code> is syntactic sugar for <code>whom</code><code> &lt;&lt; </code><code>make_any_tuple</code><code>(...)</code>.
+Hence, a message sent via <code>send</code><code>(</code><code>whom</code><code>, </code><code>self</code><code>-&gt;</code><code>last_dequeued</code><code>())</code> will not yield the expected result, since it wraps <code>self</code><code>-&gt;</code><code>last_dequeued</code><code>()</code> into another <code>any_tuple</code> instance.
+The correct way of forwarding messages is <code>self</code><code>-&gt;</code><code>forward_to</code><code>(</code><code>whom</code><code>)</code>.</li></ul>
+<!--TOC subsection id=sec64 Sharing-->
+<h3 id="sec64" class="subsection">13.5  Sharing</h3><!--SEC END --><ul class="itemize"><li class="li-itemize">
+It is strongly recommended to <span style="font-weight:bold">not</span> share states between actors.
+In particular, no actor shall ever access member variables or member functions of another actor.
+Accessing shared memory segments concurrently can cause undefined behavior that is incredibly hard to find and debug.
+However, sharing <span style="font-style:italic">data</span> between actors is fine, as long as the data is <span style="font-style:italic">immutable</span> and all actors access the data only via smart pointers such as <code>std</code><code>::</code><code>shared_ptr</code>.
+Nevertheless, the recommended way of sharing informations is message passing.
+Sending data to multiple actors does <span style="font-style:italic">not</span> result in copying the data several times.
+Read Section <a href="#Sec%3A%3ATuples">2</a> to learn more about <span style="font-family:monospace">libcppa</span>’s copy-on-write optimization for tuples.
+</li></ul>
+<!--TOC subsection id=sec65 Constructors of Class-based Actors-->
+<h3 id="sec65" class="subsection">13.6  Constructors of Class-based Actors</h3><!--SEC END --><ul class="itemize"><li class="li-itemize">
+During constructor invocation, <code>self</code> does <span style="font-weight:bold">not</span> point to <code><span style="color:blue">this</span></code>. It points to the invoking actor instead.
+</li><li class="li-itemize">You should <span style="font-weight:bold">not</span> send or receive messages in a constructor. 
+</li></ul>
+<!--TOC section id=sec66 Appendix-->
+<h2 id="sec66" class="section">14  Appendix</h2><!--SEC END -->
+<!--TOC subsection id=sec67 Class <span style="font-family:monospace">option</span>-->
+<h3 id="sec67" class="subsection">14.1  Class <span style="font-family:monospace">option</span></h3><!--SEC END --><p>
 <a id="Appendix::Option"></a></p><p>Defined in header <code><span style="color:#007F00"><code>"cppa/option.hpp"</code></span></code>.</p><div class="lstlisting"><span style="font-size:small"><span style="color:blue">template</span></span><span style="font-size:small">&lt;</span><span style="font-size:small"><span style="color:blue">typename</span></span><span style="font-size:small"> </span><span style="font-size:small">T</span><span style="font-size:small">&gt;</span><span style="font-size:small">
 </span><span style="font-size:small"><span style="color:blue">class</span></span><span style="font-size:small"> </span><span style="font-size:small">option</span><span style="font-size:small">;</span></div><p>Represents an optional value.</p><table style="border-spacing:6px;border-collapse:separate;width:100%" class="cellpading0"><tr><td style="text-align:left;white-space:nowrap"  colspan=2><span style="font-size:large"><span style="font-weight:bold">Member types</span></span><span style="font-size:small"> </span></td></tr>
 <tr><td class="hbar" colspan=2><span style="font-size:small"></span></td></tr>
@@ -1172,7 +1181,37 @@ See <code>announce_example_5</code><code>.</code><code>cpp</code> in the example
 <tr><td style="vertical-align:middle;text-align:left;" ><span style="font-size:small"> </span><code><span style="font-size:small">T</span></code><code><span style="font-size:small">&amp; </span></code><code><span style="font-size:small">get</span></code><code><span style="font-size:small">()</span></code><span style="font-size:small"><br>
 </span><code><span style="font-size:small">T</span></code><code><span style="font-size:small">&amp; </span></code><code><span style="font-size:small"><span style="color:blue">operator</span></span></code><code><span style="font-size:small">*()</span></code></td><td style="vertical-align:middle;text-align:left;" ><span style="font-size:small">Access stored value </span></td></tr>
 <tr><td class="hbar" colspan=2><span style="font-size:small"></span></td></tr>
-</table><!--CUT END -->
+</table>
+<!--TOC subsection id=sec68 Using <span style="font-family:monospace">aout</span> – A Thread-Safe Wrapper for <span style="font-family:monospace">cout</span>-->
+<h3 id="sec68" class="subsection">14.2  Using <span style="font-family:monospace">aout</span> – A Thread-Safe Wrapper for <span style="font-family:monospace">cout</span></h3><!--SEC END --><p>When using <code>cout</code> from multiple actors, output often appears interleaved.
+Moreover, using <code>cout</code> from multiple actors – and thus multiple threads – in parallel should be avoided, since the standard does not guarantee a thread-safe implementation.</p><p>By replacing <span style="font-family:monospace">std::cout</span> with <span style="font-family:monospace">cppa::aout</span>, actors can achieve a thread-safe text output.
+The header <code>cppa</code><code>/</code><code>cppa</code><code>.</code><code>hpp</code> also defines overloads for <span style="font-family:monospace">std::endl</span> and <span style="font-family:monospace">std::flush</span> for <code>aout</code>, but does not support the full range of ostream operations (yet).
+Each write operation to <span style="font-family:monospace">aout</span> sends a message to a ‘hidden’ actor (keep in mind, sending messages from actor constructors is not safe).
+This actor only prints lines, unless output is forced using <code>flush</code>.</p><div class="lstlisting"><span style="font-size:small"><span style="color:blue">#include</span></span><span style="font-size:small"> &lt;</span><span style="font-size:small">chrono</span><span style="font-size:small">&gt;</span><span style="font-size:small">
+</span><span style="font-size:small"><span style="color:blue">#include</span></span><span style="font-size:small"> &lt;</span><span style="font-size:small">cstdlib</span><span style="font-size:small">&gt;</span><span style="font-size:small">
+</span><span style="font-size:small"><span style="color:blue">#include</span></span><span style="font-size:small"> </span><span style="font-size:small"><span style="color:#007F00"><span style="font-size:small">"cppa/cppa.hpp"</span></span></span><span style="font-size:small">
+</span><span style="font-size:small">
+</span><span style="font-size:small"><span style="color:blue">using</span></span><span style="font-size:small"> </span><span style="font-size:small"><span style="color:blue">namespace</span></span><span style="font-size:small"> </span><span style="font-size:small">cppa</span><span style="font-size:small">;</span><span style="font-size:small">
+</span><span style="font-size:small"><span style="color:blue">using</span></span><span style="font-size:small"> </span><span style="font-size:small">std</span><span style="font-size:small">::</span><span style="font-size:small">endl</span><span style="font-size:small">;</span><span style="font-size:small">
+</span><span style="font-size:small">
+</span><span style="font-size:small"><span style="color:blue">int</span></span><span style="font-size:small"> </span><span style="font-size:small">main</span><span style="font-size:small">() {</span><span style="font-size:small">
+</span><span style="font-size:small">    </span><span style="font-size:small">std</span><span style="font-size:small">::</span><span style="font-size:small">srand</span><span style="font-size:small">(</span><span style="font-size:small">std</span><span style="font-size:small">::</span><span style="font-size:small">time</span><span style="font-size:small">(0));</span><span style="font-size:small">
+</span><span style="font-size:small">    </span><span style="font-size:small"><span style="color:blue">for</span></span><span style="font-size:small"> (</span><span style="font-size:small"><span style="color:blue">int</span></span><span style="font-size:small"> </span><span style="font-size:small">i</span><span style="font-size:small"> = 1; </span><span style="font-size:small">i</span><span style="font-size:small"> &lt;= 50; ++</span><span style="font-size:small">i</span><span style="font-size:small">) {</span><span style="font-size:small">
+</span><span style="font-size:small">        </span><span style="font-size:small">spawn</span><span style="font-size:small">([</span><span style="font-size:small">i</span><span style="font-size:small">] {</span><span style="font-size:small">
+</span><span style="font-size:small">          </span><span style="font-size:small">aout</span><span style="font-size:small"> &lt;&lt; </span><span style="font-size:small"><span style="color:#007F00"><span style="font-size:small">"Hi there! This is actor nr. "</span></span></span><span style="font-size:small"> &lt;&lt; </span><span style="font-size:small">i</span><span style="font-size:small"> &lt;&lt; </span><span style="font-size:small"><span style="color:#007F00"><span style="font-size:small">"!"</span></span></span><span style="font-size:small"> &lt;&lt; </span><span style="font-size:small">endl</span><span style="font-size:small">;</span><span style="font-size:small">
+</span><span style="font-size:small">          </span><span style="font-size:small">std</span><span style="font-size:small">::</span><span style="font-size:small">chrono</span><span style="font-size:small">::</span><span style="font-size:small">milliseconds</span><span style="font-size:small"> </span><span style="font-size:small">tout</span><span style="font-size:small">{</span><span style="font-size:small">std</span><span style="font-size:small">::</span><span style="font-size:small">rand</span><span style="font-size:small">() % 1000};</span><span style="font-size:small">
+</span><span style="font-size:small">          </span><span style="font-size:small">delayed_send</span><span style="font-size:small">(</span><span style="font-size:small">self</span><span style="font-size:small">, </span><span style="font-size:small">tout</span><span style="font-size:small">, </span><span style="font-size:small">atom</span><span style="font-size:small">(</span><span style="font-size:small"><span style="color:#007F00"><span style="font-size:small">"done"</span></span></span><span style="font-size:small">));</span><span style="font-size:small">
+</span><span style="font-size:small">          </span><span style="font-size:small">receive</span><span style="font-size:small">(</span><span style="font-size:small">others</span><span style="font-size:small">() &gt;&gt; [] {</span><span style="font-size:small">
+</span><span style="font-size:small">              </span><span style="font-size:small">aout</span><span style="font-size:small"> &lt;&lt; </span><span style="font-size:small"><span style="color:#007F00"><span style="font-size:small">"Actor nr. "</span></span></span><span style="font-size:small"> &lt;&lt; </span><span style="font-size:small">i</span><span style="font-size:small"> &lt;&lt; </span><span style="font-size:small"><span style="color:#007F00"><span style="font-size:small">" says goodbye!"</span></span></span><span style="font-size:small"> &lt;&lt; </span><span style="font-size:small">endl</span><span style="font-size:small">;</span><span style="font-size:small">
+</span><span style="font-size:small">          });</span><span style="font-size:small">
+</span><span style="font-size:small">        });</span><span style="font-size:small">
+</span><span style="font-size:small">    }</span><span style="font-size:small">
+</span><span style="font-size:small">    </span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">// wait until all other actors we've spawned are done</span></span></span><span style="font-size:small">
+</span><span style="font-size:small">    </span><span style="font-size:small">await_all_others_done</span><span style="font-size:small">();</span><span style="font-size:small">
+</span><span style="font-size:small">    </span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">// done</span></span></span><span style="font-size:small">
+</span><span style="font-size:small">    </span><span style="font-size:small">shutdown</span><span style="font-size:small">();</span><span style="font-size:small">
+</span><span style="font-size:small">    </span><span style="font-size:small"><span style="color:blue">return</span></span><span style="font-size:small"> 0;</span><span style="font-size:small">
+</span><span style="font-size:small">}</span></div><!--CUT END -->
 <!--HTMLFOOT-->
 <!--ENDHTML-->
 <!--FOOTER-->

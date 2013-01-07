@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libcppa
-   &#160;<span id="projectnumber">Version 0.5.4</span>
+   &#160;<span id="projectnumber">Version 0.5.5</span>
    </div>
   </td>
  </tr>
@@ -130,8 +130,8 @@ template&lt;class List , template&lt; typename &gt; class Predicate&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line"> (Predicate&lt;typename List::head&gt;::value ? 0 : 1)</div>
-<div class="line">            + tl_count_not&lt;typename List::tail, Predicate&gt;::value</div>
+<b>Initial value:</b><div class="fragment"><div class="line"> (Predicate&lt;typename tl_head&lt;List&gt;::type&gt;::value ? 0 : 1)</div>
+<div class="line">            + tl_count_not&lt;<span class="keyword">typename</span> tl_tail&lt;List&gt;::type, Predicate&gt;::value</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -141,7 +141,7 @@ template&lt;class List , template&lt; typename &gt; class Predicate&gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 19 2012 15:35:08 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jan 7 2013 16:16:29 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

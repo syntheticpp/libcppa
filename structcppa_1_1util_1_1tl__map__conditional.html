@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libcppa
-   &#160;<span id="projectnumber">Version 0.5.4</span>
+   &#160;<span id="projectnumber">Version 0.5.5</span>
    </div>
   </td>
  </tr>
@@ -103,16 +103,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a6f5d1d0def61fa63797ce9e1e5eaa622"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6f5d1d0def61fa63797ce9e1e5eaa622"></a>
-typedef tl_concat&lt; type_list<br class="typebreak"/>
+<tr class="memitem:a6590cbf01f567aeca0c9f4f2ae5a74d2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6590cbf01f567aeca0c9f4f2ae5a74d2"></a>
+typedef tl_concat&lt; <a class="el" href="structcppa_1_1util_1_1type__list.html">type_list</a><br class="typebreak"/>
 &lt; typename std::conditional<br class="typebreak"/>
-&lt; Trait&lt; typename List::head &gt;<br class="typebreak"/>
-::value==TraitResult, typename <br class="typebreak"/>
-tl_apply_all&lt; typename <br class="typebreak"/>
-List::head, Funs...&gt;::type, <br class="typebreak"/>
-typename List::head &gt;::type &gt;<br class="typebreak"/>
-, typename <a class="el" href="structcppa_1_1util_1_1tl__map__conditional.html">tl_map_conditional</a><br class="typebreak"/>
-&lt; typename List::tail, Trait, <br class="typebreak"/>
+&lt; Trait&lt; typename tl_head<br class="typebreak"/>
+&lt; List &gt;::type &gt;::value==TraitResult, <br class="typebreak"/>
+typename tl_apply_all<br class="typebreak"/>
+&lt; typename tl_head&lt; List &gt;<br class="typebreak"/>
+::type, Funs...&gt;::type, <br class="typebreak"/>
+typename tl_head&lt; List &gt;::type &gt;<br class="typebreak"/>
+::type &gt;, typename <br class="typebreak"/>
+<a class="el" href="structcppa_1_1util_1_1tl__map__conditional.html">tl_map_conditional</a>&lt; typename <br class="typebreak"/>
+tl_tail&lt; List &gt;::type, Trait, <br class="typebreak"/>
 TraitResult, Funs... &gt;::type &gt;<br class="typebreak"/>
 ::type&#160;</td><td class="memItemRight" valign="bottom"><b>type</b></td></tr>
 </table>
@@ -127,7 +129,7 @@ struct cppa::util::tl_map_conditional&lt; List, Trait, TraitResult, Funs &gt;</h
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 19 2012 15:35:08 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jan 7 2013 16:16:29 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

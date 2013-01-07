@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libcppa
-   &#160;<span id="projectnumber">Version 0.5.4</span>
+   &#160;<span id="projectnumber">Version 0.5.5</span>
    </div>
   </td>
  </tr>
@@ -88,7 +88,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a>  </div>
+<a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">cppa::util::tl_pad_left&lt; List, NewSize, FillType &gt; Struct Template Reference<div class="ingroups"><a class="el" href="group___meta_programming.html">Metaprogramming utility.</a></div></div>  </div>
 </div><!--header-->
@@ -103,10 +104,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:aaaf4bf72c7baa628f82f1fc4b25b73a9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaaf4bf72c7baa628f82f1fc4b25b73a9"></a>
+<tr class="memitem:a37de4249b3a8c87c2ced4015d302ed00"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a37de4249b3a8c87c2ced4015d302ed00"></a>
 typedef tl_pad_left_impl&lt; List, <br class="typebreak"/>
-List::size,(List::size &gt;<br class="typebreak"/>
- NewSize FillType::type&#160;</td><td class="memItemRight" valign="bottom"><b>type</b></td></tr>
+list_size,(list_size &gt; NewSize&#160;</td><td class="memItemRight" valign="bottom"><b>list_size</b>: NewSize</td></tr>
+<tr class="memitem:a46dc580bcf27d6a75101cff189f35a8b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a46dc580bcf27d6a75101cff189f35a8b"></a>
+typedef tl_pad_left_impl&lt; List, <br class="typebreak"/>
+list_size,(list_size &gt; NewSize <br class="typebreak"/>
+FillType::type&#160;</td><td class="memItemRight" valign="bottom"><b>type</b></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a2a585cbca91e73c28729c94cc8c3ed9c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2a585cbca91e73c28729c94cc8c3ed9c"></a>
+static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><b>list_size</b> = tl_size&lt;List&gt;::value</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><h3>template&lt;class List, size_t NewSize, typename FillType = void_type&gt;<br/>
@@ -119,7 +128,7 @@ struct cppa::util::tl_pad_left&lt; List, NewSize, FillType &gt;</h3>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 19 2012 15:35:08 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jan 7 2013 16:16:29 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

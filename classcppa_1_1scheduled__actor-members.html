@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libcppa
-   &#160;<span id="projectnumber">Version 0.5.4</span>
+   &#160;<span id="projectnumber">Version 0.5.5</span>
    </div>
   </td>
  </tr>
@@ -150,7 +150,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <tr bgcolor="#f0f0f0"><td class="entry"><b>ref_counted</b>() (defined in <a class="el" href="classcppa_1_1ref__counted.html">cppa::ref_counted</a>)</td><td class="entry"><a class="el" href="classcppa_1_1ref__counted.html">cppa::ref_counted</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classcppa_1_1actor.html#ad1f8d44644f596ff1e4c77fe162a3b58">remove_backlink</a>(const intrusive_ptr&lt; actor &gt; &amp;other)=0</td><td class="entry"><a class="el" href="classcppa_1_1actor.html">cppa::actor</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
   <tr bgcolor="#f0f0f0"><td class="entry"><b>request_deletion</b>() (defined in <a class="el" href="classcppa_1_1local__actor.html">cppa::local_actor</a>)</td><td class="entry"><a class="el" href="classcppa_1_1local__actor.html">cppa::local_actor</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr bgcolor="#f0f0f0"class="even"><td class="entry"><b>resume</b>(util::fiber *from)=0 (defined in <a class="el" href="classcppa_1_1scheduled__actor.html">cppa::scheduled_actor</a>)</td><td class="entry"><a class="el" href="classcppa_1_1scheduled__actor.html">cppa::scheduled_actor</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0"class="even"><td class="entry"><b>resume</b>(util::fiber *from, actor_ptr &amp;next_job)=0 (defined in <a class="el" href="classcppa_1_1scheduled__actor.html">cppa::scheduled_actor</a>)</td><td class="entry"><a class="el" href="classcppa_1_1scheduled__actor.html">cppa::scheduled_actor</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
   <tr bgcolor="#f0f0f0"><td class="entry"><b>scheduled_actor</b>(bool enable_chained_send=false) (defined in <a class="el" href="classcppa_1_1scheduled__actor.html">cppa::scheduled_actor</a>)</td><td class="entry"><a class="el" href="classcppa_1_1scheduled__actor.html">cppa::scheduled_actor</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classcppa_1_1actor.html#aff5de7ef1e44e9504379e5ec01b9e66c">sync_enqueue</a>(actor *sender, message_id_t id, any_tuple msg)=0</td><td class="entry"><a class="el" href="classcppa_1_1actor.html">cppa::actor</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
   <tr><td class="entry"><a class="el" href="classcppa_1_1local__actor.html#a47cfc101decc6efe2951f01f39535b46">trap_exit</a>() const </td><td class="entry"><a class="el" href="classcppa_1_1local__actor.html">cppa::local_actor</a></td><td class="entry"></td></tr>
@@ -164,7 +164,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 19 2012 15:35:08 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jan 7 2013 16:16:29 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

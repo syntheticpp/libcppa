@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libcppa
-   &#160;<span id="projectnumber">Version 0.5.4</span>
+   &#160;<span id="projectnumber">Version 0.5.5</span>
    </div>
   </td>
  </tr>
@@ -109,8 +109,8 @@ typedef tl_at_impl&lt; N, E...&gt;::type&#160;</td><td class="memItemRight" vali
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3c226c19d952ebd3fc836599a195368d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3c226c19d952ebd3fc836599a195368d"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>static_assert</b> (N&lt; sizeof...(E),&quot;N &gt;= List::size&quot;)</td></tr>
+<tr class="memitem:a6d8af237ddbf0511fb5956a2cbc6b70a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6d8af237ddbf0511fb5956a2cbc6b70a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>static_assert</b> (N&lt; sizeof...(E),&quot;N &gt;= tl_size&lt;List&gt;::value&quot;)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><h3>template&lt;size_t N, typename... E&gt;<br/>
@@ -123,7 +123,7 @@ struct cppa::util::tl_at&lt; type_list&lt; E...&gt;, N &gt;</h3>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 19 2012 15:35:08 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jan 7 2013 16:16:29 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

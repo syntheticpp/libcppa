@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libcppa
-   &#160;<span id="projectnumber">Version 0.5.4</span>
+   &#160;<span id="projectnumber">Version 0.5.5</span>
    </div>
   </td>
  </tr>
@@ -409,6 +409,20 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>closesocket</b> (nati
 <tr class="memitem:a8d5daac288a10cc34286f505ea637571"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8d5daac288a10cc34286f505ea637571"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecppa.html#a8d5daac288a10cc34286f505ea637571">shutdown</a> ()</td></tr>
 <tr class="memdesc:a8d5daac288a10cc34286f505ea637571"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys all singletons, disconnects all peers and stops the scheduler. It is recommended to use this function as very last function call before leaving main(). Especially in programs using libcppa's networking infrastructure. <br/></td></tr>
+<tr class="memitem:ae08349cb93c162f2d9cfd274ae53e6b3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae08349cb93c162f2d9cfd274ae53e6b3"></a>
+const actor_ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;&lt;</b> (const actor_ostream &amp;o, std::string arg)</td></tr>
+<tr class="memitem:ab58f34b5d1df5cb163efe061d8465787"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab58f34b5d1df5cb163efe061d8465787"></a>
+const actor_ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;&lt;</b> (const actor_ostream &amp;o, const <a class="el" href="classcppa_1_1any__tuple.html">any_tuple</a> &amp;arg)</td></tr>
+<tr class="memitem:afd724d4ad45e6882f875bde0a4c28a4d"><td class="memTemplParams" colspan="2"><a class="anchor" id="afd724d4ad45e6882f875bde0a4c28a4d"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:afd724d4ad45e6882f875bde0a4c28a4d"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if<br class="typebreak"/>
+&lt; !std::is_convertible&lt; T, <br class="typebreak"/>
+std::string &gt;::value <br class="typebreak"/>
+&amp;&amp;!std::is_convertible&lt; T, <br class="typebreak"/>
+<a class="el" href="classcppa_1_1any__tuple.html">any_tuple</a> &gt;::value, const <br class="typebreak"/>
+actor_ostream &amp; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator&lt;&lt;</b> (const actor_ostream &amp;o, T &amp;&amp;arg)</td></tr>
+<tr class="memitem:a3ca5dce51a19e691510357f726bcb3e5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3ca5dce51a19e691510357f726bcb3e5"></a>
+const actor_ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;&lt;</b> (const actor_ostream &amp;o, actor_ostream::fun_type f)</td></tr>
 <tr class="memitem:aaa221547ef879ba5b42f7cc7820f90e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcppa_1_1object.html">object</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecppa.html#aaa221547ef879ba5b42f7cc7820f90e1">from_string</a> (const std::string &amp;what)</td></tr>
 <tr class="memdesc:aaa221547ef879ba5b42f7cc7820f90e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a string created by <a class="el" href="namespacecppa.html#a76a9f2873d0e97eb7ceffb6101e8e507">to_string</a> to its original value.  <a href="#aaa221547ef879ba5b42f7cc7820f90e1"></a><br/></td></tr>
 <tr class="memitem:ae213a56201820111919afe92aa287586"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecppa.html#ae213a56201820111919afe92aa287586">publish_local_groups_at</a> (std::uint16_t port, const char *addr=nullptr)</td></tr>
@@ -633,7 +647,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <tr class="memdesc:a33344c46529f70febab48161c0c53a68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the position of <a class="el" href="structcppa_1_1anything.html">anything</a> from the type list <code>Types</code>.  <a href="#a33344c46529f70febab48161c0c53a68"></a><br/></td></tr>
 <tr class="memitem:ac9456f6c3944e9f8f47ec8fc678d99d5"><td class="memTemplParams" colspan="2"><a class="anchor" id="ac9456f6c3944e9f8f47ec8fc678d99d5"></a>
 template&lt;size_t N, typename... Ts&gt; </td></tr>
-<tr class="memitem:ac9456f6c3944e9f8f47ec8fc678d99d5"><td class="memTemplItemLeft" align="right" valign="top">util::at&lt; N, Ts...&gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><b>get</b> (const util::type_list&lt; Ts...&gt; &amp;)</td></tr>
+<tr class="memitem:ac9456f6c3944e9f8f47ec8fc678d99d5"><td class="memTemplItemLeft" align="right" valign="top">util::at&lt; N, Ts...&gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><b>get</b> (const <a class="el" href="structcppa_1_1util_1_1type__list.html">util::type_list</a>&lt; Ts...&gt; &amp;)</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
 <tr class="memitem:ga3ae2b7f14f29131233296643035e5128"><td class="memTemplParams" colspan="2">template&lt;class C , typename... Args&gt; </td></tr>
 <tr class="memitem:ga3ae2b7f14f29131233296643035e5128"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if<br class="typebreak"/>
@@ -792,7 +806,7 @@ template&lt;size_t Size&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns:</dt><dd>A compact representation of <code>str</code>. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="dancing_kirby_8cpp-example.html#a1">dancing_kirby.cpp</a>, and <a class="el" href="dining_philosophers_8cpp-example.html#a4">dining_philosophers.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="dancing_kirby_8cpp-example.html#a1">dancing_kirby.cpp</a>.</dd>
 </dl>
 </div>
 </div>
@@ -813,8 +827,7 @@ template&lt;size_t Size&gt; </div>
 <dl class="section warning"><dt>Warning:</dt><dd>This function will cause a deadlock if called from multiple actors. </dd>
 <dd>
 Do not call this function in cooperatively scheduled actors. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="dining_philosophers_8cpp-example.html#a8">dining_philosophers.cpp</a>.</dd>
-</dl>
+
 </div>
 </div>
 <a class="anchor" id="ab32fd2e5649ee811c08a9ff74e9bed84"></a>
@@ -902,7 +915,7 @@ template&lt;typename Types &gt; </div>
 <p>Gets the position of <a class="el" href="structcppa_1_1anything.html">anything</a> from the type list <code>Types</code>. </p>
 <dl class="tparams"><dt>Template Parameters:</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">A</td><td>template parameter pack as <a class="el" href="">type_list</a>. </td></tr>
+    <tr><td class="paramname">A</td><td>template parameter pack as <a class="el" href="structcppa_1_1util_1_1type__list.html">type_list</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1099,7 +1112,7 @@ template&lt;typename Arg0 , typename... Args&gt; </div>
 
 <p>Left-hand side of a partial function expression that matches values. </p>
 <p>This overload can be used with the wildcards <a class="el" href="namespacecppa.html#a18bab167555966e432564cdee1611825">val</a>, <a class="el" href="namespacecppa.html#a6fd601df8b1aff0ef276f80a103c5f4e">any_vals</a> and <a class="el" href="namespacecppa.html#a8b4879d9cdef5c6c0995b30ee37d935e">arg_match</a>. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="dancing_kirby_8cpp-example.html#a3">dancing_kirby.cpp</a>, and <a class="el" href="dining_philosophers_8cpp-example.html#a3">dining_philosophers.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="dancing_kirby_8cpp-example.html#a3">dancing_kirby.cpp</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1644,7 +1657,7 @@ template&lt;typename T &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 19 2012 15:35:07 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jan 7 2013 16:16:28 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

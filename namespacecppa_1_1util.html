@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libcppa
-   &#160;<span id="projectnumber">Version 0.5.4</span>
+   &#160;<span id="projectnumber">Version 0.5.5</span>
    </div>
   </td>
  </tr>
@@ -108,12 +108,36 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deduces reference type of T0 and applies it to T1.  <a href="structcppa_1_1util_1_1deduce__ref__type.html#details">More...</a><br/></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1util_1_1duration.html">duration</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time duration consisting of a <a class="el" href="namespacecppa_1_1util.html#a3e39fe86c319be59bebecacbd13a520c">time_unit</a> and a 32 bit unsigned integer.  <a href="classcppa_1_1util_1_1duration.html#details">More...</a><br/></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcppa_1_1util_1_1element__at_3_01_n_00_01_c_3_01_tn_8_8_8_4_01_4.html">element_at&lt; N, C&lt; Tn...&gt; &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the n-th template parameter of <code>C</code>.  <a href="structcppa_1_1util_1_1element__at_3_01_n_00_01_c_3_01_tn_8_8_8_4_01_4.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcppa_1_1util_1_1element__at_3_01_n_00_01_c_3_01_ts_8_8_8_4_01_4.html">element_at&lt; N, C&lt; Ts...&gt; &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the n-th template parameter of <code>C</code>.  <a href="structcppa_1_1util_1_1element__at_3_01_n_00_01_c_3_01_ts_8_8_8_4_01_4.html#details">More...</a><br/></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1util_1_1fixed__vector.html">fixed_vector</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A vector with a fixed maximum size (uses an array internally).  <a href="classcppa_1_1util_1_1fixed__vector.html#details">More...</a><br/></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcppa_1_1util_1_1if__else.html">if_else</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A conditinal expression for types that allows nested statements (unlike std::conditional).  <a href="structcppa_1_1util_1_1if__else.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcppa_1_1util_1_1int__list.html">int_list</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of integers (wraps a long... template parameter pack).  <a href="structcppa_1_1util_1_1int__list.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcppa_1_1util_1_1il__empty.html">il_empty</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests whether a list is empty.  <a href="structcppa_1_1util_1_1il__empty.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcppa_1_1util_1_1il__slice.html">il_slice</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new list from range (First, Last].  <a href="structcppa_1_1util_1_1il__slice.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcppa_1_1util_1_1il__reverse.html">il_reverse</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new list wih elements in reversed order.  <a href="structcppa_1_1util_1_1il__reverse.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcppa_1_1util_1_1il__push__back_3_01int__list_3_01_is_8_8_8_4_00_01_val_01_4.html">il_push_back&lt; int_list&lt; Is...&gt;, Val &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends <code>What</code> to given list.  <a href="structcppa_1_1util_1_1il__push__back_3_01int__list_3_01_is_8_8_8_4_00_01_val_01_4.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcppa_1_1util_1_1il__push__front_3_01int__list_3_01_is_8_8_8_4_00_01_val_01_4.html">il_push_front&lt; int_list&lt; Is...&gt;, Val &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends <code>What</code> to given list.  <a href="structcppa_1_1util_1_1il__push__front_3_01int__list_3_01_is_8_8_8_4_00_01_val_01_4.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcppa_1_1util_1_1il__pop__back.html">il_pop_back</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new list wih all but the last element of <code>List</code>.  <a href="structcppa_1_1util_1_1il__pop__back.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcppa_1_1util_1_1il__at_3_01int__list_3_01_e_8_8_8_4_00_01_n_01_4.html">il_at&lt; int_list&lt; E...&gt;, N &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets element at index <code>N</code> of <code>List</code>.  <a href="structcppa_1_1util_1_1il__at_3_01int__list_3_01_e_8_8_8_4_00_01_n_01_4.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcppa_1_1util_1_1il__prepend_3_01int__list_3_01_is_8_8_8_4_00_01_val_01_4.html">il_prepend&lt; int_list&lt; Is...&gt;, Val &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new list with <code>What</code> prepended to <code>List</code>.  <a href="structcppa_1_1util_1_1il__prepend_3_01int__list_3_01_is_8_8_8_4_00_01_val_01_4.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcppa_1_1util_1_1il__pad__right.html">il_pad_right</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resizes the list to contain <code>NewSize</code> elements and uses <code>FillVal</code> to initialize the new elements with.  <a href="structcppa_1_1util_1_1il__pad__right.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcppa_1_1util_1_1il__pad__left.html">il_pad_left</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resizes the list to contain <code>NewSize</code> elements and uses <code>FillVal</code> to initialize prepended elements with.  <a href="structcppa_1_1util_1_1il__pad__left.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcppa_1_1util_1_1il__range.html">il_range</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the list (From, ..., To)  <a href="structcppa_1_1util_1_1il__range.html#details">More...</a><br/></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcppa_1_1util_1_1is__array__of.html">is_array_of</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>is_array_of&lt;T,U&gt;::value == true</code> if and only if <code>T</code> is an array of <code>U</code>.  <a href="structcppa_1_1util_1_1is__array__of.html#details">More...</a><br/></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1util_1_1is__forward__iterator.html">is_forward_iterator</a></td></tr>
@@ -150,8 +174,8 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A for loop that can be used with tuples.  <a href="structcppa_1_1util_1_1static__foreach.html#details">More...</a><br/></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcppa_1_1util_1_1tbind.html">tbind</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Predefines the first template parameter of <code>Tp1</code>.  <a href="structcppa_1_1util_1_1tbind.html#details">More...</a><br/></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcppa_1_1util_1_1type__list_3_01_head_00_01_tail_8_8_8_4.html">type_list&lt; Head, Tail...&gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of types.  <a href="structcppa_1_1util_1_1type__list_3_01_head_00_01_tail_8_8_8_4.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcppa_1_1util_1_1type__list.html">type_list</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of types.  <a href="structcppa_1_1util_1_1type__list.html#details">More...</a><br/></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcppa_1_1util_1_1tl__empty.html">tl_empty</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests whether a list is empty.  <a href="structcppa_1_1util_1_1tl__empty.html#details">More...</a><br/></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcppa_1_1util_1_1tl__slice.html">tl_slice</a></td></tr>
@@ -174,12 +198,12 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counts the number of elements in the list which satisfy a predicate.  <a href="structcppa_1_1util_1_1tl__count__not.html#details">More...</a><br/></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcppa_1_1util_1_1tl__zipped__forall.html">tl_zipped_forall</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests whether a predicate holds for all elements of a zipped list.  <a href="structcppa_1_1util_1_1tl__zipped__forall.html#details">More...</a><br/></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcppa_1_1util_1_1tl__concat__impl_3_01type__list_3_01_list_a_types_8_8_8_4_00_01type__list_3_01_list_b_types_8_8_8_4_01_4.html">tl_concat_impl&lt; type_list&lt; ListATypes...&gt;, type_list&lt; ListBTypes...&gt; &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates two lists.  <a href="structcppa_1_1util_1_1tl__concat__impl_3_01type__list_3_01_list_a_types_8_8_8_4_00_01type__list_3_01_list_b_types_8_8_8_4_01_4.html#details">More...</a><br/></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcppa_1_1util_1_1tl__push__back_3_01type__list_3_01_list_types_8_8_8_4_00_01_what_01_4.html">tl_push_back&lt; type_list&lt; ListTypes...&gt;, What &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends <code>What</code> to given list.  <a href="structcppa_1_1util_1_1tl__push__back_3_01type__list_3_01_list_types_8_8_8_4_00_01_what_01_4.html#details">More...</a><br/></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcppa_1_1util_1_1tl__push__front_3_01type__list_3_01_list_types_8_8_8_4_00_01_what_01_4.html">tl_push_front&lt; type_list&lt; ListTypes...&gt;, What &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends <code>What</code> to given list.  <a href="structcppa_1_1util_1_1tl__push__front_3_01type__list_3_01_list_types_8_8_8_4_00_01_what_01_4.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcppa_1_1util_1_1tl__concat__impl_3_01type__list_3_01_lhs_ts_8_8_8_4_00_01type__list_3_01_rhs_ts_8_8_8_4_01_4.html">tl_concat_impl&lt; type_list&lt; LhsTs...&gt;, type_list&lt; RhsTs...&gt; &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates two lists.  <a href="structcppa_1_1util_1_1tl__concat__impl_3_01type__list_3_01_lhs_ts_8_8_8_4_00_01type__list_3_01_rhs_ts_8_8_8_4_01_4.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcppa_1_1util_1_1tl__push__back_3_01type__list_3_01_list_ts_8_8_8_4_00_01_what_01_4.html">tl_push_back&lt; type_list&lt; ListTs...&gt;, What &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends <code>What</code> to given list.  <a href="structcppa_1_1util_1_1tl__push__back_3_01type__list_3_01_list_ts_8_8_8_4_00_01_what_01_4.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcppa_1_1util_1_1tl__push__front_3_01type__list_3_01_list_ts_8_8_8_4_00_01_what_01_4.html">tl_push_front&lt; type_list&lt; ListTs...&gt;, What &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends <code>What</code> to given list.  <a href="structcppa_1_1util_1_1tl__push__front_3_01type__list_3_01_list_ts_8_8_8_4_00_01_what_01_4.html#details">More...</a><br/></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcppa_1_1util_1_1tl__map__conditional.html">tl_map_conditional</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new list by applying a <code>Fun</code> to each element which returns <code>TraitResult</code> for <code>Trait</code>.  <a href="structcppa_1_1util_1_1tl__map__conditional.html#details">More...</a><br/></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcppa_1_1util_1_1tl__zipped__map_3_01type__list_3_01_t_8_8_8_4_00_01_fun_01_4.html">tl_zipped_map&lt; type_list&lt; T...&gt;, Fun &gt;</a></td></tr>
@@ -207,8 +231,12 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr class="memitem:gaa13e09cbd714a193d428fafbdc029132"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gaa13e09cbd714a193d428fafbdc029132"></a>
+typedef <a class="el" href="structcppa_1_1util_1_1int__list.html">int_list</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___meta_programming.html#gaa13e09cbd714a193d428fafbdc029132">empty_int_list</a></td></tr>
+<tr class="memdesc:gaa13e09cbd714a193d428fafbdc029132"><td class="mdescLeft">&#160;</td><td class="mdescRight">Denotes the empty list. <br/></td></tr>
 <tr class="memitem:ga60bfc822097dce6dd6d49b0ac9f73f01"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga60bfc822097dce6dd6d49b0ac9f73f01"></a>
-typedef type_list&#160;</td><td class="memItemRight" valign="bottom"><b>empty_type_list</b></td></tr>
+typedef <a class="el" href="structcppa_1_1util_1_1type__list.html">type_list</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___meta_programming.html#ga60bfc822097dce6dd6d49b0ac9f73f01">empty_type_list</a></td></tr>
+<tr class="memdesc:ga60bfc822097dce6dd6d49b0ac9f73f01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Denotes the empty list. <br/></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -232,6 +260,18 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:af67ddf5f4b58105f369350c426a5954d"><td class="memTemplParams" colspan="2"><a class="anchor" id="af67ddf5f4b58105f369350c426a5954d"></a>
+template&lt;typename F , class Tuple , long... Is&gt; </td></tr>
+<tr class="memitem:af67ddf5f4b58105f369350c426a5954d"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>apply_args</b> (F &amp;f, Tuple &amp;tup, <a class="el" href="structcppa_1_1util_1_1int__list.html">util::int_list</a>&lt; Is...&gt;)-&gt; decltype(f(get_cv_aware&lt; Is &gt;(tup)...))</td></tr>
+<tr class="memitem:ab563482098080f1ed220a7e4e8d54147"><td class="memTemplParams" colspan="2"><a class="anchor" id="ab563482098080f1ed220a7e4e8d54147"></a>
+template&lt;typename F , class Tuple , long... Is, typename... Args&gt; </td></tr>
+<tr class="memitem:ab563482098080f1ed220a7e4e8d54147"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>apply_args_prefixed</b> (F &amp;f, Tuple &amp;tup, <a class="el" href="structcppa_1_1util_1_1int__list.html">util::int_list</a>&lt; Is...&gt;, Args &amp;&amp;...args)-&gt; decltype(f(std</td></tr>
+<tr class="memitem:a131a53b4d2839f9899b30a4247878ab4"><td class="memTemplParams" colspan="2"><a class="anchor" id="a131a53b4d2839f9899b30a4247878ab4"></a>
+template&lt;typename F , class Tuple , long... Is, typename... Args&gt; </td></tr>
+<tr class="memitem:a131a53b4d2839f9899b30a4247878ab4"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>apply_args_suffxied</b> (F &amp;f, Tuple &amp;tup, <a class="el" href="structcppa_1_1util_1_1int__list.html">util::int_list</a>&lt; Is...&gt;, Args &amp;&amp;...args)-&gt; decltype(f(get_cv_aware&lt; Is &gt;(tup)...</td></tr>
+<tr class="memitem:a6d3d230b1e457cc47d8b62602e6a9c7b"><td class="memTemplParams" colspan="2"><a class="anchor" id="a6d3d230b1e457cc47d8b62602e6a9c7b"></a>
+template&lt;typename Result , size_t Num, typename F , typename... Args&gt; </td></tr>
+<tr class="memitem:a6d3d230b1e457cc47d8b62602e6a9c7b"><td class="memTemplItemLeft" align="right" valign="top">Result&#160;</td><td class="memTemplItemRight" valign="bottom"><b>partially_apply</b> (F &amp;f, Args &amp;&amp;...args)</td></tr>
 <tr class="memitem:a01f01796f53cd81ba110daad6c9fe6d2"><td class="memTemplParams" colspan="2"><a class="anchor" id="a01f01796f53cd81ba110daad6c9fe6d2"></a>
 template&lt;typename F , template&lt; typename...&gt; class Tuple, typename... T&gt; </td></tr>
 <tr class="memitem:a01f01796f53cd81ba110daad6c9fe6d2"><td class="memTemplItemLeft" align="right" valign="top">get_result_type&lt; F &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><b>apply_tuple</b> (F &amp;&amp;fun, Tuple&lt; T...&gt; &amp;tup)</td></tr>
@@ -250,16 +290,19 @@ template&lt;typename Result , typename F , template&lt; typename...&gt; class Tu
 <tr class="memitem:aa0f3f9cd04b48f835f0b11f920606bc0"><td class="memTemplParams" colspan="2"><a class="anchor" id="aa0f3f9cd04b48f835f0b11f920606bc0"></a>
 template&lt;typename Result , typename F , template&lt; typename...&gt; class Tuple, typename... T&gt; </td></tr>
 <tr class="memitem:aa0f3f9cd04b48f835f0b11f920606bc0"><td class="memTemplItemLeft" align="right" valign="top">Result&#160;</td><td class="memTemplItemRight" valign="bottom"><b>unchecked_apply_tuple</b> (F &amp;&amp;fun, Tuple&lt; T...&gt; &amp;tup)</td></tr>
-<tr class="memitem:a46585e3dfd2a948b7d2f421f1b226df4"><td class="memTemplParams" colspan="2"><a class="anchor" id="a46585e3dfd2a948b7d2f421f1b226df4"></a>
-template&lt;template&lt; typename...&gt; class LhsTuple, typename... LhsTypes, template&lt; typename...&gt; class RhsTuple, typename... RhsTypes&gt; </td></tr>
-<tr class="memitem:a46585e3dfd2a948b7d2f421f1b226df4"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>compare_tuples</b> (const LhsTuple&lt; LhsTypes...&gt; &amp;lhs, const RhsTuple&lt; RhsTypes...&gt; &amp;rhs)</td></tr>
-<tr class="memitem:a58c461aca09419d80cd2b8607113cdfd"><td class="memTemplParams" colspan="2"><a class="anchor" id="a58c461aca09419d80cd2b8607113cdfd"></a>
-template&lt;template&lt; typename...&gt; class LhsTuple, typename... LhsTypes, template&lt; typename...&gt; class RhsTuple, typename... RhsTypes&gt; </td></tr>
-<tr class="memitem:a58c461aca09419d80cd2b8607113cdfd"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>compare_first_elements</b> (const LhsTuple&lt; LhsTypes...&gt; &amp;lhs, const RhsTuple&lt; RhsTypes...&gt; &amp;rhs)</td></tr>
+<tr class="memitem:a742a4b012bd2b54b2fc0e2050361a220"><td class="memTemplParams" colspan="2"><a class="anchor" id="a742a4b012bd2b54b2fc0e2050361a220"></a>
+template&lt;template&lt; typename...&gt; class LhsTuple, typename... LhsTs, template&lt; typename...&gt; class RhsTuple, typename... RhsTs&gt; </td></tr>
+<tr class="memitem:a742a4b012bd2b54b2fc0e2050361a220"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>compare_tuples</b> (const LhsTuple&lt; LhsTs...&gt; &amp;lhs, const RhsTuple&lt; RhsTs...&gt; &amp;rhs)</td></tr>
+<tr class="memitem:ac4f75c0234a7b852a4d0badde5c6e5f3"><td class="memTemplParams" colspan="2"><a class="anchor" id="ac4f75c0234a7b852a4d0badde5c6e5f3"></a>
+template&lt;template&lt; typename...&gt; class LhsTuple, typename... LhsTs, template&lt; typename...&gt; class RhsTuple, typename... RhsTs&gt; </td></tr>
+<tr class="memitem:ac4f75c0234a7b852a4d0badde5c6e5f3"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>compare_first_elements</b> (const LhsTuple&lt; LhsTs...&gt; &amp;lhs, const RhsTuple&lt; RhsTs...&gt; &amp;rhs)</td></tr>
 <tr class="memitem:ae3ae2bc6330184f83f4f334e48f50f7e"><td class="memTemplParams" colspan="2"><a class="anchor" id="ae3ae2bc6330184f83f4f334e48f50f7e"></a>
 template&lt;typename Period &gt; </td></tr>
 <tr class="memitem:ae3ae2bc6330184f83f4f334e48f50f7e"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="namespacecppa_1_1util.html#a3e39fe86c319be59bebecacbd13a520c">time_unit</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecppa_1_1util.html#ae3ae2bc6330184f83f4f334e48f50f7e">get_time_unit_from_period</a> ()</td></tr>
 <tr class="memdesc:ae3ae2bc6330184f83f4f334e48f50f7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts an STL time period to a <a class="el" href="namespacecppa_1_1util.html#a3e39fe86c319be59bebecacbd13a520c">time_unit</a>. <br/></td></tr>
+<tr class="memitem:gab5763349543d01fc42b7c2054a4bcadc"><td class="memTemplParams" colspan="2"><a class="anchor" id="gab5763349543d01fc42b7c2054a4bcadc"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:gab5763349543d01fc42b7c2054a4bcadc"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>get_indices</b> (const T &amp;)-&gt; typename util</td></tr>
 <tr class="memitem:a38dc2b1191c41a94d3cc2b02471a6782"><td class="memTemplParams" colspan="2">template&lt;typename Fun &gt; </td></tr>
 <tr class="memitem:a38dc2b1191c41a94d3cc2b02471a6782"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecppa_1_1util.html#a38dc2b1191c41a94d3cc2b02471a6782">pt_dispatch</a> (<a class="el" href="group___type_system.html#ga5a8afa49a3547b610d4a50b3ab1dceb6">primitive_type</a> ptype, Fun &amp;&amp;f)</td></tr>
 <tr class="memdesc:a38dc2b1191c41a94d3cc2b02471a6782"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="structcppa_1_1util_1_1pt__token.html">pt_token</a> from the runtime value <code>ptype</code> and invokes <code>f</code> with this token.  <a href="#a38dc2b1191c41a94d3cc2b02471a6782"></a><br/></td></tr>
@@ -304,7 +347,7 @@ template&lt;typename Fun &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 19 2012 15:35:08 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jan 7 2013 16:16:29 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

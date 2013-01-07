@@ -7,7 +7,7 @@ var searchData=
   ['time_5funit',['time_unit',['../namespacecppa_1_1util.html#a3e39fe86c319be59bebecacbd13a520c',1,'cppa::util']]],
   ['tl_5fat_3c_20type_5flist_3c_20e_2e_2e_2e_3e_2c_20n_20_3e',['tl_at&lt; type_list&lt; E...&gt;, N &gt;',['../structcppa_1_1util_1_1tl__at_3_01type__list_3_01_e_8_8_8_4_00_01_n_01_4.html',1,'cppa::util']]],
   ['tl_5fbinary_5fforall',['tl_binary_forall',['../structcppa_1_1util_1_1tl__binary__forall.html',1,'cppa::util']]],
-  ['tl_5fconcat_5fimpl_3c_20type_5flist_3c_20listatypes_2e_2e_2e_3e_2c_20type_5flist_3c_20listbtypes_2e_2e_2e_3e_20_3e',['tl_concat_impl&lt; type_list&lt; ListATypes...&gt;, type_list&lt; ListBTypes...&gt; &gt;',['../structcppa_1_1util_1_1tl__concat__impl_3_01type__list_3_01_list_a_types_8_8_8_4_00_01type__list_3_01_list_b_types_8_8_8_4_01_4.html',1,'cppa::util']]],
+  ['tl_5fconcat_5fimpl_3c_20type_5flist_3c_20lhsts_2e_2e_2e_3e_2c_20type_5flist_3c_20rhsts_2e_2e_2e_3e_20_3e',['tl_concat_impl&lt; type_list&lt; LhsTs...&gt;, type_list&lt; RhsTs...&gt; &gt;',['../structcppa_1_1util_1_1tl__concat__impl_3_01type__list_3_01_lhs_ts_8_8_8_4_00_01type__list_3_01_rhs_ts_8_8_8_4_01_4.html',1,'cppa::util']]],
   ['tl_5fcount',['tl_count',['../structcppa_1_1util_1_1tl__count.html',1,'cppa::util']]],
   ['tl_5fcount_5fnot',['tl_count_not',['../structcppa_1_1util_1_1tl__count__not.html',1,'cppa::util']]],
   ['tl_5fempty',['tl_empty',['../structcppa_1_1util_1_1tl__empty.html',1,'cppa::util']]],
@@ -21,8 +21,8 @@ var searchData=
   ['tl_5fpad_5fright',['tl_pad_right',['../structcppa_1_1util_1_1tl__pad__right.html',1,'cppa::util']]],
   ['tl_5fpop_5fback',['tl_pop_back',['../structcppa_1_1util_1_1tl__pop__back.html',1,'cppa::util']]],
   ['tl_5fprepend_3c_20type_5flist_3c_20t_2e_2e_2e_3e_2c_20what_20_3e',['tl_prepend&lt; type_list&lt; T...&gt;, What &gt;',['../structcppa_1_1util_1_1tl__prepend_3_01type__list_3_01_t_8_8_8_4_00_01_what_01_4.html',1,'cppa::util']]],
-  ['tl_5fpush_5fback_3c_20type_5flist_3c_20listtypes_2e_2e_2e_3e_2c_20what_20_3e',['tl_push_back&lt; type_list&lt; ListTypes...&gt;, What &gt;',['../structcppa_1_1util_1_1tl__push__back_3_01type__list_3_01_list_types_8_8_8_4_00_01_what_01_4.html',1,'cppa::util']]],
-  ['tl_5fpush_5ffront_3c_20type_5flist_3c_20listtypes_2e_2e_2e_3e_2c_20what_20_3e',['tl_push_front&lt; type_list&lt; ListTypes...&gt;, What &gt;',['../structcppa_1_1util_1_1tl__push__front_3_01type__list_3_01_list_types_8_8_8_4_00_01_what_01_4.html',1,'cppa::util']]],
+  ['tl_5fpush_5fback_3c_20type_5flist_3c_20listts_2e_2e_2e_3e_2c_20what_20_3e',['tl_push_back&lt; type_list&lt; ListTs...&gt;, What &gt;',['../structcppa_1_1util_1_1tl__push__back_3_01type__list_3_01_list_ts_8_8_8_4_00_01_what_01_4.html',1,'cppa::util']]],
+  ['tl_5fpush_5ffront_3c_20type_5flist_3c_20listts_2e_2e_2e_3e_2c_20what_20_3e',['tl_push_front&lt; type_list&lt; ListTs...&gt;, What &gt;',['../structcppa_1_1util_1_1tl__push__front_3_01type__list_3_01_list_ts_8_8_8_4_00_01_what_01_4.html',1,'cppa::util']]],
   ['tl_5freverse',['tl_reverse',['../structcppa_1_1util_1_1tl__reverse.html',1,'cppa::util']]],
   ['tl_5fslice',['tl_slice',['../structcppa_1_1util_1_1tl__slice.html',1,'cppa::util']]],
   ['tl_5ftrim',['tl_trim',['../structcppa_1_1util_1_1tl__trim.html',1,'cppa::util']]],
@@ -38,6 +38,6 @@ var searchData=
   ['tuple_5fcast',['tuple_cast',['../classcppa_1_1any__tuple.html#afd42b6ea4da35137b728f9291ef0f292',1,'cppa::any_tuple::tuple_cast(any_tuple tup)'],['../classcppa_1_1any__tuple.html#a7a2c56e0b9311e70a058fcde7f4185cc',1,'cppa::any_tuple::tuple_cast(any_tuple tup, const util::type_list&lt; T...&gt; &amp;)']]],
   ['type',['type',['../classcppa_1_1option.html#adc9b1175fcc65da9517606e9526d6d01',1,'cppa::option::type()'],['../classcppa_1_1object.html#a860d5543e4737e4295cc9b33ffe74b8a',1,'cppa::object::type()'],['../classcppa_1_1primitive__variant.html#adb321d9572e97691f7970c85269abd2a',1,'cppa::primitive_variant::type()']]],
   ['type_5fat',['type_at',['../classcppa_1_1any__tuple.html#a2ede2836703a527cc7fe31df9e808480',1,'cppa::any_tuple::type_at()'],['../classcppa_1_1cow__tuple_3_01_head_00_01_tail_8_8_8_4.html#aff1df4fdde6b7a0c9b808d6895b7254a',1,'cppa::cow_tuple&lt; Head, Tail...&gt;::type_at()']]],
-  ['type_5flist_3c_20head_2c_20tail_2e_2e_2e_3e',['type_list&lt; Head, Tail...&gt;',['../structcppa_1_1util_1_1type__list_3_01_head_00_01_tail_8_8_8_4.html',1,'cppa::util']]],
+  ['type_5flist',['type_list',['../structcppa_1_1util_1_1type__list.html',1,'cppa::util']]],
   ['type_5fpair',['type_pair',['../structcppa_1_1util_1_1type__pair.html',1,'cppa::util']]]
 ];
