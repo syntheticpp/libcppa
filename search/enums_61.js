@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['atom_5fvalue',['atom_value',['../namespacecppa.html#a5dd69804058d7adaef774fd953c63b97',1,'cppa']]]
+  ['atom_5fvalue',['atom_value',['../namespacecppa.html#a64079da560a7bd85135c11ab521a4950',1,'cppa']]]
 ];

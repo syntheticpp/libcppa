@@ -50,13 +50,13 @@ td p{margin:0px;}
 body{width:600px;margin:auto;padding-top:20px;text-align: justify;}
 </style>
 <title>User Manual 
-libcppa version 0.5.5
+libcppa version 0.6
 </title>
 </head>
 <body >
 <!--HEVEA command line is: hevea -I .. manual.tex -->
 <!--CUT STYLE article--><!--CUT DEF section 1 --><table class="title"><tr><td><h1 class="titlemain">User Manual<br>
-<span style="font-family:monospace">libcppa</span> version 0.5.5</h1><h3 class="titlerest">Dominik Charousset</h3></td></tr>
+<span style="font-family:monospace">libcppa</span> version 0.6</h1><h3 class="titlerest">Dominik Charousset</h3></td></tr>
 </table><!--TOC section id=sec1 Contents-->
 <h2 id="sec1" class="section">Contents</h2><!--SEC END --><ul class="toc"><li class="li-toc">
 <a href="#sec2">1  First Steps</a>
@@ -115,52 +115,60 @@ libcppa version 0.5.5
 </li><li class="li-toc"><a href="#sec37">6.2.3  Using a Factory to Define Event-Based Actors</a>
 </li></ul>
 </li><li class="li-toc"><a href="#sec38">6.3  Timeouts</a>
+</li><li class="li-toc"><a href="#sec39">6.4  Skipping Messages</a>
 </li></ul>
-</li><li class="li-toc"><a href="#sec39">7  Synchronous Communication</a>
+</li><li class="li-toc"><a href="#sec40">7  Synchronous Communication</a>
 <ul class="toc"><li class="li-toc">
-<a href="#sec40">7.1  Receive Response Messages</a>
-</li><li class="li-toc"><a href="#sec41">7.2  Using <code>message_future</code>’s Member Functions to Receive a Response</a>
+<a href="#sec41">7.1  Error Messages</a>
+</li><li class="li-toc"><a href="#sec42">7.2  Receive Response Messages</a>
+</li><li class="li-toc"><a href="#sec43">7.3  Synchronous Failures and Error Handlers</a>
+</li><li class="li-toc"><a href="#sec44">7.4  Using <code>then</code> and <code>await</code> to Receive a Response</a>
+<ul class="toc"><li class="li-toc">
+<a href="#sec45">7.4.1  Using Functors without Patterns</a>
+</li><li class="li-toc"><a href="#sec46">7.4.2  Continuations for Event-based Actors</a>
 </li></ul>
-</li><li class="li-toc"><a href="#sec42">8  Management</a>
-<ul class="toc"><li class="li-toc">
-<a href="#sec43">8.1  Links</a>
-</li><li class="li-toc"><a href="#sec44">8.2  Monitors</a>
-</li><li class="li-toc"><a href="#sec45">8.3  Error Codes</a>
-</li><li class="li-toc"><a href="#sec46">8.4  Attach Cleanup Code to an Actor</a>
 </li></ul>
-</li><li class="li-toc"><a href="#sec47">9  Spawning Actors</a>
+</li><li class="li-toc"><a href="#sec47">8  Management</a>
 <ul class="toc"><li class="li-toc">
-<a href="#sec48">9.1  Create Actors from Functors</a>
-</li><li class="li-toc"><a href="#sec49">9.2  Create Class-Based Actors</a>
+<a href="#sec48">8.1  Links</a>
+</li><li class="li-toc"><a href="#sec49">8.2  Monitors</a>
+</li><li class="li-toc"><a href="#sec50">8.3  Error Codes</a>
+</li><li class="li-toc"><a href="#sec51">8.4  Attach Cleanup Code to an Actor</a>
 </li></ul>
-</li><li class="li-toc"><a href="#sec50">10  Network Transparency</a>
+</li><li class="li-toc"><a href="#sec52">9  Spawning Actors</a>
 <ul class="toc"><li class="li-toc">
-<a href="#sec51">10.1  Publishing of Actors</a>
-</li><li class="li-toc"><a href="#sec52">10.2  Connecting to Remote Actors</a>
+<a href="#sec53">9.1  Create Actors from Functors</a>
+</li><li class="li-toc"><a href="#sec54">9.2  Create Class-Based Actors</a>
+</li><li class="li-toc"><a href="#sec55">9.3  Spawn Linked and Monitored Actors</a>
 </li></ul>
-</li><li class="li-toc"><a href="#sec53">11  Group Communication</a>
+</li><li class="li-toc"><a href="#sec56">10  Network Transparency</a>
 <ul class="toc"><li class="li-toc">
-<a href="#sec54">11.1  Anonymous Groups</a>
-</li><li class="li-toc"><a href="#sec55">11.2  Local Groups</a>
-</li><li class="li-toc"><a href="#sec56">11.3  Spawn Actors in Groups</a>
+<a href="#sec57">10.1  Publishing of Actors</a>
+</li><li class="li-toc"><a href="#sec58">10.2  Connecting to Remote Actors</a>
 </li></ul>
-</li><li class="li-toc"><a href="#sec57">12  Platform-Independent Type System</a>
+</li><li class="li-toc"><a href="#sec59">11  Group Communication</a>
 <ul class="toc"><li class="li-toc">
-<a href="#sec58">12.1  User-Defined Data Types in Messages</a>
+<a href="#sec60">11.1  Anonymous Groups</a>
+</li><li class="li-toc"><a href="#sec61">11.2  Local Groups</a>
+</li><li class="li-toc"><a href="#sec62">11.3  Spawn Actors in Groups</a>
 </li></ul>
-</li><li class="li-toc"><a href="#sec59">13  Common Pitfalls</a>
+</li><li class="li-toc"><a href="#sec63">12  Platform-Independent Type System</a>
 <ul class="toc"><li class="li-toc">
-<a href="#sec60">13.1  Event-Based API</a>
-</li><li class="li-toc"><a href="#sec61">13.2  Mixing Event-Based and Blocking API</a>
-</li><li class="li-toc"><a href="#sec62">13.3  Synchronous Messages</a>
-</li><li class="li-toc"><a href="#sec63">13.4  Sending Messages</a>
-</li><li class="li-toc"><a href="#sec64">13.5  Sharing</a>
-</li><li class="li-toc"><a href="#sec65">13.6  Constructors of Class-based Actors</a>
+<a href="#sec64">12.1  User-Defined Data Types in Messages</a>
 </li></ul>
-</li><li class="li-toc"><a href="#sec66">14  Appendix</a>
+</li><li class="li-toc"><a href="#sec65">13  Common Pitfalls</a>
 <ul class="toc"><li class="li-toc">
-<a href="#sec67">14.1  Class <span style="font-family:monospace">option</span></a>
-</li><li class="li-toc"><a href="#sec68">14.2  Using <span style="font-family:monospace">aout</span> – A Thread-Safe Wrapper for <span style="font-family:monospace">cout</span></a>
+<a href="#sec66">13.1  Event-Based API</a>
+</li><li class="li-toc"><a href="#sec67">13.2  Mixing Event-Based and Blocking API</a>
+</li><li class="li-toc"><a href="#sec68">13.3  Synchronous Messages</a>
+</li><li class="li-toc"><a href="#sec69">13.4  Sending Messages</a>
+</li><li class="li-toc"><a href="#sec70">13.5  Sharing</a>
+</li><li class="li-toc"><a href="#sec71">13.6  Constructors of Class-based Actors</a>
+</li></ul>
+</li><li class="li-toc"><a href="#sec72">14  Appendix</a>
+<ul class="toc"><li class="li-toc">
+<a href="#sec73">14.1  Class <span style="font-family:monospace">option</span></a>
+</li><li class="li-toc"><a href="#sec74">14.2  Using <span style="font-family:monospace">aout</span> – A Thread-Safe Wrapper for <span style="font-family:monospace">cout</span></a>
 </li></ul>
 </li></ul>
 <!--TOC section id=sec2 First Steps-->
@@ -468,7 +476,7 @@ Hence, “everything is an actor” in <span style="font-family:monospace">libcp
 <h4 id="sec22" class="subsubsection">4.1.2  Interface</h4><!--SEC END --><div class="lstlisting"><span style="font-size:small"><span style="color:blue">class</span></span><span style="font-size:small"> </span><span style="font-size:small">local_actor</span><span style="font-size:small">;</span></div><table style="border-spacing:6px;border-collapse:separate;width:100%" class="cellpading0"><tr><td style="vertical-align:middle;text-align:left;"  colspan=2><span style="font-size:large"><span style="font-weight:bold">Member functions</span></span><span style="font-size:small"> </span></td></tr>
 <tr><td style="vertical-align:middle;text-align:left;" ><span style="font-size:small">&nbsp;</span></td></tr>
 <tr><td class="hbar" colspan=2><span style="font-size:small"></span></td></tr>
-<tr><td style="vertical-align:middle;text-align:left;" ><span style="font-size:small"> </span><code><span style="font-size:small">quit</span></code><code><span style="font-size:small">(</span></code><code><span style="font-size:small">uint32_t</span></code><code><span style="font-size:small"> </span></code><code><span style="font-size:small">reason</span></code><code><span style="font-size:small"> = </span></code><code><span style="font-size:small">normal</span></code><code><span style="font-size:small">)</span></code></td><td style="vertical-align:middle;text-align:left;" ><span style="font-size:small">Finishes execution of this actor </span></td></tr>
+<tr><td style="vertical-align:middle;text-align:left;" ><span style="font-size:small"> </span><code><span style="font-size:small">quit</span></code><code><span style="font-size:small">(</span></code><code><span style="font-size:small"><span style="color:blue">uint32_t</span></span></code><code><span style="font-size:small"> </span></code><code><span style="font-size:small">reason</span></code><code><span style="font-size:small"> = </span></code><code><span style="font-size:small">normal</span></code><code><span style="font-size:small">)</span></code></td><td style="vertical-align:middle;text-align:left;" ><span style="font-size:small">Finishes execution of this actor </span></td></tr>
 <tr><td class="hbar" colspan=2><span style="font-size:small"></span></td></tr>
 <tr><td style="vertical-align:middle;text-align:left;" ><span style="font-size:small">&nbsp;</span></td></tr>
 <tr><td style="text-align:left;white-space:nowrap"  colspan=2><span style="font-size:small"><span style="font-weight:bold">Observers</span></span><span style="font-size:small"> </span></td></tr>
@@ -817,21 +825,66 @@ But often, we need to be able to recover if an expected messages does not arrive
 Any number of patterns can precede the timeout definition, but “<code>after</code>” must always be the final statement.
 Using a zero-duration timeout causes <code>receive</code> to not block.</p><p><span style="font-family:monospace">libcppa</span> supports <code>minutes</code>, <code>seconds</code>, <code>milliseconds</code> and <code>microseconds</code>.
 However, note that the precision depends on the operating system and your local work load.
-Thus, you should not depend on a certain clock resolution.
-
-</p>
-<!--TOC section id=sec39 Synchronous Communication-->
-<h2 id="sec39" class="section">7  Synchronous Communication</h2><!--SEC END --><p>
+Thus, you should not depend on a certain clock resolution.</p>
+<!--TOC subsection id=sec39 Skipping Messages-->
+<h3 id="sec39" class="subsection">6.4  Skipping Messages</h3><!--SEC END --><p>Unmatched messages are skipped automatically by <span style="font-family:monospace">libcppa</span>’s runtime system.
+This is true for <span style="font-style:italic">all</span> actor implementations.
+To allow actors to skip messages manually, <code>skip_message</code> can be used.
+This is in particular useful whenever an actor switches between behaviors, but wants to use a default rule created by <code>others</code><code>()</code> to filter messages that are not handled by any of its behaviors.</p><p>The following example illustrates a simple server actor that dispatches requests to workers.
+After receiving an <code><span style="color:#007F00"><code>'idle'</code></span></code> message, it awaits a request that is then forwarded to the idle worker.
+Afterwards, the server returns to its initial behavior, i.e., awaits the next <code><span style="color:#007F00"><code>'idle'</code></span></code> message.
+The server actor will exit for reason <code>user_defined</code> whenever it receives a message that is neither a request, nor an idle message.</p><div class="lstlisting"><span style="font-size:small"><span style="color:blue">struct</span></span><span style="font-size:small"> </span><span style="font-size:small">server</span><span style="font-size:small"> : </span><span style="font-size:small">event_based_actor</span><span style="font-size:small"> {</span><span style="font-size:small">
+</span><span style="font-size:small">  </span><span style="font-size:small"><span style="color:blue">void</span></span><span style="font-size:small"> </span><span style="font-size:small">init</span><span style="font-size:small">() {</span><span style="font-size:small">
+</span><span style="font-size:small">    </span><span style="font-size:small"><span style="color:blue">auto</span></span><span style="font-size:small"> </span><span style="font-size:small">die</span><span style="font-size:small"> = [=] { </span><span style="font-size:small">quit</span><span style="font-size:small">(</span><span style="font-size:small">exit_reason</span><span style="font-size:small">::</span><span style="font-size:small">user_defined</span><span style="font-size:small">); };</span><span style="font-size:small">
+</span><span style="font-size:small">    </span><span style="font-size:small">become</span><span style="font-size:small"> (</span><span style="font-size:small">
+</span><span style="font-size:small">      </span><span style="font-size:small">on</span><span style="font-size:small">(</span><span style="font-size:small">atom</span><span style="font-size:small">(</span><span style="font-size:small"><span style="color:#007F00"><span style="font-size:small">"idle"</span></span></span><span style="font-size:small">)) &gt;&gt; [=] {</span><span style="font-size:small">
+</span><span style="font-size:small">        </span><span style="font-size:small"><span style="color:blue">auto</span></span><span style="font-size:small"> </span><span style="font-size:small">worker</span><span style="font-size:small"> = </span><span style="font-size:small">last_sender</span><span style="font-size:small">();</span><span style="font-size:small">
+</span><span style="font-size:small">        </span><span style="font-size:small">become</span><span style="font-size:small"> (</span><span style="font-size:small">
+</span><span style="font-size:small">          </span><span style="font-size:small">keep_behavior</span><span style="font-size:small">,</span><span style="font-size:small">
+</span><span style="font-size:small">          </span><span style="font-size:small">on</span><span style="font-size:small">(</span><span style="font-size:small">atom</span><span style="font-size:small">(</span><span style="font-size:small"><span style="color:#007F00"><span style="font-size:small">"request"</span></span></span><span style="font-size:small">)) &gt;&gt; [=] {</span><span style="font-size:small">
+</span><span style="font-size:small">            </span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">// forward request to idle worker</span></span></span><span style="font-size:small">
+</span><span style="font-size:small">            </span><span style="font-size:small">forward_to</span><span style="font-size:small">(</span><span style="font-size:small">worker</span><span style="font-size:small">);</span><span style="font-size:small">
+</span><span style="font-size:small">            </span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">// await next idle message</span></span></span><span style="font-size:small">
+</span><span style="font-size:small">            </span><span style="font-size:small">unbecome</span><span style="font-size:small">();</span><span style="font-size:small">
+</span><span style="font-size:small">          },</span><span style="font-size:small">
+</span><span style="font-size:small">          </span><span style="font-size:small">on</span><span style="font-size:small">(</span><span style="font-size:small">atom</span><span style="font-size:small">(</span><span style="font-size:small"><span style="color:#007F00"><span style="font-size:small">"idle"</span></span></span><span style="font-size:small">)) &gt;&gt; </span><span style="font-size:small">skip_message</span><span style="font-size:small">,</span><span style="font-size:small">
+</span><span style="font-size:small">          </span><span style="font-size:small">others</span><span style="font-size:small">() &gt;&gt; </span><span style="font-size:small">die</span><span style="font-size:small">
+</span><span style="font-size:small">        );</span><span style="font-size:small">
+</span><span style="font-size:small">      },</span><span style="font-size:small">
+</span><span style="font-size:small">      </span><span style="font-size:small">on</span><span style="font-size:small">(</span><span style="font-size:small">atom</span><span style="font-size:small">(</span><span style="font-size:small"><span style="color:#007F00"><span style="font-size:small">"request"</span></span></span><span style="font-size:small">)) &gt;&gt; </span><span style="font-size:small">skip_message</span><span style="font-size:small">,</span><span style="font-size:small">
+</span><span style="font-size:small">      </span><span style="font-size:small">others</span><span style="font-size:small">() &gt;&gt; </span><span style="font-size:small">die</span><span style="font-size:small">
+</span><span style="font-size:small">    );</span><span style="font-size:small">
+</span><span style="font-size:small">  }</span><span style="font-size:small">
+</span><span style="font-size:small">};</span></div>
+<!--TOC section id=sec40 Synchronous Communication-->
+<h2 id="sec40" class="section">7  Synchronous Communication</h2><!--SEC END --><p>
 <a id="Sec::Sync"></a></p><p><span style="font-family:monospace">libcppa</span> uses a future-based API for synchronous communication.
 The functions <code>sync_send</code> and <code>sync_send_tuple</code> send synchronous request messages to the receiver and return a future to the response message.
 Note that the returned future is <span style="font-style:italic">actor-local</span>, i.e., only the actor that has send the corresponding request message is able to receive the response identified by such a future.</p><div class="lstlisting"><span style="font-size:small"><span style="color:blue">template</span></span><span style="font-size:small">&lt;</span><span style="font-size:small"><span style="color:blue">typename</span></span><span style="font-size:small">... </span><span style="font-size:small">Args</span><span style="font-size:small">&gt;</span><span style="font-size:small">
 </span><span style="font-size:small">message_future</span><span style="font-size:small"> </span><span style="font-size:small">sync_send</span><span style="font-size:small">(</span><span style="font-size:small">actor_ptr</span><span style="font-size:small"> </span><span style="font-size:small">whom</span><span style="font-size:small">, </span><span style="font-size:small">Args</span><span style="font-size:small">&amp;&amp;... </span><span style="font-size:small">what</span><span style="font-size:small">);</span><span style="font-size:small">
 </span><span style="font-size:small">
-</span><span style="font-size:small">message_future</span><span style="font-size:small"> </span><span style="font-size:small">sync_send_tuple</span><span style="font-size:small">(</span><span style="font-size:small">actor_ptr</span><span style="font-size:small"> </span><span style="font-size:small">whom</span><span style="font-size:small">, </span><span style="font-size:small">any_tuple</span><span style="font-size:small"> </span><span style="font-size:small">what</span><span style="font-size:small">);</span></div><p>A synchronous message is sent to the receiving actor’s mailbox like any other asynchronous message.
-The response message, on the other hand, is treated separately.</p><p><span style="font-weight:bold">Note:</span> the runtime system will automatically reply with an empty message if the receiving actor did not respond to a received synchronous response message by using the function <code>reply</code>.</p>
-<!--TOC subsection id=sec40 Receive Response Messages-->
-<h3 id="sec40" class="subsection">7.1  Receive Response Messages</h3><!--SEC END --><p>The functions <code>receive_response</code> and <code>handle_response</code> can be used to receive response messages, as shown in the following example.</p><div class="lstlisting"><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">// an actor that replies with a string to atom("get")</span></span></span><span style="font-size:small">
-</span><span style="font-size:small"><span style="color:blue">auto</span></span><span style="font-size:small"> </span><span style="font-size:small">testee</span><span style="font-size:small"> = </span><span style="font-size:small">spawn</span><span style="font-size:small">&lt;</span><span style="font-size:small">testee_impl</span><span style="font-size:small">&gt;();</span><span style="font-size:small">
+</span><span style="font-size:small">message_future</span><span style="font-size:small"> </span><span style="font-size:small">sync_send_tuple</span><span style="font-size:small">(</span><span style="font-size:small">actor_ptr</span><span style="font-size:small"> </span><span style="font-size:small">whom</span><span style="font-size:small">, </span><span style="font-size:small">any_tuple</span><span style="font-size:small"> </span><span style="font-size:small">what</span><span style="font-size:small">);</span><span style="font-size:small">
+</span><span style="font-size:small">
+</span><span style="font-size:small"><span style="color:blue">template</span></span><span style="font-size:small">&lt;</span><span style="font-size:small"><span style="color:blue">typename</span></span><span style="font-size:small"> </span><span style="font-size:small">Duration</span><span style="font-size:small">, </span><span style="font-size:small"><span style="color:blue">typename</span></span><span style="font-size:small">... </span><span style="font-size:small">Args</span><span style="font-size:small">&gt;</span><span style="font-size:small">
+</span><span style="font-size:small">message_future</span><span style="font-size:small"> </span><span style="font-size:small">timed_sync_send</span><span style="font-size:small">(</span><span style="font-size:small">actor_ptr</span><span style="font-size:small"> </span><span style="font-size:small">whom</span><span style="font-size:small">,</span><span style="font-size:small">
+</span><span style="font-size:small">                               </span><span style="font-size:small">Duration</span><span style="font-size:small"> </span><span style="font-size:small">timeout</span><span style="font-size:small">,</span><span style="font-size:small">
+</span><span style="font-size:small">                               </span><span style="font-size:small">Args</span><span style="font-size:small">&amp;&amp;... </span><span style="font-size:small">what</span><span style="font-size:small">);</span><span style="font-size:small">
+</span><span style="font-size:small">
+</span><span style="font-size:small"><span style="color:blue">template</span></span><span style="font-size:small">&lt;</span><span style="font-size:small"><span style="color:blue">typename</span></span><span style="font-size:small"> </span><span style="font-size:small">Duration</span><span style="font-size:small">, </span><span style="font-size:small"><span style="color:blue">typename</span></span><span style="font-size:small">... </span><span style="font-size:small">Args</span><span style="font-size:small">&gt;</span><span style="font-size:small">
+</span><span style="font-size:small">message_future</span><span style="font-size:small"> </span><span style="font-size:small">timed_sync_send_tuple</span><span style="font-size:small">(</span><span style="font-size:small">actor_ptr</span><span style="font-size:small"> </span><span style="font-size:small">whom</span><span style="font-size:small">,</span><span style="font-size:small">
+</span><span style="font-size:small">                                     </span><span style="font-size:small">Duration</span><span style="font-size:small"> </span><span style="font-size:small">timeout</span><span style="font-size:small">,</span><span style="font-size:small">
+</span><span style="font-size:small">                                     </span><span style="font-size:small">any_tuple</span><span style="font-size:small"> </span><span style="font-size:small">what</span><span style="font-size:small">);</span></div><p>A synchronous message is sent to the receiving actor’s mailbox like any other asynchronous message.
+The response message, on the other hand, is treated separately.</p><p>The difference between <code>sync_send</code> and <code>timed_sync_send</code> is how timeouts are handled.
+The behavior of <code>sync_send</code> is analogous to <code>send</code>, i.e., timeouts are specified by using <code>after</code><code>(...)</code> statements (see <a href="#Sec%3A%3AReceive%3A%3ATimeouts">6.3</a>).
+When using <code>timed_sync_send</code> function, <code>after</code><code>(...)</code> statements are ignored and the actor will receive a <code><span style="color:#007F00"><code>'TIMEOUT'</code></span></code> message after the given duration instead.</p>
+<!--TOC subsection id=sec41 Error Messages-->
+<h3 id="sec41" class="subsection">7.1  Error Messages</h3><!--SEC END --><p>When using synchronous messaging, <span style="font-family:monospace">libcppa</span>’s runtime environment will send ...</p><ul class="itemize"><li class="li-itemize">
+<code>{</code><code><span style="color:#007F00"><code>'EXITED'</code></span></code><code>, </code><code><span style="color:blue">uint32_t</span></code><code> </code><code>exit_reason</code><code>}</code> if the receiver is not alive
+</li><li class="li-itemize"><code>{</code><code><span style="color:#007F00"><code>'VOID'</code></span></code><code>}</code> if the receiver handled the message but did not call <code>reply</code>
+</li><li class="li-itemize"><code>{</code><code><span style="color:#007F00"><code>'TIMEOUT'</code></span></code><code>}</code> if a message send by <code>timed_sync_send</code> timed out
+</li></ul>
+<!--TOC subsection id=sec42 Receive Response Messages-->
+<h3 id="sec42" class="subsection">7.2  Receive Response Messages</h3><!--SEC END --><p>The functions <code>receive_response</code> and <code>handle_response</code> can be used to receive response messages, as shown in the following example.</p><div class="lstlisting"><span style="font-size:small">actor_ptr</span><span style="font-size:small"> </span><span style="font-size:small">testee</span><span style="font-size:small"> = ...; </span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">// replies with a string to 'get'</span></span></span><span style="font-size:small">
 </span><span style="font-size:small">
 </span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">// "receive_response" usage example (blocking API)</span></span></span><span style="font-size:small">
 </span><span style="font-size:small"><span style="color:blue">auto</span></span><span style="font-size:small"> </span><span style="font-size:small">future</span><span style="font-size:small"> = </span><span style="font-size:small">sync_send</span><span style="font-size:small">(</span><span style="font-size:small">testee</span><span style="font-size:small">, </span><span style="font-size:small">atom</span><span style="font-size:small">(</span><span style="font-size:small"><span style="color:#007F00"><span style="font-size:small">"get"</span></span></span><span style="font-size:small">));</span><span style="font-size:small">
@@ -856,41 +909,83 @@ The response message, on the other hand, is treated separately.</p><p><span styl
 </span><span style="font-size:small">);</span></div><p>The function <code>receive_response</code> is similar to <code>receive</code>, i.e., it blocks the calling actor until either a response message was received or a timeout occured.</p><p>Similar to <code>become</code>, the function <code>handle_response</code> is part of the event-based API and is used as “one-shot handler” to respond to a given future.
 The behavior passed to <code>handle_response</code> is executed <span style="font-style:italic">once</span> and the actor automatically returns to its previous behavior afterwards.
 It is possible to “stack” multiple <code>handle_response</code> calls.
-Each response handler is executed once and then automatically discarded.</p><p>In both cases, the behavior definition of the response handler requires a timeout.</p>
-<!--TOC subsection id=sec41 Using <code>message_future</code>’s Member Functions to Receive a Response-->
-<h3 id="sec41" class="subsection">7.2  Using <code>message_future</code>’s Member Functions to Receive a Response</h3><!--SEC END --><p>Often, an actor sends a synchronous message and then wants to wait for the response.
+Each response handler is executed once and then automatically discarded.</p>
+<!--TOC subsection id=sec43 Synchronous Failures and Error Handlers-->
+<h3 id="sec43" class="subsection">7.3  Synchronous Failures and Error Handlers</h3><!--SEC END --><p>An unexpected response message, i.e., a message that is not handled by given behavior, will invoke the actor’s <code>on_sync_failure</code> handler.
+The default handler kills the actor by calling <code>self</code><code>-&gt;</code><code>quit</code><code>(</code><code>exit_reason</code><code>::</code><code>unhandled_sync_failure</code><code>)</code>.
+The handler can be overridden by calling <code>self</code><code>-&gt;</code><code>on_sync_failure</code><code>(</code><code><span style="color:#7F007F"><code>/*...*/</code></span></code><code>)</code>.</p><p>Unhandled <code><span style="color:#007F00"><code>'TIMEOUT'</code></span></code> messages trigger the <code>on_sync_timeout</code> handler.
+The default handler kills the actor for reason <code>exit_reason</code><code>::</code><code>unhandled_sync_failure</code>.
+It is possible set both error handlers by calling <code>self</code><code>-&gt;</code><code>on_sync_timeout_or_failure</code><code>(</code><code><span style="color:#7F007F"><code>/*...*)</code></span></code>.</p>
+<!--TOC subsection id=sec44 Using <code>then</code> and <code>await</code> to Receive a Response-->
+<h3 id="sec44" class="subsection">7.4  Using <code>then</code> and <code>await</code> to Receive a Response</h3><!--SEC END --><p>Often, an actor sends a synchronous message and then wants to wait for the response.
 In this case, using either <code>handle_response</code> or <code>receive_response</code> is quite verbose.
 Therefore, <code>message_future</code> provides the two member functions <code>then</code> and <code>await</code>.
-Using <code>then</code> is equal to using <code>handle_response</code>, wheres <code>await</code> corresponds to <code>receive_response</code>, as illustrated by the following example.</p><div class="lstlisting"><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">// an actor that replies with a string to atom("get")</span></span></span><span style="font-size:small">
-</span><span style="font-size:small"><span style="color:blue">auto</span></span><span style="font-size:small"> </span><span style="font-size:small">testee</span><span style="font-size:small"> = </span><span style="font-size:small">spawn</span><span style="font-size:small">&lt;</span><span style="font-size:small">testee_impl</span><span style="font-size:small">&gt;();</span><span style="font-size:small">
+Using <code>then</code> is equal to using <code>handle_response</code>, wheres <code>await</code> corresponds to <code>receive_response</code>, as illustrated by the following example.</p><div class="lstlisting"><span style="font-size:small">actor_ptr</span><span style="font-size:small"> </span><span style="font-size:small">testee</span><span style="font-size:small"> = ...; </span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">// replies with a string to 'get'</span></span></span><span style="font-size:small">
+</span><span style="font-size:small">
+</span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">// set handler for unexpected messages</span></span></span><span style="font-size:small">
+</span><span style="font-size:small">self</span><span style="font-size:small">-&gt;</span><span style="font-size:small">on_sync_failure</span><span style="font-size:small"> = [] {</span><span style="font-size:small">
+</span><span style="font-size:small">    </span><span style="font-size:small">aout</span><span style="font-size:small"> &lt;&lt; </span><span style="font-size:small"><span style="color:#007F00"><span style="font-size:small">"received: "</span></span></span><span style="font-size:small"> &lt;&lt; </span><span style="font-size:small">to_string</span><span style="font-size:small">(</span><span style="font-size:small">self</span><span style="font-size:small">-&gt;</span><span style="font-size:small">last_dequeued</span><span style="font-size:small">()) &lt;&lt; </span><span style="font-size:small">endl</span><span style="font-size:small">;</span><span style="font-size:small">
+</span><span style="font-size:small">};</span><span style="font-size:small">
+</span><span style="font-size:small">
+</span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">// handler for timeouts</span></span></span><span style="font-size:small">
+</span><span style="font-size:small"><span style="color:blue">auto</span></span><span style="font-size:small"> </span><span style="font-size:small">timeout_handler</span><span style="font-size:small"> = [] {</span><span style="font-size:small">
+</span><span style="font-size:small">    </span><span style="font-size:small">aout</span><span style="font-size:small"> &lt;&lt; </span><span style="font-size:small"><span style="color:#007F00"><span style="font-size:small">"timeout occured"</span></span></span><span style="font-size:small"> &lt;&lt; </span><span style="font-size:small">endl</span><span style="font-size:small">;</span><span style="font-size:small">
+</span><span style="font-size:small">};</span><span style="font-size:small">
 </span><span style="font-size:small">
 </span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">// receive response by using "await" (blocking API)</span></span></span><span style="font-size:small">
 </span><span style="font-size:small">sync_send</span><span style="font-size:small">(</span><span style="font-size:small">testee</span><span style="font-size:small">, </span><span style="font-size:small">atom</span><span style="font-size:small">(</span><span style="font-size:small"><span style="color:#007F00"><span style="font-size:small">"get"</span></span></span><span style="font-size:small">)).</span><span style="font-size:small">await</span><span style="font-size:small">(</span><span style="font-size:small">
-</span><span style="font-size:small">  </span><span style="font-size:small">on_arg_match</span><span style="font-size:small"> &gt;&gt; [&amp;](</span><span style="font-size:small"><span style="color:blue">const</span></span><span style="font-size:small"> </span><span style="font-size:small">std</span><span style="font-size:small">::</span><span style="font-size:small">string</span><span style="font-size:small">&amp; </span><span style="font-size:small">str</span><span style="font-size:small">) {</span><span style="font-size:small">
-</span><span style="font-size:small">    </span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">// handle str</span></span></span><span style="font-size:small">
-</span><span style="font-size:small">  },</span><span style="font-size:small">
-</span><span style="font-size:small">  </span><span style="font-size:small">after</span><span style="font-size:small">(</span><span style="font-size:small">std</span><span style="font-size:small">::</span><span style="font-size:small">chrono</span><span style="font-size:small">::</span><span style="font-size:small">seconds</span><span style="font-size:small">(30)) &gt;&gt; [&amp;]() {</span><span style="font-size:small">
-</span><span style="font-size:small">    </span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">// handle error</span></span></span><span style="font-size:small">
-</span><span style="font-size:small">  }</span><span style="font-size:small">
+</span><span style="font-size:small">  </span><span style="font-size:small">on_arg_match</span><span style="font-size:small"> &gt;&gt; [&amp;](</span><span style="font-size:small"><span style="color:blue">const</span></span><span style="font-size:small"> </span><span style="font-size:small">std</span><span style="font-size:small">::</span><span style="font-size:small">string</span><span style="font-size:small">&amp; </span><span style="font-size:small">str</span><span style="font-size:small">) { </span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">/* handle str */</span></span></span><span style="font-size:small"> },</span><span style="font-size:small">
+</span><span style="font-size:small">  </span><span style="font-size:small">after</span><span style="font-size:small">(</span><span style="font-size:small">std</span><span style="font-size:small">::</span><span style="font-size:small">chrono</span><span style="font-size:small">::</span><span style="font-size:small">seconds</span><span style="font-size:small">(30)) &gt;&gt; </span><span style="font-size:small">handle_timeout</span><span style="font-size:small">
 </span><span style="font-size:small">);</span><span style="font-size:small">
 </span><span style="font-size:small">
 </span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">// set response handler by using "then" (event-based API)</span></span></span><span style="font-size:small">
-</span><span style="font-size:small">sync_send</span><span style="font-size:small">(</span><span style="font-size:small">testee</span><span style="font-size:small">, </span><span style="font-size:small">atom</span><span style="font-size:small">(</span><span style="font-size:small"><span style="color:#007F00"><span style="font-size:small">"get"</span></span></span><span style="font-size:small">)).</span><span style="font-size:small">then</span><span style="font-size:small">(</span><span style="font-size:small">
-</span><span style="font-size:small">  </span><span style="font-size:small">on_arg_match</span><span style="font-size:small"> &gt;&gt; [=](</span><span style="font-size:small"><span style="color:blue">const</span></span><span style="font-size:small"> </span><span style="font-size:small">std</span><span style="font-size:small">::</span><span style="font-size:small">string</span><span style="font-size:small">&amp; </span><span style="font-size:small">str</span><span style="font-size:small">) {</span><span style="font-size:small">
-</span><span style="font-size:small">    </span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">// handle str</span></span></span><span style="font-size:small">
-</span><span style="font-size:small">  },</span><span style="font-size:small">
-</span><span style="font-size:small">  </span><span style="font-size:small">after</span><span style="font-size:small">(</span><span style="font-size:small">std</span><span style="font-size:small">::</span><span style="font-size:small">chrono</span><span style="font-size:small">::</span><span style="font-size:small">seconds</span><span style="font-size:small">(30)) &gt;&gt; [=]() {</span><span style="font-size:small">
-</span><span style="font-size:small">    </span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">// handle error</span></span></span><span style="font-size:small">
-</span><span style="font-size:small">  }</span><span style="font-size:small">
+</span><span style="font-size:small">timed_sync_send</span><span style="font-size:small">(</span><span style="font-size:small">testee</span><span style="font-size:small">, </span><span style="font-size:small">std</span><span style="font-size:small">::</span><span style="font-size:small">chrono</span><span style="font-size:small">::</span><span style="font-size:small">seconds</span><span style="font-size:small">(30), </span><span style="font-size:small">atom</span><span style="font-size:small">(</span><span style="font-size:small"><span style="color:#007F00"><span style="font-size:small">"get"</span></span></span><span style="font-size:small">)).</span><span style="font-size:small">then</span><span style="font-size:small">(</span><span style="font-size:small">
+</span><span style="font-size:small">  </span><span style="font-size:small">on_arg_match</span><span style="font-size:small"> &gt;&gt; [=](</span><span style="font-size:small"><span style="color:blue">const</span></span><span style="font-size:small"> </span><span style="font-size:small">std</span><span style="font-size:small">::</span><span style="font-size:small">string</span><span style="font-size:small">&amp; </span><span style="font-size:small">str</span><span style="font-size:small">) { </span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">/* handle str */</span></span></span><span style="font-size:small"> },</span><span style="font-size:small">
+</span><span style="font-size:small">  </span><span style="font-size:small">on</span><span style="font-size:small">(</span><span style="font-size:small"><span style="color:#007F00"><span style="font-size:small">'TIMEOUT'</span></span></span><span style="font-size:small">) &gt;&gt; </span><span style="font-size:small">handle_timeout</span><span style="font-size:small">
 </span><span style="font-size:small">);</span></div>
-<!--TOC section id=sec42 Management-->
-<h2 id="sec42" class="section">8  Management</h2><!--SEC END --><p><span style="font-family:monospace">libcppa</span> adapts Erlang’s well-established fault propagation model.
+<!--TOC subsubsection id=sec45 Using Functors without Patterns-->
+<h4 id="sec45" class="subsubsection">7.4.1  Using Functors without Patterns</h4><!--SEC END --><p>To reduce verbosity, <span style="font-family:monospace">libcppa</span> supports synchronous response handlers without patterns.
+In this case, the pattern is automatically deduced by the functor’s signature.</p><div class="lstlisting"><span style="font-size:small">actor_ptr</span><span style="font-size:small"> </span><span style="font-size:small">testee</span><span style="font-size:small"> = ...; </span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">// replies with a string to 'get'</span></span></span><span style="font-size:small">
+</span><span style="font-size:small">
+</span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">// (1) functor only usage</span></span></span><span style="font-size:small">
+</span><span style="font-size:small">sync_send</span><span style="font-size:small">(</span><span style="font-size:small">testee</span><span style="font-size:small">, </span><span style="font-size:small">atom</span><span style="font-size:small">(</span><span style="font-size:small"><span style="color:#007F00"><span style="font-size:small">"get"</span></span></span><span style="font-size:small">)).</span><span style="font-size:small">then</span><span style="font-size:small">(</span><span style="font-size:small">
+</span><span style="font-size:small">  [=](</span><span style="font-size:small"><span style="color:blue">const</span></span><span style="font-size:small"> </span><span style="font-size:small">std</span><span style="font-size:small">::</span><span style="font-size:small">string</span><span style="font-size:small">&amp; </span><span style="font-size:small">str</span><span style="font-size:small">) { </span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">/*...*/</span></span></span><span style="font-size:small"> }</span><span style="font-size:small">
+</span><span style="font-size:small">);</span><span style="font-size:small">
+</span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">// statement (1) is equal to:</span></span></span><span style="font-size:small">
+</span><span style="font-size:small">sync_send</span><span style="font-size:small">(</span><span style="font-size:small">testee</span><span style="font-size:small">, </span><span style="font-size:small">atom</span><span style="font-size:small">(</span><span style="font-size:small"><span style="color:#007F00"><span style="font-size:small">"get"</span></span></span><span style="font-size:small">)).</span><span style="font-size:small">then</span><span style="font-size:small">(</span><span style="font-size:small">
+</span><span style="font-size:small">  </span><span style="font-size:small">on</span><span style="font-size:small">(</span><span style="font-size:small">any_vals</span><span style="font-size:small">, </span><span style="font-size:small">arg_match</span><span style="font-size:small">) &gt;&gt; [=](</span><span style="font-size:small"><span style="color:blue">const</span></span><span style="font-size:small"> </span><span style="font-size:small">std</span><span style="font-size:small">::</span><span style="font-size:small">string</span><span style="font-size:small">&amp; </span><span style="font-size:small">str</span><span style="font-size:small">) { </span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">/*...*/</span></span></span><span style="font-size:small"> }</span><span style="font-size:small">
+</span><span style="font-size:small">);</span></div>
+<!--TOC subsubsection id=sec46 Continuations for Event-based Actors-->
+<h4 id="sec46" class="subsubsection">7.4.2  Continuations for Event-based Actors</h4><!--SEC END --><p><span style="font-family:monospace">libcppa</span> supports continuations to enable chaining of send/receive statements in the event-based API.
+The functions <code>handle_response</code> and <code>message_future</code><code>::</code><code>then</code> return a helper object offering <code>continue_with</code>, which takes a functor <span style="font-style:italic">f</span> without arguments.
+After receiving a message, <span style="font-style:italic">f</span> is invoked if and only if the received messages was handled successfully, i.e., neither <code>sync_failure</code> nor <code>sync_timeout</code> occurred and the messages was not skipped manually.</p><div class="lstlisting"><span style="font-size:small">actor_ptr</span><span style="font-size:small"> </span><span style="font-size:small">d_or_s</span><span style="font-size:small"> = ...; </span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">// replies with either a double or a string</span></span></span><span style="font-size:small">
+</span><span style="font-size:small">
+</span><span style="font-size:small">sync_send</span><span style="font-size:small">(</span><span style="font-size:small">d_or_s</span><span style="font-size:small">, </span><span style="font-size:small">atom</span><span style="font-size:small">(</span><span style="font-size:small"><span style="color:#007F00"><span style="font-size:small">"get"</span></span></span><span style="font-size:small">)).</span><span style="font-size:small">then</span><span style="font-size:small">(</span><span style="font-size:small">
+</span><span style="font-size:small">  [=](</span><span style="font-size:small"><span style="color:blue">double</span></span><span style="font-size:small"> </span><span style="font-size:small">value</span><span style="font-size:small">) { </span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">/* functor f1 */</span></span></span><span style="font-size:small"> },</span><span style="font-size:small">
+</span><span style="font-size:small">  [=](</span><span style="font-size:small"><span style="color:blue">const</span></span><span style="font-size:small"> </span><span style="font-size:small">string</span><span style="font-size:small">&amp; </span><span style="font-size:small">value</span><span style="font-size:small">) { </span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">/* functor f2*/</span></span></span><span style="font-size:small"> }</span><span style="font-size:small">
+</span><span style="font-size:small">).</span><span style="font-size:small">continue_with</span><span style="font-size:small">([=] {</span><span style="font-size:small">
+</span><span style="font-size:small">  </span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">// this continuation is invoked in both cases</span></span></span><span style="font-size:small">
+</span><span style="font-size:small">  </span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">// *after* f1 or f2 is done, but *not* in case</span></span></span><span style="font-size:small">
+</span><span style="font-size:small">  </span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">// of sync_failure or sync_timeout</span></span></span><span style="font-size:small">
+</span><span style="font-size:small">});</span><span style="font-size:small">
+</span><span style="font-size:small">
+</span><span style="font-size:small">sync_send</span><span style="font-size:small">(</span><span style="font-size:small">d_or_s</span><span style="font-size:small">, </span><span style="font-size:small">atom</span><span style="font-size:small">(</span><span style="font-size:small"><span style="color:#007F00"><span style="font-size:small">"get"</span></span></span><span style="font-size:small">)).</span><span style="font-size:small">then</span><span style="font-size:small">(</span><span style="font-size:small">
+</span><span style="font-size:small">  </span><span style="font-size:small">on_arg_match</span><span style="font-size:small"> &gt;&gt; [=](</span><span style="font-size:small"><span style="color:blue">double</span></span><span style="font-size:small"> </span><span style="font-size:small">value</span><span style="font-size:small">) { </span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">/* functor f1 */</span></span></span><span style="font-size:small"> },</span><span style="font-size:small">
+</span><span style="font-size:small">  </span><span style="font-size:small">on</span><span style="font-size:small">&lt;</span><span style="font-size:small">string</span><span style="font-size:small">&gt;() &gt;&gt; </span><span style="font-size:small">skip_message</span><span style="font-size:small">
+</span><span style="font-size:small">).</span><span style="font-size:small">continue_with</span><span style="font-size:small">([=] {</span><span style="font-size:small">
+</span><span style="font-size:small">  </span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">// this continuation is invoked only if f1 was called;</span></span></span><span style="font-size:small">
+</span><span style="font-size:small">  </span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">// string messages are completely ignored:</span></span></span><span style="font-size:small">
+</span><span style="font-size:small">  </span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">// skipping a message in a synchronous handler will</span></span></span><span style="font-size:small">
+</span><span style="font-size:small">  </span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">// suppress the continuation, but will not raise sync_failure</span></span></span><span style="font-size:small">
+</span><span style="font-size:small">});</span></div>
+<!--TOC section id=sec47 Management-->
+<h2 id="sec47" class="section">8  Management</h2><!--SEC END --><p><span style="font-family:monospace">libcppa</span> adapts Erlang’s well-established fault propagation model.
 It allows to build actor subsystem in which either all actors are alive or have collectively failed.</p>
-<!--TOC subsection id=sec43 Links-->
-<h3 id="sec43" class="subsection">8.1  Links</h3><!--SEC END --><p>Linked actors monitor each other.
+<!--TOC subsection id=sec48 Links-->
+<h3 id="sec48" class="subsection">8.1  Links</h3><!--SEC END --><p>Linked actors monitor each other.
 An actor sends an exit message to all of its links as part of its termination.
 The default behavior for actors receiving such an exit message is to die for the same reason, if the exit reason is non-normal.
-Actors can <span style="font-style:italic">trap</span> exit messages to handle them manually.</p><div class="lstlisting"><span style="font-size:small"><span style="color:blue">auto</span></span><span style="font-size:small"> </span><span style="font-size:small">worker</span><span style="font-size:small"> = </span><span style="font-size:small">spawn</span><span style="font-size:small">(...);</span><span style="font-size:small">
+Actors can <span style="font-style:italic">trap</span> exit messages to handle them manually.</p><div class="lstlisting"><span style="font-size:small">actor_ptr</span><span style="font-size:small"> </span><span style="font-size:small">worker</span><span style="font-size:small"> = ...;</span><span style="font-size:small">
 </span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">// receive exit messages as regular messages</span></span></span><span style="font-size:small">
 </span><span style="font-size:small">self</span><span style="font-size:small">-&gt;</span><span style="font-size:small">trap_exit</span><span style="font-size:small">(</span><span style="font-size:small"><span style="color:blue">true</span></span><span style="font-size:small">);</span><span style="font-size:small">
 </span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">// monitor spawned actor</span></span></span><span style="font-size:small">
@@ -900,14 +995,15 @@ Actors can <span style="font-style:italic">trap</span> exit messages to handle t
 </span><span style="font-size:small">  </span><span style="font-size:small">on</span><span style="font-size:small">(</span><span style="font-size:small">atom</span><span style="font-size:small">(</span><span style="font-size:small"><span style="color:#007F00"><span style="font-size:small">"EXIT"</span></span></span><span style="font-size:small">), </span><span style="font-size:small">exit_reason</span><span style="font-size:small">::</span><span style="font-size:small">normal</span><span style="font-size:small">) &gt;&gt; []() {</span><span style="font-size:small">
 </span><span style="font-size:small">    </span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">// worker finished computation</span></span></span><span style="font-size:small">
 </span><span style="font-size:small">  },</span><span style="font-size:small">
-</span><span style="font-size:small">  </span><span style="font-size:small">on</span><span style="font-size:small">(</span><span style="font-size:small">atom</span><span style="font-size:small">(</span><span style="font-size:small"><span style="color:#007F00"><span style="font-size:small">"EXIT"</span></span></span><span style="font-size:small">), </span><span style="font-size:small">arg_match</span><span style="font-size:small">) &gt;&gt; [](</span><span style="font-size:small">std</span><span style="font-size:small">::</span><span style="font-size:small">uint32_t</span><span style="font-size:small"> </span><span style="font-size:small">reason</span><span style="font-size:small">) {</span><span style="font-size:small">
+</span><span style="font-size:small">  </span><span style="font-size:small">on</span><span style="font-size:small">(</span><span style="font-size:small">atom</span><span style="font-size:small">(</span><span style="font-size:small"><span style="color:#007F00"><span style="font-size:small">"EXIT"</span></span></span><span style="font-size:small">), </span><span style="font-size:small">arg_match</span><span style="font-size:small">) &gt;&gt; [](</span><span style="font-size:small">std</span><span style="font-size:small">::</span><span style="font-size:small"><span style="color:blue">uint32_t</span></span><span style="font-size:small"> </span><span style="font-size:small">reason</span><span style="font-size:small">) {</span><span style="font-size:small">
 </span><span style="font-size:small">    </span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">// worker died unexpectedly</span></span></span><span style="font-size:small">
 </span><span style="font-size:small">  }</span><span style="font-size:small">
 </span><span style="font-size:small">);</span></div>
-<!--TOC subsection id=sec44 Monitors-->
-<h3 id="sec44" class="subsection">8.2  Monitors</h3><!--SEC END --><p>A monitor observes the lifetime of an actor.
-Monitored actors send a down message to all monitors as part of their termination.
-Unlike exit messages, down messages are always treated like any other ordinary message.</p><div class="lstlisting"><span style="font-size:small"><span style="color:blue">auto</span></span><span style="font-size:small"> </span><span style="font-size:small">worker</span><span style="font-size:small"> = </span><span style="font-size:small">spawn</span><span style="font-size:small">(...);</span><span style="font-size:small">
+<!--TOC subsection id=sec49 Monitors-->
+<h3 id="sec49" class="subsection">8.2  Monitors</h3><!--SEC END --><p>A monitor observes the lifetime of an actor.
+Monitored actors send a down message to all observers as part of their termination.
+Unlike exit messages, down messages are always treated like any other ordinary message.
+An actor will receive one down message for each time it called <code>self</code><code>-&gt;</code><code>monitor</code><code>(...)</code>, even if it adds a monitor to the same actor multiple times.</p><div class="lstlisting"><span style="font-size:small">actor_ptr</span><span style="font-size:small"> </span><span style="font-size:small">worker</span><span style="font-size:small"> = ...;</span><span style="font-size:small">
 </span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">// monitor spawned actor</span></span></span><span style="font-size:small">
 </span><span style="font-size:small">self</span><span style="font-size:small">-&gt;</span><span style="font-size:small">monitor</span><span style="font-size:small">(</span><span style="font-size:small">worker</span><span style="font-size:small">);</span><span style="font-size:small">
 </span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">// wait until worker exited</span></span></span><span style="font-size:small">
@@ -915,32 +1011,36 @@ Unlike exit messages, down messages are always treated like any other ordinary m
 </span><span style="font-size:small">  </span><span style="font-size:small">on</span><span style="font-size:small">(</span><span style="font-size:small">atom</span><span style="font-size:small">(</span><span style="font-size:small"><span style="color:#007F00"><span style="font-size:small">"DOWN"</span></span></span><span style="font-size:small">), </span><span style="font-size:small">exit_reason</span><span style="font-size:small">::</span><span style="font-size:small">normal</span><span style="font-size:small">) &gt;&gt; []() {</span><span style="font-size:small">
 </span><span style="font-size:small">    </span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">// worker finished computation</span></span></span><span style="font-size:small">
 </span><span style="font-size:small">  },</span><span style="font-size:small">
-</span><span style="font-size:small">  </span><span style="font-size:small">on</span><span style="font-size:small">(</span><span style="font-size:small">atom</span><span style="font-size:small">(</span><span style="font-size:small"><span style="color:#007F00"><span style="font-size:small">"DOWN"</span></span></span><span style="font-size:small">), </span><span style="font-size:small">arg_match</span><span style="font-size:small">) &gt;&gt; [](</span><span style="font-size:small">std</span><span style="font-size:small">::</span><span style="font-size:small">uint32_t</span><span style="font-size:small"> </span><span style="font-size:small">reason</span><span style="font-size:small">) {</span><span style="font-size:small">
+</span><span style="font-size:small">  </span><span style="font-size:small">on</span><span style="font-size:small">(</span><span style="font-size:small">atom</span><span style="font-size:small">(</span><span style="font-size:small"><span style="color:#007F00"><span style="font-size:small">"DOWN"</span></span></span><span style="font-size:small">), </span><span style="font-size:small">arg_match</span><span style="font-size:small">) &gt;&gt; [](</span><span style="font-size:small">std</span><span style="font-size:small">::</span><span style="font-size:small"><span style="color:blue">uint32_t</span></span><span style="font-size:small"> </span><span style="font-size:small">reason</span><span style="font-size:small">) {</span><span style="font-size:small">
 </span><span style="font-size:small">    </span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">// worker died unexpectedly</span></span></span><span style="font-size:small">
 </span><span style="font-size:small">  }</span><span style="font-size:small">
-</span><span style="font-size:small">);</span></div><p>Monitors are redundant.
-Hence, actors will receive one down message for each monitor.</p>
-<!--TOC subsection id=sec45 Error Codes-->
-<h3 id="sec45" class="subsection">8.3  Error Codes</h3><!--SEC END --><p>All error codes are defined in the namespace <code>cppa</code><code>::</code><code>exit_reason</code>.</p><table style="border-spacing:6px;border-collapse:separate;width:100%" class="cellpading0"><tr><td class="hbar" colspan=3></td></tr>
+</span><span style="font-size:small">);</span></div>
+<!--TOC subsection id=sec50 Error Codes-->
+<h3 id="sec50" class="subsection">8.3  Error Codes</h3><!--SEC END --><p>All error codes are defined in the namespace <code>cppa</code><code>::</code><code>exit_reason</code>.
+To obtain a string representation of an error code, use <code>cppa</code><code>::</code><code>exit_reason</code><code>::</code><code>as_string</code><code>(</code><code><span style="color:blue">uint32_t</span></code><code>)</code>.</p><table style="border-spacing:6px;border-collapse:separate;width:100%" class="cellpading0"><tr><td class="hbar" colspan=3></td></tr>
 <tr><td style="vertical-align:middle;text-align:left;" > <code>normal</code></td><td style="vertical-align:middle;text-align:left;" >1</td><td style="vertical-align:middle;text-align:left;" >Actor finished execution without error </td></tr>
 <tr><td class="hbar" colspan=3></td></tr>
 <tr><td style="vertical-align:middle;text-align:left;" > <code>unhandled_exception</code></td><td style="vertical-align:middle;text-align:left;" >2</td><td style="vertical-align:middle;text-align:left;" >Actor was killed due to an unhandled exception </td></tr>
 <tr><td class="hbar" colspan=3></td></tr>
 <tr><td style="vertical-align:middle;text-align:left;" > <code>unallowed_function_call</code></td><td style="vertical-align:middle;text-align:left;" >3</td><td style="vertical-align:middle;text-align:left;" >Indicates that an event-based actor tried to use blocking receive calls </td></tr>
 <tr><td class="hbar" colspan=3></td></tr>
+<tr><td style="vertical-align:middle;text-align:left;" > <code>unhandled_sync_failure</code></td><td style="vertical-align:middle;text-align:left;" >4</td><td style="vertical-align:middle;text-align:left;" >Actor was killed due to an unexpected synchronous response message </td></tr>
+<tr><td class="hbar" colspan=3></td></tr>
+<tr><td style="vertical-align:middle;text-align:left;" > <code>unhandled_sync_timeout</code></td><td style="vertical-align:middle;text-align:left;" >5</td><td style="vertical-align:middle;text-align:left;" >Actor was killed, because no timeout handler was set and a synchronous message timed out </td></tr>
+<tr><td class="hbar" colspan=3></td></tr>
 <tr><td style="vertical-align:middle;text-align:left;" > <code>remote_link_unreachable</code></td><td style="vertical-align:middle;text-align:left;" >257</td><td style="vertical-align:middle;text-align:left;" >Indicates that a remote actor became unreachable, e.g., due to connection error </td></tr>
 <tr><td class="hbar" colspan=3></td></tr>
 <tr><td style="vertical-align:middle;text-align:left;" > <code>user_defined</code></td><td style="vertical-align:middle;text-align:left;" >65536</td><td style="vertical-align:middle;text-align:left;" >Minimum value for user-defined exit codes </td></tr>
 <tr><td class="hbar" colspan=3></td></tr>
 </table>
-<!--TOC subsection id=sec46 Attach Cleanup Code to an Actor-->
-<h3 id="sec46" class="subsection">8.4  Attach Cleanup Code to an Actor</h3><!--SEC END --><p>Actors can attach cleanup code to other actors.
+<!--TOC subsection id=sec51 Attach Cleanup Code to an Actor-->
+<h3 id="sec51" class="subsection">8.4  Attach Cleanup Code to an Actor</h3><!--SEC END --><p>Actors can attach cleanup code to other actors.
 This code is executed immediately if the actor has already exited.
 Keep in mind that <code>self</code> refers to the currently running actor.
 Thus, <code>self</code> refers to the terminating actor and not to the actor that attached a functor to it.</p><div class="lstlisting"><span style="font-size:small"><span style="color:blue">auto</span></span><span style="font-size:small"> </span><span style="font-size:small">worker</span><span style="font-size:small"> = </span><span style="font-size:small">spawn</span><span style="font-size:small">(...);</span><span style="font-size:small">
 </span><span style="font-size:small">actor_ptr</span><span style="font-size:small"> </span><span style="font-size:small">observer</span><span style="font-size:small"> = </span><span style="font-size:small">self</span><span style="font-size:small">;</span><span style="font-size:small">
 </span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">// "monitor" spawned actor</span></span></span><span style="font-size:small">
-</span><span style="font-size:small">worker</span><span style="font-size:small">-&gt;</span><span style="font-size:small">attach_functor</span><span style="font-size:small">([</span><span style="font-size:small">observer</span><span style="font-size:small">](</span><span style="font-size:small">std</span><span style="font-size:small">::</span><span style="font-size:small">uint32_t</span><span style="font-size:small"> </span><span style="font-size:small">reason</span><span style="font-size:small">) {</span><span style="font-size:small">
+</span><span style="font-size:small">worker</span><span style="font-size:small">-&gt;</span><span style="font-size:small">attach_functor</span><span style="font-size:small">([</span><span style="font-size:small">observer</span><span style="font-size:small">](</span><span style="font-size:small">std</span><span style="font-size:small">::</span><span style="font-size:small"><span style="color:blue">uint32_t</span></span><span style="font-size:small"> </span><span style="font-size:small">reason</span><span style="font-size:small">) {</span><span style="font-size:small">
 </span><span style="font-size:small">  </span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">// this callback is invoked from worker =&gt; self == worker</span></span></span><span style="font-size:small">
 </span><span style="font-size:small">  </span><span style="font-size:small">send</span><span style="font-size:small">(</span><span style="font-size:small">observer</span><span style="font-size:small">, </span><span style="font-size:small">atom</span><span style="font-size:small">(</span><span style="font-size:small"><span style="color:#007F00"><span style="font-size:small">"DONE"</span></span></span><span style="font-size:small">));</span><span style="font-size:small">
 </span><span style="font-size:small">});</span><span style="font-size:small">
@@ -952,11 +1052,11 @@ Thus, <code>self</code> refers to the terminating actor and not to the actor tha
 </span><span style="font-size:small">);</span></div><p><span style="font-weight:bold">Note</span>: It is possible to attach code to remote actors, but the cleanup code will run on the local machine.
 
 </p>
-<!--TOC section id=sec47 Spawning Actors-->
-<h2 id="sec47" class="section">9  Spawning Actors</h2><!--SEC END --><p>Actors are created using the function <code>spawn</code>.
+<!--TOC section id=sec52 Spawning Actors-->
+<h2 id="sec52" class="section">9  Spawning Actors</h2><!--SEC END --><p>Actors are created using the function <code>spawn</code>.
 The arguments passed to <code>spawn</code> depend on the actor’s implementation.</p>
-<!--TOC subsection id=sec48 Create Actors from Functors-->
-<h3 id="sec48" class="subsection">9.1  Create Actors from Functors</h3><!--SEC END --><p>The recommended way to implement both context-switching and thread-mapped actors is to use functors, e.g., a free function or lambda expression.
+<!--TOC subsection id=sec53 Create Actors from Functors-->
+<h3 id="sec53" class="subsection">9.1  Create Actors from Functors</h3><!--SEC END --><p>The recommended way to implement both context-switching and thread-mapped actors is to use functors, e.g., a free function or lambda expression.
 The arguments to the functor are passed to <code>spawn</code> as additional arguments.
 The optional <code>scheduling_hint</code> template parameter of <code>spawn</code> decides whether an actor should run in its own thread or use context-switching.
 The flag <code>detached</code> causes <code>spawn</code> to create a thread-mapped actor, whereas <code>scheduled</code>, the default flag, causes it to create a context-switching actor.
@@ -984,8 +1084,8 @@ In general, context-switching and thread-mapped actors are intended to ease migr
 Class-based actors should be a subtype of <code>event_based_actor</code>, since this is the recommended actor implementation of <span style="font-family:monospace">libcppa</span>.</p><p><span style="font-weight:bold">Note</span>: <code>spawn</code><code>(</code><code>fun</code><code>, </code><code>arg0</code><code>, ...)</code> is <span style="font-style:italic">not</span> the same as <code>spawn</code><code>(</code><code>std</code><code>::</code><code>bind</code><code>(</code><code>fun</code><code>, </code><code>arg0</code><code>, ...))</code>!
 For example, a call to <code>spawn</code><code>(</code><code>fun</code><code>, </code><code>self</code><code>, ...)</code> will pass a pointer to the calling actor to the newly created actor, as expected, whereas <code>spawn</code><code>(</code><code>std</code><code>::</code><code>bind</code><code>(</code><code>fun</code><code>, </code><code>self</code><code>, ...))</code> wraps the type of <code>self</code> into the function wrapper and evaluates <code>self</code> on function invocation.
 Thus, the actor will end up having a pointer to itself rather than a pointer to the actor that created it.</p>
-<!--TOC subsection id=sec49 Create Class-Based Actors-->
-<h3 id="sec49" class="subsection">9.2  Create Class-Based Actors</h3><!--SEC END --><p>Spawning class-based actors is straightforward and uses the function <code>spawn</code> as well.
+<!--TOC subsection id=sec54 Create Class-Based Actors-->
+<h3 id="sec54" class="subsection">9.2  Create Class-Based Actors</h3><!--SEC END --><p>Spawning class-based actors is straightforward and uses the function <code>spawn</code> as well.
 The template parameter is the implementing class rather than a <code>scheduling_hint</code>, since class-based actors are always scheduled.
 All arguments are forwarded to the constructor, as shown in the following example.</p><div class="lstlisting"><span style="font-size:small"><span style="color:blue">#include</span></span><span style="font-size:small"> </span><span style="font-size:small"><span style="color:#007F00"><span style="font-size:small">"cppa/cppa.hpp"</span></span></span><span style="font-size:small">
 </span><span style="font-size:small">
@@ -1006,14 +1106,17 @@ All arguments are forwarded to the constructor, as shown in the following exampl
 </span><span style="font-size:small">  </span><span style="font-size:small"><span style="color:blue">auto</span></span><span style="font-size:small"> </span><span style="font-size:small">a2</span><span style="font-size:small"> = </span><span style="font-size:small">spawn</span><span style="font-size:small">&lt;</span><span style="font-size:small">my_actor2</span><span style="font-size:small">&gt;(1, 2.0</span><span style="font-size:small">f</span><span style="font-size:small">);</span><span style="font-size:small">
 </span><span style="font-size:small">  </span><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">// ...</span></span></span><span style="font-size:small">
 </span><span style="font-size:small">}</span></div><p>For spawning event-based actors without implementing an own class see Section <a href="#Sec%3A%3AReceive%3A%3AEventBased%3A%3AFactory">6.2.3</a>.
-To spawn actors as members of a group see Section <a href="#Sec%3A%3AGroup%3A%3ASpawn">11.3</a>.
+To spawn actors as members of a group see Section <a href="#Sec%3A%3AGroup%3A%3ASpawn">11.3</a>.</p>
+<!--TOC subsection id=sec55 Spawn Linked and Monitored Actors-->
+<h3 id="sec55" class="subsection">9.3  Spawn Linked and Monitored Actors</h3><!--SEC END --><p>In addition to <code>spawn</code>, there are the two convenience functions <code>spawn_link</code> and <code>spawn_monitor</code> available.
+The function <code>spawn_link</code> automatically creates a link between the calling actor and the new actor, whereas <code>spawn_monitor</code> causes the calling actor to monitor the new actor.
 
 </p>
-<!--TOC section id=sec50 Network Transparency-->
-<h2 id="sec50" class="section">10  Network Transparency</h2><!--SEC END --><p>All actor operations as well as sending messages are network transparent.
+<!--TOC section id=sec56 Network Transparency-->
+<h2 id="sec56" class="section">10  Network Transparency</h2><!--SEC END --><p>All actor operations as well as sending messages are network transparent.
 Remote actors are represented by actor proxies that forward all messages.</p>
-<!--TOC subsection id=sec51 Publishing of Actors-->
-<h3 id="sec51" class="subsection">10.1  Publishing of Actors</h3><!--SEC END --><div class="lstlisting"><span style="font-size:small"><span style="color:blue">void</span></span><span style="font-size:small"> </span><span style="font-size:small">publish</span><span style="font-size:small">(</span><span style="font-size:small">actor_ptr</span><span style="font-size:small"> </span><span style="font-size:small">whom</span><span style="font-size:small">, </span><span style="font-size:small">std</span><span style="font-size:small">::</span><span style="font-size:small">uint16_t</span><span style="font-size:small"> </span><span style="font-size:small">port</span><span style="font-size:small">, </span><span style="font-size:small"><span style="color:blue">const</span></span><span style="font-size:small"> </span><span style="font-size:small"><span style="color:blue">char</span></span><span style="font-size:small">* </span><span style="font-size:small">addr</span><span style="font-size:small"> = 0)</span></div><p>The function <code>publish</code> binds an actor to a given port.
+<!--TOC subsection id=sec57 Publishing of Actors-->
+<h3 id="sec57" class="subsection">10.1  Publishing of Actors</h3><!--SEC END --><div class="lstlisting"><span style="font-size:small"><span style="color:blue">void</span></span><span style="font-size:small"> </span><span style="font-size:small">publish</span><span style="font-size:small">(</span><span style="font-size:small">actor_ptr</span><span style="font-size:small"> </span><span style="font-size:small">whom</span><span style="font-size:small">, </span><span style="font-size:small">std</span><span style="font-size:small">::</span><span style="font-size:small">uint16_t</span><span style="font-size:small"> </span><span style="font-size:small">port</span><span style="font-size:small">, </span><span style="font-size:small"><span style="color:blue">const</span></span><span style="font-size:small"> </span><span style="font-size:small"><span style="color:blue">char</span></span><span style="font-size:small">* </span><span style="font-size:small">addr</span><span style="font-size:small"> = 0)</span></div><p>The function <code>publish</code> binds an actor to a given port.
 It throws <code>network_error</code> if socket related errors occur or <code>bind_failure</code> if the specified port is already in use.
 The optional <code>addr</code> parameter can be used to listen only to the given IP address.
 Otherwise, the actor accepts all incoming connections (<code>INADDR_ANY</code>).</p><div class="lstlisting"><span style="font-size:small">publish</span><span style="font-size:small">(</span><span style="font-size:small">self</span><span style="font-size:small">, 4242);</span><span style="font-size:small">
@@ -1022,8 +1125,8 @@ Otherwise, the actor accepts all incoming connections (<code>INADDR_ANY</code>).
 </span><span style="font-size:small">    </span><span style="font-size:small">reply</span><span style="font-size:small">(</span><span style="font-size:small">atom</span><span style="font-size:small">(</span><span style="font-size:small"><span style="color:#007F00"><span style="font-size:small">"pong"</span></span></span><span style="font-size:small">), </span><span style="font-size:small">i</span><span style="font-size:small">);</span><span style="font-size:small">
 </span><span style="font-size:small">  }</span><span style="font-size:small">
 </span><span style="font-size:small">);</span></div>
-<!--TOC subsection id=sec52 Connecting to Remote Actors-->
-<h3 id="sec52" class="subsection">10.2  Connecting to Remote Actors</h3><!--SEC END --><div class="lstlisting"><span style="font-size:small">actor_ptr</span><span style="font-size:small"> </span><span style="font-size:small">remote_actor</span><span style="font-size:small">(</span><span style="font-size:small"><span style="color:blue">const</span></span><span style="font-size:small"> </span><span style="font-size:small"><span style="color:blue">char</span></span><span style="font-size:small">* </span><span style="font-size:small">host</span><span style="font-size:small">, </span><span style="font-size:small">std</span><span style="font-size:small">::</span><span style="font-size:small">uint16_t</span><span style="font-size:small"> </span><span style="font-size:small">port</span><span style="font-size:small">)</span></div><p>The function <code>remote_actor</code> connects to the actor at given host and port.
+<!--TOC subsection id=sec58 Connecting to Remote Actors-->
+<h3 id="sec58" class="subsection">10.2  Connecting to Remote Actors</h3><!--SEC END --><div class="lstlisting"><span style="font-size:small">actor_ptr</span><span style="font-size:small"> </span><span style="font-size:small">remote_actor</span><span style="font-size:small">(</span><span style="font-size:small"><span style="color:blue">const</span></span><span style="font-size:small"> </span><span style="font-size:small"><span style="color:blue">char</span></span><span style="font-size:small">* </span><span style="font-size:small">host</span><span style="font-size:small">, </span><span style="font-size:small">std</span><span style="font-size:small">::</span><span style="font-size:small">uint16_t</span><span style="font-size:small"> </span><span style="font-size:small">port</span><span style="font-size:small">)</span></div><p>The function <code>remote_actor</code> connects to the actor at given host and port.
 A <code>network_error</code> is thrown if the connection failed.</p><div class="lstlisting"><span style="font-size:small"><span style="color:blue">auto</span></span><span style="font-size:small"> </span><span style="font-size:small">pong</span><span style="font-size:small"> = </span><span style="font-size:small">remote_actor</span><span style="font-size:small">(</span><span style="font-size:small"><span style="color:#007F00"><span style="font-size:small">"localhost"</span></span></span><span style="font-size:small">, 4242);</span><span style="font-size:small">
 </span><span style="font-size:small">send</span><span style="font-size:small">(</span><span style="font-size:small">pong</span><span style="font-size:small">, </span><span style="font-size:small">atom</span><span style="font-size:small">(</span><span style="font-size:small"><span style="color:#007F00"><span style="font-size:small">"ping"</span></span></span><span style="font-size:small">), 0);</span><span style="font-size:small">
 </span><span style="font-size:small"><span style="color:blue">bool</span></span><span style="font-size:small"> </span><span style="font-size:small">done</span><span style="font-size:small"> = </span><span style="font-size:small"><span style="color:blue">false</span></span><span style="font-size:small">;</span><span style="font-size:small">
@@ -1035,8 +1138,8 @@ A <code>network_error</code> is thrown if the connection failed.</p><div class="
 </span><span style="font-size:small">    </span><span style="font-size:small">reply</span><span style="font-size:small">(</span><span style="font-size:small">atom</span><span style="font-size:small">(</span><span style="font-size:small"><span style="color:#007F00"><span style="font-size:small">"ping"</span></span></span><span style="font-size:small">), </span><span style="font-size:small">i</span><span style="font-size:small">+1);</span><span style="font-size:small">
 </span><span style="font-size:small">  }</span><span style="font-size:small">
 </span><span style="font-size:small">).</span><span style="font-size:small">until</span><span style="font-size:small">(</span><span style="font-size:small">gref</span><span style="font-size:small">(</span><span style="font-size:small">done</span><span style="font-size:small">));</span></div>
-<!--TOC section id=sec53 Group Communication-->
-<h2 id="sec53" class="section">11  Group Communication</h2><!--SEC END --><p>
+<!--TOC section id=sec59 Group Communication-->
+<h2 id="sec59" class="section">11  Group Communication</h2><!--SEC END --><p>
 <a id="Sec::Group"></a></p><p><span style="font-family:monospace">libcppa</span> supports publish/subscribe-based group communication.
 Actors can join and leave groups and send messages to groups.</p><div class="lstlisting"><span style="font-size:small">std</span><span style="font-size:small">::</span><span style="font-size:small">string</span><span style="font-size:small"> </span><span style="font-size:small">group_module</span><span style="font-size:small"> = ...;</span><span style="font-size:small">
 </span><span style="font-size:small">std</span><span style="font-size:small">::</span><span style="font-size:small">string</span><span style="font-size:small"> </span><span style="font-size:small">group_id</span><span style="font-size:small"> = ...;</span><span style="font-size:small">
@@ -1044,17 +1147,17 @@ Actors can join and leave groups and send messages to groups.</p><div class="lst
 </span><span style="font-size:small">self</span><span style="font-size:small">-&gt;</span><span style="font-size:small">join</span><span style="font-size:small">(</span><span style="font-size:small">grp</span><span style="font-size:small">);</span><span style="font-size:small">
 </span><span style="font-size:small">send</span><span style="font-size:small">(</span><span style="font-size:small">grp</span><span style="font-size:small">, </span><span style="font-size:small">atom</span><span style="font-size:small">(</span><span style="font-size:small"><span style="color:#007F00"><span style="font-size:small">"test"</span></span></span><span style="font-size:small">));</span><span style="font-size:small">
 </span><span style="font-size:small">self</span><span style="font-size:small">-&gt;</span><span style="font-size:small">leave</span><span style="font-size:small">(</span><span style="font-size:small">grp</span><span style="font-size:small">);</span></div>
-<!--TOC subsection id=sec54 Anonymous Groups-->
-<h3 id="sec54" class="subsection">11.1  Anonymous Groups</h3><!--SEC END --><p>
+<!--TOC subsection id=sec60 Anonymous Groups-->
+<h3 id="sec60" class="subsection">11.1  Anonymous Groups</h3><!--SEC END --><p>
 <a id="Sec::Group::Anonymous"></a></p><p>Groups created on-the-fly with <code>group</code><code>::</code><code>anonymous</code><code>()</code> can be used to coordinate a set of workers.
 Each call to <code>group</code><code>::</code><code>anonymous</code><code>()</code> returns a new group instance.</p>
-<!--TOC subsection id=sec55 Local Groups-->
-<h3 id="sec55" class="subsection">11.2  Local Groups</h3><!--SEC END --><p>
+<!--TOC subsection id=sec61 Local Groups-->
+<h3 id="sec61" class="subsection">11.2  Local Groups</h3><!--SEC END --><p>
 <a id="Sec::Group::Local"></a></p><p>The <code><span style="color:#007F00"><code>"local"</code></span></code> group module creates groups for in-process communication.
 For example, a group for GUI related events could be identified by <code>group</code><code>::</code><code>get</code><code>(</code><code><span style="color:#007F00"><code>"local"</code></span></code><code>, </code><code><span style="color:#007F00"><code>"GUI events"</code></span></code><code>)</code>.
 The group ID <code><span style="color:#007F00"><code>"GUI events"</code></span></code> uniquely identifies a singleton group instance of the module <code><span style="color:#007F00"><code>"local"</code></span></code>.</p>
-<!--TOC subsection id=sec56 Spawn Actors in Groups-->
-<h3 id="sec56" class="subsection">11.3  Spawn Actors in Groups</h3><!--SEC END --><p>
+<!--TOC subsection id=sec62 Spawn Actors in Groups-->
+<h3 id="sec62" class="subsection">11.3  Spawn Actors in Groups</h3><!--SEC END --><p>
 <a id="Sec::Group::Spawn"></a></p><p>The function <code>spawn_in_group</code> can be used to create actors as members of a group.
 The function causes the newly created actors to call <code>self</code><code>-&gt;</code><code>join</code><code>(...)</code> immediately and before <code>spawn_in_group</code> returns. 
 The usage of <code>spawn_in_group</code> is equal to <code>spawn</code>, except for an additional group argument.
@@ -1071,15 +1174,15 @@ The group handle is always the first argument, as shown in the examples below.</
 </span><span style="font-size:small"><span style="color:blue">auto</span></span><span style="font-size:small"> </span><span style="font-size:small">a2</span><span style="font-size:small"> = </span><span style="font-size:small">spawn_in_group</span><span style="font-size:small">(</span><span style="font-size:small">grp</span><span style="font-size:small">, </span><span style="font-size:small">fun2</span><span style="font-size:small">, 1, 2.0</span><span style="font-size:small">f</span><span style="font-size:small">);</span><span style="font-size:small">
 </span><span style="font-size:small"><span style="color:blue">auto</span></span><span style="font-size:small"> </span><span style="font-size:small">a3</span><span style="font-size:small"> = </span><span style="font-size:small">spawn_in_group</span><span style="font-size:small">&lt;</span><span style="font-size:small">my_actor1</span><span style="font-size:small">&gt;(</span><span style="font-size:small">grp</span><span style="font-size:small">);</span><span style="font-size:small">
 </span><span style="font-size:small"><span style="color:blue">auto</span></span><span style="font-size:small"> </span><span style="font-size:small">a4</span><span style="font-size:small"> = </span><span style="font-size:small">spawn_in_group</span><span style="font-size:small">&lt;</span><span style="font-size:small">my_actor2</span><span style="font-size:small">&gt;(</span><span style="font-size:small">grp</span><span style="font-size:small">, </span><span style="font-size:small"><span style="color:#007F00"><span style="font-size:small">"hello my_actor2!"</span></span></span><span style="font-size:small">);</span></div>
-<!--TOC section id=sec57 Platform-Independent Type System-->
-<h2 id="sec57" class="section">12  Platform-Independent Type System</h2><!--SEC END --><p>
+<!--TOC section id=sec63 Platform-Independent Type System-->
+<h2 id="sec63" class="section">12  Platform-Independent Type System</h2><!--SEC END --><p>
 <a id="Sec::TypeSystem"></a></p><p><span style="font-family:monospace">libcppa</span> provides a fully network transparent communication between actors.
 Thus, <span style="font-family:monospace">libcppa</span> needs to serialize and deserialize messages.
 Unfortunately, this is not possible using the RTTI system of C++.
 <span style="font-family:monospace">libcppa</span> uses its own RTTI based on the class <code>uniform_type_info</code>, since it is not possible to extend <code>std</code><code>::</code><code><span style="color:blue">type_info</span></code>.</p><p>Unlike <code>std</code><code>::</code><code><span style="color:blue">type_info</span></code><code>::</code><code>name</code><code>()</code>, <code>uniform_type_info</code><code>::</code><code>name</code><code>()</code> is guaranteed to return the same name on all supported platforms. Furthermore, it allows to create an instance of a type by name.</p><div class="lstlisting"><span style="font-size:small"><span style="color:#7F007F"><span style="font-size:small">// creates a signed, 32 bit integer</span></span></span><span style="font-size:small">
 </span><span style="font-size:small">cppa</span><span style="font-size:small">::</span><span style="font-size:small">object</span><span style="font-size:small"> </span><span style="font-size:small">i</span><span style="font-size:small"> = </span><span style="font-size:small">cppa</span><span style="font-size:small">::</span><span style="font-size:small">uniform_typeid</span><span style="font-size:small">&lt;</span><span style="font-size:small"><span style="color:blue">int</span></span><span style="font-size:small">&gt;()-&gt;</span><span style="font-size:small">create</span><span style="font-size:small">();</span></div><p>However, you should rarely if ever need to use <code>object</code> or <code>uniform_type_info</code>.</p>
-<!--TOC subsection id=sec58 User-Defined Data Types in Messages-->
-<h3 id="sec58" class="subsection">12.1  User-Defined Data Types in Messages</h3><!--SEC END --><p>
+<!--TOC subsection id=sec64 User-Defined Data Types in Messages-->
+<h3 id="sec64" class="subsection">12.1  User-Defined Data Types in Messages</h3><!--SEC END --><p>
 <a id="Sec::TypeSystem::UserDefined"></a></p><p>All user-defined types must be explicitly “announced” so that <span style="font-family:monospace">libcppa</span> can (de)serialize them correctly, as shown in the example below.</p><div class="lstlisting"><span style="font-size:small"><span style="color:blue">#include</span></span><span style="font-size:small"> </span><span style="font-size:small"><span style="color:#007F00"><span style="font-size:small">"cppa/cppa.hpp"</span></span></span><span style="font-size:small">
 </span><span style="font-size:small"><span style="color:blue">using</span></span><span style="font-size:small"> </span><span style="font-size:small"><span style="color:blue">namespace</span></span><span style="font-size:small"> </span><span style="font-size:small">cppa</span><span style="font-size:small">;</span><span style="font-size:small">
 </span><span style="font-size:small">
@@ -1095,35 +1198,35 @@ See the announce examples 1 – 4 of the standard distribution for more details.
 You have to implement serialize/deserialize by yourself if your class does implement an unsupported data structure.
 See <code>announce_example_5</code><code>.</code><code>cpp</code> in the examples folder.
 </p>
-<!--TOC section id=sec59 Common Pitfalls-->
-<h2 id="sec59" class="section">13  Common Pitfalls</h2><!--SEC END --><p>
+<!--TOC section id=sec65 Common Pitfalls-->
+<h2 id="sec65" class="section">13  Common Pitfalls</h2><!--SEC END --><p>
 <a id="Sec::Pitfalls"></a></p>
-<!--TOC subsection id=sec60 Event-Based API-->
-<h3 id="sec60" class="subsection">13.1  Event-Based API</h3><!--SEC END --><ul class="itemize"><li class="li-itemize">
+<!--TOC subsection id=sec66 Event-Based API-->
+<h3 id="sec66" class="subsection">13.1  Event-Based API</h3><!--SEC END --><ul class="itemize"><li class="li-itemize">
 The functions <code>become</code> and <code>handle_response</code> do not block, i.e., always return immediately.
 Thus, you should <span style="font-style:italic">always</span> capture by value in event-based actors, because all references on the stack will cause undefined behavior if a lambda is executed.
 </li></ul>
-<!--TOC subsection id=sec61 Mixing Event-Based and Blocking API-->
-<h3 id="sec61" class="subsection">13.2  Mixing Event-Based and Blocking API</h3><!--SEC END --><ul class="itemize"><li class="li-itemize">
+<!--TOC subsection id=sec67 Mixing Event-Based and Blocking API-->
+<h3 id="sec67" class="subsection">13.2  Mixing Event-Based and Blocking API</h3><!--SEC END --><ul class="itemize"><li class="li-itemize">
 Blocking <span style="font-family:monospace">libcppa</span> function such as <code>receive</code> will <span style="font-weight:bold">throw an exception</span> if accessed from an event-based actor.
 To catch as many errors as possible at compile-time, <span style="font-family:monospace">libcppa</span> will produce an error if <code>receive</code> is called and the <code><span style="color:blue">this</span></code> pointer is set and points to an event-based actor.</li><li class="li-itemize">Context-switching and thread-mapped actors <span style="font-style:italic">can</span> use the <code>become</code> API, <span style="font-weight:bold">but</span> they should use it either exclusively or not at all.
 Whenever a non-event-based actor calls <code>become</code><code>()</code> for the first time, it will create a behavior stack and execute it until the behavior stack is empty.
 Thus, the <span style="font-style:italic">initial</span> <code>become</code> <span style="font-style:italic">blocks</span> until the behavior stack is empty, whereas all subsequent calls to <code>become</code> will return immediately.
 Related functions, e.g., <code>sync_send</code><code>(...).</code><code>then</code><code>(...)</code>, behave the same, as they manipulate the behavior as well.
 </li></ul>
-<!--TOC subsection id=sec62 Synchronous Messages-->
-<h3 id="sec62" class="subsection">13.3  Synchronous Messages</h3><!--SEC END --><ul class="itemize"><li class="li-itemize"><code>send</code><code>(</code><code>self</code><code>-&gt;</code><code>last_sender</code><code>(), ...)</code> is <span style="font-weight:bold">not</span> equal to <code>reply</code><code>(...)</code>.
+<!--TOC subsection id=sec68 Synchronous Messages-->
+<h3 id="sec68" class="subsection">13.3  Synchronous Messages</h3><!--SEC END --><ul class="itemize"><li class="li-itemize"><code>send</code><code>(</code><code>self</code><code>-&gt;</code><code>last_sender</code><code>(), ...)</code> is <span style="font-weight:bold">not</span> equal to <code>reply</code><code>(...)</code>.
 The two functions <code>receive_response</code> and <code>handle_response</code> will only recognize messages send via either <code>reply</code> or <code>reply_tuple</code>.</li><li class="li-itemize">A future returned by <code>sync_send</code> represents <em>exactly one</em> response message.
 Therefore, it is not possible to receive more than one response message.
 Calling <code>reply</code> more than once will result in lost messages and calling <code>handle_response</code> or <code>receive_response</code> more than once on a future will throw an exception.</li><li class="li-itemize">The future returned by <code>sync_send</code> is bound to the calling actor.
 It is not possible to transfer such a future to another actor.
 Calling <code>receive_response</code> or <code>handle_response</code> for a future bound to another actor is undefined behavior.</li></ul>
-<!--TOC subsection id=sec63 Sending Messages-->
-<h3 id="sec63" class="subsection">13.4  Sending Messages</h3><!--SEC END --><ul class="itemize"><li class="li-itemize"><code>send</code><code>(</code><code>whom</code><code>, ...)</code> is syntactic sugar for <code>whom</code><code> &lt;&lt; </code><code>make_any_tuple</code><code>(...)</code>.
+<!--TOC subsection id=sec69 Sending Messages-->
+<h3 id="sec69" class="subsection">13.4  Sending Messages</h3><!--SEC END --><ul class="itemize"><li class="li-itemize"><code>send</code><code>(</code><code>whom</code><code>, ...)</code> is syntactic sugar for <code>whom</code><code> &lt;&lt; </code><code>make_any_tuple</code><code>(...)</code>.
 Hence, a message sent via <code>send</code><code>(</code><code>whom</code><code>, </code><code>self</code><code>-&gt;</code><code>last_dequeued</code><code>())</code> will not yield the expected result, since it wraps <code>self</code><code>-&gt;</code><code>last_dequeued</code><code>()</code> into another <code>any_tuple</code> instance.
 The correct way of forwarding messages is <code>self</code><code>-&gt;</code><code>forward_to</code><code>(</code><code>whom</code><code>)</code>.</li></ul>
-<!--TOC subsection id=sec64 Sharing-->
-<h3 id="sec64" class="subsection">13.5  Sharing</h3><!--SEC END --><ul class="itemize"><li class="li-itemize">
+<!--TOC subsection id=sec70 Sharing-->
+<h3 id="sec70" class="subsection">13.5  Sharing</h3><!--SEC END --><ul class="itemize"><li class="li-itemize">
 It is strongly recommended to <span style="font-weight:bold">not</span> share states between actors.
 In particular, no actor shall ever access member variables or member functions of another actor.
 Accessing shared memory segments concurrently can cause undefined behavior that is incredibly hard to find and debug.
@@ -1132,15 +1235,15 @@ Nevertheless, the recommended way of sharing informations is message passing.
 Sending data to multiple actors does <span style="font-style:italic">not</span> result in copying the data several times.
 Read Section <a href="#Sec%3A%3ATuples">2</a> to learn more about <span style="font-family:monospace">libcppa</span>’s copy-on-write optimization for tuples.
 </li></ul>
-<!--TOC subsection id=sec65 Constructors of Class-based Actors-->
-<h3 id="sec65" class="subsection">13.6  Constructors of Class-based Actors</h3><!--SEC END --><ul class="itemize"><li class="li-itemize">
+<!--TOC subsection id=sec71 Constructors of Class-based Actors-->
+<h3 id="sec71" class="subsection">13.6  Constructors of Class-based Actors</h3><!--SEC END --><ul class="itemize"><li class="li-itemize">
 During constructor invocation, <code>self</code> does <span style="font-weight:bold">not</span> point to <code><span style="color:blue">this</span></code>. It points to the invoking actor instead.
 </li><li class="li-itemize">You should <span style="font-weight:bold">not</span> send or receive messages in a constructor. 
 </li></ul>
-<!--TOC section id=sec66 Appendix-->
-<h2 id="sec66" class="section">14  Appendix</h2><!--SEC END -->
-<!--TOC subsection id=sec67 Class <span style="font-family:monospace">option</span>-->
-<h3 id="sec67" class="subsection">14.1  Class <span style="font-family:monospace">option</span></h3><!--SEC END --><p>
+<!--TOC section id=sec72 Appendix-->
+<h2 id="sec72" class="section">14  Appendix</h2><!--SEC END -->
+<!--TOC subsection id=sec73 Class <span style="font-family:monospace">option</span>-->
+<h3 id="sec73" class="subsection">14.1  Class <span style="font-family:monospace">option</span></h3><!--SEC END --><p>
 <a id="Appendix::Option"></a></p><p>Defined in header <code><span style="color:#007F00"><code>"cppa/option.hpp"</code></span></code>.</p><div class="lstlisting"><span style="font-size:small"><span style="color:blue">template</span></span><span style="font-size:small">&lt;</span><span style="font-size:small"><span style="color:blue">typename</span></span><span style="font-size:small"> </span><span style="font-size:small">T</span><span style="font-size:small">&gt;</span><span style="font-size:small">
 </span><span style="font-size:small"><span style="color:blue">class</span></span><span style="font-size:small"> </span><span style="font-size:small">option</span><span style="font-size:small">;</span></div><p>Represents an optional value.</p><table style="border-spacing:6px;border-collapse:separate;width:100%" class="cellpading0"><tr><td style="text-align:left;white-space:nowrap"  colspan=2><span style="font-size:large"><span style="font-weight:bold">Member types</span></span><span style="font-size:small"> </span></td></tr>
 <tr><td class="hbar" colspan=2><span style="font-size:small"></span></td></tr>
@@ -1182,8 +1285,8 @@ During constructor invocation, <code>self</code> does <span style="font-weight:b
 </span><code><span style="font-size:small">T</span></code><code><span style="font-size:small">&amp; </span></code><code><span style="font-size:small"><span style="color:blue">operator</span></span></code><code><span style="font-size:small">*()</span></code></td><td style="vertical-align:middle;text-align:left;" ><span style="font-size:small">Access stored value </span></td></tr>
 <tr><td class="hbar" colspan=2><span style="font-size:small"></span></td></tr>
 </table>
-<!--TOC subsection id=sec68 Using <span style="font-family:monospace">aout</span> – A Thread-Safe Wrapper for <span style="font-family:monospace">cout</span>-->
-<h3 id="sec68" class="subsection">14.2  Using <span style="font-family:monospace">aout</span> – A Thread-Safe Wrapper for <span style="font-family:monospace">cout</span></h3><!--SEC END --><p>When using <code>cout</code> from multiple actors, output often appears interleaved.
+<!--TOC subsection id=sec74 Using <span style="font-family:monospace">aout</span> – A Thread-Safe Wrapper for <span style="font-family:monospace">cout</span>-->
+<h3 id="sec74" class="subsection">14.2  Using <span style="font-family:monospace">aout</span> – A Thread-Safe Wrapper for <span style="font-family:monospace">cout</span></h3><!--SEC END --><p>When using <code>cout</code> from multiple actors, output often appears interleaved.
 Moreover, using <code>cout</code> from multiple actors – and thus multiple threads – in parallel should be avoided, since the standard does not guarantee a thread-safe implementation.</p><p>By replacing <span style="font-family:monospace">std::cout</span> with <span style="font-family:monospace">cppa::aout</span>, actors can achieve a thread-safe text output.
 The header <code>cppa</code><code>/</code><code>cppa</code><code>.</code><code>hpp</code> also defines overloads for <span style="font-family:monospace">std::endl</span> and <span style="font-family:monospace">std::flush</span> for <code>aout</code>, but does not support the full range of ostream operations (yet).
 Each write operation to <span style="font-family:monospace">aout</span> sends a message to a ‘hidden’ actor (keep in mind, sending messages from actor constructors is not safe).

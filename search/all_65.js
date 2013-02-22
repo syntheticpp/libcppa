@@ -4,7 +4,7 @@ var searchData=
   ['either',['either',['../classcppa_1_1either.html',1,'cppa']]],
   ['either',['either',['../classcppa_1_1either.html#a02cba8e6af7624086b56129edbad0fde',1,'cppa::either::either()'],['../classcppa_1_1either.html#a7ffbdb6390a2b85b4bf23edd4f7bd1ed',1,'cppa::either::either(const left_type &amp;value)'],['../classcppa_1_1either.html#a82cac5f1777488c04766408260d1b8a2',1,'cppa::either::either(Left &amp;&amp;value)'],['../classcppa_1_1either.html#a05deae393c89aa5a67fda13f03e29cb0',1,'cppa::either::either(const right_type &amp;value)'],['../classcppa_1_1either.html#a9ad9272b3dda275c1e06e5d690f1927f',1,'cppa::either::either(Right &amp;&amp;value)']]],
   ['element_5fat_3c_20n_2c_20c_3c_20ts_2e_2e_2e_3e_20_3e',['element_at&lt; N, C&lt; Ts...&gt; &gt;',['../structcppa_1_1util_1_1element__at_3_01_n_00_01_c_3_01_ts_8_8_8_4_01_4.html',1,'cppa::util']]],
-  ['empty',['empty',['../classcppa_1_1any__tuple.html#a9b090f6cb7419a29eb5a90b940d838ba',1,'cppa::any_tuple::empty()'],['../classcppa_1_1intrusive_1_1single__reader__queue.html#a45ae40e62b07d1ff60add1dd463c0105',1,'cppa::intrusive::single_reader_queue::empty()']]],
+  ['empty',['empty',['../classcppa_1_1any__tuple.html#a9b090f6cb7419a29eb5a90b940d838ba',1,'cppa::any_tuple::empty()'],['../classcppa_1_1option.html#a185f34221d0eddcaad10587ea43cd424',1,'cppa::option::empty()'],['../classcppa_1_1intrusive_1_1single__reader__queue.html#a919081cadd494e713c7d0c4ad82cdd62',1,'cppa::intrusive::single_reader_queue::empty()']]],
   ['empty_5fint_5flist',['empty_int_list',['../group___meta_programming.html#gaa13e09cbd714a193d428fafbdc029132',1,'cppa::util']]],
   ['empty_5ftype_5flist',['empty_type_list',['../group___meta_programming.html#ga60bfc822097dce6dd6d49b0ac9f73f01',1,'cppa::util']]],
   ['enable_5fweak_5fptr_5fmixin',['enable_weak_ptr_mixin',['../classcppa_1_1enable__weak__ptr__mixin.html',1,'cppa']]],
@@ -17,5 +17,6 @@ var searchData=
   ['establish_5fbacklink',['establish_backlink',['../classcppa_1_1actor.html#ad20eddd3d0b6b5f9bfe5a96d2e231103',1,'cppa::actor']]],
   ['event_5fbased',['event_based',['../namespacecppa_1_1factory.html#aa731ede30ab7a935bf5581fc2c2551e9',1,'cppa::factory::event_based(InitFun fun)'],['../namespacecppa_1_1factory.html#a51b99b53428d5505fc1411f3b6c52ae4',1,'cppa::factory::event_based(InitFun fun0, OnExitFun fun1)']]],
   ['event_5fbased_5factor',['event_based_actor',['../classcppa_1_1event__based__actor.html',1,'cppa']]],
+  ['exec_5fbehavior_5fstack',['exec_behavior_stack',['../classcppa_1_1local__actor.html#af7951ecb230b7c81c1cb3eea4d5e3666',1,'cppa::local_actor']]],
   ['expired',['expired',['../classcppa_1_1weak__intrusive__ptr.html#adb0b0f05039b3f77f4315b08881ec527',1,'cppa::weak_intrusive_ptr::expired()'],['../classcppa_1_1weak__ptr__anchor.html#ab00cc08ff818324f5cb7582e450bec0b',1,'cppa::weak_ptr_anchor::expired()']]]
 ];
