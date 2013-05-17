@@ -92,7 +92,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
-<a href="#friends">Friends</a> &#124;
 <a href="classcppa_1_1message__id__t-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">cppa::message_id_t Class Reference</div>  </div>
@@ -100,6 +99,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 
 <p><code>#include &lt;message_id.hpp&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for cppa::message_id_t:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classcppa_1_1message__id__t.png" usemap="#cppa::message_id_t_map" alt=""/>
+  <map id="cppa::message_id_t_map" name="cppa::message_id_t_map">
+<area href="classcppa_1_1util_1_1comparable.html" alt="cppa::util::comparable&lt; message_id_t &gt;" shape="rect" coords="0,0,234,24"/>
+</map>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -142,9 +150,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>mark_as_answered</b> 
 <tr class="memitem:a22163f6cb6b31c9de2b5322ce4dd89e9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a22163f6cb6b31c9de2b5322ce4dd89e9"></a>
 std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><b>integer_value</b> () const </td></tr>
 <tr class="separator:a22163f6cb6b31c9de2b5322ce4dd89e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4995e63dc3359dba881e99a03043701f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4995e63dc3359dba881e99a03043701f"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>message_id_t</b> (invalid_message_id_flag)</td></tr>
-<tr class="separator:a4995e63dc3359dba881e99a03043701f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01e535c4a52773103c8ee50f38b3d1b4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a01e535c4a52773103c8ee50f38b3d1b4"></a>
+constexpr&#160;</td><td class="memItemRight" valign="bottom"><b>message_id_t</b> (invalid_message_id)</td></tr>
+<tr class="separator:a01e535c4a52773103c8ee50f38b3d1b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cd4feca3d7fcedb67554dd9e3f0126d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5cd4feca3d7fcedb67554dd9e3f0126d"></a>
+long&#160;</td><td class="memItemRight" valign="bottom"><b>compare</b> (const <a class="el" href="classcppa_1_1message__id__t.html">message_id_t</a> &amp;other) const </td></tr>
+<tr class="separator:a5cd4feca3d7fcedb67554dd9e3f0126d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -154,16 +165,9 @@ static <a class="el" href="classcppa_1_1message__id__t.html">message_id_t</a>&#1
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:a331e905cbb949e2c249ea1affa29acdf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a331e905cbb949e2c249ea1affa29acdf"></a>
-static constexpr <br class="typebreak"/>
-invalid_message_id_flag&#160;</td><td class="memItemRight" valign="bottom"><b>invalid</b> = invalid_message_id_flag()</td></tr>
-<tr class="separator:a331e905cbb949e2c249ea1affa29acdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
-Friends</h2></td></tr>
-<tr class="memitem:acb013e62bd06bad43ec136ac5e0c2438"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acb013e62bd06bad43ec136ac5e0c2438"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="classcppa_1_1message__id__t.html">message_id_t</a> &amp;lhs, const <a class="el" href="classcppa_1_1message__id__t.html">message_id_t</a> &amp;rhs)</td></tr>
-<tr class="separator:acb013e62bd06bad43ec136ac5e0c2438"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a864a8121b7ebeb1ae418853c644ab8cd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a864a8121b7ebeb1ae418853c644ab8cd"></a>
+static constexpr invalid_message_id&#160;</td><td class="memItemRight" valign="bottom"><b>invalid</b> = invalid_message_id{}</td></tr>
+<tr class="separator:a864a8121b7ebeb1ae418853c644ab8cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section note"><dt>Note</dt><dd>Asynchronous messages always have an invalid message id. </dd></dl>
@@ -173,7 +177,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Feb 22 2013 12:12:59 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Mar 6 2013 13:08:00 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3
 </small></address>

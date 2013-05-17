@@ -1,16 +1,17 @@
 var searchData=
 [
-  ['make_5fany_5ftuple',['make_any_tuple',['../namespacecppa.html#a7d0ed8b8c047b52ff833c8315b1bf963',1,'cppa']]],
-  ['make_5fcounted',['make_counted',['../namespacecppa.html#ad9a68bcc41e0df87663196f06f274246',1,'cppa']]],
-  ['make_5fcow_5ftuple',['make_cow_tuple',['../group___implicit_conversion.html#gac673df17e67038b46546605de97fde8e',1,'cow_tuple']]],
+  ['make_5fany_5ftuple',['make_any_tuple',['../namespacecppa.html#a28cd5b37281764af3f24ba8ca297c2f3',1,'cppa']]],
+  ['make_5fcounted',['make_counted',['../namespacecppa.html#afae235ed79838ec2a5697233ca045c34',1,'cppa']]],
+  ['make_5fcow_5ftuple',['make_cow_tuple',['../group___implicit_conversion.html#gaff872b47edb1a234bd573d5ef04f6d35',1,'cppa::cow_tuple']]],
   ['make_5fresponse_5fhandle',['make_response_handle',['../classcppa_1_1local__actor.html#a54bfe7413750a2709b44e047dc8ede9b',1,'cppa::local_actor']]],
   ['make_5fscope_5fguard',['make_scope_guard',['../classcppa_1_1util_1_1scope__guard.html#a13bd8eab149e576b3bbd274595f12481',1,'cppa::util::scope_guard']]],
   ['match',['match',['../namespacecppa.html#ad65859efc090932630d14b226b9c9624',1,'cppa::match(any_tuple what)'],['../namespacecppa.html#adaa18a8117e9022caea2b0606c11ebbc',1,'cppa::match(T &amp;&amp;what)']]],
   ['match_5feach',['match_each',['../namespacecppa.html#abe0e5c70506e72b5f24d9fbb6dcc3c81',1,'cppa::match_each(InputIterator first, InputIterator last) -&gt; detail::match_each_helper&lt; InputIterator &gt;'],['../namespacecppa.html#aae71367202afc39f91c6a3bb0337ba37',1,'cppa::match_each(InputIterator first, InputIterator last, Projection proj) -&gt; detail::match_each_helper&lt; InputIterator, Projection &gt;']]],
   ['match_5fsplit',['match_split',['../namespacecppa.html#a512c996a6bbaef4f7127218b5513226f',1,'cppa']]],
   ['matches',['matches',['../classcppa_1_1attachable.html#a0fd31569245dd6c213e24bc5164d1e4d',1,'cppa::attachable']]],
+  ['message_5fheader',['message_header',['../classcppa_1_1message__header.html#aa3ceb478115d74da8a97654fb53be567',1,'cppa::message_header::message_header()=default'],['../classcppa_1_1message__header.html#a739d4a4129b6d61304c9780cb02d0608',1,'cppa::message_header::message_header(intrusive_ptr&lt; T &gt; dest)'],['../classcppa_1_1message__header.html#a9f849acf2e72c523e80052787cf1a96a',1,'cppa::message_header::message_header(const self_type &amp;)'],['../classcppa_1_1message__header.html#a6a7cf4b8b176ef5b75b62955b3c0e7f4',1,'cppa::message_header::message_header(channel_ptr dest, message_id mid, message_priority prio=message_priority::normal)'],['../classcppa_1_1message__header.html#aaf4a0f3a00cc020efdcf18b3e9b44e96',1,'cppa::message_header::message_header(channel_ptr dest, message_priority prio)'],['../classcppa_1_1message__header.html#a986b30851335f3f04e033bb204d1e8a3',1,'cppa::message_header::message_header(actor_ptr source, channel_ptr dest, message_id mid=message_id::invalid, message_priority prio=message_priority::normal)'],['../classcppa_1_1message__header.html#a969d8ee5c214f64d7525ae80251000d7',1,'cppa::message_header::message_header(actor_ptr source, channel_ptr dest, message_priority prio)']]],
   ['module_5fname',['module_name',['../classcppa_1_1group.html#a2a366f8a319cb300c6ec1874b2eb296a',1,'cppa::group']]],
-  ['monitor',['monitor',['../classcppa_1_1local__actor.html#a5561fb7c7cd949276177f72654e5855a',1,'cppa::local_actor']]],
+  ['monitor',['monitor',['../classcppa_1_1local__actor.html#ad5784c584fea3a87cb26d998a830d47f',1,'cppa::local_actor']]],
   ['moving_5ftuple_5fcast',['moving_tuple_cast',['../classcppa_1_1any__tuple.html#acc780e1aede633490be86297bb7d5b2f',1,'cppa::any_tuple::moving_tuple_cast(any_tuple &amp;tup)'],['../classcppa_1_1any__tuple.html#ac34bacbf817cbdb733699a66768321c1',1,'cppa::any_tuple::moving_tuple_cast(any_tuple &amp;tup, const util::type_list&lt; T...&gt; &amp;)']]],
   ['mutable_5fat',['mutable_at',['../classcppa_1_1any__tuple.html#a9edcdb961cf07068d79d19c53f73904d',1,'cppa::any_tuple::mutable_at()'],['../classcppa_1_1cow__tuple_3_01_head_00_01_tail_8_8_8_4.html#a035bbf5789fc835746e562130ab51770',1,'cppa::cow_tuple&lt; Head, Tail...&gt;::mutable_at()']]],
   ['mutable_5fvalue',['mutable_value',['../classcppa_1_1object.html#af38be5d0d948be00eac3b22b88ac835a',1,'cppa::object']]]

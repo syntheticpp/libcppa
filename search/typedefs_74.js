@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['type',['type',['../classcppa_1_1option.html#adc9b1175fcc65da9517606e9526d6d01',1,'cppa::option']]]
+  ['type',['type',['../classcppa_1_1option.html#a4112816c1b0ff95b0ead48f501183104',1,'cppa::option']]]
 ];
