@@ -50,13 +50,13 @@ td p{margin:0px;}
 body{width:600px;margin:auto;padding-top:20px;text-align: justify;}
 </style>
 <title>User Manual 
-libcppa version 0.7
+libcppa version 0.7.1
 </title>
 </head>
 <body >
 <!--HEVEA command line is: hevea -I .. manual.tex -->
 <!--CUT STYLE article--><!--CUT DEF section 1 --><table class="title"><tr><td><h1 class="titlemain">User Manual<br>
-<span style="font-family:monospace">libcppa</span> version 0.7</h1><h3 class="titlerest">Dominik Charousset</h3></td></tr>
+<span style="font-family:monospace">libcppa</span> version 0.7.1</h1><h3 class="titlerest">Dominik Charousset</h3></td></tr>
 </table><!--TOC section id=sec1 Contents-->
 <h2 id="sec1" class="section">Contents</h2><!--SEC END --><ul class="toc"><li class="li-toc">
 <a href="#sec2">1  First Steps</a>
@@ -610,7 +610,7 @@ However, actor <span style="font-family:monospace">A</span> will see actor <span
 The given behavior is then executed until it is replaced by another call to <code>become</code> or the actor finishes execution.</p>
 <!--TOC subsection id=sec28 Class-based actors-->
 <h3 id="sec28" class="subsection">6.1  Class-based actors</h3><!--SEC END --><p>A class-based actor is a subtype of <code>event_based_actor</code> and must implement the pure virtual member function <code>init</code>.
-An implementation of <code>init</code> shall set an initial behavior by using <code>become</code>.</p><div class="lstlisting"><span style="font-size:small"><span style="color:blue">class</span></span><span style="font-size:small"> </span><span style="font-size:small">printer</span><span style="font-size:small"> : </span><span style="font-size:small"><span style="color:blue">public</span></span><span style="font-size:small"> </span><span style="font-size:small">event_based_actor</span><span style="font-size:small"> {</span><span style="font-size:small">
+An implementation of <code>init</code> shall set an initial behavior by using <code>become</code>.</p><div class="lstlisting"><span style="font-size:small"><span style="color:blue">struct</span></span><span style="font-size:small"> </span><span style="font-size:small">printer</span><span style="font-size:small"> : </span><span style="font-size:small">event_based_actor</span><span style="font-size:small"> {</span><span style="font-size:small">
 </span><span style="font-size:small">  </span><span style="font-size:small"><span style="color:blue">void</span></span><span style="font-size:small"> </span><span style="font-size:small">init</span><span style="font-size:small">() {</span><span style="font-size:small">
 </span><span style="font-size:small">    </span><span style="font-size:small">become</span><span style="font-size:small"> (</span><span style="font-size:small">
 </span><span style="font-size:small">      </span><span style="font-size:small">others</span><span style="font-size:small">() &gt;&gt; [] {</span><span style="font-size:small">

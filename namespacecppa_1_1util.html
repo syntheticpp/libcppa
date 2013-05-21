@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libcppa
-   &#160;<span id="projectnumber">Version 0.7.0</span>
+   &#160;<span id="projectnumber">Version 0.7.1</span>
    </div>
   </td>
  </tr>
@@ -392,6 +392,13 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a9223ba055d227098afaab7c04b7d7bc7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9223ba055d227098afaab7c04b7d7bc7"></a>
+std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>split</b> (const std::string &amp;str, char delim= ' ', bool keep_empties=true)</td></tr>
+<tr class="separator:a9223ba055d227098afaab7c04b7d7bc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5150929da6f9ee121af92b727f4afcbc"><td class="memTemplParams" colspan="2"><a class="anchor" id="a5150929da6f9ee121af92b727f4afcbc"></a>
+template&lt;typename Iterator &gt; </td></tr>
+<tr class="memitem:a5150929da6f9ee121af92b727f4afcbc"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><b>join</b> (Iterator begin, Iterator end)</td></tr>
+<tr class="separator:a5150929da6f9ee121af92b727f4afcbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a553864cfc1fca40e10d64e891f50cc2b"><td class="memTemplParams" colspan="2"><a class="anchor" id="a553864cfc1fca40e10d64e891f50cc2b"></a>
 template&lt;typename F , class Tuple , long... Is&gt; </td></tr>
 <tr class="memitem:a553864cfc1fca40e10d64e891f50cc2b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>apply_args</b> (F &amp;f, Tuple &amp;tup, <a class="el" href="structcppa_1_1util_1_1int__list.html">util::int_list</a>&lt; Is...&gt;) -&gt; decltype(f(<a class="el" href="namespacecppa.html#a7c26044ba1f8a78aa4d43cd13e2a9abe">get_cv_aware</a>&lt; Is &gt;(tup)...))</td></tr>
@@ -429,6 +436,12 @@ template&lt;typename Period &gt; </td></tr>
 <tr class="memitem:ae3ae2bc6330184f83f4f334e48f50f7e"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="namespacecppa_1_1util.html#ab9e5a7e6b32f7d1cbe52d4eae74cdf34">time_unit</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecppa_1_1util.html#ae3ae2bc6330184f83f4f334e48f50f7e">get_time_unit_from_period</a> ()</td></tr>
 <tr class="memdesc:ae3ae2bc6330184f83f4f334e48f50f7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts an STL time period to a <a class="el" href="namespacecppa_1_1util.html#ab9e5a7e6b32f7d1cbe52d4eae74cdf34">time_unit</a>. <br/></td></tr>
 <tr class="separator:ae3ae2bc6330184f83f4f334e48f50f7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ddcdf88d69b100b9abcf824d96e7ba8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7ddcdf88d69b100b9abcf824d96e7ba8"></a>
+std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>get_mac_addresses</b> ()</td></tr>
+<tr class="separator:a7ddcdf88d69b100b9abcf824d96e7ba8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af24d8973212b688452a0ba40a09238db"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af24d8973212b688452a0ba40a09238db"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>get_root_uuid</b> ()</td></tr>
+<tr class="separator:af24d8973212b688452a0ba40a09238db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad9ba9406700e6d4bc8fadca9ba0c1555"><td class="memTemplParams" colspan="2"><a class="anchor" id="gad9ba9406700e6d4bc8fadca9ba0c1555"></a>
 template&lt;typename T &gt; </td></tr>
 <tr class="memitem:gad9ba9406700e6d4bc8fadca9ba0c1555"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>get_indices</b> (const T &amp;) -&gt; typename <a class="el" href="structcppa_1_1util_1_1il__indices.html">il_indices</a>&lt; T &gt;::type</td></tr>
@@ -483,7 +496,7 @@ template&lt;typename Fun &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 17 2013 08:53:06 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue May 21 2013 20:04:30 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
