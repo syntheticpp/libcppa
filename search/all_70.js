@@ -1,7 +1,7 @@
 var searchData=
 [
+  ['parent',['parent',['../classcppa_1_1io_1_1protocol.html#a3e738d0613c7012f0830d260101423c7',1,'cppa::io::protocol']]],
   ['partial_5ffunction',['partial_function',['../classcppa_1_1partial__function.html',1,'cppa']]],
-  ['peek_5fobject',['peek_object',['../classcppa_1_1binary__deserializer.html#a0a0fccfe3847011675b8a0c216645d8b',1,'cppa::binary_deserializer::peek_object()'],['../classcppa_1_1deserializer.html#a2486ae2333c538cbb964c9925e3219d9',1,'cppa::deserializer::peek_object()']]],
   ['primitive_5ftype',['primitive_type',['../group___type_system.html#ga4405c08180f3db0936dcc6afe84f2899',1,'cppa']]],
   ['primitive_5ftype_5fname',['primitive_type_name',['../group___type_system.html#ga5d1de7bc77d88156d0e12e373ab2c613',1,'cppa']]],
   ['primitive_5fvariant',['primitive_variant',['../classcppa_1_1primitive__variant.html',1,'cppa']]],
@@ -16,8 +16,8 @@ var searchData=
   ['producer_5fconsumer_5flist',['producer_consumer_list',['../classcppa_1_1util_1_1producer__consumer__list.html',1,'cppa::util']]],
   ['program',['program',['../classcppa_1_1opencl_1_1program.html',1,'cppa::opencl']]],
   ['promote',['promote',['../classcppa_1_1weak__intrusive__ptr.html#affcad52aed9b45da89df3eaa7bfb8d1b',1,'cppa::weak_intrusive_ptr']]],
-  ['protocol',['protocol',['../classcppa_1_1network_1_1middleman.html#a99d6e0700d48100c5cbeb4ce117d279a',1,'cppa::network::middleman']]],
-  ['protocol',['protocol',['../classcppa_1_1network_1_1protocol.html',1,'cppa::network']]],
+  ['protocol',['protocol',['../classcppa_1_1io_1_1protocol.html',1,'cppa::io']]],
+  ['pt_5fatom',['pt_atom',['../group___type_system.html#gga4405c08180f3db0936dcc6afe84f2899a8b7d0c7bdeab0ac7b90d756827b95cb4',1,'cppa']]],
   ['pt_5fdispatch',['pt_dispatch',['../namespacecppa_1_1util.html#a38dc2b1191c41a94d3cc2b02471a6782',1,'cppa::util']]],
   ['pt_5fdouble',['pt_double',['../group___type_system.html#gga4405c08180f3db0936dcc6afe84f2899a840b02ba715ef3b798d3f1b6cb1dd1bc',1,'cppa']]],
   ['pt_5ffloat',['pt_float',['../group___type_system.html#gga4405c08180f3db0936dcc6afe84f2899a9c2885b0dd3095de04714bf6d791ed61',1,'cppa']]],
@@ -37,7 +37,7 @@ var searchData=
   ['pt_5fuint8',['pt_uint8',['../group___type_system.html#gga4405c08180f3db0936dcc6afe84f2899a88cb8022596d4673fede279849a67c9e',1,'cppa']]],
   ['ptr',['ptr',['../structcppa_1_1attachable_1_1token.html#ab2c49d1030e066dfd4ef314e7ac51442',1,'cppa::attachable::token']]],
   ['ptype',['ptype',['../classcppa_1_1primitive__variant.html#ac5636545a0b5fc6116cb5a9e88d59ac1',1,'cppa::primitive_variant']]],
-  ['publish',['publish',['../namespacecppa.html#a487e6c08f5f4f7de4775418547f7e93e',1,'cppa::publish(actor_ptr whom, std::uint16_t port, const char *addr=nullptr)'],['../namespacecppa.html#ad9c73df0929df9b069096d3d9f9499bf',1,'cppa::publish(actor_ptr whom, std::unique_ptr&lt; network::acceptor &gt; acceptor)']]],
+  ['publish',['publish',['../namespacecppa.html#a487e6c08f5f4f7de4775418547f7e93e',1,'cppa::publish(actor_ptr whom, std::uint16_t port, const char *addr=nullptr)'],['../namespacecppa.html#aa7de4c76a41489b5391c1b9cd24b2e1b',1,'cppa::publish(actor_ptr whom, std::unique_ptr&lt; io::acceptor &gt; acceptor)']]],
   ['publish_5flocal_5fgroups_5fat',['publish_local_groups_at',['../namespacecppa.html#ae213a56201820111919afe92aa287586',1,'cppa']]],
   ['purge_5frefs',['purge_refs',['../structcppa_1_1util_1_1purge__refs.html',1,'cppa::util']]]
 ];

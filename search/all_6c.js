@@ -1,8 +1,8 @@
 var searchData=
 [
   ['libcppa',['libcppa',['../index.html',1,'']]],
-  ['last_5fdequeued',['last_dequeued',['../classcppa_1_1local__actor.html#a16e9cf7b2ed2658fb355395443c15eb4',1,'cppa::local_actor']]],
-  ['last_5fsender',['last_sender',['../classcppa_1_1local__actor.html#a2b230048f90393d67ac72dd703244247',1,'cppa::local_actor']]],
+  ['last_5fdequeued',['last_dequeued',['../classcppa_1_1local__actor.html#af043515202c47e7ff10e2bdee0240f7f',1,'cppa::local_actor']]],
+  ['last_5fsender',['last_sender',['../classcppa_1_1local__actor.html#a5a7d021fd06d2c5acafda8f2604f125c',1,'cppa::local_actor']]],
   ['leave',['leave',['../classcppa_1_1local__actor.html#af31c61e4bd1af56d54b8f1e3af4720c1',1,'cppa::local_actor']]],
   ['left_5for_5fright',['left_or_right',['../structcppa_1_1util_1_1left__or__right.html',1,'cppa::util']]],
   ['limited_5fvector',['limited_vector',['../classcppa_1_1util_1_1limited__vector.html',1,'cppa::util']]],
