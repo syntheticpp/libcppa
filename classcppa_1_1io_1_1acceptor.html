@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libcppa
-   &#160;<span id="projectnumber">Version 0.8</span>
+   &#160;<span id="projectnumber">Version 0.9.0</span>
    </div>
   </td>
  </tr>
@@ -100,14 +100,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
  <a href="classcppa_1_1io_1_1acceptor.html#details">More...</a></p>
 
 <p><code>#include &lt;acceptor.hpp&gt;</code></p>
-
-<p>Inherited by cppa::io::ipv4_acceptor.</p>
+<div class="dynheader">
+Inheritance diagram for cppa::io::acceptor:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classcppa_1_1io_1_1acceptor.png" usemap="#cppa::io::acceptor_map" alt=""/>
+  <map id="cppa::io::acceptor_map" name="cppa::io::acceptor_map">
+<area href="classcppa_1_1io_1_1tcp__acceptor.html" title="An implementation of the acceptor interface for TCP sockets. " alt="cppa::io::tcp_acceptor" shape="rect" coords="0,56,136,80"/>
+</map>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab391d1312463bf198056fe2bb73bbcf8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab391d1312463bf198056fe2bb73bbcf8"></a>
 virtual native_socket_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1io_1_1acceptor.html#ab391d1312463bf198056fe2bb73bbcf8">file_handle</a> () const =0</td></tr>
-<tr class="memdesc:ab391d1312463bf198056fe2bb73bbcf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the internal file descriptor. This descriptor is needed for socket multiplexing using select(). <br/></td></tr>
+<tr class="memdesc:ab391d1312463bf198056fe2bb73bbcf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the internal file descriptor. This descriptor is needed for socket multiplexing using select()/poll()/epoll(). <br/></td></tr>
 <tr class="separator:ab391d1312463bf198056fe2bb73bbcf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79de24590ac0257632ac090842594e14"><td class="memItemLeft" align="right" valign="top">virtual stream_ptr_pair&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1io_1_1acceptor.html#a79de24590ac0257632ac090842594e14">accept_connection</a> ()=0</td></tr>
 <tr class="memdesc:a79de24590ac0257632ac090842594e14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accepts a new connection and returns an input/output stream pair.  <a href="#a79de24590ac0257632ac090842594e14">More...</a><br/></td></tr>
@@ -144,6 +151,8 @@ virtual <a class="el" href="classcppa_1_1optional.html">optional</a>&lt; stream_
 <p>Accepts a new connection and returns an input/output stream pair. </p>
 <dl class="section note"><dt>Note</dt><dd>This member function blocks until a new connection was established. </dd></dl>
 
+<p>Implemented in <a class="el" href="classcppa_1_1io_1_1tcp__acceptor.html#afd26fd0bb93bae61b9040535517672fd">cppa::io::tcp_acceptor</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
@@ -152,7 +161,7 @@ virtual <a class="el" href="classcppa_1_1optional.html">optional</a>&lt; stream_
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 14 2013 20:08:20 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun May 4 2014 23:48:01 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

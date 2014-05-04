@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libcppa
-   &#160;<span id="projectnumber">Version 0.8</span>
+   &#160;<span id="projectnumber">Version 0.9.0</span>
    </div>
   </td>
  </tr>
@@ -127,12 +127,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="comment">// receives `remaining` messages</span></div>
-<div class="line"><span class="keywordtype">void</span> testee(<span class="keywordtype">size_t</span> remaining) {</div>
+<div class="line"><span class="keywordtype">void</span> testee(<a name="_a0"></a><a class="code" href="classcppa_1_1event__based__actor.html">event_based_actor</a>* <span class="keyword">self</span>, <span class="keywordtype">size_t</span> remaining) {</div>
 <div class="line">    <span class="keyword">auto</span> set_next_behavior = [=] {</div>
-<div class="line">        <span class="keywordflow">if</span> (remaining &gt; 1) testee(remaining - 1);</div>
+<div class="line">        <span class="keywordflow">if</span> (remaining &gt; 1) testee(<span class="keyword">self</span>, remaining - 1);</div>
 <div class="line">        <span class="keywordflow">else</span> <span class="keyword">self</span>-&gt;quit();</div>
 <div class="line">    };</div>
-<div class="line">    <a class="code" href="namespacecppa.html#a32d3c95b12475508947918017ead6fac">become</a> (</div>
+<div class="line">    <span class="keyword">self</span>-&gt;become (</div>
 <div class="line">        <span class="comment">// note: we sent a foo_pair2, but match on foo_pair</span></div>
 <div class="line">        <span class="comment">// that&#39;s safe because both are aliases for std::pair&lt;int, int&gt;</span></div>
 <div class="line">        on&lt;foo_pair&gt;() &gt;&gt; [=](<span class="keyword">const</span> foo_pair&amp; val) {</div>
@@ -173,11 +173,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    vd.b.resize(1);</div>
 <div class="line">    vd.b.back().push_back(42);</div>
 <div class="line"></div>
-<div class="line">    util::buffer buf;</div>
-<div class="line">    <a name="_a0"></a><a class="code" href="classcppa_1_1binary__serializer.html">binary_serializer</a> bs(&amp;buf);</div>
+<div class="line">    <a name="_a1"></a><a class="code" href="classcppa_1_1util_1_1buffer.html">util::buffer</a> buf;</div>
+<div class="line">    <a name="_a2"></a><a class="code" href="classcppa_1_1binary__serializer.html">binary_serializer</a> bs(&amp;buf);</div>
 <div class="line">    bs &lt;&lt; vd;</div>
 <div class="line"></div>
-<div class="line">    <a name="_a1"></a><a class="code" href="classcppa_1_1binary__deserializer.html">binary_deserializer</a> bd(buf.data(), buf.size());</div>
+<div class="line">    <a name="_a3"></a><a class="code" href="classcppa_1_1binary__deserializer.html">binary_deserializer</a> bd(buf.<a name="a4"></a><a class="code" href="classcppa_1_1util_1_1buffer.html#a14ae3f9bf1eb43bef416abcf8e063919">data</a>(), buf.<a name="a5"></a><a class="code" href="classcppa_1_1util_1_1buffer.html#a4bf7f922d60404bd4469922a2b4e8dc6">size</a>());</div>
 <div class="line">    foo2 vd2;</div>
 <div class="line">    uniform_typeid&lt;foo2&gt;()-&gt;deserialize(&amp;vd2, &amp;bd);</div>
 <div class="line"></div>
@@ -197,13 +197,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    assert(uniform_typeid&lt;foo_pair&gt;() == uniform_typeid&lt;foo_pair2&gt;());</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// spawn a testee that receives two messages</span></div>
-<div class="line">    <span class="keyword">auto</span> t = <a name="a2"></a><a class="code" href="group___actor_creation.html#ga64b99980b69ba8e8cdd218e402f48fd6">spawn</a>(testee, 2);</div>
-<div class="line">    <span class="comment">// send t a foo</span></div>
-<div class="line">    <a class="code" href="namespacecppa.html#a8ce9b9bc8666bd339ff6a95065b91d65">send</a>(t, foo{std::vector&lt;int&gt;{1, 2, 3, 4}, 5});</div>
-<div class="line">    <span class="comment">// send t a foo_pair2</span></div>
-<div class="line">    <a class="code" href="namespacecppa.html#a8ce9b9bc8666bd339ff6a95065b91d65">send</a>(t, foo_pair2{3, 4});</div>
-<div class="line"></div>
-<div class="line">    <a class="code" href="namespacecppa.html#a185090573ffb146384ccdfa94172c23e">await_all_others_done</a>();</div>
+<div class="line">    <span class="keyword">auto</span> t = <a name="a6"></a><a class="code" href="group___actor_creation.html#gaba7260e3d070dfd846946305e0fbc31e">spawn</a>(testee, 2);</div>
+<div class="line">    {</div>
+<div class="line">        <a name="_a7"></a><a class="code" href="classcppa_1_1scoped__actor.html">scoped_actor</a> <span class="keyword">self</span>;</div>
+<div class="line">        <span class="comment">// send t a foo</span></div>
+<div class="line">        <span class="keyword">self</span>-&gt;<a name="a8"></a><a class="code" href="classcppa_1_1local__actor.html#a95c7969866a9860d0b996e76b73e7d4f">send</a>(t, foo{std::vector&lt;int&gt;{1, 2, 3, 4}, 5});</div>
+<div class="line">        <span class="comment">// send t a foo_pair2</span></div>
+<div class="line">        <span class="keyword">self</span>-&gt;send(t, foo_pair2{3, 4});</div>
+<div class="line">    }</div>
+<div class="line">    <a class="code" href="namespacecppa.html#a1155a80c876121987be19d4f38c4dacd">await_all_actors_done</a>();</div>
 <div class="line">    <a class="code" href="namespacecppa.html#a8d5daac288a10cc34286f505ea637571">shutdown</a>();</div>
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
@@ -211,7 +213,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --> </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 14 2013 20:08:20 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun May 4 2014 23:48:00 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

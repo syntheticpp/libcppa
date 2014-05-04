@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libcppa
-   &#160;<span id="projectnumber">Version 0.8</span>
+   &#160;<span id="projectnumber">Version 0.9.0</span>
    </div>
   </td>
  </tr>
@@ -107,11 +107,14 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1util_1_1abstract__uniform__type__info.html">abstract_uniform_type_info</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements all pure virtual functions of <a class="el" href="classcppa_1_1uniform__type__info.html">uniform_type_info</a> except <a class="el" href="classcppa_1_1uniform__type__info.html#a49feca24516d39c1ecaae1801403941e" title="Serializes instance to sink. ">serialize()</a> and <a class="el" href="classcppa_1_1uniform__type__info.html#a1841b5f6ef66723792e2639b306569bb" title="Deserializes an object of this type from source. ">deserialize()</a>.  <a href="classcppa_1_1util_1_1abstract__uniform__type__info.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1util_1_1buffer.html">buffer</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A buffer implementation with configurable final size that also supports dynamic growing if needed.  <a href="classcppa_1_1util_1_1buffer.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1util_1_1comparable.html">comparable</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Barton–Nackman trick implementation.  <a href="classcppa_1_1util_1_1comparable.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1util_1_1duration.html">duration</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time duration consisting of a <a class="el" href="namespacecppa_1_1util.html#ab9e5a7e6b32f7d1cbe52d4eae74cdf34">time_unit</a> and a 32 bit unsigned integer.  <a href="classcppa_1_1util_1_1duration.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time duration consisting of a <a class="el" href="namespacecppa_1_1util.html#ab9e5a7e6b32f7d1cbe52d4eae74cdf34">time_unit</a> and a 64 bit unsigned integer.  <a href="classcppa_1_1util_1_1duration.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcppa_1_1util_1_1int__list.html">int_list</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of integers (wraps a long... template parameter pack).  <a href="structcppa_1_1util_1_1int__list.html#details">More...</a><br/></td></tr>
@@ -429,7 +432,7 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="separator:a65e63901c139ec8b1dd123dd8cd97738"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9e5a7e6b32f7d1cbe52d4eae74cdf34"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecppa_1_1util.html#ab9e5a7e6b32f7d1cbe52d4eae74cdf34">time_unit</a> : std::uint32_t { <br/>
-&#160;&#160;<b>none</b> = 0, 
+&#160;&#160;<b>invalid</b> = 0, 
 <br/>
 &#160;&#160;<b>seconds</b> = 1, 
 <br/>
@@ -466,17 +469,33 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>splice</b> (std::stri
 template&lt;typename T , typename... Ts&gt; </td></tr>
 <tr class="memitem:ab56b15078c7a5ec898dadd06b3483811"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>splice</b> (std::string &amp;str, const std::string &amp;glue, T &amp;&amp;arg, Ts &amp;&amp;...args)</td></tr>
 <tr class="separator:ab56b15078c7a5ec898dadd06b3483811"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a776a2df8af689823f1d44f98e736089e"><td class="memTemplParams" colspan="2"><a class="anchor" id="a776a2df8af689823f1d44f98e736089e"></a>
+template&lt;typename T , typename U &gt; </td></tr>
+<tr class="memitem:a776a2df8af689823f1d44f98e736089e"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if<br class="typebreak"/>
+&lt; !std::is_floating_point&lt; T &gt;<br class="typebreak"/>
+::value <br class="typebreak"/>
+&amp;&amp;!std::is_floating_point&lt; U &gt;<br class="typebreak"/>
+::value, bool &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecppa_1_1util.html#a776a2df8af689823f1d44f98e736089e">safe_equal</a> (const T &amp;lhs, const U &amp;rhs)</td></tr>
+<tr class="memdesc:a776a2df8af689823f1d44f98e736089e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two values by using <code>operator==</code> unless two floating point numbers are compared. In the latter case, the function performs an epsilon comparison. <br/></td></tr>
+<tr class="separator:a776a2df8af689823f1d44f98e736089e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb5eb4f1fc892ee1711743fb260c1667"><td class="memTemplParams" colspan="2"><a class="anchor" id="aeb5eb4f1fc892ee1711743fb260c1667"></a>
+template&lt;typename T , typename U &gt; </td></tr>
+<tr class="memitem:aeb5eb4f1fc892ee1711743fb260c1667"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if<br class="typebreak"/>
+&lt; std::is_floating_point&lt; T &gt;<br class="typebreak"/>
+::value||std::is_floating_point<br class="typebreak"/>
+&lt; U &gt;::value, bool &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><b>safe_equal</b> (const T &amp;lhs, const U &amp;rhs)</td></tr>
+<tr class="separator:aeb5eb4f1fc892ee1711743fb260c1667"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a553864cfc1fca40e10d64e891f50cc2b"><td class="memTemplParams" colspan="2"><a class="anchor" id="a553864cfc1fca40e10d64e891f50cc2b"></a>
 template&lt;typename F , class Tuple , long... Is&gt; </td></tr>
-<tr class="memitem:a553864cfc1fca40e10d64e891f50cc2b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>apply_args</b> (F &amp;f, Tuple &amp;tup, <a class="el" href="structcppa_1_1util_1_1int__list.html">util::int_list</a>&lt; Is...&gt;) -&gt; decltype(f(<a class="el" href="namespacecppa.html#a7c26044ba1f8a78aa4d43cd13e2a9abe">get_cv_aware</a>&lt; Is &gt;(tup)...))</td></tr>
+<tr class="memitem:a553864cfc1fca40e10d64e891f50cc2b"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>apply_args</b> (F &amp;f, Tuple &amp;tup, <a class="el" href="structcppa_1_1util_1_1int__list.html">util::int_list</a>&lt; Is...&gt;) -&gt; decltype(f(<a class="el" href="namespacecppa.html#ab8c29a3f51ac8a87ac927f436dd6d808">get_cv_aware</a>&lt; Is &gt;(tup)...))</td></tr>
 <tr class="separator:a553864cfc1fca40e10d64e891f50cc2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae578498e37349453f1b28e38e61ac0e0"><td class="memTemplParams" colspan="2"><a class="anchor" id="ae578498e37349453f1b28e38e61ac0e0"></a>
 template&lt;typename F , class Tuple , long... Is, typename... Ts&gt; </td></tr>
-<tr class="memitem:ae578498e37349453f1b28e38e61ac0e0"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>apply_args_prefixed</b> (F &amp;f, Tuple &amp;tup, <a class="el" href="structcppa_1_1util_1_1int__list.html">util::int_list</a>&lt; Is...&gt;, Ts &amp;&amp;...args) -&gt; decltype(f(std::forward&lt; Ts &gt;(args)..., <a class="el" href="namespacecppa.html#a7c26044ba1f8a78aa4d43cd13e2a9abe">get_cv_aware</a>&lt; Is &gt;(tup)...))</td></tr>
+<tr class="memitem:ae578498e37349453f1b28e38e61ac0e0"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>apply_args_prefixed</b> (F &amp;f, Tuple &amp;tup, <a class="el" href="structcppa_1_1util_1_1int__list.html">util::int_list</a>&lt; Is...&gt;, Ts &amp;&amp;...args) -&gt; decltype(f(std::forward&lt; Ts &gt;(args)..., <a class="el" href="namespacecppa.html#ab8c29a3f51ac8a87ac927f436dd6d808">get_cv_aware</a>&lt; Is &gt;(tup)...))</td></tr>
 <tr class="separator:ae578498e37349453f1b28e38e61ac0e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14a19f5cbb30d40dc6f36a2f91d5b8e8"><td class="memTemplParams" colspan="2"><a class="anchor" id="a14a19f5cbb30d40dc6f36a2f91d5b8e8"></a>
 template&lt;typename F , class Tuple , long... Is, typename... Ts&gt; </td></tr>
-<tr class="memitem:a14a19f5cbb30d40dc6f36a2f91d5b8e8"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>apply_args_suffxied</b> (F &amp;f, Tuple &amp;tup, <a class="el" href="structcppa_1_1util_1_1int__list.html">util::int_list</a>&lt; Is...&gt;, Ts &amp;&amp;...args) -&gt; decltype(f(<a class="el" href="namespacecppa.html#a7c26044ba1f8a78aa4d43cd13e2a9abe">get_cv_aware</a>&lt; Is &gt;(tup)..., std::forward&lt; Ts &gt;(args)...))</td></tr>
+<tr class="memitem:a14a19f5cbb30d40dc6f36a2f91d5b8e8"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>apply_args_suffxied</b> (F &amp;f, Tuple &amp;tup, <a class="el" href="structcppa_1_1util_1_1int__list.html">util::int_list</a>&lt; Is...&gt;, Ts &amp;&amp;...args) -&gt; decltype(f(<a class="el" href="namespacecppa.html#ab8c29a3f51ac8a87ac927f436dd6d808">get_cv_aware</a>&lt; Is &gt;(tup)..., std::forward&lt; Ts &gt;(args)...))</td></tr>
 <tr class="separator:a14a19f5cbb30d40dc6f36a2f91d5b8e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab058927d2da5218816d10c5b75c34cc7"><td class="memTemplParams" colspan="2"><a class="anchor" id="ab058927d2da5218816d10c5b75c34cc7"></a>
 template&lt;typename F , typename... Ts&gt; </td></tr>
@@ -521,6 +540,18 @@ template&lt;size_t Num, typename T &gt; </td></tr>
 <tr class="memitem:a38dc2b1191c41a94d3cc2b02471a6782"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecppa_1_1util.html#a38dc2b1191c41a94d3cc2b02471a6782">pt_dispatch</a> (<a class="el" href="group___type_system.html#ga4405c08180f3db0936dcc6afe84f2899">primitive_type</a> ptype, Fun &amp;&amp;f)</td></tr>
 <tr class="memdesc:a38dc2b1191c41a94d3cc2b02471a6782"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="structcppa_1_1util_1_1pt__token.html">pt_token</a> from the runtime value <code>ptype</code> and invokes <code>f</code> with this token.  <a href="#a38dc2b1191c41a94d3cc2b02471a6782">More...</a><br/></td></tr>
 <tr class="separator:a38dc2b1191c41a94d3cc2b02471a6782"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae83597e279b92625e54ae31ec01c6f2b"><td class="memTemplParams" colspan="2"><a class="anchor" id="ae83597e279b92625e54ae31ec01c6f2b"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ae83597e279b92625e54ae31ec01c6f2b"><td class="memTemplItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>unwrap_ref</b> (T &amp;ref)</td></tr>
+<tr class="separator:ae83597e279b92625e54ae31ec01c6f2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7d88536eb440ecbf18d61b830591301"><td class="memTemplParams" colspan="2"><a class="anchor" id="ac7d88536eb440ecbf18d61b830591301"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ac7d88536eb440ecbf18d61b830591301"><td class="memTemplItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>unwrap_ref</b> (<a class="el" href="classcppa_1_1util_1_1rebindable__reference.html">util::rebindable_reference</a>&lt; T &gt; &amp;ref)</td></tr>
+<tr class="separator:ac7d88536eb440ecbf18d61b830591301"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb24eda7b9d33e9d0cb5f898171431b6"><td class="memTemplParams" colspan="2"><a class="anchor" id="afb24eda7b9d33e9d0cb5f898171431b6"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:afb24eda7b9d33e9d0cb5f898171431b6"><td class="memTemplItemLeft" align="right" valign="top">std::add_const&lt; T &gt;::type &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>unwrap_ref</b> (const <a class="el" href="classcppa_1_1util_1_1rebindable__reference.html">util::rebindable_reference</a>&lt; T &gt; &amp;ref)</td></tr>
+<tr class="separator:afb24eda7b9d33e9d0cb5f898171431b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aefe0082d66a3564308ebba66750e7a1f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aefe0082d66a3564308ebba66750e7a1f"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecppa_1_1util.html#aefe0082d66a3564308ebba66750e7a1f">ripemd_160</a> (std::array&lt; std::uint8_t, 20 &gt; &amp;storage, const std::string &amp;data)</td></tr>
 <tr class="memdesc:aefe0082d66a3564308ebba66750e7a1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a hash from <code>data</code> using the RIPEMD-160 algorithm. <br/></td></tr>
@@ -563,7 +594,7 @@ template&lt;typename Fun &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 14 2013 20:08:20 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun May 4 2014 23:48:01 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

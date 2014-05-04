@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libcppa
-   &#160;<span id="projectnumber">Version 0.8</span>
+   &#160;<span id="projectnumber">Version 0.9.0</span>
    </div>
   </td>
  </tr>
@@ -86,8 +86,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">cppa::factory Namespace Reference</div>  </div>
 </div><!--header-->
@@ -95,58 +93,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>Contains factory functions to create actors from lambdas or other functors.  
 <a href="#details">More...</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a842998118f420c43aec41cf98f082b36"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a842998118f420c43aec41cf98f082b36"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>default_cleanup</b> ()</td></tr>
-<tr class="separator:a842998118f420c43aec41cf98f082b36"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afdd00568a2e347a9cd15929f2b3d0e6d"><td class="memTemplParams" colspan="2">template&lt;typename InitFun &gt; </td></tr>
-<tr class="memitem:afdd00568a2e347a9cd15929f2b3d0e6d"><td class="memTemplItemLeft" align="right" valign="top">detail::ebaf_from_functor<br class="typebreak"/>
-&lt; InitFun, void(*)()&gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecppa_1_1factory.html#afdd00568a2e347a9cd15929f2b3d0e6d">event_based</a> (InitFun init)</td></tr>
-<tr class="memdesc:afdd00568a2e347a9cd15929f2b3d0e6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a factory for event-based actors using <code>fun</code> as implementation for <a class="el" href="classcppa_1_1event__based__actor.html#a0a1ccf0896f295551b51e4969b5db0f8">init()</a>.  <a href="#afdd00568a2e347a9cd15929f2b3d0e6d">More...</a><br/></td></tr>
-<tr class="separator:afdd00568a2e347a9cd15929f2b3d0e6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a328de8918e2e0ed9d4548eea4f552ef6"><td class="memTemplParams" colspan="2"><a class="anchor" id="a328de8918e2e0ed9d4548eea4f552ef6"></a>
-template&lt;typename InitFun , typename OnExitFun &gt; </td></tr>
-<tr class="memitem:a328de8918e2e0ed9d4548eea4f552ef6"><td class="memTemplItemLeft" align="right" valign="top">detail::ebaf_from_functor<br class="typebreak"/>
-&lt; InitFun, OnExitFun &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacecppa_1_1factory.html#a328de8918e2e0ed9d4548eea4f552ef6">event_based</a> (InitFun init, OnExitFun on_exit)</td></tr>
-<tr class="memdesc:a328de8918e2e0ed9d4548eea4f552ef6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a factory for event-based actors using <code>fun0</code> as implementation for <a class="el" href="classcppa_1_1event__based__actor.html#a0a1ccf0896f295551b51e4969b5db0f8">init()</a> and <code>fun1</code> as implementation for <a class="el" href="classcppa_1_1local__actor.html#a77a401359c4fa5d766d403345053430a">on_exit()</a>. <br/></td></tr>
-<tr class="separator:a328de8918e2e0ed9d4548eea4f552ef6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains factory functions to create actors from lambdas or other functors. </p>
-</div><h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="afdd00568a2e347a9cd15929f2b3d0e6d"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename InitFun &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">detail::ebaf_from_functor&lt;InitFun, void (*)()&gt;::type cppa::factory::event_based </td>
-          <td>(</td>
-          <td class="paramtype">InitFun&#160;</td>
-          <td class="paramname"><em>init</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns a factory for event-based actors using <code>fun</code> as implementation for <a class="el" href="classcppa_1_1event__based__actor.html#a0a1ccf0896f295551b51e4969b5db0f8">init()</a>. </p>
-<p><code>fun</code> must take pointer arguments only. The factory creates an event-based actor implementation with member variables according to the functor's signature, as shown in the example below.</p>
-<div class="fragment"><div class="line">* <span class="keyword">auto</span> f = <a class="code" href="namespacecppa_1_1factory.html#afdd00568a2e347a9cd15929f2b3d0e6d">factory::event_based</a>([](<span class="keywordtype">int</span>* a, <span class="keywordtype">int</span>* b) { ... });</div>
-<div class="line">* <span class="keyword">auto</span> actor1 = f.spawn();</div>
-<div class="line">* <span class="keyword">auto</span> actor2 = f.spawn(1);</div>
-<div class="line">* <span class="keyword">auto</span> actor3 = f.spawn(1, 2);</div>
-<div class="line">* </div>
-</div><!-- fragment --><p>The arguments <code>a</code> and <code>b</code> will point to <code>int</code> member variables of the actor. All member variables are initialized using the default constructor unless an initial value is passed to <code>spawn</code>. </p>
-
-</div>
-</div>
-</div><!-- contents -->
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 14 2013 20:08:20 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun May 4 2014 23:48:01 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

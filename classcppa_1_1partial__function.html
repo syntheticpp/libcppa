@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libcppa
-   &#160;<span id="projectnumber">Version 0.8</span>
+   &#160;<span id="projectnumber">Version 0.9.0</span>
    </div>
   </td>
  </tr>
@@ -116,32 +116,29 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a86b2c03c61c4dfc7ffadf362d5ad57dc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a86b2c03c61c4dfc7ffadf362d5ad57dc"></a>
 <a class="el" href="classcppa_1_1partial__function.html">partial_function</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classcppa_1_1partial__function.html">partial_function</a> &amp;)=default</td></tr>
 <tr class="separator:a86b2c03c61c4dfc7ffadf362d5ad57dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a091b0451948e4bee6c5086f2954318cb"><td class="memTemplParams" colspan="2"><a class="anchor" id="a091b0451948e4bee6c5086f2954318cb"></a>
-template&lt;typename... Cs&gt; </td></tr>
-<tr class="memitem:a091b0451948e4bee6c5086f2954318cb"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><b>partial_function</b> (const <a class="el" href="classcppa_1_1match__expr.html">match_expr</a>&lt; Cs...&gt; &amp;arg)</td></tr>
-<tr class="separator:a091b0451948e4bee6c5086f2954318cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08eb8012902d1a124c7534c284d3531a"><td class="memTemplParams" colspan="2"><a class="anchor" id="a08eb8012902d1a124c7534c284d3531a"></a>
-template&lt;typename... Cs, typename T , typename... Ts&gt; </td></tr>
-<tr class="memitem:a08eb8012902d1a124c7534c284d3531a"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><b>partial_function</b> (const <a class="el" href="classcppa_1_1match__expr.html">match_expr</a>&lt; Cs...&gt; &amp;arg0, const T &amp;arg1, const Ts &amp;...args)</td></tr>
-<tr class="separator:a08eb8012902d1a124c7534c284d3531a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96d44f96bc124640b9ab6d07a9da9be2"><td class="memTemplParams" colspan="2"><a class="anchor" id="a96d44f96bc124640b9ab6d07a9da9be2"></a>
+template&lt;typename T , typename... Ts&gt; </td></tr>
+<tr class="memitem:a96d44f96bc124640b9ab6d07a9da9be2"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><b>partial_function</b> (const T &amp;arg, Ts &amp;&amp;...args)</td></tr>
+<tr class="separator:a96d44f96bc124640b9ab6d07a9da9be2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb760069c1047ebe1402fc2f3b393d93"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeb760069c1047ebe1402fc2f3b393d93"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1partial__function.html#aeb760069c1047ebe1402fc2f3b393d93">defined_at</a> (const <a class="el" href="classcppa_1_1any__tuple.html">any_tuple</a> &amp;value)</td></tr>
 <tr class="memdesc:aeb760069c1047ebe1402fc2f3b393d93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if this partial function is defined for the types of <code>value</code>, false otherwise. <br/></td></tr>
 <tr class="separator:aeb760069c1047ebe1402fc2f3b393d93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6aa7016c1d97af3f87c8bf606ccf4ae"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ab6aa7016c1d97af3f87c8bf606ccf4ae"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classcppa_1_1optional.html">optional</a>&lt; <a class="el" href="classcppa_1_1any__tuple.html">any_tuple</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classcppa_1_1partial__function.html#ab6aa7016c1d97af3f87c8bf606ccf4ae">operator()</a> (T &amp;&amp;arg)</td></tr>
-<tr class="memdesc:ab6aa7016c1d97af3f87c8bf606ccf4ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if this partial function was applied to <code>args</code>, false otherwise.  <a href="#ab6aa7016c1d97af3f87c8bf606ccf4ae">More...</a><br/></td></tr>
+<tr class="memdesc:ab6aa7016c1d97af3f87c8bf606ccf4ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a value if <code>arg</code> was matched by one of the handler of this behavior, returns <code>nothing</code> otherwise.  <a href="#ab6aa7016c1d97af3f87c8bf606ccf4ae">More...</a><br/></td></tr>
 <tr class="separator:ab6aa7016c1d97af3f87c8bf606ccf4ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb6c3149c0f4d057c3fff77ab4af7e17"><td class="memTemplParams" colspan="2"><a class="anchor" id="adb6c3149c0f4d057c3fff77ab4af7e17"></a>
+<tr class="memitem:a7df968d2a07184e4828c2cc1fe0f8f91"><td class="memTemplParams" colspan="2"><a class="anchor" id="a7df968d2a07184e4828c2cc1fe0f8f91"></a>
 template&lt;typename... Ts&gt; </td></tr>
-<tr class="memitem:adb6c3149c0f4d057c3fff77ab4af7e17"><td class="memTemplItemLeft" align="right" valign="top">std::conditional<br class="typebreak"/>
+<tr class="memitem:a7df968d2a07184e4828c2cc1fe0f8f91"><td class="memTemplItemLeft" align="right" valign="top">std::conditional<br class="typebreak"/>
 &lt; <a class="el" href="structcppa_1_1util_1_1disjunction.html">util::disjunction</a><br class="typebreak"/>
-&lt; <a class="el" href="structcppa_1_1util_1_1rm__const__and__ref.html">util::rm_const_and_ref</a>&lt; Ts &gt;<br class="typebreak"/>
-::type::may_have_timeout...&gt;<br class="typebreak"/>
-::value, <a class="el" href="classcppa_1_1behavior.html">behavior</a>, <br class="typebreak"/>
-<a class="el" href="classcppa_1_1partial__function.html">partial_function</a> &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classcppa_1_1partial__function.html#adb6c3149c0f4d057c3fff77ab4af7e17">or_else</a> (Ts &amp;&amp;...args) const </td></tr>
-<tr class="memdesc:adb6c3149c0f4d057c3fff77ab4af7e17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a fallback which is used where this partial function is not defined. <br/></td></tr>
-<tr class="separator:adb6c3149c0f4d057c3fff77ab4af7e17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+&lt; may_have_timeout&lt; typename <br class="typebreak"/>
+<a class="el" href="structcppa_1_1util_1_1rm__const__and__ref.html">util::rm_const_and_ref</a>&lt; Ts &gt;<br class="typebreak"/>
+::type &gt;::value... &gt;::value, <br class="typebreak"/>
+<a class="el" href="classcppa_1_1behavior.html">behavior</a>, <a class="el" href="classcppa_1_1partial__function.html">partial_function</a> &gt;<br class="typebreak"/>
+::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classcppa_1_1partial__function.html#a7df968d2a07184e4828c2cc1fe0f8f91">or_else</a> (Ts &amp;&amp;...args) const </td></tr>
+<tr class="memdesc:a7df968d2a07184e4828c2cc1fe0f8f91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a fallback which is used where this partial function is not defined. <br/></td></tr>
+<tr class="separator:a7df968d2a07184e4828c2cc1fe0f8f91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -168,8 +165,8 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Returns <code>true</code> if this partial function was applied to <code>args</code>, false otherwise. </p>
-<dl class="section note"><dt>Note</dt><dd>This member function can return <code>false</code> even if <a class="el" href="classcppa_1_1partial__function.html#aeb760069c1047ebe1402fc2f3b393d93">defined_at()</a> returns <code>true</code>, because <a class="el" href="classcppa_1_1partial__function.html#aeb760069c1047ebe1402fc2f3b393d93">defined_at()</a> does <b>not</b> evaluate guards. </dd></dl>
+<p>Returns a value if <code>arg</code> was matched by one of the handler of this behavior, returns <code>nothing</code> otherwise. </p>
+<dl class="section note"><dt>Note</dt><dd>This member function can return <code>nothing</code> even if <a class="el" href="classcppa_1_1partial__function.html#aeb760069c1047ebe1402fc2f3b393d93">defined_at()</a> returns <code>true</code>, because <a class="el" href="classcppa_1_1partial__function.html#aeb760069c1047ebe1402fc2f3b393d93">defined_at()</a> does not evaluate guards. </dd></dl>
 
 </div>
 </div>
@@ -179,7 +176,7 @@ template&lt;typename T &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 14 2013 20:08:20 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun May 4 2014 23:48:01 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

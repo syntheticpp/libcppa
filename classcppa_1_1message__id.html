@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libcppa
-   &#160;<span id="projectnumber">Version 0.8</span>
+   &#160;<span id="projectnumber">Version 0.9.0</span>
    </div>
   </td>
  </tr>
@@ -98,6 +98,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>Denotes whether a message is asynchronous or synchronous.  
+ <a href="classcppa_1_1message__id.html#details">More...</a></p>
+
 <p><code>#include &lt;message_id.hpp&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for cppa::message_id:</div>
@@ -132,6 +135,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_response</b> () co
 <tr class="memitem:a4d70b12b99f966d1f1d319bf0853e0f5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4d70b12b99f966d1f1d319bf0853e0f5"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_answered</b> () const </td></tr>
 <tr class="separator:a4d70b12b99f966d1f1d319bf0853e0f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6a44b2a9d205e8758d1944eb00c1667"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af6a44b2a9d205e8758d1944eb00c1667"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_high_priority</b> () const </td></tr>
+<tr class="separator:af6a44b2a9d205e8758d1944eb00c1667"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8016252c490d69380e8c681c6766d1ee"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8016252c490d69380e8c681c6766d1ee"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>valid</b> () const </td></tr>
 <tr class="separator:a8016252c490d69380e8c681c6766d1ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -144,6 +150,12 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_request</b> () con
 <tr class="memitem:ad48874981beceb40ffd07fbcce9d35a2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad48874981beceb40ffd07fbcce9d35a2"></a>
 <a class="el" href="classcppa_1_1message__id.html">message_id</a>&#160;</td><td class="memItemRight" valign="bottom"><b>request_id</b> () const </td></tr>
 <tr class="separator:ad48874981beceb40ffd07fbcce9d35a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5625f0d28a7ed40bb926738d8d81a3fb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5625f0d28a7ed40bb926738d8d81a3fb"></a>
+<a class="el" href="classcppa_1_1message__id.html">message_id</a>&#160;</td><td class="memItemRight" valign="bottom"><b>with_high_priority</b> () const </td></tr>
+<tr class="separator:a5625f0d28a7ed40bb926738d8d81a3fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a452ea2afb2334624cb779437206005"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3a452ea2afb2334624cb779437206005"></a>
+<a class="el" href="classcppa_1_1message__id.html">message_id</a>&#160;</td><td class="memItemRight" valign="bottom"><b>with_normal_priority</b> () const </td></tr>
+<tr class="separator:a3a452ea2afb2334624cb779437206005"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afca10052743875e2d5a03651676c4e4a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afca10052743875e2d5a03651676c4e4a"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>mark_as_answered</b> ()</td></tr>
 <tr class="separator:afca10052743875e2d5a03651676c4e4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -170,14 +182,15 @@ static constexpr invalid_message_id&#160;</td><td class="memItemRight" valign="b
 <tr class="separator:a2af674073b47b8693a27cf472cb711bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section note"><dt>Note</dt><dd>Asynchronous messages always have an invalid message id. </dd></dl>
+<div class="textblock"><p>Denotes whether a message is asynchronous or synchronous. </p>
+<dl class="section note"><dt>Note</dt><dd>Asynchronous messages always have an invalid message id. </dd></dl>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>cppa/message_id.hpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 14 2013 20:08:20 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun May 4 2014 23:48:01 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libcppa
-   &#160;<span id="projectnumber">Version 0.8</span>
+   &#160;<span id="projectnumber">Version 0.9.0</span>
    </div>
   </td>
  </tr>
@@ -76,8 +76,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Blocking API.</div>  </div>
 </div><!--header-->
@@ -85,49 +83,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>Blocking functions to receive messages.  
 <a href="#details">More...</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:gaf7951ecb230b7c81c1cb3eea4d5e3666"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___blocking_a_p_i.html#gaf7951ecb230b7c81c1cb3eea4d5e3666">cppa::local_actor::exec_behavior_stack</a> ()</td></tr>
-<tr class="memdesc:gaf7951ecb230b7c81c1cb3eea4d5e3666"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes an actor's behavior stack until it is empty.  <a href="#gaf7951ecb230b7c81c1cb3eea4d5e3666">More...</a><br/></td></tr>
-<tr class="separator:gaf7951ecb230b7c81c1cb3eea4d5e3666"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2572278151133dc5aea4ef57f15ba79a"><td class="memTemplParams" colspan="2"><a class="anchor" id="ga2572278151133dc5aea4ef57f15ba79a"></a>
-template&lt;typename... Ts&gt; </td></tr>
-<tr class="memitem:ga2572278151133dc5aea4ef57f15ba79a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group___blocking_a_p_i.html#ga2572278151133dc5aea4ef57f15ba79a">cppa::receive</a> (Ts &amp;&amp;...args)</td></tr>
-<tr class="memdesc:ga2572278151133dc5aea4ef57f15ba79a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dequeues the next message from the mailbox that is matched by given behavior. <br/></td></tr>
-<tr class="separator:ga2572278151133dc5aea4ef57f15ba79a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa4dd7ae464477ee09420f3db58803806"><td class="memTemplParams" colspan="2"><a class="anchor" id="gaa4dd7ae464477ee09420f3db58803806"></a>
-template&lt;typename... Ts&gt; </td></tr>
-<tr class="memitem:gaa4dd7ae464477ee09420f3db58803806"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group___blocking_a_p_i.html#gaa4dd7ae464477ee09420f3db58803806">cppa::receive_loop</a> (Ts &amp;&amp;...args)</td></tr>
-<tr class="memdesc:gaa4dd7ae464477ee09420f3db58803806"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives messages in an endless loop. Semantically equal to: <code>for (;;) { receive(...); }</code> <br/></td></tr>
-<tr class="separator:gaa4dd7ae464477ee09420f3db58803806"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac8c02896ff6b0ca3a36829fbe1482584"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:gac8c02896ff6b0ca3a36829fbe1482584"><td class="memTemplItemLeft" align="right" valign="top">detail::receive_for_helper&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group___blocking_a_p_i.html#gac8c02896ff6b0ca3a36829fbe1482584">cppa::receive_for</a> (T &amp;begin, const T &amp;end)</td></tr>
-<tr class="memdesc:gac8c02896ff6b0ca3a36829fbe1482584"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives messages as in a range-based loop.  <a href="#gac8c02896ff6b0ca3a36829fbe1482584">More...</a><br/></td></tr>
-<tr class="separator:gac8c02896ff6b0ca3a36829fbe1482584"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7410ca248936f055cdf10d90694af732"><td class="memTemplParams" colspan="2">template&lt;typename Statement &gt; </td></tr>
-<tr class="memitem:ga7410ca248936f055cdf10d90694af732"><td class="memTemplItemLeft" align="right" valign="top">detail::receive_while_helper<br class="typebreak"/>
-&lt; Statement &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group___blocking_a_p_i.html#ga7410ca248936f055cdf10d90694af732">cppa::receive_while</a> (Statement &amp;&amp;stmt)</td></tr>
-<tr class="memdesc:ga7410ca248936f055cdf10d90694af732"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives messages as long as <code>stmt</code> returns true.  <a href="#ga7410ca248936f055cdf10d90694af732">More...</a><br/></td></tr>
-<tr class="separator:ga7410ca248936f055cdf10d90694af732"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga32a52e24a04a2e4cb0d5de312b94b4c8"><td class="memTemplParams" colspan="2">template&lt;typename... Ts&gt; </td></tr>
-<tr class="memitem:ga32a52e24a04a2e4cb0d5de312b94b4c8"><td class="memTemplItemLeft" align="right" valign="top">detail::do_receive_helper&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group___blocking_a_p_i.html#ga32a52e24a04a2e4cb0d5de312b94b4c8">cppa::do_receive</a> (Ts &amp;&amp;...args)</td></tr>
-<tr class="memdesc:ga32a52e24a04a2e4cb0d5de312b94b4c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receives messages until <code>stmt</code> returns true.  <a href="#ga32a52e24a04a2e4cb0d5de312b94b4c8">More...</a><br/></td></tr>
-<tr class="separator:ga32a52e24a04a2e4cb0d5de312b94b4c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Blocking functions to receive messages. </p>
 <p>The blocking API of libcppa is intended to be used for migrating previously threaded applications. When writing new code, you should use ibcppas nonblocking become/unbecome API.</p>
 <h1><a class="anchor" id="Send"></a>
 Send messages</h1>
 <p>The function <code>send</code> could be used to send a message to an actor. The first argument is the receiver of the message followed by any number of values. <code>send</code> creates a tuple from the given values and enqueues the tuple to the receivers mailbox. Thus, send should <b>not</b> be used to send a message to multiple receivers. You should use <code>operator&lt;&lt;</code> instead as in the following example:</p>
 <div class="fragment"><div class="line">* <span class="comment">// spawn some actors</span></div>
-<div class="line">* <span class="keyword">auto</span> a1 = <a class="code" href="group___actor_creation.html#ga64b99980b69ba8e8cdd218e402f48fd6">spawn</a>(...);</div>
-<div class="line">* <span class="keyword">auto</span> a2 = <a class="code" href="group___actor_creation.html#ga64b99980b69ba8e8cdd218e402f48fd6">spawn</a>(...);</div>
-<div class="line">* <span class="keyword">auto</span> a3 = <a class="code" href="group___actor_creation.html#ga64b99980b69ba8e8cdd218e402f48fd6">spawn</a>(...);</div>
+<div class="line">* <span class="keyword">auto</span> a1 = <a class="code" href="group___actor_creation.html#gaba7260e3d070dfd846946305e0fbc31e">spawn</a>(...);</div>
+<div class="line">* <span class="keyword">auto</span> a2 = <a class="code" href="group___actor_creation.html#gaba7260e3d070dfd846946305e0fbc31e">spawn</a>(...);</div>
+<div class="line">* <span class="keyword">auto</span> a3 = <a class="code" href="group___actor_creation.html#gaba7260e3d070dfd846946305e0fbc31e">spawn</a>(...);</div>
 <div class="line">*</div>
 <div class="line">* <span class="comment">// send a message to a1</span></div>
-<div class="line">* <a class="code" href="namespacecppa.html#a8ce9b9bc8666bd339ff6a95065b91d65">send</a>(a1, <a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;hello&quot;</span>), <span class="stringliteral">&quot;hello a1!&quot;</span>);</div>
+<div class="line">* send(a1, <a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;hello&quot;</span>), <span class="stringliteral">&quot;hello a1!&quot;</span>);</div>
 <div class="line">*</div>
 <div class="line">* <span class="comment">// send a message to a1, a2 and a3</span></div>
 <div class="line">* <span class="keyword">auto</span> msg = <a class="code" href="group___implicit_conversion.html#gaff872b47edb1a234bd573d5ef04f6d35">make_cow_tuple</a>(<a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;compute&quot;</span>), 1, 2, 3);</div>
@@ -149,7 +116,7 @@ Send messages</h1>
 </div><!-- fragment --><h1><a class="anchor" id="Receive"></a>
 Receive messages</h1>
 <p>The function <code>receive</code> takes a <code>behavior</code> as argument. The behavior is a list of { pattern &gt;&gt; callback } rules.</p>
-<div class="fragment"><div class="line">* <a class="code" href="group___blocking_a_p_i.html#ga2572278151133dc5aea4ef57f15ba79a">receive</a></div>
+<div class="fragment"><div class="line">* receive</div>
 <div class="line">* (</div>
 <div class="line">*     <a class="code" href="namespacecppa.html#a25d0d9e15f20fe8a0644a1d137d27e90">on</a>(<a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;hello&quot;</span>), arg_match) &gt;&gt; [](<span class="keyword">const</span> std::string&amp; msg)</div>
 <div class="line">*     {</div>
@@ -168,7 +135,7 @@ Atoms</h1>
 <p>Atoms are a nice way to add semantic informations to a message. Assuming an actor wants to provide a "math sevice" for integers. It could provide operations such as addition, subtraction, etc. This operations all have two operands. Thus, the actor does not know what operation the sender of a message wanted by receiving just two integers.</p>
 <p>Example actor: </p>
 <div class="fragment"><div class="line">* <span class="keywordtype">void</span> math_actor() {</div>
-<div class="line">*     <a class="code" href="group___blocking_a_p_i.html#gaa4dd7ae464477ee09420f3db58803806">receive_loop</a> (</div>
+<div class="line">*     receive_loop (</div>
 <div class="line">*         <a class="code" href="namespacecppa.html#a25d0d9e15f20fe8a0644a1d137d27e90">on</a>(<a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;plus&quot;</span>), arg_match) &gt;&gt; [](<span class="keywordtype">int</span> a, <span class="keywordtype">int</span> b) {</div>
 <div class="line">*             <span class="keywordflow">return</span> <a class="code" href="group___implicit_conversion.html#gaff872b47edb1a234bd573d5ef04f6d35">make_cow_tuple</a>(<a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;result&quot;</span>), a + b);</div>
 <div class="line">*         },</div>
@@ -186,7 +153,7 @@ Receive loops</h1>
 <p><code>receive_while</code> creates a functor evaluating a lambda expression. The loop continues until the given lambda returns <code>false</code>. A simple example:</p>
 <div class="fragment"><div class="line">* <span class="comment">// receive two integers</span></div>
 <div class="line">* vector&lt;int&gt; received_values;</div>
-<div class="line">* <a class="code" href="group___blocking_a_p_i.html#ga7410ca248936f055cdf10d90694af732">receive_while</a>([&amp;]() { <span class="keywordflow">return</span> received_values.size() &lt; 2; }) (</div>
+<div class="line">* receive_while([&amp;]() { <span class="keywordflow">return</span> received_values.size() &lt; 2; }) (</div>
 <div class="line">*     on&lt;int&gt;() &gt;&gt; [](<span class="keywordtype">int</span> value) {</div>
 <div class="line">*         received_values.push_back(value);</div>
 <div class="line">*     }</div>
@@ -196,14 +163,14 @@ Receive loops</h1>
 </div><!-- fragment --><p><code>receive_for</code> is a simple ranged-based loop:</p>
 <div class="fragment"><div class="line">* std::vector&lt;int&gt; vec {1, 2, 3, 4};</div>
 <div class="line">* <span class="keyword">auto</span> i = vec.begin();</div>
-<div class="line">* <a class="code" href="group___blocking_a_p_i.html#gac8c02896ff6b0ca3a36829fbe1482584">receive_for</a>(i, vec.end()) (</div>
+<div class="line">* receive_for(i, vec.end()) (</div>
 <div class="line">*     <a class="code" href="namespacecppa.html#a25d0d9e15f20fe8a0644a1d137d27e90">on</a>(<a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;get&quot;</span>)) &gt;&gt; [&amp;]() -&gt; any_tuple { <span class="keywordflow">return</span> {<a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;result&quot;</span>), *i}; }</div>
 <div class="line">* );</div>
 <div class="line">* </div>
 </div><!-- fragment --><p><code>do_receive</code> returns a functor providing the function <code>until</code> that takes a lambda expression. The loop continues until the given lambda returns true. Example:</p>
 <div class="fragment"><div class="line">* <span class="comment">// receive ints until zero was received</span></div>
 <div class="line">* vector&lt;int&gt; received_values;</div>
-<div class="line">* <a class="code" href="group___blocking_a_p_i.html#ga32a52e24a04a2e4cb0d5de312b94b4c8">do_receive</a> (</div>
+<div class="line">* do_receive (</div>
 <div class="line">*     on&lt;int&gt;() &gt;&gt; [](<span class="keywordtype">int</span> value) {</div>
 <div class="line">*         received_values.push_back(value);</div>
 <div class="line">*     }</div>
@@ -214,166 +181,21 @@ Receive loops</h1>
 </div><!-- fragment --><h1><a class="anchor" id="FutureSend"></a>
 Send delayed messages</h1>
 <p>The function <code>delayed_send</code> provides a simple way to delay a message. This is particularly useful for recurring events, e.g., periodical polling. Usage example:</p>
-<div class="fragment"><div class="line">* <a class="code" href="namespacecppa.html#ac0794637247bdee55e95638c34e21f9e">delayed_send</a>(<span class="keyword">self</span>, std::chrono::seconds(1), <a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;poll&quot;</span>));</div>
-<div class="line">* <a class="code" href="group___blocking_a_p_i.html#gaa4dd7ae464477ee09420f3db58803806">receive_loop</a> (</div>
+<div class="fragment"><div class="line">* delayed_send(<span class="keyword">self</span>, std::chrono::seconds(1), <a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;poll&quot;</span>));</div>
+<div class="line">* receive_loop (</div>
 <div class="line">*     <span class="comment">// ...</span></div>
 <div class="line">*     <a class="code" href="namespacecppa.html#a25d0d9e15f20fe8a0644a1d137d27e90">on</a>(<a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;poll&quot;</span>)) &gt;&gt; [] {</div>
 <div class="line">*         <span class="comment">// ... poll something ...</span></div>
 <div class="line">*         <span class="comment">// and do it again after 1sec</span></div>
-<div class="line">*         <a class="code" href="namespacecppa.html#ac0794637247bdee55e95638c34e21f9e">delayed_send</a>(<span class="keyword">self</span>, std::chrono::seconds(1), <a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;poll&quot;</span>));</div>
+<div class="line">*         delayed_send(<span class="keyword">self</span>, std::chrono::seconds(1), <a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;poll&quot;</span>));</div>
 <div class="line">*     }</div>
 <div class="line">* );</div>
 <div class="line">* </div>
 </div><!-- fragment --><p>See also the <a class="el" href="dancing_kirby_8cpp-example.html">dancing kirby example</a>. </p>
-<h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="ga32a52e24a04a2e4cb0d5de312b94b4c8"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename... Ts&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">detail::do_receive_helper cppa::do_receive </td>
-          <td>(</td>
-          <td class="paramtype">Ts &amp;&amp;...&#160;</td>
-          <td class="paramname"><em>args</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Receives messages until <code>stmt</code> returns true. </p>
-<p>Semantically equal to: <code>do { receive(...); } while (stmt() == false);</code></p>
-<p><b>Usage example:</b> </p>
-<div class="fragment"><div class="line">* <span class="keywordtype">int</span> i = 0;</div>
-<div class="line">* <a class="code" href="group___blocking_a_p_i.html#ga32a52e24a04a2e4cb0d5de312b94b4c8">do_receive</a></div>
-<div class="line">* (</div>
-<div class="line">*     on&lt;int&gt;() &gt;&gt; int_fun,</div>
-<div class="line">*     on&lt;float&gt;() &gt;&gt; float_fun</div>
-<div class="line">* )</div>
-<div class="line">* .until([&amp;]() { <span class="keywordflow">return</span> (++i &gt;= 10); };</div>
-<div class="line">* </div>
-</div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">bhvr</td><td>Denotes the actor's response the next incoming message. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A functor providing the <code>until</code> member function. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gaf7951ecb230b7c81c1cb3eea4d5e3666"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void cppa::local_actor::exec_behavior_stack </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Executes an actor's behavior stack until it is empty. </p>
-<p>This member function allows thread-based and context-switching actors to make use of the nonblocking behavior API of libcppa. Calling this member function in an event-based actor does nothing. </p>
-
-</div>
-</div>
-<a class="anchor" id="gac8c02896ff6b0ca3a36829fbe1482584"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">detail::receive_for_helper&lt; T &gt; cppa::receive_for </td>
-          <td>(</td>
-          <td class="paramtype">T &amp;&#160;</td>
-          <td class="paramname"><em>begin</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>end</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Receives messages as in a range-based loop. </p>
-<p>Semantically equal to: <code>for ( ; begin != end; ++begin) { receive(...); }</code>.</p>
-<p><b>Usage example:</b> </p>
-<div class="fragment"><div class="line">* <span class="keywordtype">int</span> i = 0;</div>
-<div class="line">* <a class="code" href="group___blocking_a_p_i.html#gac8c02896ff6b0ca3a36829fbe1482584">receive_for</a>(i, 10) (</div>
-<div class="line">*     <a class="code" href="namespacecppa.html#a25d0d9e15f20fe8a0644a1d137d27e90">on</a>(<a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;get&quot;</span>)) &gt;&gt; [&amp;]() -&gt; any_tuple { <span class="keywordflow">return</span> {<span class="stringliteral">&quot;result&quot;</span>, i}; }</div>
-<div class="line">* );</div>
-<div class="line">* </div>
-</div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">begin</td><td>First value in range. </td></tr>
-    <tr><td class="paramname">end</td><td>Last value in range (excluded). </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A functor implementing the loop. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga7410ca248936f055cdf10d90694af732"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Statement &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">detail::receive_while_helper&lt; Statement &gt; cppa::receive_while </td>
-          <td>(</td>
-          <td class="paramtype">Statement &amp;&amp;&#160;</td>
-          <td class="paramname"><em>stmt</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Receives messages as long as <code>stmt</code> returns true. </p>
-<p>Semantically equal to: <code>while (stmt()) { receive(...); }</code>.</p>
-<p><b>Usage example:</b> </p>
-<div class="fragment"><div class="line">* <span class="keywordtype">int</span> i = 0;</div>
-<div class="line">* <a class="code" href="group___blocking_a_p_i.html#ga7410ca248936f055cdf10d90694af732">receive_while</a>([&amp;]() { <span class="keywordflow">return</span> (++i &lt;= 10); })</div>
-<div class="line">* (</div>
-<div class="line">*     on&lt;int&gt;() &gt;&gt; int_fun,</div>
-<div class="line">*     on&lt;float&gt;() &gt;&gt; float_fun</div>
-<div class="line">* );</div>
-<div class="line">* </div>
-</div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">stmt</td><td>Lambda expression, functor or function returning a <code>bool</code>. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A functor implementing the loop. </dd></dl>
-
-</div>
-</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 14 2013 20:08:20 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun May 4 2014 23:48:00 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

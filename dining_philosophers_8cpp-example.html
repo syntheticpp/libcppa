@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libcppa
-   &#160;<span id="projectnumber">Version 0.8</span>
+   &#160;<span id="projectnumber">Version 0.9.0</span>
    </div>
   </td>
  </tr>
@@ -99,22 +99,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><span class="keyword">using namespace </span>std;</div>
 <div class="line"><span class="keyword">using namespace </span>cppa;</div>
 <div class="line"></div>
+<div class="line"><span class="keyword">namespace </span>{</div>
+<div class="line"></div>
 <div class="line"><span class="comment">// either taken by a philosopher or available</span></div>
-<div class="line"><span class="keywordtype">void</span> chopstick() {</div>
-<div class="line">    <a class="code" href="namespacecppa.html#a32d3c95b12475508947918017ead6fac">become</a>(</div>
-<div class="line">        <a class="code" href="namespacecppa.html#a25d0d9e15f20fe8a0644a1d137d27e90">on</a>(<a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;take&quot;</span>), <a class="code" href="namespacecppa.html#aea202e88a810b28d8c7370c5e058277b">arg_match</a>) &gt;&gt; [=](<span class="keyword">const</span> <a name="_a0"></a><a class="code" href="classcppa_1_1intrusive__ptr.html">actor_ptr</a>&amp; philos) {</div>
+<div class="line"><span class="keywordtype">void</span> chopstick(<a name="_a0"></a><a class="code" href="classcppa_1_1event__based__actor.html">event_based_actor</a>* <span class="keyword">self</span>) {</div>
+<div class="line">    <span class="keyword">self</span>-&gt;become(</div>
+<div class="line">        <a class="code" href="namespacecppa.html#a25d0d9e15f20fe8a0644a1d137d27e90">on</a>(<a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;take&quot;</span>), <a class="code" href="namespacecppa.html#aea202e88a810b28d8c7370c5e058277b">arg_match</a>) &gt;&gt; [=](<span class="keyword">const</span> <a name="_a1"></a><a class="code" href="classcppa_1_1actor.html">actor</a>&amp; philos) {</div>
 <div class="line">            <span class="comment">// tell philosopher it took this chopstick</span></div>
-<div class="line">            <a class="code" href="namespacecppa.html#a8ce9b9bc8666bd339ff6a95065b91d65">send</a>(philos, <a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;taken&quot;</span>), <span class="keyword">self</span>);</div>
+<div class="line">            <span class="keyword">self</span>-&gt;send(philos, <a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;taken&quot;</span>), <span class="keyword">self</span>);</div>
 <div class="line">            <span class="comment">// await &#39;put&#39; message and reject other &#39;take&#39; messages</span></div>
-<div class="line">            <a class="code" href="namespacecppa.html#a32d3c95b12475508947918017ead6fac">become</a>(</div>
+<div class="line">            <span class="keyword">self</span>-&gt;become(</div>
 <div class="line">                <span class="comment">// allows us to return to the previous behavior</span></div>
 <div class="line">                keep_behavior,</div>
-<div class="line">                <a class="code" href="namespacecppa.html#a25d0d9e15f20fe8a0644a1d137d27e90">on</a>(<a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;take&quot;</span>), <a class="code" href="namespacecppa.html#aea202e88a810b28d8c7370c5e058277b">arg_match</a>) &gt;&gt; [=](<span class="keyword">const</span> <a class="code" href="classcppa_1_1intrusive__ptr.html">actor_ptr</a>&amp; other) {</div>
-<div class="line">                    <a class="code" href="namespacecppa.html#a8ce9b9bc8666bd339ff6a95065b91d65">send</a>(other, <a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;busy&quot;</span>), <span class="keyword">self</span>);</div>
+<div class="line">                <a class="code" href="namespacecppa.html#a25d0d9e15f20fe8a0644a1d137d27e90">on</a>(<a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;take&quot;</span>), <a class="code" href="namespacecppa.html#aea202e88a810b28d8c7370c5e058277b">arg_match</a>) &gt;&gt; [=](<span class="keyword">const</span> <a class="code" href="classcppa_1_1actor.html">actor</a>&amp; other) {</div>
+<div class="line">                    <span class="keyword">self</span>-&gt;send(other, <a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;busy&quot;</span>), <span class="keyword">self</span>);</div>
 <div class="line">                },</div>
 <div class="line">                <a class="code" href="namespacecppa.html#a25d0d9e15f20fe8a0644a1d137d27e90">on</a>(<a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;put&quot;</span>), philos) &gt;&gt; [=] {</div>
 <div class="line">                    <span class="comment">// return to previous behaivor, i.e., await next &#39;take&#39;</span></div>
-<div class="line">                    <a class="code" href="namespacecppa.html#ae1bfd1a9574057e1470ea7d26167ba18">unbecome</a>();</div>
+<div class="line">                    <span class="keyword">self</span>-&gt;unbecome();</div>
 <div class="line">                }</div>
 <div class="line">            );</div>
 <div class="line">        }</div>
@@ -154,11 +156,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><span class="comment"> * [ X = right =&gt; Y = left  ]</span></div>
 <div class="line"><span class="comment"> */</span></div>
 <div class="line"></div>
-<div class="line"><span class="keyword">struct </span>philosopher : <a name="_a1"></a><a class="code" href="classcppa_1_1event__based__actor.html">event_based_actor</a> {</div>
+<div class="line"><span class="keyword">struct </span>philosopher : <a class="code" href="classcppa_1_1event__based__actor.html">event_based_actor</a> {</div>
 <div class="line"></div>
 <div class="line">    std::string name; <span class="comment">// the name of this philosopher</span></div>
-<div class="line">    <a class="code" href="classcppa_1_1intrusive__ptr.html">actor_ptr</a> left;   <span class="comment">// left chopstick</span></div>
-<div class="line">    <a class="code" href="classcppa_1_1intrusive__ptr.html">actor_ptr</a> right;  <span class="comment">// right chopstick</span></div>
+<div class="line">    <a class="code" href="classcppa_1_1actor.html">actor</a> left;   <span class="comment">// left chopstick</span></div>
+<div class="line">    <a class="code" href="classcppa_1_1actor.html">actor</a> right;  <span class="comment">// right chopstick</span></div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// note: we have to define all behaviors in the constructor because</span></div>
 <div class="line">    <span class="comment">//       non-static member initialization are not (yet) implemented in GCC</span></div>
@@ -168,113 +170,120 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <a class="code" href="classcppa_1_1behavior.html">behavior</a> eating;</div>
 <div class="line"></div>
 <div class="line">    <span class="comment">// wait for second chopstick</span></div>
-<div class="line">    <a class="code" href="classcppa_1_1behavior.html">behavior</a> waiting_for(<span class="keyword">const</span> <a class="code" href="classcppa_1_1intrusive__ptr.html">actor_ptr</a>&amp; what) {</div>
+<div class="line">    <a class="code" href="classcppa_1_1behavior.html">behavior</a> waiting_for(<span class="keyword">const</span> <a class="code" href="classcppa_1_1actor.html">actor</a>&amp; what) {</div>
 <div class="line">        <span class="keywordflow">return</span> (</div>
 <div class="line">            <a class="code" href="namespacecppa.html#a25d0d9e15f20fe8a0644a1d137d27e90">on</a>(<a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;taken&quot;</span>), what) &gt;&gt; [=] {</div>
-<div class="line">                aout &lt;&lt; name</div>
-<div class="line">                     &lt;&lt; <span class="stringliteral">&quot; has picked up chopsticks with IDs &quot;</span></div>
-<div class="line">                     &lt;&lt; left-&gt;id()</div>
-<div class="line">                     &lt;&lt; <span class="stringliteral">&quot; and &quot;</span></div>
-<div class="line">                     &lt;&lt; right-&gt;id()</div>
-<div class="line">                     &lt;&lt; <span class="stringliteral">&quot; and starts to eat\n&quot;</span>;</div>
+<div class="line">                aout(<span class="keyword">this</span>) &lt;&lt; name</div>
+<div class="line">                           &lt;&lt; <span class="stringliteral">&quot; has picked up chopsticks with IDs &quot;</span></div>
+<div class="line">                           &lt;&lt; left-&gt;id()</div>
+<div class="line">                           &lt;&lt; <span class="stringliteral">&quot; and &quot;</span></div>
+<div class="line">                           &lt;&lt; right-&gt;id()</div>
+<div class="line">                           &lt;&lt; <span class="stringliteral">&quot; and starts to eat\n&quot;</span>;</div>
 <div class="line">                <span class="comment">// eat some time</span></div>
-<div class="line">                <a class="code" href="namespacecppa.html#ac0794637247bdee55e95638c34e21f9e">delayed_send</a>(<span class="keyword">this</span>, seconds(5), <a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;think&quot;</span>));</div>
-<div class="line">                <a class="code" href="namespacecppa.html#a32d3c95b12475508947918017ead6fac">become</a>(eating);</div>
+<div class="line">                delayed_send(<span class="keyword">this</span>, seconds(5), <a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;think&quot;</span>));</div>
+<div class="line">                become(eating);</div>
 <div class="line">            },</div>
 <div class="line">            <a class="code" href="namespacecppa.html#a25d0d9e15f20fe8a0644a1d137d27e90">on</a>(<a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;busy&quot;</span>), what) &gt;&gt; [=] {</div>
-<div class="line">                <a class="code" href="namespacecppa.html#a8ce9b9bc8666bd339ff6a95065b91d65">send</a>((what == left) ? right : left, <a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;put&quot;</span>), <span class="keyword">this</span>);</div>
-<div class="line">                <a class="code" href="namespacecppa.html#a8ce9b9bc8666bd339ff6a95065b91d65">send</a>(<span class="keyword">this</span>, <a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;eat&quot;</span>));</div>
-<div class="line">                <a class="code" href="namespacecppa.html#a32d3c95b12475508947918017ead6fac">become</a>(thinking);</div>
+<div class="line">                send((what == left) ? right : left, <a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;put&quot;</span>), <span class="keyword">this</span>);</div>
+<div class="line">                send(<span class="keyword">this</span>, <a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;eat&quot;</span>));</div>
+<div class="line">                become(thinking);</div>
 <div class="line">            }</div>
 <div class="line">        );</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    philosopher(<span class="keyword">const</span> std::string&amp; n, <span class="keyword">const</span> <a class="code" href="classcppa_1_1intrusive__ptr.html">actor_ptr</a>&amp; l, <span class="keyword">const</span> <a class="code" href="classcppa_1_1intrusive__ptr.html">actor_ptr</a>&amp; r)</div>
+<div class="line">    philosopher(<span class="keyword">const</span> std::string&amp; n, <span class="keyword">const</span> <a class="code" href="classcppa_1_1actor.html">actor</a>&amp; l, <span class="keyword">const</span> <a class="code" href="classcppa_1_1actor.html">actor</a>&amp; r)</div>
 <div class="line">    : name(n), left(l), right(r) {</div>
 <div class="line">        <span class="comment">// a philosopher that receives {eat} stops thinking and becomes hungry</span></div>
 <div class="line">        thinking = (</div>
 <div class="line">            <a class="code" href="namespacecppa.html#a25d0d9e15f20fe8a0644a1d137d27e90">on</a>(<a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;eat&quot;</span>)) &gt;&gt; [=] {</div>
-<div class="line">                <a class="code" href="namespacecppa.html#a32d3c95b12475508947918017ead6fac">become</a>(hungry);</div>
-<div class="line">                <a class="code" href="namespacecppa.html#a8ce9b9bc8666bd339ff6a95065b91d65">send</a>(left, <a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;take&quot;</span>), <span class="keyword">this</span>);</div>
-<div class="line">                <a class="code" href="namespacecppa.html#a8ce9b9bc8666bd339ff6a95065b91d65">send</a>(right, <a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;take&quot;</span>), <span class="keyword">this</span>);</div>
+<div class="line">                become(hungry);</div>
+<div class="line">                send(left, <a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;take&quot;</span>), <span class="keyword">this</span>);</div>
+<div class="line">                send(right, <a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;take&quot;</span>), <span class="keyword">this</span>);</div>
 <div class="line">            }</div>
 <div class="line">        );</div>
 <div class="line">        <span class="comment">// wait for the first answer of a chopstick</span></div>
 <div class="line">        hungry = (</div>
 <div class="line">            <a class="code" href="namespacecppa.html#a25d0d9e15f20fe8a0644a1d137d27e90">on</a>(<a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;taken&quot;</span>), left) &gt;&gt; [=] {</div>
-<div class="line">                <a class="code" href="namespacecppa.html#a32d3c95b12475508947918017ead6fac">become</a>(waiting_for(right));</div>
+<div class="line">                become(waiting_for(right));</div>
 <div class="line">            },</div>
 <div class="line">            <a class="code" href="namespacecppa.html#a25d0d9e15f20fe8a0644a1d137d27e90">on</a>(<a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;taken&quot;</span>), right) &gt;&gt; [=] {</div>
-<div class="line">                <a class="code" href="namespacecppa.html#a32d3c95b12475508947918017ead6fac">become</a>(waiting_for(left));</div>
+<div class="line">                become(waiting_for(left));</div>
 <div class="line">            },</div>
-<div class="line">            <a class="code" href="namespacecppa.html#a25d0d9e15f20fe8a0644a1d137d27e90">on</a>&lt;<a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;busy&quot;</span>), <a class="code" href="classcppa_1_1intrusive__ptr.html">actor_ptr</a>&gt;() &gt;&gt; [=] {</div>
-<div class="line">                <a class="code" href="namespacecppa.html#a32d3c95b12475508947918017ead6fac">become</a>(denied);</div>
+<div class="line">            <a class="code" href="namespacecppa.html#a25d0d9e15f20fe8a0644a1d137d27e90">on</a>&lt;<a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;busy&quot;</span>), <a class="code" href="classcppa_1_1actor.html">actor</a>&gt;() &gt;&gt; [=] {</div>
+<div class="line">                become(denied);</div>
 <div class="line">            }</div>
 <div class="line">        );</div>
 <div class="line">        <span class="comment">// philosopher was not able to obtain the first chopstick</span></div>
 <div class="line">        denied = (</div>
-<div class="line">            <a class="code" href="namespacecppa.html#a25d0d9e15f20fe8a0644a1d137d27e90">on</a>(<a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;taken&quot;</span>), arg_match) &gt;&gt; [=](<span class="keyword">const</span> <a class="code" href="classcppa_1_1intrusive__ptr.html">actor_ptr</a>&amp; ptr) {</div>
-<div class="line">                <a class="code" href="namespacecppa.html#a8ce9b9bc8666bd339ff6a95065b91d65">send</a>(ptr, <a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;put&quot;</span>), <span class="keyword">this</span>);</div>
-<div class="line">                <a class="code" href="namespacecppa.html#a8ce9b9bc8666bd339ff6a95065b91d65">send</a>(<span class="keyword">this</span>, <a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;eat&quot;</span>));</div>
-<div class="line">                <a class="code" href="namespacecppa.html#a32d3c95b12475508947918017ead6fac">become</a>(thinking);</div>
+<div class="line">            <a class="code" href="namespacecppa.html#a25d0d9e15f20fe8a0644a1d137d27e90">on</a>(<a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;taken&quot;</span>), <a class="code" href="namespacecppa.html#aea202e88a810b28d8c7370c5e058277b">arg_match</a>) &gt;&gt; [=](<span class="keyword">const</span> <a class="code" href="classcppa_1_1actor.html">actor</a>&amp; ptr) {</div>
+<div class="line">                send(ptr, <a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;put&quot;</span>), <span class="keyword">this</span>);</div>
+<div class="line">                send(<span class="keyword">this</span>, <a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;eat&quot;</span>));</div>
+<div class="line">                become(thinking);</div>
 <div class="line">            },</div>
-<div class="line">            <a class="code" href="namespacecppa.html#a25d0d9e15f20fe8a0644a1d137d27e90">on</a>&lt;<a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;busy&quot;</span>), <a class="code" href="classcppa_1_1intrusive__ptr.html">actor_ptr</a>&gt;() &gt;&gt; [=] {</div>
-<div class="line">                <a class="code" href="namespacecppa.html#a8ce9b9bc8666bd339ff6a95065b91d65">send</a>(<span class="keyword">this</span>, <a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;eat&quot;</span>));</div>
-<div class="line">                <a class="code" href="namespacecppa.html#a32d3c95b12475508947918017ead6fac">become</a>(thinking);</div>
+<div class="line">            <a class="code" href="namespacecppa.html#a25d0d9e15f20fe8a0644a1d137d27e90">on</a>&lt;<a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;busy&quot;</span>), <a class="code" href="classcppa_1_1actor.html">actor</a>&gt;() &gt;&gt; [=] {</div>
+<div class="line">                send(<span class="keyword">this</span>, <a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;eat&quot;</span>));</div>
+<div class="line">                become(thinking);</div>
 <div class="line">            }</div>
 <div class="line">        );</div>
 <div class="line">        <span class="comment">// philosopher obtained both chopstick and eats (for five seconds)</span></div>
 <div class="line">        eating = (</div>
 <div class="line">            <a class="code" href="namespacecppa.html#a25d0d9e15f20fe8a0644a1d137d27e90">on</a>(<a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;think&quot;</span>)) &gt;&gt; [=] {</div>
-<div class="line">                <a class="code" href="namespacecppa.html#a8ce9b9bc8666bd339ff6a95065b91d65">send</a>(left, <a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;put&quot;</span>), <span class="keyword">this</span>);</div>
-<div class="line">                <a class="code" href="namespacecppa.html#a8ce9b9bc8666bd339ff6a95065b91d65">send</a>(right, <a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;put&quot;</span>), <span class="keyword">this</span>);</div>
-<div class="line">                <a class="code" href="namespacecppa.html#ac0794637247bdee55e95638c34e21f9e">delayed_send</a>(<span class="keyword">this</span>, seconds(5), <a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;eat&quot;</span>));</div>
-<div class="line">                aout &lt;&lt; name</div>
-<div class="line">                     &lt;&lt; <span class="stringliteral">&quot; puts down his chopsticks and starts to think\n&quot;</span>;</div>
-<div class="line">                <a class="code" href="namespacecppa.html#a32d3c95b12475508947918017ead6fac">become</a>(thinking);</div>
+<div class="line">                send(left, <a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;put&quot;</span>), <span class="keyword">this</span>);</div>
+<div class="line">                send(right, <a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;put&quot;</span>), <span class="keyword">this</span>);</div>
+<div class="line">                delayed_send(<span class="keyword">this</span>, seconds(5), <a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;eat&quot;</span>));</div>
+<div class="line">                aout(<span class="keyword">this</span>) &lt;&lt; name</div>
+<div class="line">                           &lt;&lt; <span class="stringliteral">&quot; puts down his chopsticks and starts to think\n&quot;</span>;</div>
+<div class="line">                become(thinking);</div>
 <div class="line">            }</div>
 <div class="line">        );</div>
 <div class="line">    }</div>
 <div class="line"></div>
-<div class="line">    <span class="keywordtype">void</span> init() {</div>
+<div class="line">    <a class="code" href="classcppa_1_1behavior.html">behavior</a> make_behavior()<span class="keyword"> override </span>{</div>
+<div class="line">        <span class="comment">// start thinking</span></div>
+<div class="line">        send(<span class="keyword">this</span>, <a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;think&quot;</span>));</div>
 <div class="line">        <span class="comment">// philosophers start to think after receiving {think}</span></div>
-<div class="line">        <a class="code" href="namespacecppa.html#a32d3c95b12475508947918017ead6fac">become</a> (</div>
+<div class="line">        <span class="keywordflow">return</span> (</div>
 <div class="line">            <a class="code" href="namespacecppa.html#a25d0d9e15f20fe8a0644a1d137d27e90">on</a>(<a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;think&quot;</span>)) &gt;&gt; [=] {</div>
-<div class="line">                aout &lt;&lt; name &lt;&lt; <span class="stringliteral">&quot; starts to think\n&quot;</span>;</div>
-<div class="line">                <a class="code" href="namespacecppa.html#ac0794637247bdee55e95638c34e21f9e">delayed_send</a>(<span class="keyword">this</span>, seconds(5), <a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;eat&quot;</span>));</div>
-<div class="line">                <a class="code" href="namespacecppa.html#a32d3c95b12475508947918017ead6fac">become</a>(thinking);</div>
+<div class="line">                aout(<span class="keyword">this</span>) &lt;&lt; name &lt;&lt; <span class="stringliteral">&quot; starts to think\n&quot;</span>;</div>
+<div class="line">                delayed_send(<span class="keyword">this</span>, seconds(5), <a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;eat&quot;</span>));</div>
+<div class="line">                become(thinking);</div>
 <div class="line">            }</div>
 <div class="line">        );</div>
-<div class="line">        <span class="comment">// start thinking</span></div>
-<div class="line">        <a class="code" href="namespacecppa.html#a8ce9b9bc8666bd339ff6a95065b91d65">send</a>(<span class="keyword">this</span>, <a class="code" href="namespacecppa.html#a9ed5b5aa07c384b14899beae80974d47">atom</a>(<span class="stringliteral">&quot;think&quot;</span>));</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">};</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span>, <span class="keywordtype">char</span>**) {</div>
+<div class="line"><span class="keywordtype">void</span> dining_philosophers() {</div>
+<div class="line">    <a name="_a3"></a><a class="code" href="classcppa_1_1scoped__actor.html">scoped_actor</a> <span class="keyword">self</span>;</div>
 <div class="line">    <span class="comment">// create five chopsticks</span></div>
-<div class="line">    aout &lt;&lt; <span class="stringliteral">&quot;chopstick ids are:&quot;</span>;</div>
-<div class="line">    std::vector&lt;actor_ptr&gt; chopsticks;</div>
+<div class="line">    aout(<span class="keyword">self</span>) &lt;&lt; <span class="stringliteral">&quot;chopstick ids are:&quot;</span>;</div>
+<div class="line">    std::vector&lt;actor&gt; chopsticks;</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; 5; ++i) {</div>
-<div class="line">        chopsticks.push_back(<a name="a3"></a><a class="code" href="group___actor_creation.html#ga64b99980b69ba8e8cdd218e402f48fd6">spawn</a>(chopstick));</div>
-<div class="line">        aout &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; chopsticks.back()-&gt;id();</div>
+<div class="line">        chopsticks.push_back(<a name="a4"></a><a class="code" href="group___actor_creation.html#gaba7260e3d070dfd846946305e0fbc31e">spawn</a>(chopstick));</div>
+<div class="line">        aout(<span class="keyword">self</span>) &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; chopsticks.back()-&gt;id();</div>
 <div class="line">    }</div>
-<div class="line">    aout &lt;&lt; endl;</div>
+<div class="line">    aout(<span class="keyword">self</span>) &lt;&lt; endl;</div>
 <div class="line">    <span class="comment">// spawn five philosophers</span></div>
 <div class="line">    std::vector&lt;std::string&gt; names { <span class="stringliteral">&quot;Plato&quot;</span>, <span class="stringliteral">&quot;Hume&quot;</span>, <span class="stringliteral">&quot;Kant&quot;</span>,</div>
 <div class="line">                                     <span class="stringliteral">&quot;Nietzsche&quot;</span>, <span class="stringliteral">&quot;Descartes&quot;</span> };</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; 5; ++i) {</div>
 <div class="line">        spawn&lt;philosopher&gt;(names[i], chopsticks[i], chopsticks[(i+1)%5]);</div>
 <div class="line">    }</div>
+<div class="line">}</div>
+<div class="line"></div>
+<div class="line">} <span class="comment">// namespace &lt;anonymous&gt;</span></div>
+<div class="line"></div>
+<div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span>, <span class="keywordtype">char</span>**) {</div>
+<div class="line">    dining_philosophers();</div>
 <div class="line">    <span class="comment">// real philosophers are never done</span></div>
-<div class="line">    <a class="code" href="namespacecppa.html#a185090573ffb146384ccdfa94172c23e">await_all_others_done</a>();</div>
+<div class="line">    <a class="code" href="namespacecppa.html#a1155a80c876121987be19d4f38c4dacd">await_all_actors_done</a>();</div>
 <div class="line">    <a class="code" href="namespacecppa.html#a8d5daac288a10cc34286f505ea637571">shutdown</a>();</div>
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 14 2013 20:08:20 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun May 4 2014 23:48:00 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

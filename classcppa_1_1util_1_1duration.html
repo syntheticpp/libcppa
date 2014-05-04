@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libcppa
-   &#160;<span id="projectnumber">Version 0.8</span>
+   &#160;<span id="projectnumber">Version 0.9.0</span>
    </div>
   </td>
  </tr>
@@ -98,7 +98,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Time duration consisting of a <a class="el" href="namespacecppa_1_1util.html#ab9e5a7e6b32f7d1cbe52d4eae74cdf34">time_unit</a> and a 32 bit unsigned integer.  
+<p>Time duration consisting of a <a class="el" href="namespacecppa_1_1util.html#ab9e5a7e6b32f7d1cbe52d4eae74cdf34">time_unit</a> and a 64 bit unsigned integer.  
  <a href="classcppa_1_1util_1_1duration.html#details">More...</a></p>
 
 <p><code>#include &lt;duration.hpp&gt;</code></p>
@@ -108,14 +108,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac718753c9cbe4f541e85a0920162fc35"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac718753c9cbe4f541e85a0920162fc35"></a>
 constexpr&#160;</td><td class="memItemRight" valign="bottom"><b>duration</b> (<a class="el" href="namespacecppa_1_1util.html#ab9e5a7e6b32f7d1cbe52d4eae74cdf34">time_unit</a> u, std::uint32_t v)</td></tr>
 <tr class="separator:ac718753c9cbe4f541e85a0920162fc35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af17f5e1c7b62286e29648f5ad384874d"><td class="memTemplParams" colspan="2"><a class="anchor" id="af17f5e1c7b62286e29648f5ad384874d"></a>
-template&lt;class Rep , class Period &gt; </td></tr>
-<tr class="memitem:af17f5e1c7b62286e29648f5ad384874d"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><b>duration</b> (std::chrono::duration&lt; Rep, Period &gt; d)</td></tr>
-<tr class="separator:af17f5e1c7b62286e29648f5ad384874d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a842a8b904d250c12ca7520fc5886db"><td class="memTemplParams" colspan="2"><a class="anchor" id="a1a842a8b904d250c12ca7520fc5886db"></a>
-template&lt;class Rep &gt; </td></tr>
-<tr class="memitem:a1a842a8b904d250c12ca7520fc5886db"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><b>duration</b> (std::chrono::duration&lt; Rep, std::ratio&lt; 60, 1 &gt; &gt; d)</td></tr>
-<tr class="separator:a1a842a8b904d250c12ca7520fc5886db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a298558656fcfb9afc42b05b2827847a9"><td class="memTemplParams" colspan="2">template&lt;class Rep , class Period &gt; </td></tr>
+<tr class="memitem:a298558656fcfb9afc42b05b2827847a9"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classcppa_1_1util_1_1duration.html#a298558656fcfb9afc42b05b2827847a9">duration</a> (std::chrono::duration&lt; Rep, Period &gt; d)</td></tr>
+<tr class="memdesc:a298558656fcfb9afc42b05b2827847a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new instance from an STL duration.  <a href="#a298558656fcfb9afc42b05b2827847a9">More...</a><br/></td></tr>
+<tr class="separator:a298558656fcfb9afc42b05b2827847a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e9cba6d5ff405178d11a869a8a8cff6"><td class="memTemplParams" colspan="2">template&lt;class Rep &gt; </td></tr>
+<tr class="memitem:a6e9cba6d5ff405178d11a869a8a8cff6"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classcppa_1_1util_1_1duration.html#a6e9cba6d5ff405178d11a869a8a8cff6">duration</a> (std::chrono::duration&lt; Rep, std::ratio&lt; 60, 1 &gt; &gt; d)</td></tr>
+<tr class="memdesc:a6e9cba6d5ff405178d11a869a8a8cff6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new instance from an STL duration given in minutes.  <a href="#a6e9cba6d5ff405178d11a869a8a8cff6">More...</a><br/></td></tr>
+<tr class="separator:a6e9cba6d5ff405178d11a869a8a8cff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15306eac6a40e0c57905ff72a69630c0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a15306eac6a40e0c57905ff72a69630c0"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1util_1_1duration.html#a15306eac6a40e0c57905ff72a69630c0">valid</a> () const </td></tr>
 <tr class="memdesc:a15306eac6a40e0c57905ff72a69630c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if <code>unit != time_unit::none</code>. <br/></td></tr>
@@ -124,15 +124,18 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1util_1_1duration.html#ae133e0bdc6ddd48f0ef118d444c90aca">is_zero</a> () const </td></tr>
 <tr class="memdesc:ae133e0bdc6ddd48f0ef118d444c90aca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if <code>count == 0</code>. <br/></td></tr>
 <tr class="separator:ae133e0bdc6ddd48f0ef118d444c90aca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a557e27d54aa0f318da6a96f0b4cec619"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a557e27d54aa0f318da6a96f0b4cec619"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>to_string</b> () const </td></tr>
+<tr class="separator:a557e27d54aa0f318da6a96f0b4cec619"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a64c33193acaf2fc56ef89d771f60b273"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a64c33193acaf2fc56ef89d771f60b273"></a>
 <a class="el" href="namespacecppa_1_1util.html#ab9e5a7e6b32f7d1cbe52d4eae74cdf34">time_unit</a>&#160;</td><td class="memItemRight" valign="bottom"><b>unit</b></td></tr>
 <tr class="separator:a64c33193acaf2fc56ef89d771f60b273"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af2baf7e12ddbed3444fa283cfa1b5890"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af2baf7e12ddbed3444fa283cfa1b5890"></a>
-std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>count</b></td></tr>
-<tr class="separator:af2baf7e12ddbed3444fa283cfa1b5890"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a671602c63fb74c9a30e3853edb2fc6de"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a671602c63fb74c9a30e3853edb2fc6de"></a>
+std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><b>count</b></td></tr>
+<tr class="separator:a671602c63fb74c9a30e3853edb2fc6de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="related"></a>
 Related Functions</h2></td></tr>
@@ -151,14 +154,67 @@ Duration &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>o
 <tr class="separator:a610582a35ba555219c244001b3eef82e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Time duration consisting of a <a class="el" href="namespacecppa_1_1util.html#ab9e5a7e6b32f7d1cbe52d4eae74cdf34">time_unit</a> and a 32 bit unsigned integer. </p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+<div class="textblock"><p>Time duration consisting of a <a class="el" href="namespacecppa_1_1util.html#ab9e5a7e6b32f7d1cbe52d4eae74cdf34">time_unit</a> and a 64 bit unsigned integer. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a298558656fcfb9afc42b05b2827847a9"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Rep , class Period &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">cppa::util::duration::duration </td>
+          <td>(</td>
+          <td class="paramtype">std::chrono::duration&lt; Rep, Period &gt;&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a new instance from an STL duration. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Thrown if <code>d.count()</code> is negative. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a6e9cba6d5ff405178d11a869a8a8cff6"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Rep &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">cppa::util::duration::duration </td>
+          <td>(</td>
+          <td class="paramtype">std::chrono::duration&lt; Rep, std::ratio&lt; 60, 1 &gt; &gt;&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a new instance from an STL duration given in minutes. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Thrown if <code>d.count()</code> is negative. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>cppa/util/duration.hpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 14 2013 20:08:20 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun May 4 2014 23:48:01 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

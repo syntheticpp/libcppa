@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libcppa
-   &#160;<span id="projectnumber">Version 0.8</span>
+   &#160;<span id="projectnumber">Version 0.9.0</span>
    </div>
   </td>
  </tr>
@@ -97,10 +97,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Provides the <code>continue_with</code> member function as used in <code>sync_send(...).then(...).continue_with(...)</code>.  
+<p>Helper class to enable users to add continuations when dealing with synchronous sends.  
  <a href="classcppa_1_1continue__helper.html#details">More...</a></p>
 
-<p><code>#include &lt;message_future.hpp&gt;</code></p>
+<p><code>#include &lt;continue_helper.hpp&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
@@ -110,29 +110,81 @@ typedef int&#160;</td><td class="memItemRight" valign="bottom"><b>message_id_wra
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2964b0c7aee3dd1393584ea72858125a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2964b0c7aee3dd1393584ea72858125a"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>continue_helper</b> (<a class="el" href="classcppa_1_1message__id.html">message_id</a> mid)</td></tr>
-<tr class="separator:a2964b0c7aee3dd1393584ea72858125a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2e3d22e5d5be87ea826334bd4218c5c"><td class="memTemplParams" colspan="2"><a class="anchor" id="aa2e3d22e5d5be87ea826334bd4218c5c"></a>
-template&lt;typename F &gt; </td></tr>
-<tr class="memitem:aa2e3d22e5d5be87ea826334bd4218c5c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>continue_with</b> (F fun)</td></tr>
-<tr class="separator:aa2e3d22e5d5be87ea826334bd4218c5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1dd499545aa30950b548a7cafb2dec7d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1dd499545aa30950b548a7cafb2dec7d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>continue_with</b> (behavior::continuation_fun fun)</td></tr>
-<tr class="separator:a1dd499545aa30950b548a7cafb2dec7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc808d0693b931ab680aa57cfeb52cc0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adc808d0693b931ab680aa57cfeb52cc0"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>continue_helper</b> (<a class="el" href="classcppa_1_1message__id.html">message_id</a> mid, <a class="el" href="classcppa_1_1local__actor.html">local_actor</a> *self)</td></tr>
+<tr class="separator:adc808d0693b931ab680aa57cfeb52cc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1993cd73baf93095238c1e3b1cb43ace"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
+<tr class="memitem:a1993cd73baf93095238c1e3b1cb43ace"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classcppa_1_1continue__helper.html">continue_helper</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classcppa_1_1continue__helper.html#a1993cd73baf93095238c1e3b1cb43ace">continue_with</a> (F fun)</td></tr>
+<tr class="memdesc:a1993cd73baf93095238c1e3b1cb43ace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a continuation to the synchronous message handler that is invoked if the response handler successfully returned.  <a href="#a1993cd73baf93095238c1e3b1cb43ace">More...</a><br/></td></tr>
+<tr class="separator:a1993cd73baf93095238c1e3b1cb43ace"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b2ab532f2b5681eb63edb475ce47483"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcppa_1_1continue__helper.html">continue_helper</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1continue__helper.html#a6b2ab532f2b5681eb63edb475ce47483">continue_with</a> (behavior::continuation_fun fun)</td></tr>
+<tr class="memdesc:a6b2ab532f2b5681eb63edb475ce47483"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a continuation to the synchronous message handler that is invoked if the response handler successfully returned.  <a href="#a6b2ab532f2b5681eb63edb475ce47483">More...</a><br/></td></tr>
+<tr class="separator:a6b2ab532f2b5681eb63edb475ce47483"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad19bbff6ea09159c8b93944fbeb53ff"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aad19bbff6ea09159c8b93944fbeb53ff"></a>
-<a class="el" href="classcppa_1_1message__id.html">message_id</a>&#160;</td><td class="memItemRight" valign="bottom"><b>get_message_id</b> () const </td></tr>
+<a class="el" href="classcppa_1_1message__id.html">message_id</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1continue__helper.html#aad19bbff6ea09159c8b93944fbeb53ff">get_message_id</a> () const </td></tr>
+<tr class="memdesc:aad19bbff6ea09159c8b93944fbeb53ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the ID of the expected response message. <br/></td></tr>
 <tr class="separator:aad19bbff6ea09159c8b93944fbeb53ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Provides the <code>continue_with</code> member function as used in <code>sync_send(...).then(...).continue_with(...)</code>. </p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
-<li>cppa/message_future.hpp</li>
+<div class="textblock"><p>Helper class to enable users to add continuations when dealing with synchronous sends. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a1993cd73baf93095238c1e3b1cb43ace"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename F &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcppa_1_1continue__helper.html">continue_helper</a>&amp; cppa::continue_helper::continue_with </td>
+          <td>(</td>
+          <td class="paramtype">F&#160;</td>
+          <td class="paramname"><em>fun</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds a continuation to the synchronous message handler that is invoked if the response handler successfully returned. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fun</td><td>The continuation as functor object. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a6b2ab532f2b5681eb63edb475ce47483"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcppa_1_1continue__helper.html">continue_helper</a>&amp; cppa::continue_helper::continue_with </td>
+          <td>(</td>
+          <td class="paramtype">behavior::continuation_fun&#160;</td>
+          <td class="paramname"><em>fun</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds a continuation to the synchronous message handler that is invoked if the response handler successfully returned. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fun</td><td>The continuation as functor object. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>cppa/continue_helper.hpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 14 2013 20:08:20 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun May 4 2014 23:48:00 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

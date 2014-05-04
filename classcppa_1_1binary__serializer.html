@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libcppa
-   &#160;<span id="projectnumber">Version 0.8</span>
+   &#160;<span id="projectnumber">Version 0.9.0</span>
    </div>
   </td>
  </tr>
@@ -112,11 +112,12 @@ Inheritance diagram for cppa::binary_serializer:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af9da0a38e015caf1ecef455b1dc62360"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1binary__serializer.html#af9da0a38e015caf1ecef455b1dc62360">binary_serializer</a> (util::buffer *write_buffer, <a class="el" href="classcppa_1_1actor__addressing.html">actor_addressing</a> *addressing=nullptr, <a class="el" href="classcppa_1_1type__lookup__table.html">type_lookup_table</a> *lookup_table=nullptr)</td></tr>
-<tr class="memdesc:af9da0a38e015caf1ecef455b1dc62360"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a binary serializer writing to <code>write_buffer</code>.  <a href="#af9da0a38e015caf1ecef455b1dc62360">More...</a><br/></td></tr>
-<tr class="separator:af9da0a38e015caf1ecef455b1dc62360"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a131f70de7b1ee2efee74dbf7c204bf52"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1binary__serializer.html#a131f70de7b1ee2efee74dbf7c204bf52">begin_object</a> (const <a class="el" href="classcppa_1_1uniform__type__info.html">uniform_type_info</a> *) override</td></tr>
-<tr class="memdesc:a131f70de7b1ee2efee74dbf7c204bf52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins serialization of an object of the type named <code>type_name</code>.  <a href="#a131f70de7b1ee2efee74dbf7c204bf52">More...</a><br/></td></tr>
+<tr class="memitem:aad9dded47b3faa02dbde94e3ee78b11b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1binary__serializer.html#aad9dded47b3faa02dbde94e3ee78b11b">binary_serializer</a> (<a class="el" href="classcppa_1_1util_1_1buffer.html">util::buffer</a> *write_buffer, <a class="el" href="classcppa_1_1actor__namespace.html">actor_namespace</a> *ns=nullptr, <a class="el" href="classcppa_1_1type__lookup__table.html">type_lookup_table</a> *lookup_table=nullptr)</td></tr>
+<tr class="memdesc:aad9dded47b3faa02dbde94e3ee78b11b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a binary serializer writing to <code>write_buffer</code>.  <a href="#aad9dded47b3faa02dbde94e3ee78b11b">More...</a><br/></td></tr>
+<tr class="separator:aad9dded47b3faa02dbde94e3ee78b11b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a131f70de7b1ee2efee74dbf7c204bf52"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a131f70de7b1ee2efee74dbf7c204bf52"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1binary__serializer.html#a131f70de7b1ee2efee74dbf7c204bf52">begin_object</a> (const <a class="el" href="classcppa_1_1uniform__type__info.html">uniform_type_info</a> *) override</td></tr>
+<tr class="memdesc:a131f70de7b1ee2efee74dbf7c204bf52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins serialization of an object of type <code>uti</code>. <br/></td></tr>
 <tr class="separator:a131f70de7b1ee2efee74dbf7c204bf52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3fc0bf4d5c4721a53c52f13848a36ed"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae3fc0bf4d5c4721a53c52f13848a36ed"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1binary__serializer.html#ae3fc0bf4d5c4721a53c52f13848a36ed">end_object</a> () override</td></tr>
@@ -140,11 +141,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:a86bb181f44f71f61f443da3ef56529c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a raw block of data.  <a href="#a86bb181f44f71f61f443da3ef56529c6">More...</a><br/></td></tr>
 <tr class="separator:a86bb181f44f71f61f443da3ef56529c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classcppa_1_1serializer"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classcppa_1_1serializer')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classcppa_1_1serializer.html">cppa::serializer</a></td></tr>
-<tr class="memitem:ab3a9c4633ca936f08cb4e1ed1edf69ca inherit pub_methods_classcppa_1_1serializer"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1serializer.html#ab3a9c4633ca936f08cb4e1ed1edf69ca">serializer</a> (<a class="el" href="classcppa_1_1actor__addressing.html">actor_addressing</a> *addressing=nullptr, <a class="el" href="classcppa_1_1type__lookup__table.html">type_lookup_table</a> *outgoing_types=nullptr)</td></tr>
-<tr class="separator:ab3a9c4633ca936f08cb4e1ed1edf69ca inherit pub_methods_classcppa_1_1serializer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69dfb4025d85273146b9001e1aefcdaa inherit pub_methods_classcppa_1_1serializer"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a69dfb4025d85273146b9001e1aefcdaa"></a>
-<a class="el" href="classcppa_1_1actor__addressing.html">actor_addressing</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>addressing</b> ()</td></tr>
-<tr class="separator:a69dfb4025d85273146b9001e1aefcdaa inherit pub_methods_classcppa_1_1serializer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a887d0119481b46df7c9c728e0e4d3914 inherit pub_methods_classcppa_1_1serializer"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1serializer.html#a887d0119481b46df7c9c728e0e4d3914">serializer</a> (<a class="el" href="classcppa_1_1actor__namespace.html">actor_namespace</a> *addressing=nullptr, <a class="el" href="classcppa_1_1type__lookup__table.html">type_lookup_table</a> *outgoing_types=nullptr)</td></tr>
+<tr class="separator:a887d0119481b46df7c9c728e0e4d3914 inherit pub_methods_classcppa_1_1serializer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ebbc2227743cf079b57570e2267a154 inherit pub_methods_classcppa_1_1serializer"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3ebbc2227743cf079b57570e2267a154"></a>
+<a class="el" href="classcppa_1_1actor__namespace.html">actor_namespace</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>get_namespace</b> ()</td></tr>
+<tr class="separator:a3ebbc2227743cf079b57570e2267a154 inherit pub_methods_classcppa_1_1serializer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d9ffee70003e4bc17ff7173898ea920 inherit pub_methods_classcppa_1_1serializer"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3d9ffee70003e4bc17ff7173898ea920"></a>
 <a class="el" href="classcppa_1_1type__lookup__table.html">type_lookup_table</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>outgoing_types</b> ()</td></tr>
 <tr class="separator:a3d9ffee70003e4bc17ff7173898ea920 inherit pub_methods_classcppa_1_1serializer"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -159,23 +160,23 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Implements the serializer interface with a binary serialization protocol. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="announce_1_8cpp-example.html#_a0">announce_1.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="announce_1_8cpp-example.html#_a2">announce_1.cpp</a>.</dd>
 </dl></div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="af9da0a38e015caf1ecef455b1dc62360"></a>
+<a class="anchor" id="aad9dded47b3faa02dbde94e3ee78b11b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">cppa::binary_serializer::binary_serializer </td>
           <td>(</td>
-          <td class="paramtype">util::buffer *&#160;</td>
+          <td class="paramtype"><a class="el" href="classcppa_1_1util_1_1buffer.html">util::buffer</a> *&#160;</td>
           <td class="paramname"><em>write_buffer</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classcppa_1_1actor__addressing.html">actor_addressing</a> *&#160;</td>
-          <td class="paramname"><em>addressing</em> = <code>nullptr</code>, </td>
+          <td class="paramtype"><a class="el" href="classcppa_1_1actor__namespace.html">actor_namespace</a> *&#160;</td>
+          <td class="paramname"><em>ns</em> = <code>nullptr</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -197,40 +198,6 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a131f70de7b1ee2efee74dbf7c204bf52"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void cppa::binary_serializer::begin_object </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classcppa_1_1uniform__type__info.html">uniform_type_info</a> *&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Begins serialization of an object of the type named <code>type_name</code>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">type_name</td><td>The platform-independent <code>libcppa</code> type name. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Implements <a class="el" href="classcppa_1_1serializer.html#a3e7edaf01d36d0546bd81ecb90cae84e">cppa::serializer</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="a86bb181f44f71f61f443da3ef56529c6"></a>
 <div class="memitem">
 <div class="memproto">
@@ -361,7 +328,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 14 2013 20:08:20 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun May 4 2014 23:48:00 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

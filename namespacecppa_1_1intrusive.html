@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libcppa
-   &#160;<span id="projectnumber">Version 0.8</span>
+   &#160;<span id="projectnumber">Version 0.9.0</span>
    </div>
   </td>
  </tr>
@@ -100,27 +100,62 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1intrusive_1_1single__reader__queue.html">single_reader_queue</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An intrusive, thread safe queue implementation.  <a href="classcppa_1_1intrusive_1_1single__reader__queue.html#details">More...</a><br/></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An intrusive, thread-safe queue implementation.  <a href="classcppa_1_1intrusive_1_1single__reader__queue.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:aa92d5e2e9e2308cd076c8c311b8a00b6"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><b>enqueue_result</b> { <br/>
-&#160;&#160;<b>enqueued</b>, 
+<tr class="memitem:aa92d5e2e9e2308cd076c8c311b8a00b6"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecppa_1_1intrusive.html#aa92d5e2e9e2308cd076c8c311b8a00b6">enqueue_result</a> { <br/>
+&#160;&#160;<a class="el" href="namespacecppa_1_1intrusive.html#aa92d5e2e9e2308cd076c8c311b8a00b6a260ca9dd8a4577fc00b7bd5810298076">enqueue_result::success</a>, 
 <br/>
-&#160;&#160;<b>first_enqueued</b>, 
+&#160;&#160;<a class="el" href="namespacecppa_1_1intrusive.html#aa92d5e2e9e2308cd076c8c311b8a00b6a8505d92f1a08d64e80ebffbde6749069">enqueue_result::unblocked_reader</a>, 
 <br/>
-&#160;&#160;<b>queue_closed</b>
+&#160;&#160;<a class="el" href="namespacecppa_1_1intrusive.html#aa92d5e2e9e2308cd076c8c311b8a00b6a1f494a6c8d9d6b854fcae46e258d9b85">enqueue_result::queue_closed</a>
 <br/>
  }</td></tr>
+<tr class="memdesc:aa92d5e2e9e2308cd076c8c311b8a00b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Denotes in which state queue and reader are after an enqueue.  <a href="namespacecppa_1_1intrusive.html#aa92d5e2e9e2308cd076c8c311b8a00b6">More...</a><br/></td></tr>
 <tr class="separator:aa92d5e2e9e2308cd076c8c311b8a00b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Contains intrusive container implementations. </p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Enumeration Type Documentation</h2>
+<a class="anchor" id="aa92d5e2e9e2308cd076c8c311b8a00b6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespacecppa_1_1intrusive.html#aa92d5e2e9e2308cd076c8c311b8a00b6">cppa::intrusive::enqueue_result</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Denotes in which state queue and reader are after an enqueue. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="aa92d5e2e9e2308cd076c8c311b8a00b6a260ca9dd8a4577fc00b7bd5810298076"></a>success</em>&nbsp;</td><td class="fielddoc">
+<p>Indicates that the enqueue operation succeeded and the reader is ready to receive the data. </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="aa92d5e2e9e2308cd076c8c311b8a00b6a8505d92f1a08d64e80ebffbde6749069"></a>unblocked_reader</em>&nbsp;</td><td class="fielddoc">
+<p>Indicates that the enqueue operation succeeded and the reader is currently blocked, i.e., needs to be re-scheduled. </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="aa92d5e2e9e2308cd076c8c311b8a00b6a1f494a6c8d9d6b854fcae46e258d9b85"></a>queue_closed</em>&nbsp;</td><td class="fielddoc">
+<p>Indicates that the enqueue operation failed because the queue has been closed by the reader. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 14 2013 20:08:20 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun May 4 2014 23:48:01 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

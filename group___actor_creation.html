@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libcppa
-   &#160;<span id="projectnumber">Version 0.8</span>
+   &#160;<span id="projectnumber">Version 0.9.0</span>
    </div>
   </td>
  </tr>
@@ -88,53 +88,94 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1spawn__options.html">cppa::spawn_options</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores options passed to the <code>spawn</code> function family.  <a href="classcppa_1_1spawn__options.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga64b99980b69ba8e8cdd218e402f48fd6"><td class="memTemplParams" colspan="2">template&lt;spawn_options Options = no_spawn_options, typename... Ts&gt; </td></tr>
-<tr class="memitem:ga64b99980b69ba8e8cdd218e402f48fd6"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classcppa_1_1actor.html#a15b74113cbde6221df8f00c25b6c2a56">actor_ptr</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group___actor_creation.html#ga64b99980b69ba8e8cdd218e402f48fd6">cppa::spawn</a> (Ts &amp;&amp;...args)</td></tr>
-<tr class="memdesc:ga64b99980b69ba8e8cdd218e402f48fd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawns a new <a class="el" href="classcppa_1_1actor.html">actor</a> that evaluates given arguments.  <a href="#ga64b99980b69ba8e8cdd218e402f48fd6">More...</a><br/></td></tr>
-<tr class="separator:ga64b99980b69ba8e8cdd218e402f48fd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae0ea633de5e468cacd5156d014b7c647"><td class="memTemplParams" colspan="2">template&lt;class Impl , spawn_options Options = no_spawn_options, typename... Ts&gt; </td></tr>
-<tr class="memitem:gae0ea633de5e468cacd5156d014b7c647"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classcppa_1_1actor.html#a15b74113cbde6221df8f00c25b6c2a56">actor_ptr</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group___actor_creation.html#gae0ea633de5e468cacd5156d014b7c647">cppa::spawn</a> (Ts &amp;&amp;...args)</td></tr>
-<tr class="memdesc:gae0ea633de5e468cacd5156d014b7c647"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawns an actor of type <code>Impl</code>.  <a href="#gae0ea633de5e468cacd5156d014b7c647">More...</a><br/></td></tr>
-<tr class="separator:gae0ea633de5e468cacd5156d014b7c647"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga72975ef0dee3891fb56c195c0a75fc2b"><td class="memTemplParams" colspan="2">template&lt;spawn_options Options = no_spawn_options, typename... Ts&gt; </td></tr>
-<tr class="memitem:ga72975ef0dee3891fb56c195c0a75fc2b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classcppa_1_1actor.html#a15b74113cbde6221df8f00c25b6c2a56">actor_ptr</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group___actor_creation.html#ga72975ef0dee3891fb56c195c0a75fc2b">cppa::spawn_in_group</a> (const <a class="el" href="classcppa_1_1group.html#ae32f63fffa19f24154c1cc3527a8f420">group_ptr</a> &amp;grp, Ts &amp;&amp;...args)</td></tr>
-<tr class="memdesc:ga72975ef0dee3891fb56c195c0a75fc2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawns a new actor that evaluates given arguments and immediately joins <code>grp</code>.  <a href="#ga72975ef0dee3891fb56c195c0a75fc2b">More...</a><br/></td></tr>
-<tr class="separator:ga72975ef0dee3891fb56c195c0a75fc2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacfc41ffbe46b4e47a4a6955e4fe0c6e3"><td class="memTemplParams" colspan="2">template&lt;class Impl , spawn_options Options, typename... Ts&gt; </td></tr>
-<tr class="memitem:gacfc41ffbe46b4e47a4a6955e4fe0c6e3"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classcppa_1_1actor.html#a15b74113cbde6221df8f00c25b6c2a56">actor_ptr</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group___actor_creation.html#gacfc41ffbe46b4e47a4a6955e4fe0c6e3">cppa::spawn_in_group</a> (const <a class="el" href="classcppa_1_1group.html#ae32f63fffa19f24154c1cc3527a8f420">group_ptr</a> &amp;grp, Ts &amp;&amp;...args)</td></tr>
-<tr class="memdesc:gacfc41ffbe46b4e47a4a6955e4fe0c6e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawns an actor of type <code>Impl</code> that immediately joins <code>grp</code>.  <a href="#gacfc41ffbe46b4e47a4a6955e4fe0c6e3">More...</a><br/></td></tr>
-<tr class="separator:gacfc41ffbe46b4e47a4a6955e4fe0c6e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8e85fddea6ef0ab8c90b00a39afb8044"><td class="memTemplParams" colspan="2"><a class="anchor" id="ga8e85fddea6ef0ab8c90b00a39afb8044"></a>
-template&lt;class Impl , spawn_options Options = no_spawn_options, typename... Ts&gt; </td></tr>
-<tr class="memitem:ga8e85fddea6ef0ab8c90b00a39afb8044"><td class="memTemplItemLeft" align="right" valign="top">Impl::typed_pointer_type&#160;</td><td class="memTemplItemRight" valign="bottom"><b>cppa::spawn_typed</b> (Ts &amp;&amp;...args)</td></tr>
-<tr class="separator:ga8e85fddea6ef0ab8c90b00a39afb8044"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1eab34bf42bb316807cedebb527de857"><td class="memTemplParams" colspan="2"><a class="anchor" id="ga1eab34bf42bb316807cedebb527de857"></a>
-template&lt;spawn_options Options, typename... Ts&gt; </td></tr>
-<tr class="memitem:ga1eab34bf42bb316807cedebb527de857"><td class="memTemplItemLeft" align="right" valign="top">typed_actor_ptr&lt; typename <br class="typebreak"/>
-detail::deduce_signature&lt; Ts &gt;<br class="typebreak"/>
-::type...&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>cppa::spawn_typed</b> (const match_expr&lt; Ts...&gt; &amp;me)</td></tr>
-<tr class="separator:ga1eab34bf42bb316807cedebb527de857"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5abaf860ed7d1e8c075ffcc5ac3aaeb0"><td class="memTemplParams" colspan="2"><a class="anchor" id="ga5abaf860ed7d1e8c075ffcc5ac3aaeb0"></a>
-template&lt;typename... Ts&gt; </td></tr>
-<tr class="memitem:ga5abaf860ed7d1e8c075ffcc5ac3aaeb0"><td class="memTemplItemLeft" align="right" valign="top">typed_actor_ptr&lt; typename <br class="typebreak"/>
-detail::deduce_signature&lt; Ts &gt;<br class="typebreak"/>
-::type...&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>cppa::spawn_typed</b> (const match_expr&lt; Ts...&gt; &amp;me)</td></tr>
-<tr class="separator:ga5abaf860ed7d1e8c075ffcc5ac3aaeb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga467688df5583d9b7573ed3a09eb31bea"><td class="memTemplParams" colspan="2"><a class="anchor" id="ga467688df5583d9b7573ed3a09eb31bea"></a>
-template&lt;typename T0 , typename T1 , typename... Ts&gt; </td></tr>
-<tr class="memitem:ga467688df5583d9b7573ed3a09eb31bea"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>cppa::spawn_typed</b> (T0 &amp;&amp;v0, T1 &amp;&amp;v1, Ts &amp;&amp;...vs) -&gt; decltype(spawn_typed(match_expr_collect(std::forward&lt; T0 &gt;(v0), std::forward&lt; T1 &gt;(v1), std::forward&lt; Ts &gt;(vs)...)))</td></tr>
-<tr class="separator:ga467688df5583d9b7573ed3a09eb31bea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaba7260e3d070dfd846946305e0fbc31e"><td class="memTemplParams" colspan="2">template&lt;class Impl , spawn_options Os = no_spawn_options, typename... Ts&gt; </td></tr>
+<tr class="memitem:gaba7260e3d070dfd846946305e0fbc31e"><td class="memTemplItemLeft" align="right" valign="top">actor&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group___actor_creation.html#gaba7260e3d070dfd846946305e0fbc31e">cppa::spawn</a> (Ts &amp;&amp;...args)</td></tr>
+<tr class="memdesc:gaba7260e3d070dfd846946305e0fbc31e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawns an actor of type <code>C</code>.  <a href="#gaba7260e3d070dfd846946305e0fbc31e">More...</a><br/></td></tr>
+<tr class="separator:gaba7260e3d070dfd846946305e0fbc31e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2ebbaf95b3beec025d64cb6fa76221e8"><td class="memTemplParams" colspan="2">template&lt;spawn_options Os = no_spawn_options, typename... Ts&gt; </td></tr>
+<tr class="memitem:ga2ebbaf95b3beec025d64cb6fa76221e8"><td class="memTemplItemLeft" align="right" valign="top">actor&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group___actor_creation.html#ga2ebbaf95b3beec025d64cb6fa76221e8">cppa::spawn</a> (Ts &amp;&amp;...args)</td></tr>
+<tr class="memdesc:ga2ebbaf95b3beec025d64cb6fa76221e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawns a new <a class="el" href="classcppa_1_1actor.html">actor</a> that evaluates given arguments.  <a href="#ga2ebbaf95b3beec025d64cb6fa76221e8">More...</a><br/></td></tr>
+<tr class="separator:ga2ebbaf95b3beec025d64cb6fa76221e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga02c2c411c5db83e255ee18f57993471d"><td class="memTemplParams" colspan="2">template&lt;class Impl , spawn_options Os = no_spawn_options, typename... Ts&gt; </td></tr>
+<tr class="memitem:ga02c2c411c5db83e255ee18f57993471d"><td class="memTemplItemLeft" align="right" valign="top">actor&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group___actor_creation.html#ga02c2c411c5db83e255ee18f57993471d">cppa::spawn_in_group</a> (const group &amp;grp, Ts &amp;&amp;...args)</td></tr>
+<tr class="memdesc:ga02c2c411c5db83e255ee18f57993471d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawns an actor of type <code>C</code> that immediately joins <code>grp</code>.  <a href="#ga02c2c411c5db83e255ee18f57993471d">More...</a><br/></td></tr>
+<tr class="separator:ga02c2c411c5db83e255ee18f57993471d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab91322eea201e1c0ffec28ee11cac1e3"><td class="memTemplParams" colspan="2">template&lt;spawn_options Os = no_spawn_options, typename... Ts&gt; </td></tr>
+<tr class="memitem:gab91322eea201e1c0ffec28ee11cac1e3"><td class="memTemplItemLeft" align="right" valign="top">actor&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group___actor_creation.html#gab91322eea201e1c0ffec28ee11cac1e3">cppa::spawn_in_group</a> (const group &amp;grp, Ts &amp;&amp;...args)</td></tr>
+<tr class="memdesc:gab91322eea201e1c0ffec28ee11cac1e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawns a new actor that evaluates given arguments and immediately joins <code>grp</code>.  <a href="#gab91322eea201e1c0ffec28ee11cac1e3">More...</a><br/></td></tr>
+<tr class="separator:gab91322eea201e1c0ffec28ee11cac1e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa38871f50ed4dc03499f0d92e0761614"><td class="memTemplParams" colspan="2">template&lt;class C , spawn_options Os = no_spawn_options, typename... Ts&gt; </td></tr>
+<tr class="memitem:gaa38871f50ed4dc03499f0d92e0761614"><td class="memTemplItemLeft" align="right" valign="top">detail::actor_handle_from_signature_list<br class="typebreak"/>
+&lt; typename C::signatures &gt;<br class="typebreak"/>
+::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group___actor_creation.html#gaa38871f50ed4dc03499f0d92e0761614">cppa::spawn_typed</a> (Ts &amp;&amp;...args)</td></tr>
+<tr class="memdesc:gaa38871f50ed4dc03499f0d92e0761614"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawns a typed actor of type <code>C</code>.  <a href="#gaa38871f50ed4dc03499f0d92e0761614">More...</a><br/></td></tr>
+<tr class="separator:gaa38871f50ed4dc03499f0d92e0761614"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1bbdfd6150cacb8aeca4e949ed67a5db"><td class="memTemplParams" colspan="2"><a class="anchor" id="ga1bbdfd6150cacb8aeca4e949ed67a5db"></a>
+template&lt;spawn_options Os, typename BeforeLaunch , typename F , typename... Ts&gt; </td></tr>
+<tr class="memitem:ga1bbdfd6150cacb8aeca4e949ed67a5db"><td class="memTemplItemLeft" align="right" valign="top">detail::infer_typed_actor_handle<br class="typebreak"/>
+&lt; typename <br class="typebreak"/>
+util::get_callable_trait&lt; F &gt;<br class="typebreak"/>
+::result_type, typename <br class="typebreak"/>
+util::tl_head&lt; typename <br class="typebreak"/>
+util::get_callable_trait&lt; F &gt;<br class="typebreak"/>
+::arg_types &gt;::type &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><b>cppa::spawn_typed_functor</b> (execution_unit *eu, BeforeLaunch bl, F fun, Ts &amp;&amp;...args)</td></tr>
+<tr class="separator:ga1bbdfd6150cacb8aeca4e949ed67a5db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae5d2de102fac70eadfd5b8552474420f"><td class="memTemplParams" colspan="2">template&lt;spawn_options Os = no_spawn_options, typename F , typename... Ts&gt; </td></tr>
+<tr class="memitem:gae5d2de102fac70eadfd5b8552474420f"><td class="memTemplItemLeft" align="right" valign="top">detail::infer_typed_actor_handle<br class="typebreak"/>
+&lt; typename <br class="typebreak"/>
+util::get_callable_trait&lt; F &gt;<br class="typebreak"/>
+::result_type, typename <br class="typebreak"/>
+util::tl_head&lt; typename <br class="typebreak"/>
+util::get_callable_trait&lt; F &gt;<br class="typebreak"/>
+::arg_types &gt;::type &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group___actor_creation.html#gae5d2de102fac70eadfd5b8552474420f">cppa::spawn_typed</a> (F fun, Ts &amp;&amp;...args)</td></tr>
+<tr class="memdesc:gae5d2de102fac70eadfd5b8552474420f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawns a typed actor from a functor.  <a href="#gae5d2de102fac70eadfd5b8552474420f">More...</a><br/></td></tr>
+<tr class="separator:gae5d2de102fac70eadfd5b8552474420f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="ga64b99980b69ba8e8cdd218e402f48fd6"></a>
+<a class="anchor" id="gaba7260e3d070dfd846946305e0fbc31e"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;spawn_options Options = no_spawn_options, typename... Ts&gt; </div>
+template&lt;class Impl , spawn_options Os = no_spawn_options, typename... Ts&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classcppa_1_1actor.html#a15b74113cbde6221df8f00c25b6c2a56">actor_ptr</a> cppa::spawn </td>
+          <td class="memname">actor cppa::spawn </td>
+          <td>(</td>
+          <td class="paramtype">Ts &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Spawns an actor of type <code>C</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>Constructor arguments. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Impl</td><td>Subtype of <a class="el" href="classcppa_1_1event__based__actor.html">event_based_actor</a> or <a class="el" href="classcppa_1_1sb__actor.html">sb_actor</a>. </td></tr>
+    <tr><td class="paramname">Os</td><td>Optional flags to modify <code>spawn</code>'s behavior. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classcppa_1_1actor.html">actor</a> to the spawned <a class="el" href="classcppa_1_1actor.html">actor</a>. </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="announce_1_8cpp-example.html#a6">announce_1.cpp</a>, <a class="el" href="announce_2_8cpp-example.html#a3">announce_2.cpp</a>, <a class="el" href="announce_3_8cpp-example.html#a4">announce_3.cpp</a>, <a class="el" href="announce_4_8cpp-example.html#a5">announce_4.cpp</a>, <a class="el" href="announce_5_8cpp-example.html#a14">announce_5.cpp</a>, <a class="el" href="dancing_kirby_8cpp-example.html#a4">dancing_kirby.cpp</a>, <a class="el" href="dining_philosophers_8cpp-example.html#a4">dining_philosophers.cpp</a>, and <a class="el" href="hello_world_8cpp-example.html#a3">hello_world.cpp</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="ga2ebbaf95b3beec025d64cb6fa76221e8"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;spawn_options Os = no_spawn_options, typename... Ts&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">actor cppa::spawn </td>
           <td>(</td>
           <td class="paramtype">Ts &amp;&amp;...&#160;</td>
           <td class="paramname"><em>args</em></td><td>)</td>
@@ -152,32 +193,41 @@ template&lt;spawn_options Options = no_spawn_options, typename... Ts&gt; </div>
 </dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">Options</td><td>Optional flags to modify <code>spawn</code>'s behavior. </td></tr>
+    <tr><td class="paramname">Os</td><td>Optional flags to modify <code>spawn</code>'s behavior. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="">actor_ptr</a> to the spawned <a class="el" href="classcppa_1_1actor.html">actor</a>. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="announce_1_8cpp-example.html#a2">announce_1.cpp</a>, <a class="el" href="announce_2_8cpp-example.html#a2">announce_2.cpp</a>, <a class="el" href="announce_3_8cpp-example.html#a3">announce_3.cpp</a>, <a class="el" href="announce_4_8cpp-example.html#a5">announce_4.cpp</a>, <a class="el" href="announce_5_8cpp-example.html#a15">announce_5.cpp</a>, <a class="el" href="dancing_kirby_8cpp-example.html#a6">dancing_kirby.cpp</a>, <a class="el" href="dining_philosophers_8cpp-example.html#a3">dining_philosophers.cpp</a>, and <a class="el" href="hello_world_8cpp-example.html#a2">hello_world.cpp</a>.</dd>
-</dl>
+<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classcppa_1_1actor.html">actor</a> to the spawned <a class="el" href="classcppa_1_1actor.html">actor</a>. </dd></dl>
+
 </div>
 </div>
-<a class="anchor" id="gae0ea633de5e468cacd5156d014b7c647"></a>
+<a class="anchor" id="ga02c2c411c5db83e255ee18f57993471d"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Impl , spawn_options Options = no_spawn_options, typename... Ts&gt; </div>
+template&lt;class Impl , spawn_options Os = no_spawn_options, typename... Ts&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classcppa_1_1actor.html#a15b74113cbde6221df8f00c25b6c2a56">actor_ptr</a> cppa::spawn </td>
+          <td class="memname">actor cppa::spawn_in_group </td>
           <td>(</td>
-          <td class="paramtype">Ts &amp;&amp;...&#160;</td>
-          <td class="paramname"><em>args</em></td><td>)</td>
+          <td class="paramtype">const group &amp;&#160;</td>
+          <td class="paramname"><em>grp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">Ts &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Spawns an actor of type <code>Impl</code>. </p>
+<p>Spawns an actor of type <code>C</code> that immediately joins <code>grp</code>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">args</td><td>Constructor arguments. </td></tr>
@@ -187,24 +237,25 @@ template&lt;class Impl , spawn_options Options = no_spawn_options, typename... T
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">Impl</td><td>Subtype of <a class="el" href="classcppa_1_1event__based__actor.html">event_based_actor</a> or <a class="el" href="classcppa_1_1sb__actor.html">sb_actor</a>. </td></tr>
-    <tr><td class="paramname">Options</td><td>Optional flags to modify <code>spawn</code>'s behavior. </td></tr>
+    <tr><td class="paramname">Os</td><td>Optional flags to modify <code>spawn</code>'s behavior. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="">actor_ptr</a> to the spawned <a class="el" href="classcppa_1_1actor.html">actor</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classcppa_1_1actor.html">actor</a> to the spawned <a class="el" href="classcppa_1_1actor.html">actor</a>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The spawned has joined the group before this function returns. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga72975ef0dee3891fb56c195c0a75fc2b"></a>
+<a class="anchor" id="gab91322eea201e1c0ffec28ee11cac1e3"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;spawn_options Options = no_spawn_options, typename... Ts&gt; </div>
+template&lt;spawn_options Os = no_spawn_options, typename... Ts&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classcppa_1_1actor.html#a15b74113cbde6221df8f00c25b6c2a56">actor_ptr</a> cppa::spawn_in_group </td>
+          <td class="memname">actor cppa::spawn_in_group </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classcppa_1_1group.html#ae32f63fffa19f24154c1cc3527a8f420">group_ptr</a> &amp;&#160;</td>
+          <td class="paramtype">const group &amp;&#160;</td>
           <td class="paramname"><em>grp</em>, </td>
         </tr>
         <tr>
@@ -230,26 +281,60 @@ template&lt;spawn_options Options = no_spawn_options, typename... Ts&gt; </div>
 </dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">Options</td><td>Optional flags to modify <code>spawn</code>'s behavior. </td></tr>
+    <tr><td class="paramname">Os</td><td>Optional flags to modify <code>spawn</code>'s behavior. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="">actor_ptr</a> to the spawned <a class="el" href="classcppa_1_1actor.html">actor</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classcppa_1_1actor.html">actor</a> to the spawned <a class="el" href="classcppa_1_1actor.html">actor</a>. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>The spawned has joined the group before this function returns. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gacfc41ffbe46b4e47a4a6955e4fe0c6e3"></a>
+<a class="anchor" id="gaa38871f50ed4dc03499f0d92e0761614"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Impl , spawn_options Options, typename... Ts&gt; </div>
+template&lt;class C , spawn_options Os = no_spawn_options, typename... Ts&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classcppa_1_1actor.html#a15b74113cbde6221df8f00c25b6c2a56">actor_ptr</a> cppa::spawn_in_group </td>
+          <td class="memname">detail::actor_handle_from_signature_list&lt; typename C::signatures&gt;::type cppa::spawn_typed </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classcppa_1_1group.html#ae32f63fffa19f24154c1cc3527a8f420">group_ptr</a> &amp;&#160;</td>
-          <td class="paramname"><em>grp</em>, </td>
+          <td class="paramtype">Ts &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Spawns a typed actor of type <code>C</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>Constructor arguments. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">C</td><td>Subtype of <a class="el" href="classcppa_1_1typed__event__based__actor.html">typed_event_based_actor</a>. </td></tr>
+    <tr><td class="paramname">Os</td><td>Optional flags to modify <code>spawn</code>'s behavior. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classcppa_1_1typed__actor.html">typed_actor</a> handle to the spawned actor. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gae5d2de102fac70eadfd5b8552474420f"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;spawn_options Os = no_spawn_options, typename F , typename... Ts&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">detail::infer_typed_actor_handle&lt; typename util::get_callable_trait&lt;F&gt;::result_type, typename util::tl_head&lt; typename util::get_callable_trait&lt;F&gt;::arg_types &gt;::type&gt;::type cppa::spawn_typed </td>
+          <td>(</td>
+          <td class="paramtype">F&#160;</td>
+          <td class="paramname"><em>fun</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -265,29 +350,27 @@ template&lt;class Impl , spawn_options Options, typename... Ts&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Spawns an actor of type <code>Impl</code> that immediately joins <code>grp</code>. </p>
+<p>Spawns a typed actor from a functor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">args</td><td>Constructor arguments. </td></tr>
+    <tr><td class="paramname">args</td><td>A functor followed by its arguments. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">Impl</td><td>Subtype of <a class="el" href="classcppa_1_1event__based__actor.html">event_based_actor</a> or <a class="el" href="classcppa_1_1sb__actor.html">sb_actor</a>. </td></tr>
-    <tr><td class="paramname">Options</td><td>Optional flags to modify <code>spawn</code>'s behavior. </td></tr>
+    <tr><td class="paramname">Os</td><td>Optional flags to modify <code>spawn</code>'s behavior. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="">actor_ptr</a> to the spawned <a class="el" href="classcppa_1_1actor.html">actor</a>. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>The spawned has joined the group before this function returns. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classcppa_1_1actor.html">actor</a> to the spawned <a class="el" href="classcppa_1_1actor.html">actor</a>. </dd></dl>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 14 2013 20:08:20 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun May 4 2014 23:48:00 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

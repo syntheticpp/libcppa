@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libcppa
-   &#160;<span id="projectnumber">Version 0.8</span>
+   &#160;<span id="projectnumber">Version 0.9.0</span>
    </div>
   </td>
  </tr>
@@ -103,6 +103,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line"><span class="keyword">using namespace </span>cppa;</div>
 <div class="line"></div>
+<div class="line"><span class="keyword">namespace </span>{</div>
+<div class="line"></div>
 <div class="line"><span class="comment">// a node containing an integer and a vector of children</span></div>
 <div class="line"><span class="keyword">struct </span>tree_node {</div>
 <div class="line">    std::uint32_t value;</div>
@@ -122,18 +124,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="keywordtype">void</span> print()<span class="keyword"> const </span>{</div>
 <div class="line">        <span class="comment">// format is: value { children0, children1, ..., childrenN }</span></div>
 <div class="line">        <span class="comment">// e.g., 10 { 20 { 21, 22 }, 30 }</span></div>
-<div class="line">        aout &lt;&lt; value;</div>
+<div class="line">        cout &lt;&lt; value;</div>
 <div class="line">        <span class="keywordflow">if</span> (children.empty() == <span class="keyword">false</span>) {</div>
-<div class="line">            aout &lt;&lt; <span class="stringliteral">&quot; { &quot;</span>;</div>
+<div class="line">            cout &lt;&lt; <span class="stringliteral">&quot; { &quot;</span>;</div>
 <div class="line">            <span class="keyword">auto</span> begin = children.begin();</div>
 <div class="line">            <span class="keyword">auto</span> end = children.end();</div>
 <div class="line">            <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = begin; i != end; ++i) {</div>
 <div class="line">                <span class="keywordflow">if</span> (i != begin) {</div>
-<div class="line">                    aout &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
+<div class="line">                    cout &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
 <div class="line">                }</div>
 <div class="line">                i-&gt;print();</div>
 <div class="line">            }</div>
-<div class="line">            aout &lt;&lt; <span class="stringliteral">&quot; } &quot;</span>;</div>
+<div class="line">            cout &lt;&lt; <span class="stringliteral">&quot; } &quot;</span>;</div>
 <div class="line">        }</div>
 <div class="line">    }</div>
 <div class="line"></div>
@@ -145,9 +147,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"></div>
 <div class="line">    <span class="comment">// print tree to stdout</span></div>
 <div class="line">    <span class="keywordtype">void</span> print()<span class="keyword"> const </span>{</div>
-<div class="line">        aout &lt;&lt; <span class="stringliteral">&quot;tree::print: &quot;</span>;</div>
+<div class="line">        cout &lt;&lt; <span class="stringliteral">&quot;tree::print: &quot;</span>;</div>
 <div class="line">        root.print();</div>
-<div class="line">        aout &lt;&lt; endl;</div>
+<div class="line">        cout &lt;&lt; endl;</div>
 <div class="line">    }</div>
 <div class="line"></div>
 <div class="line">};</div>
@@ -214,17 +216,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><span class="keyword">typedef</span> std::vector&lt;tree&gt; tree_vector;</div>
 <div class="line"></div>
 <div class="line"><span class="comment">// receives `remaining` messages</span></div>
-<div class="line"><span class="keywordtype">void</span> testee(<span class="keywordtype">size_t</span> remaining) {</div>
+<div class="line"><span class="keywordtype">void</span> testee(<a name="_a9"></a><a class="code" href="classcppa_1_1event__based__actor.html">event_based_actor</a>* <span class="keyword">self</span>, <span class="keywordtype">size_t</span> remaining) {</div>
 <div class="line">    <span class="keyword">auto</span> set_next_behavior = [=] {</div>
-<div class="line">        <span class="keywordflow">if</span> (remaining &gt; 1) testee(remaining - 1);</div>
+<div class="line">        <span class="keywordflow">if</span> (remaining &gt; 1) testee(<span class="keyword">self</span>, remaining - 1);</div>
 <div class="line">        <span class="keywordflow">else</span> <span class="keyword">self</span>-&gt;quit();</div>
 <div class="line">    };</div>
-<div class="line">    <a name="a9"></a><a class="code" href="namespacecppa.html#a32d3c95b12475508947918017ead6fac">become</a> (</div>
+<div class="line">    <span class="keyword">self</span>-&gt;become (</div>
 <div class="line">        <a name="a10"></a><a class="code" href="namespacecppa.html#a46d615a84f0e0e4eede5087ace98adfb">on_arg_match</a> &gt;&gt; [=](<span class="keyword">const</span> tree&amp; tmsg) {</div>
 <div class="line">            <span class="comment">// prints the tree in its serialized format:</span></div>
 <div class="line">            <span class="comment">// @&lt;&gt; ( { tree ( 0, { 10, { 11, { }, 12, { }, 13, { } }, 20, { 21, { }, 22, { } } } ) } )</span></div>
-<div class="line">            aout &lt;&lt; <span class="stringliteral">&quot;to_string(self-&gt;last_dequeued()): &quot;</span></div>
-<div class="line">                 &lt;&lt; <a name="a11"></a><a class="code" href="namespacecppa.html#a76a9f2873d0e97eb7ceffb6101e8e507">to_string</a>(<a name="a12"></a><a class="code" href="namespacecppa.html#abdc77f5b27edd9e40908860db20e666d">self</a>-&gt;<a name="a13"></a><a class="code" href="classcppa_1_1local__actor.html#af043515202c47e7ff10e2bdee0240f7f">last_dequeued</a>())</div>
+<div class="line">            cout &lt;&lt; <span class="stringliteral">&quot;to_string(self-&gt;last_dequeued()): &quot;</span></div>
+<div class="line">                 &lt;&lt; <a name="a11"></a><a class="code" href="namespacecppa.html#a76a9f2873d0e97eb7ceffb6101e8e507">to_string</a>(self-&gt;last_dequeued())</div>
 <div class="line">                 &lt;&lt; endl;</div>
 <div class="line">            <span class="comment">// prints the tree using the print member function:</span></div>
 <div class="line">            <span class="comment">// 0 { 10 { 11, 12, 13 } , 20 { 21, 22 } }</span></div>
@@ -233,7 +235,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">        },</div>
 <div class="line">        <a class="code" href="namespacecppa.html#a46d615a84f0e0e4eede5087ace98adfb">on_arg_match</a> &gt;&gt; [=](<span class="keyword">const</span> tree_vector&amp; trees) {</div>
 <div class="line">            <span class="comment">// prints &quot;received 2 trees&quot;</span></div>
-<div class="line">            aout &lt;&lt; <span class="stringliteral">&quot;received &quot;</span> &lt;&lt; trees.size() &lt;&lt; <span class="stringliteral">&quot; trees&quot;</span> &lt;&lt; endl;</div>
+<div class="line">            cout &lt;&lt; <span class="stringliteral">&quot;received &quot;</span> &lt;&lt; trees.size() &lt;&lt; <span class="stringliteral">&quot; trees&quot;</span> &lt;&lt; endl;</div>
 <div class="line">            <span class="comment">// prints:</span></div>
 <div class="line">            <span class="comment">// @&lt;&gt; ( {</span></div>
 <div class="line">            <span class="comment">//   std::vector&lt;tree, std::allocator&lt;tree&gt;&gt; ( {</span></div>
@@ -241,15 +243,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">            <span class="comment">//     tree ( 0, { 10, { 11, { }, 12, { }, 13, { } }, 20, { 21, { }, 22, { } } } )</span></div>
 <div class="line">            <span class="comment">//   )</span></div>
 <div class="line">            <span class="comment">// } )</span></div>
-<div class="line">            aout &lt;&lt; <span class="stringliteral">&quot;to_string: &quot;</span> &lt;&lt; <a class="code" href="namespacecppa.html#a76a9f2873d0e97eb7ceffb6101e8e507">to_string</a>(<a class="code" href="namespacecppa.html#abdc77f5b27edd9e40908860db20e666d">self</a>-&gt;<a class="code" href="classcppa_1_1local__actor.html#af043515202c47e7ff10e2bdee0240f7f">last_dequeued</a>()) &lt;&lt; endl;</div>
+<div class="line">            cout &lt;&lt; <span class="stringliteral">&quot;to_string: &quot;</span> &lt;&lt; <a class="code" href="namespacecppa.html#a76a9f2873d0e97eb7ceffb6101e8e507">to_string</a>(self-&gt;last_dequeued()) &lt;&lt; endl;</div>
 <div class="line">            set_next_behavior();</div>
 <div class="line">        }</div>
 <div class="line">    );</div>
 <div class="line">}</div>
 <div class="line"></div>
+<div class="line">} <span class="comment">// namespace &lt;anonymous&gt;</span></div>
+<div class="line"></div>
 <div class="line"><span class="keywordtype">int</span> main() {</div>
 <div class="line">    <span class="comment">// the tree_type_info is owned by libcppa after this function call</span></div>
-<div class="line">    <a name="a14"></a><a class="code" href="group___type_system.html#ga5168c92d6bb51d74f61cea1253940cd6">announce</a>(<span class="keyword">typeid</span>(tree), std::unique_ptr&lt;uniform_type_info&gt;{<span class="keyword">new</span> tree_type_info});</div>
+<div class="line">    <a name="a12"></a><a class="code" href="group___type_system.html#ga5168c92d6bb51d74f61cea1253940cd6">announce</a>(<span class="keyword">typeid</span>(tree), std::unique_ptr&lt;uniform_type_info&gt;{<span class="keyword">new</span> tree_type_info});</div>
 <div class="line"></div>
 <div class="line">    tree t0; <span class="comment">// create a tree and fill it with some data</span></div>
 <div class="line"></div>
@@ -271,27 +275,31 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><span class="comment">       11 12 13 21    22</span></div>
 <div class="line"><span class="comment">    */</span></div>
 <div class="line"></div>
-<div class="line">    <span class="comment">// spawn a testee that receives two messages</span></div>
-<div class="line">    <span class="keyword">auto</span> t = <a name="a15"></a><a class="code" href="group___actor_creation.html#ga64b99980b69ba8e8cdd218e402f48fd6">spawn</a>(testee, 2);</div>
+<div class="line">    { <span class="comment">// lifetime scope of self</span></div>
+<div class="line">        <a name="_a13"></a><a class="code" href="classcppa_1_1scoped__actor.html">scoped_actor</a> <span class="keyword">self</span>;</div>
 <div class="line"></div>
-<div class="line">    <span class="comment">// send a tree</span></div>
-<div class="line">    <a name="a16"></a><a class="code" href="namespacecppa.html#a8ce9b9bc8666bd339ff6a95065b91d65">send</a>(t, t0);</div>
+<div class="line">        <span class="comment">// spawn a testee that receives two messages</span></div>
+<div class="line">        <span class="keyword">auto</span> t = <a name="a14"></a><a class="code" href="group___actor_creation.html#gaba7260e3d070dfd846946305e0fbc31e">spawn</a>(testee, 2);</div>
 <div class="line"></div>
-<div class="line">    <span class="comment">// send a vector of trees</span></div>
-<div class="line">    announce&lt;tree_vector&gt;();</div>
-<div class="line">    tree_vector tvec;</div>
-<div class="line">    tvec.push_back(t0);</div>
-<div class="line">    tvec.push_back(t0);</div>
-<div class="line">    <a class="code" href="namespacecppa.html#a8ce9b9bc8666bd339ff6a95065b91d65">send</a>(t, tvec);</div>
+<div class="line">        <span class="comment">// send a tree</span></div>
+<div class="line">        <span class="keyword">self</span>-&gt;send(t, t0);</div>
 <div class="line"></div>
-<div class="line">    <a name="a17"></a><a class="code" href="namespacecppa.html#a185090573ffb146384ccdfa94172c23e">await_all_others_done</a>();</div>
-<div class="line">    <a name="a18"></a><a class="code" href="namespacecppa.html#a8d5daac288a10cc34286f505ea637571">shutdown</a>();</div>
+<div class="line">        <span class="comment">// send a vector of trees</span></div>
+<div class="line">        announce&lt;tree_vector&gt;();</div>
+<div class="line">        tree_vector tvec;</div>
+<div class="line">        tvec.push_back(t0);</div>
+<div class="line">        tvec.push_back(t0);</div>
+<div class="line">        <span class="keyword">self</span>-&gt;send(t, tvec);</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <a name="a15"></a><a class="code" href="namespacecppa.html#a1155a80c876121987be19d4f38c4dacd">await_all_actors_done</a>();</div>
+<div class="line">    <a name="a16"></a><a class="code" href="namespacecppa.html#a8d5daac288a10cc34286f505ea637571">shutdown</a>();</div>
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 14 2013 20:08:20 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun May 4 2014 23:48:00 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

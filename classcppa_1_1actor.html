@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libcppa
-   &#160;<span id="projectnumber">Version 0.8</span>
+   &#160;<span id="projectnumber">Version 0.9.0</span>
    </div>
   </td>
  </tr>
@@ -90,8 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="#related">Related Functions</a> &#124;
 <a href="classcppa_1_1actor-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -99,7 +98,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Base class for all actor implementations.  
+<p>Identifies an untyped actor.  
  <a href="classcppa_1_1actor.html#details">More...</a></p>
 
 <p><code>#include &lt;actor.hpp&gt;</code></p>
@@ -109,400 +108,112 @@ Inheritance diagram for cppa::actor:</div>
  <div class="center">
   <img src="classcppa_1_1actor.png" usemap="#cppa::actor_map" alt=""/>
   <map id="cppa::actor_map" name="cppa::actor_map">
-<area href="classcppa_1_1channel.html" title="Interface for all message receivers. " alt="cppa::channel" shape="rect" coords="95,112,276,136"/>
-<area href="classcppa_1_1ref__counted.html" title="A (thread safe) base class for reference counted objects with an atomic reference count..." alt="cppa::ref_counted" shape="rect" coords="95,56,276,80"/>
-<area href="classcppa_1_1memory__managed.html" title="This base enables derived classes to enforce a different allocation strategy than new/delete by provi..." alt="cppa::memory_managed" shape="rect" coords="95,0,276,24"/>
-<area href="classcppa_1_1actor__proxy.html" title="Represents a remote actor. " alt="cppa::actor_proxy" shape="rect" coords="0,224,181,248"/>
-<area href="classcppa_1_1local__actor.html" title="Base class for local running Actors. " alt="cppa::local_actor" shape="rect" coords="191,224,372,248"/>
-<area href="classcppa_1_1io_1_1broker.html" title="A broker mediates between a libcppa-based actor system and other components in the network..." alt="cppa::io::broker" shape="rect" coords="0,280,181,304"/>
-<area href="classcppa_1_1scheduled__actor.html" title="A base class for cooperatively scheduled actors. " alt="cppa::scheduled_actor" shape="rect" coords="191,280,372,304"/>
-<area href="classcppa_1_1thread__mapped__actor.html" title="An actor using the blocking API running in its own thread. " alt="cppa::thread_mapped_actor" shape="rect" coords="382,280,563,304"/>
-<area href="classcppa_1_1context__switching__actor.html" title="Context-switching actor implementation. " alt="cppa::context_switching_actor" shape="rect" coords="95,336,276,360"/>
-<area href="classcppa_1_1event__based__actor.html" title="Base class for all event-based actor implementations. " alt="cppa::event_based_actor" shape="rect" coords="286,336,467,360"/>
+<area href="classcppa_1_1util_1_1comparable.html" alt="cppa::util::comparable&lt; actor &gt;" shape="rect" coords="0,0,312,24"/>
+<area href="classcppa_1_1util_1_1comparable.html" alt="cppa::util::comparable&lt; actor, actor_addr &gt;" shape="rect" coords="322,0,634,24"/>
+<area href="classcppa_1_1util_1_1comparable.html" alt="cppa::util::comparable&lt; actor, invalid_actor_t &gt;" shape="rect" coords="644,0,956,24"/>
+<area href="classcppa_1_1util_1_1comparable.html" alt="cppa::util::comparable&lt; actor, invalid_actor_addr_t &gt;" shape="rect" coords="966,0,1278,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2e5b9f1c7e0171cf0766260dac7ae989"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1actor.html#a2e5b9f1c7e0171cf0766260dac7ae989">attach</a> (attachable_ptr ptr)</td></tr>
-<tr class="memdesc:a2e5b9f1c7e0171cf0766260dac7ae989"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attaches <code>ptr</code> to this actor.  <a href="#a2e5b9f1c7e0171cf0766260dac7ae989">More...</a><br/></td></tr>
-<tr class="separator:a2e5b9f1c7e0171cf0766260dac7ae989"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d0465fd9e903d7ec745cb0d7c80092c"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
-<tr class="memitem:a4d0465fd9e903d7ec745cb0d7c80092c"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classcppa_1_1actor.html#a4d0465fd9e903d7ec745cb0d7c80092c">attach_functor</a> (F &amp;&amp;f)</td></tr>
-<tr class="memdesc:a4d0465fd9e903d7ec745cb0d7c80092c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience function that attaches the functor or function <code>f</code> to this actor.  <a href="#a4d0465fd9e903d7ec745cb0d7c80092c">More...</a><br/></td></tr>
-<tr class="separator:a4d0465fd9e903d7ec745cb0d7c80092c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f23b29670873eb8c03d69aa6367b4f2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5f23b29670873eb8c03d69aa6367b4f2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1actor.html#a5f23b29670873eb8c03d69aa6367b4f2">detach</a> (const <a class="el" href="structcppa_1_1attachable_1_1token.html">attachable::token</a> &amp;what)</td></tr>
-<tr class="memdesc:a5f23b29670873eb8c03d69aa6367b4f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detaches the first attached object that matches <code>what</code>. <br/></td></tr>
-<tr class="separator:a5f23b29670873eb8c03d69aa6367b4f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62406e89d86a0522b9e8786abb82de0c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1actor.html#a62406e89d86a0522b9e8786abb82de0c">link_to</a> (const <a class="el" href="classcppa_1_1actor.html#a15b74113cbde6221df8f00c25b6c2a56">actor_ptr</a> &amp;other)</td></tr>
-<tr class="memdesc:a62406e89d86a0522b9e8786abb82de0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Links this actor to <code>other</code>.  <a href="#a62406e89d86a0522b9e8786abb82de0c">More...</a><br/></td></tr>
-<tr class="separator:a62406e89d86a0522b9e8786abb82de0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae163d71975de46a9775cc8894edcbc0b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1actor.html#ae163d71975de46a9775cc8894edcbc0b">unlink_from</a> (const <a class="el" href="classcppa_1_1actor.html#a15b74113cbde6221df8f00c25b6c2a56">actor_ptr</a> &amp;other)</td></tr>
-<tr class="memdesc:ae163d71975de46a9775cc8894edcbc0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unlinks this actor from <code>other</code>.  <a href="#ae163d71975de46a9775cc8894edcbc0b">More...</a><br/></td></tr>
-<tr class="separator:ae163d71975de46a9775cc8894edcbc0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe6e34bc6ae27d1d3ab88b4814b4e17c"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1actor.html#abe6e34bc6ae27d1d3ab88b4814b4e17c">establish_backlink</a> (const <a class="el" href="classcppa_1_1actor.html#a15b74113cbde6221df8f00c25b6c2a56">actor_ptr</a> &amp;other)</td></tr>
-<tr class="memdesc:abe6e34bc6ae27d1d3ab88b4814b4e17c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Establishes a link relation between this actor and <code>other</code>.  <a href="#abe6e34bc6ae27d1d3ab88b4814b4e17c">More...</a><br/></td></tr>
-<tr class="separator:abe6e34bc6ae27d1d3ab88b4814b4e17c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acbd5c4ef89260aa2df7bbb9813976a24"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1actor.html#acbd5c4ef89260aa2df7bbb9813976a24">remove_backlink</a> (const <a class="el" href="classcppa_1_1actor.html#a15b74113cbde6221df8f00c25b6c2a56">actor_ptr</a> &amp;other)</td></tr>
-<tr class="memdesc:acbd5c4ef89260aa2df7bbb9813976a24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a link relation between this actor and <code>other</code>.  <a href="#acbd5c4ef89260aa2df7bbb9813976a24">More...</a><br/></td></tr>
-<tr class="separator:acbd5c4ef89260aa2df7bbb9813976a24"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1bcf6d0dda3abb9ba1811c62efc998c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcppa_1_1actor.html#a419bd336028a1fe6c3d44558088cc484">actor_id</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1actor.html#a1bcf6d0dda3abb9ba1811c62efc998c9">id</a> () const </td></tr>
-<tr class="memdesc:a1bcf6d0dda3abb9ba1811c62efc998c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an integer value that uniquely identifies this Actor in the process it's executed in.  <a href="#a1bcf6d0dda3abb9ba1811c62efc998c9">More...</a><br/></td></tr>
-<tr class="separator:a1bcf6d0dda3abb9ba1811c62efc998c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c2a21b5056fbe82b73ed8e84497b0bd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1actor.html#a6c2a21b5056fbe82b73ed8e84497b0bd">is_proxy</a> () const </td></tr>
-<tr class="memdesc:a6c2a21b5056fbe82b73ed8e84497b0bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if this actor is running on a remote node.  <a href="#a6c2a21b5056fbe82b73ed8e84497b0bd">More...</a><br/></td></tr>
-<tr class="separator:a6c2a21b5056fbe82b73ed8e84497b0bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_classcppa_1_1channel"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classcppa_1_1channel')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classcppa_1_1channel.html">cppa::channel</a></td></tr>
-<tr class="memitem:a496c76ddab97788642190f677f38da85 inherit pub_methods_classcppa_1_1channel"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a496c76ddab97788642190f677f38da85"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1channel.html#a496c76ddab97788642190f677f38da85">enqueue</a> (const <a class="el" href="classcppa_1_1message__header.html">message_header</a> &amp;hdr, <a class="el" href="classcppa_1_1any__tuple.html">any_tuple</a> msg)=0</td></tr>
-<tr class="memdesc:a496c76ddab97788642190f677f38da85 inherit pub_methods_classcppa_1_1channel"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enqueues <code>msg</code> to the list of received messages. <br/></td></tr>
-<tr class="separator:a496c76ddab97788642190f677f38da85 inherit pub_methods_classcppa_1_1channel"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7c7b45c7eed552e439262ce32c489e1 inherit pub_methods_classcppa_1_1channel"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af7c7b45c7eed552e439262ce32c489e1"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1channel.html#af7c7b45c7eed552e439262ce32c489e1">chained_enqueue</a> (const <a class="el" href="classcppa_1_1message__header.html">message_header</a> &amp;hdr, <a class="el" href="classcppa_1_1any__tuple.html">any_tuple</a> msg)</td></tr>
-<tr class="memdesc:af7c7b45c7eed552e439262ce32c489e1 inherit pub_methods_classcppa_1_1channel"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enqueues <code>msg</code> to the list of received messages and returns true if this is an scheduled actor that successfully changed its state to <code>pending</code> in response to the enqueue operation. <br/></td></tr>
-<tr class="separator:af7c7b45c7eed552e439262ce32c489e1 inherit pub_methods_classcppa_1_1channel"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e94c1e65bf566fe653263f1996be109 inherit pub_methods_classcppa_1_1channel"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2e94c1e65bf566fe653263f1996be109"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1channel.html#a2e94c1e65bf566fe653263f1996be109">unchain</a> ()</td></tr>
-<tr class="memdesc:a2e94c1e65bf566fe653263f1996be109 inherit pub_methods_classcppa_1_1channel"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the state from <code>pending</code> to <code>ready</code>. <br/></td></tr>
-<tr class="separator:a2e94c1e65bf566fe653263f1996be109 inherit pub_methods_classcppa_1_1channel"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_classcppa_1_1ref__counted"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classcppa_1_1ref__counted')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classcppa_1_1ref__counted.html">cppa::ref_counted</a></td></tr>
-<tr class="memitem:adde91679876095e34d1ca4502e8c2ee9 inherit pub_methods_classcppa_1_1ref__counted"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adde91679876095e34d1ca4502e8c2ee9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1ref__counted.html#adde91679876095e34d1ca4502e8c2ee9">ref</a> ()</td></tr>
-<tr class="memdesc:adde91679876095e34d1ca4502e8c2ee9 inherit pub_methods_classcppa_1_1ref__counted"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increases reference count by one. <br/></td></tr>
-<tr class="separator:adde91679876095e34d1ca4502e8c2ee9 inherit pub_methods_classcppa_1_1ref__counted"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9439c57c415af736d7284b160f2f6ec0 inherit pub_methods_classcppa_1_1ref__counted"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9439c57c415af736d7284b160f2f6ec0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1ref__counted.html#a9439c57c415af736d7284b160f2f6ec0">deref</a> ()</td></tr>
-<tr class="memdesc:a9439c57c415af736d7284b160f2f6ec0 inherit pub_methods_classcppa_1_1ref__counted"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decreases reference count by one and calls <code>request_deletion</code> when it drops to zero. <br/></td></tr>
-<tr class="separator:a9439c57c415af736d7284b160f2f6ec0 inherit pub_methods_classcppa_1_1ref__counted"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace4f2598ce4c746d6a3f5d21edadd9fd inherit pub_methods_classcppa_1_1ref__counted"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ace4f2598ce4c746d6a3f5d21edadd9fd"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1ref__counted.html#ace4f2598ce4c746d6a3f5d21edadd9fd">unique</a> () const </td></tr>
-<tr class="memdesc:ace4f2598ce4c746d6a3f5d21edadd9fd inherit pub_methods_classcppa_1_1ref__counted"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries whether there is exactly one reference. <br/></td></tr>
-<tr class="separator:ace4f2598ce4c746d6a3f5d21edadd9fd inherit pub_methods_classcppa_1_1ref__counted"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a907a6686023122998f5b2351837c7b37 inherit pub_methods_classcppa_1_1ref__counted"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a907a6686023122998f5b2351837c7b37"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>get_reference_count</b> () const </td></tr>
-<tr class="separator:a907a6686023122998f5b2351837c7b37 inherit pub_methods_classcppa_1_1ref__counted"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb335d21acdbc5b2937abac03bd417bd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acb335d21acdbc5b2937abac03bd417bd"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>actor</b> (<a class="el" href="classcppa_1_1actor.html">actor</a> &amp;&amp;)=default</td></tr>
+<tr class="separator:acb335d21acdbc5b2937abac03bd417bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfe4b458b207064c4e42ce075fb46374"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abfe4b458b207064c4e42ce075fb46374"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>actor</b> (const <a class="el" href="classcppa_1_1actor.html">actor</a> &amp;)=default</td></tr>
+<tr class="separator:abfe4b458b207064c4e42ce075fb46374"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c09018cf6aa462e5503009dd352ad10"><td class="memTemplParams" colspan="2"><a class="anchor" id="a2c09018cf6aa462e5503009dd352ad10"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a2c09018cf6aa462e5503009dd352ad10"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><b>actor</b> (<a class="el" href="classcppa_1_1intrusive__ptr.html">intrusive_ptr</a>&lt; T &gt; ptr, typename std::enable_if&lt; is_convertible_to_actor&lt; T &gt;::value &gt;::type *=0)</td></tr>
+<tr class="separator:a2c09018cf6aa462e5503009dd352ad10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5a89a57103cc2e2eb582328f51c289e"><td class="memTemplParams" colspan="2"><a class="anchor" id="af5a89a57103cc2e2eb582328f51c289e"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:af5a89a57103cc2e2eb582328f51c289e"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><b>actor</b> (T *ptr, typename std::enable_if&lt; is_convertible_to_actor&lt; T &gt;::value &gt;::type *=0)</td></tr>
+<tr class="separator:af5a89a57103cc2e2eb582328f51c289e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade3ab4fea1b74f837629ba12595c279e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ade3ab4fea1b74f837629ba12595c279e"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>actor</b> (const invalid_actor_t &amp;)</td></tr>
+<tr class="separator:ade3ab4fea1b74f837629ba12595c279e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadaee032ce97ce4103d26097f94aa87e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aadaee032ce97ce4103d26097f94aa87e"></a>
+<a class="el" href="classcppa_1_1actor.html">actor</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classcppa_1_1actor.html">actor</a> &amp;&amp;)=default</td></tr>
+<tr class="separator:aadaee032ce97ce4103d26097f94aa87e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab715e072d3a5e333e2c6d555b4487ca4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab715e072d3a5e333e2c6d555b4487ca4"></a>
+<a class="el" href="classcppa_1_1actor.html">actor</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classcppa_1_1actor.html">actor</a> &amp;)=default</td></tr>
+<tr class="separator:ab715e072d3a5e333e2c6d555b4487ca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3236c197155d3b1138c3c6f59b046437"><td class="memTemplParams" colspan="2"><a class="anchor" id="a3236c197155d3b1138c3c6f59b046437"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a3236c197155d3b1138c3c6f59b046437"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if<br class="typebreak"/>
+&lt; is_convertible_to_actor&lt; T &gt;<br class="typebreak"/>
+::value, <a class="el" href="classcppa_1_1actor.html">actor</a> &amp; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classcppa_1_1intrusive__ptr.html">intrusive_ptr</a>&lt; T &gt; ptr)</td></tr>
+<tr class="separator:a3236c197155d3b1138c3c6f59b046437"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b16f44b097efa10e2a3003c6cc82aa1"><td class="memTemplParams" colspan="2"><a class="anchor" id="a7b16f44b097efa10e2a3003c6cc82aa1"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a7b16f44b097efa10e2a3003c6cc82aa1"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if<br class="typebreak"/>
+&lt; is_convertible_to_actor&lt; T &gt;<br class="typebreak"/>
+::value, <a class="el" href="classcppa_1_1actor.html">actor</a> &amp; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator=</b> (T *ptr)</td></tr>
+<tr class="separator:a7b16f44b097efa10e2a3003c6cc82aa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f7ce1583529ca06f46436ab0cf09c1e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9f7ce1583529ca06f46436ab0cf09c1e"></a>
+<a class="el" href="classcppa_1_1actor.html">actor</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const invalid_actor_t &amp;)</td></tr>
+<tr class="separator:a9f7ce1583529ca06f46436ab0cf09c1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c11a4561276553495f63a46100ca66e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0c11a4561276553495f63a46100ca66e"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>operator bool</b> () const </td></tr>
+<tr class="separator:a0c11a4561276553495f63a46100ca66e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad749d8877d4d750d586eb12bfdb66414"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad749d8877d4d750d586eb12bfdb66414"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!</b> () const </td></tr>
+<tr class="separator:ad749d8877d4d750d586eb12bfdb66414"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65075a75369a77a56504931f12ef70b7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a65075a75369a77a56504931f12ef70b7"></a>
+<a class="el" href="classcppa_1_1abstract__actor.html">abstract_actor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1actor.html#a65075a75369a77a56504931f12ef70b7">operator-&gt;</a> () const </td></tr>
+<tr class="memdesc:a65075a75369a77a56504931f12ef70b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a handle that grants access to actor operations such as enqueue. <br/></td></tr>
+<tr class="separator:a65075a75369a77a56504931f12ef70b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bd4b73bc7d951b40fb3b60c5cb840d8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6bd4b73bc7d951b40fb3b60c5cb840d8"></a>
+<a class="el" href="classcppa_1_1abstract__actor.html">abstract_actor</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator*</b> () const </td></tr>
+<tr class="separator:a6bd4b73bc7d951b40fb3b60c5cb840d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48be269a09e0837db54f254784e8ad4c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a48be269a09e0837db54f254784e8ad4c"></a>
+intptr_t&#160;</td><td class="memItemRight" valign="bottom"><b>compare</b> (const <a class="el" href="classcppa_1_1actor.html">actor</a> &amp;other) const </td></tr>
+<tr class="separator:a48be269a09e0837db54f254784e8ad4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11bd59fce2a9958fb2e75377274183d8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a11bd59fce2a9958fb2e75377274183d8"></a>
+intptr_t&#160;</td><td class="memItemRight" valign="bottom"><b>compare</b> (const <a class="el" href="classcppa_1_1actor__addr.html">actor_addr</a> &amp;) const </td></tr>
+<tr class="separator:a11bd59fce2a9958fb2e75377274183d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af929c7f193c2954b756c265c94180257"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af929c7f193c2954b756c265c94180257"></a>
+intptr_t&#160;</td><td class="memItemRight" valign="bottom"><b>compare</b> (const invalid_actor_t &amp;) const </td></tr>
+<tr class="separator:af929c7f193c2954b756c265c94180257"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade0051dbd64003d84bbdfd3704621f29"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ade0051dbd64003d84bbdfd3704621f29"></a>
+intptr_t&#160;</td><td class="memItemRight" valign="bottom"><b>compare</b> (const <a class="el" href="structcppa_1_1invalid__actor__addr__t.html">invalid_actor_addr_t</a> &amp;) const </td></tr>
+<tr class="separator:ade0051dbd64003d84bbdfd3704621f29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a426ea36f55baf1cf0711d720d7e49813"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a426ea36f55baf1cf0711d720d7e49813"></a>
+<a class="el" href="classcppa_1_1actor__addr.html">actor_addr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1actor.html#a426ea36f55baf1cf0711d720d7e49813">address</a> () const </td></tr>
+<tr class="memdesc:a426ea36f55baf1cf0711d720d7e49813"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries the address of the stored actor. <br/></td></tr>
+<tr class="separator:a426ea36f55baf1cf0711d720d7e49813"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
-Protected Member Functions</h2></td></tr>
-<tr class="memitem:a60c4075e0351b84dfe155b090e17309a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a60c4075e0351b84dfe155b090e17309a"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>actor</b> (<a class="el" href="classcppa_1_1actor.html#a419bd336028a1fe6c3d44558088cc484">actor_id</a> aid)</td></tr>
-<tr class="separator:a60c4075e0351b84dfe155b090e17309a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7de56c5d175c82d29311049b5593be47"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1actor.html#a7de56c5d175c82d29311049b5593be47">cleanup</a> (std::uint32_t reason)</td></tr>
-<tr class="memdesc:a7de56c5d175c82d29311049b5593be47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Should be overridden by subtypes and called upon termination.  <a href="#a7de56c5d175c82d29311049b5593be47">More...</a><br/></td></tr>
-<tr class="separator:a7de56c5d175c82d29311049b5593be47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1096516eaad1c5356f0921775a71d8b8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1096516eaad1c5356f0921775a71d8b8"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1actor.html#a1096516eaad1c5356f0921775a71d8b8">link_to_impl</a> (const <a class="el" href="classcppa_1_1actor.html#a15b74113cbde6221df8f00c25b6c2a56">actor_ptr</a> &amp;other)</td></tr>
-<tr class="memdesc:a1096516eaad1c5356f0921775a71d8b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default implementation for <a class="el" href="classcppa_1_1actor.html#a62406e89d86a0522b9e8786abb82de0c">link_to()</a>. <br/></td></tr>
-<tr class="separator:a1096516eaad1c5356f0921775a71d8b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d40f5c0f8c22e217c845dbee45d474b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4d40f5c0f8c22e217c845dbee45d474b"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1actor.html#a4d40f5c0f8c22e217c845dbee45d474b">unlink_from_impl</a> (const <a class="el" href="classcppa_1_1actor.html#a15b74113cbde6221df8f00c25b6c2a56">actor_ptr</a> &amp;other)</td></tr>
-<tr class="memdesc:a4d40f5c0f8c22e217c845dbee45d474b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The default implementation for <a class="el" href="classcppa_1_1actor.html#ae163d71975de46a9775cc8894edcbc0b">unlink_from()</a>. <br/></td></tr>
-<tr class="separator:a4d40f5c0f8c22e217c845dbee45d474b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3fdf26cc394f4ca9a653582dac63fec0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3fdf26cc394f4ca9a653582dac63fec0"></a>
-std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1actor.html#a3fdf26cc394f4ca9a653582dac63fec0">exit_reason</a> () const </td></tr>
-<tr class="memdesc:a3fdf26cc394f4ca9a653582dac63fec0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the actor's exit reason of <code><a class="el" href="namespacecppa_1_1exit__reason.html#ad7faf386becb6bfd02a68ec83e899dcb" title="Indicates that the actor is still alive. ">exit_reason::not_exited</a></code> if it's still alive. <br/></td></tr>
-<tr class="separator:a3fdf26cc394f4ca9a653582dac63fec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72572d872d79d0baf8bab4b5e40053e3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a72572d872d79d0baf8bab4b5e40053e3"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1actor.html#a72572d872d79d0baf8bab4b5e40053e3">exited</a> () const </td></tr>
-<tr class="memdesc:a72572d872d79d0baf8bab4b5e40053e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code><a class="el" href="classcppa_1_1actor.html#a3fdf26cc394f4ca9a653582dac63fec0" title="Returns the actor&#39;s exit reason of exit_reason::not_exited if it&#39;s still alive. ">exit_reason()</a> != <a class="el" href="namespacecppa_1_1exit__reason.html#ad7faf386becb6bfd02a68ec83e899dcb" title="Indicates that the actor is still alive. ">exit_reason::not_exited</a></code>. <br/></td></tr>
-<tr class="separator:a72572d872d79d0baf8bab4b5e40053e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_methods_classcppa_1_1memory__managed"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classcppa_1_1memory__managed')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classcppa_1_1memory__managed.html">cppa::memory_managed</a></td></tr>
-<tr class="memitem:ae14e5c4be622520c604a9ac69f0c9478 inherit pro_methods_classcppa_1_1memory__managed"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae14e5c4be622520c604a9ac69f0c9478"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1memory__managed.html#ae14e5c4be622520c604a9ac69f0c9478">request_deletion</a> ()</td></tr>
-<tr class="memdesc:ae14e5c4be622520c604a9ac69f0c9478 inherit pro_methods_classcppa_1_1memory__managed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default implementations calls <code>delete this</code>, but can be overriden in case deletion depends on some condition or the class doesn't use default new/delete. <br/></td></tr>
-<tr class="separator:ae14e5c4be622520c604a9ac69f0c9478 inherit pro_methods_classcppa_1_1memory__managed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:a2c860cb8ed42ecc26327e673ea325681"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2c860cb8ed42ecc26327e673ea325681"></a>
-const <a class="el" href="classcppa_1_1actor.html#a419bd336028a1fe6c3d44558088cc484">actor_id</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_id</b></td></tr>
-<tr class="separator:a2c860cb8ed42ecc26327e673ea325681"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a174954966e2ae008684f0decd25d888c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a174954966e2ae008684f0decd25d888c"></a>
-const bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_is_proxy</b></td></tr>
-<tr class="separator:a174954966e2ae008684f0decd25d888c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a47f3ef96cd71724b53350fd88035cc9e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a47f3ef96cd71724b53350fd88035cc9e"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>local_actor</b></td></tr>
+<tr class="separator:a47f3ef96cd71724b53350fd88035cc9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab15aa07e7555051637eab28abf17dad8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab15aa07e7555051637eab28abf17dad8"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>detail::raw_access</b></td></tr>
+<tr class="separator:ab15aa07e7555051637eab28abf17dad8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="related"></a>
 Related Functions</h2></td></tr>
 <tr><td class="ititle" colspan="2"><p>(Note that these are not member functions.) </p>
 </td></tr>
-<tr class="memitem:a419bd336028a1fe6c3d44558088cc484"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a419bd336028a1fe6c3d44558088cc484"></a>
-typedef std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1actor.html#a419bd336028a1fe6c3d44558088cc484">actor_id</a></td></tr>
-<tr class="memdesc:a419bd336028a1fe6c3d44558088cc484"><td class="mdescLeft">&#160;</td><td class="mdescRight">A unique actor ID. <br/></td></tr>
-<tr class="separator:a419bd336028a1fe6c3d44558088cc484"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15b74113cbde6221df8f00c25b6c2a56"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a15b74113cbde6221df8f00c25b6c2a56"></a>
-typedef <a class="el" href="classcppa_1_1intrusive__ptr.html">intrusive_ptr</a>&lt; <a class="el" href="classcppa_1_1actor.html">actor</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1actor.html#a15b74113cbde6221df8f00c25b6c2a56">actor_ptr</a></td></tr>
-<tr class="memdesc:a15b74113cbde6221df8f00c25b6c2a56"><td class="mdescLeft">&#160;</td><td class="mdescRight">A smart pointer type that manages instances of <a class="el" href="classcppa_1_1actor.html">actor</a>. <br/></td></tr>
-<tr class="separator:a15b74113cbde6221df8f00c25b6c2a56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header related_classcppa_1_1channel"><td colspan="2" onclick="javascript:toggleInherit('related_classcppa_1_1channel')"><img src="closed.png" alt="-"/>&#160;Related Functions inherited from <a class="el" href="classcppa_1_1channel.html">cppa::channel</a></td></tr>
-<tr class="memitem:ac7df8ed0bb6003f386e088bb0dedb1df inherit related_classcppa_1_1channel"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac7df8ed0bb6003f386e088bb0dedb1df"></a>
-typedef <a class="el" href="classcppa_1_1intrusive__ptr.html">intrusive_ptr</a>&lt; <a class="el" href="classcppa_1_1channel.html">channel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1channel.html#ac7df8ed0bb6003f386e088bb0dedb1df">channel_ptr</a></td></tr>
-<tr class="memdesc:ac7df8ed0bb6003f386e088bb0dedb1df inherit related_classcppa_1_1channel"><td class="mdescLeft">&#160;</td><td class="mdescRight">A smart pointer type that manages instances of <a class="el" href="classcppa_1_1channel.html">channel</a>. <br/></td></tr>
-<tr class="separator:ac7df8ed0bb6003f386e088bb0dedb1df inherit related_classcppa_1_1channel"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a895a8a98e6b0487fd798d10a515b6f94"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a895a8a98e6b0487fd798d10a515b6f94"></a>
+constexpr invalid_actor_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1actor.html#a895a8a98e6b0487fd798d10a515b6f94">invalid_actor</a> = invalid_actor_t{}</td></tr>
+<tr class="memdesc:a895a8a98e6b0487fd798d10a515b6f94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifies an invalid <a class="el" href="classcppa_1_1actor.html">actor</a>. <br/></td></tr>
+<tr class="separator:a895a8a98e6b0487fd798d10a515b6f94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Base class for all actor implementations. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a2e5b9f1c7e0171cf0766260dac7ae989"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool cppa::actor::attach </td>
-          <td>(</td>
-          <td class="paramtype">attachable_ptr&#160;</td>
-          <td class="paramname"><em>ptr</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Attaches <code>ptr</code> to this actor. </p>
-<p>The actor will call <code>ptr-&gt;detach(...)</code> on exit, or immediately if it already finished execution. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">ptr</td><td>A callback object that's executed if the actor finishes execution. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if <code>ptr</code> was successfully attached to the actor; otherwise (actor already exited) <code>false</code>. </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>The actor takes ownership of <code>ptr</code>. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a4d0465fd9e903d7ec745cb0d7c80092c"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename F &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">bool cppa::actor::attach_functor </td>
-          <td>(</td>
-          <td class="paramtype">F &amp;&amp;&#160;</td>
-          <td class="paramname"><em>f</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Convenience function that attaches the functor or function <code>f</code> to this actor. </p>
-<p>The actor executes <code>f()</code> on exit, or immediatley if it already finished execution. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">f</td><td>A functor, function or lambda expression that's executed if the actor finishes execution. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if <code>f</code> was successfully attached to the actor; otherwise (actor already exited) <code>false</code>. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a7de56c5d175c82d29311049b5593be47"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void cppa::actor::cleanup </td>
-          <td>(</td>
-          <td class="paramtype">std::uint32_t&#160;</td>
-          <td class="paramname"><em>reason</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Should be overridden by subtypes and called upon termination. </p>
-<dl class="section note"><dt>Note</dt><dd>Default implementation sets '<a class="el" href="namespacecppa_1_1exit__reason.html" title="Contains all predefined exit reasons. ">exit_reason</a>' accordingly. </dd>
-<dd>
-Overridden functions should always call super::cleanup(). </dd></dl>
-
-<p>Reimplemented in <a class="el" href="classcppa_1_1io_1_1broker.html#abe3fb556165f10fd60bb85907a0665dc">cppa::io::broker</a>, and <a class="el" href="classcppa_1_1scheduled__actor.html#a2ab49a82962272657f44ea8b31ab225f">cppa::scheduled_actor</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="abe6e34bc6ae27d1d3ab88b4814b4e17c"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual bool cppa::actor::establish_backlink </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classcppa_1_1actor.html#a15b74113cbde6221df8f00c25b6c2a56">actor_ptr</a> &amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Establishes a link relation between this actor and <code>other</code>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">other</td><td>Actor instance that wants to link against this Actor. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if this actor is running and added <code>other</code> to its list of linked actors; otherwise <code>false</code>. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a1bcf6d0dda3abb9ba1811c62efc998c9"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::uint32_t cppa::actor::id </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets an integer value that uniquely identifies this Actor in the process it's executed in. </p>
-<dl class="section return"><dt>Returns</dt><dd>The unique identifier of this actor. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a6c2a21b5056fbe82b73ed8e84497b0bd"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool cppa::actor::is_proxy </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Checks if this actor is running on a remote node. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if this actor represents a remote actor; otherwise <code>false</code>. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a62406e89d86a0522b9e8786abb82de0c"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void cppa::actor::link_to </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classcppa_1_1actor.html#a15b74113cbde6221df8f00c25b6c2a56">actor_ptr</a> &amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Links this actor to <code>other</code>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">other</td><td>Actor instance that whose execution is coupled to the execution of this Actor. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="acbd5c4ef89260aa2df7bbb9813976a24"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual bool cppa::actor::remove_backlink </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classcppa_1_1actor.html#a15b74113cbde6221df8f00c25b6c2a56">actor_ptr</a> &amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Removes a link relation between this actor and <code>other</code>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">other</td><td>Actor instance that wants to unlink from this Actor. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if this actor is running and removed <code>other</code> from its list of linked actors; otherwise <code>false</code>. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ae163d71975de46a9775cc8894edcbc0b"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void cppa::actor::unlink_from </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classcppa_1_1actor.html#a15b74113cbde6221df8f00c25b6c2a56">actor_ptr</a> &amp;&#160;</td>
-          <td class="paramname"><em>other</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Unlinks this actor from <code>other</code>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">other</td><td>Linked Actor. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section note"><dt>Note</dt><dd>Links are automatically removed if the actor finishes execution. </dd></dl>
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<div class="textblock"><p>Identifies an untyped actor. </p>
+<p>Can be used with derived types of <a class="el" href="classcppa_1_1event__based__actor.html">event_based_actor</a>, <a class="el" href="classcppa_1_1blocking__actor.html">blocking_actor</a>, <a class="el" href="classcppa_1_1actor__proxy.html">actor_proxy</a>, or <a class="el" href="classcppa_1_1io_1_1broker.html">io::broker</a>. </p>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="dining_philosophers_8cpp-example.html#_a1">dining_philosophers.cpp</a>, and <a class="el" href="hello_world_8cpp-example.html#_a2">hello_world.cpp</a>.</dd>
+</dl></div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>cppa/actor.hpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 14 2013 20:08:20 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun May 4 2014 23:48:00 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

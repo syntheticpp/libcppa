@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libcppa
-   &#160;<span id="projectnumber">Version 0.8</span>
+   &#160;<span id="projectnumber">Version 0.9.0</span>
    </div>
   </td>
  </tr>
@@ -165,14 +165,14 @@ util::rm_const_and_ref&lt; GRes &gt;<br class="typebreak"/>
 ::type &gt; * &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group___type_system.html#ga8f1d70c1c395b02cf3b668fbe103a593">cppa::compound_member</a> (const std::pair&lt; GRes(Parent::*)() const, SRes(Parent::*)(SArg) &gt; &amp;gspair, const Ts &amp;...args)</td></tr>
 <tr class="memdesc:ga8f1d70c1c395b02cf3b668fbe103a593"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates meta informations for a non-trivial member accessed via a getter/setter pair.  <a href="#ga8f1d70c1c395b02cf3b668fbe103a593">More...</a><br/></td></tr>
 <tr class="separator:ga8f1d70c1c395b02cf3b668fbe103a593"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga855b3b9aeeb091f8f7db15fb0e012fb8"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Ts&gt; </td></tr>
+<tr class="memitem:ga855b3b9aeeb091f8f7db15fb0e012fb8"><td class="memTemplParams" colspan="2">template&lt;class C , typename... Ts&gt; </td></tr>
 <tr class="memitem:ga855b3b9aeeb091f8f7db15fb0e012fb8"><td class="memTemplItemLeft" align="right" valign="top">const uniform_type_info *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group___type_system.html#ga855b3b9aeeb091f8f7db15fb0e012fb8">cppa::announce</a> (const Ts &amp;...args)</td></tr>
-<tr class="memdesc:ga855b3b9aeeb091f8f7db15fb0e012fb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new type mapping for <code>T</code> to the libcppa type system.  <a href="#ga855b3b9aeeb091f8f7db15fb0e012fb8">More...</a><br/></td></tr>
+<tr class="memdesc:ga855b3b9aeeb091f8f7db15fb0e012fb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new type mapping for <code>C</code> to the libcppa type system.  <a href="#ga855b3b9aeeb091f8f7db15fb0e012fb8">More...</a><br/></td></tr>
 <tr class="separator:ga855b3b9aeeb091f8f7db15fb0e012fb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2534a2a021d60eaa4519e36714d435af"><td class="memTemplParams" colspan="2"><a class="anchor" id="ga2534a2a021d60eaa4519e36714d435af"></a>
 template&lt;typename T , typename... Ts&gt; </td></tr>
 <tr class="memitem:ga2534a2a021d60eaa4519e36714d435af"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group___type_system.html#ga2534a2a021d60eaa4519e36714d435af">cppa::announce_tuple</a> ()</td></tr>
-<tr class="memdesc:ga2534a2a021d60eaa4519e36714d435af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a hint to the type system of libcppa. This type hint can significantly increase the network performance, because libcppa can use the hint to create tuples with full static type information rather than using fully dynamically typed tuples. <br/></td></tr>
+<tr class="memdesc:ga2534a2a021d60eaa4519e36714d435af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a hint to the type system of libcppa. This type hint can increase the network performance, because libcppa can use the hint to create tuples with full static type information rather than using fully dynamically typed tuples. <br/></td></tr>
 <tr class="separator:ga2534a2a021d60eaa4519e36714d435af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5d1de7bc77d88156d0e12e373ab2c613"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___type_system.html#ga5d1de7bc77d88156d0e12e373ab2c613">cppa::primitive_type_name</a> (<a class="el" href="group___type_system.html#ga4405c08180f3db0936dcc6afe84f2899">primitive_type</a> ptype)</td></tr>
 <tr class="memdesc:ga5d1de7bc77d88156d0e12e373ab2c613"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps a <a class="el" href="group___type_system.html#ga4405c08180f3db0936dcc6afe84f2899" title="Represents the type flag of primitive_variant. ">primitive_type</a> value to its name.  <a href="#ga5d1de7bc77d88156d0e12e373ab2c613">More...</a><br/></td></tr>
@@ -202,7 +202,7 @@ template&lt;typename T , typename... Ts&gt; </td></tr>
 <div class="line">*</div>
 <div class="line">* <span class="keywordtype">int</span> main()</div>
 <div class="line">* {</div>
-<div class="line">*     <a class="code" href="namespacecppa.html#a8ce9b9bc8666bd339ff6a95065b91d65">send</a>(<span class="keyword">self</span>, foo{1, 2});</div>
+<div class="line">*     send(<span class="keyword">self</span>, foo{1, 2});</div>
 <div class="line">*     <span class="keywordflow">return</span> 0;</div>
 <div class="line">* }</div>
 <div class="line">* </div>
@@ -323,7 +323,7 @@ template&lt;typename T , typename... Ts&gt; </td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if <code>uniform_type</code> was added as known instance (mapped to <code>plain_type</code>); otherwise <code>false</code> is returned and <code>uniform_type</code> was deleted. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="announce_5_8cpp-example.html#a14">announce_5.cpp</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="announce_5_8cpp-example.html#a12">announce_5.cpp</a>.</dd>
 </dl>
 </div>
 </div>
@@ -331,7 +331,7 @@ template&lt;typename T , typename... Ts&gt; </td></tr>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , typename... Ts&gt; </div>
+template&lt;class C , typename... Ts&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">const uniform_type_info* cppa::announce </td>
@@ -343,10 +343,16 @@ template&lt;typename T , typename... Ts&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Adds a new type mapping for <code>T</code> to the libcppa type system. </p>
+<p>Adds a new type mapping for <code>C</code> to the libcppa type system. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">C</td><td>A class that is either empty or is default constructible, copy constructible, and comparable. </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">args</td><td>Members of <code>T</code>. </td></tr>
+    <tr><td class="paramname">args</td><td>Members of <code>C</code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -582,7 +588,7 @@ template&lt;typename T &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 14 2013 20:08:20 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun May 4 2014 23:48:00 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

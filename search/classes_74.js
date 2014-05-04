@@ -1,8 +1,9 @@
 var searchData=
 [
   ['tbind',['tbind',['../structcppa_1_1util_1_1tbind.html',1,'cppa::util']]],
-  ['thread_5fmapped_5factor',['thread_mapped_actor',['../classcppa_1_1thread__mapped__actor.html',1,'cppa']]],
-  ['threadless',['threadless',['../classcppa_1_1threadless.html',1,'cppa']]],
+  ['tcp_5facceptor',['tcp_acceptor',['../classcppa_1_1io_1_1tcp__acceptor.html',1,'cppa::io']]],
+  ['tcp_5fio_5fstream',['tcp_io_stream',['../classcppa_1_1io_1_1tcp__io__stream.html',1,'cppa::io']]],
+  ['timeout_5fmsg',['timeout_msg',['../structcppa_1_1timeout__msg.html',1,'cppa']]],
   ['tl_5fapply',['tl_apply',['../structcppa_1_1util_1_1tl__apply.html',1,'cppa::util']]],
   ['tl_5fapply_3c_20transformers_2c_20tdata_20_3e',['tl_apply&lt; Transformers, tdata &gt;',['../structcppa_1_1util_1_1tl__apply.html',1,'cppa::util']]],
   ['tl_5fat_3c_20type_5flist_3c_20e_2e_2e_2e_3e_2c_20n_20_3e',['tl_at&lt; type_list&lt; E...&gt;, N &gt;',['../structcppa_1_1util_1_1tl__at_3_01type__list_3_01_e_8_8_8_4_00_01_n_01_4.html',1,'cppa::util']]],
@@ -48,5 +49,8 @@ var searchData=
   ['type_5fat',['type_at',['../structcppa_1_1util_1_1type__at.html',1,'cppa::util']]],
   ['type_5flist',['type_list',['../structcppa_1_1util_1_1type__list.html',1,'cppa::util']]],
   ['type_5flookup_5ftable',['type_lookup_table',['../classcppa_1_1type__lookup__table.html',1,'cppa']]],
-  ['type_5fpair',['type_pair',['../structcppa_1_1util_1_1type__pair.html',1,'cppa::util']]]
+  ['type_5fpair',['type_pair',['../structcppa_1_1util_1_1type__pair.html',1,'cppa::util']]],
+  ['typed_5factor',['typed_actor',['../classcppa_1_1typed__actor.html',1,'cppa']]],
+  ['typed_5fevent_5fbased_5factor',['typed_event_based_actor',['../classcppa_1_1typed__event__based__actor.html',1,'cppa']]],
+  ['typed_5fevent_5fbased_5factor_3c_20rs_2e_2e_2e_3e',['typed_event_based_actor&lt; Rs...&gt;',['../classcppa_1_1typed__event__based__actor.html',1,'cppa']]]
 ];

@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libcppa
-   &#160;<span id="projectnumber">Version 0.8</span>
+   &#160;<span id="projectnumber">Version 0.9.0</span>
    </div>
   </td>
  </tr>
@@ -97,7 +97,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>An intrusive, thread safe queue implementation.  
+<p>An intrusive, thread-safe queue implementation.  
  <a href="classcppa_1_1intrusive_1_1single__reader__queue.html#details">More...</a></p>
 
 <p><code>#include &lt;single_reader_queue.hpp&gt;</code></p>
@@ -120,16 +120,25 @@ template&lt;class UnaryPredicate &gt; </td></tr>
 <tr class="memitem:a6addb74c732bede89504e15f651be796"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>remove_if</b> (UnaryPredicate f)</td></tr>
 <tr class="separator:a6addb74c732bede89504e15f651be796"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a457dab96cfc36f031b4386fb123683a9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a457dab96cfc36f031b4386fb123683a9"></a>
-enqueue_result&#160;</td><td class="memItemRight" valign="bottom"><b>enqueue</b> (pointer new_element)</td></tr>
+<a class="el" href="namespacecppa_1_1intrusive.html#aa92d5e2e9e2308cd076c8c311b8a00b6">enqueue_result</a>&#160;</td><td class="memItemRight" valign="bottom"><b>enqueue</b> (pointer new_element)</td></tr>
 <tr class="separator:a457dab96cfc36f031b4386fb123683a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9dc83a443438cc5202ddfb6380e37f5f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9dc83a443438cc5202ddfb6380e37f5f"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>can_fetch_more</b> () const </td></tr>
-<tr class="separator:a9dc83a443438cc5202ddfb6380e37f5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a919081cadd494e713c7d0c4ad82cdd62"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1intrusive_1_1single__reader__queue.html#a919081cadd494e713c7d0c4ad82cdd62">empty</a> () const </td></tr>
-<tr class="separator:a919081cadd494e713c7d0c4ad82cdd62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acbb5adb91216bb0969c242afe58e8373"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acbb5adb91216bb0969c242afe58e8373"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>closed</b> () const </td></tr>
-<tr class="separator:acbb5adb91216bb0969c242afe58e8373"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9120a065ddbd4ac469b1c47aa4f77c3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1intrusive_1_1single__reader__queue.html#ae9120a065ddbd4ac469b1c47aa4f77c3">can_fetch_more</a> ()</td></tr>
+<tr class="memdesc:ae9120a065ddbd4ac469b1c47aa4f77c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries whether there is new data to read.  <a href="#ae9120a065ddbd4ac469b1c47aa4f77c3">More...</a><br/></td></tr>
+<tr class="separator:ae9120a065ddbd4ac469b1c47aa4f77c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b9f72c8f8f5700f27923a83e8c5fcbc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1intrusive_1_1single__reader__queue.html#a2b9f72c8f8f5700f27923a83e8c5fcbc">empty</a> ()</td></tr>
+<tr class="separator:a2b9f72c8f8f5700f27923a83e8c5fcbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a351205b13096867ad8906e9b51ea9320"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a351205b13096867ad8906e9b51ea9320"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>closed</b> ()</td></tr>
+<tr class="separator:a351205b13096867ad8906e9b51ea9320"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae225f763349e79eee795abd44f2853fa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae225f763349e79eee795abd44f2853fa"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>blocked</b> ()</td></tr>
+<tr class="separator:ae225f763349e79eee795abd44f2853fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0f8e177fb79e9205949c744e14a25e1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1intrusive_1_1single__reader__queue.html#ad0f8e177fb79e9205949c744e14a25e1">try_block</a> ()</td></tr>
+<tr class="memdesc:ad0f8e177fb79e9205949c744e14a25e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to set this queue from state <code>empty</code> to state <code>blocked</code>.  <a href="#ad0f8e177fb79e9205949c744e14a25e1">More...</a><br/></td></tr>
+<tr class="separator:ad0f8e177fb79e9205949c744e14a25e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a070d9af5598494f880a1335087674d26"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1intrusive_1_1single__reader__queue.html#a070d9af5598494f880a1335087674d26">try_unblock</a> ()</td></tr>
+<tr class="memdesc:a070d9af5598494f880a1335087674d26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to set this queue from state <code>blocked</code> to state <code>empty</code>.  <a href="#a070d9af5598494f880a1335087674d26">More...</a><br/></td></tr>
+<tr class="separator:a070d9af5598494f880a1335087674d26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af99b182adab30f6a9b3c0936fa65ba51"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1intrusive_1_1single__reader__queue.html#af99b182adab30f6a9b3c0936fa65ba51">close</a> ()</td></tr>
 <tr class="separator:af99b182adab30f6a9b3c0936fa65ba51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5fa7c8c2ef2105e53f2b68afa407b8f"><td class="memTemplParams" colspan="2"><a class="anchor" id="ae5fa7c8c2ef2105e53f2b68afa407b8f"></a>
@@ -139,14 +148,54 @@ template&lt;typename F &gt; </td></tr>
 <tr class="memitem:a98d431a7a6ad6f9e50e0dd91dd31e5fe"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a98d431a7a6ad6f9e50e0dd91dd31e5fe"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr>
 <tr class="separator:a98d431a7a6ad6f9e50e0dd91dd31e5fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21d8d7d24c520ebfb8f297f83931b30c"><td class="memTemplParams" colspan="2"><a class="anchor" id="a21d8d7d24c520ebfb8f297f83931b30c"></a>
+template&lt;class Mutex , class CondVar &gt; </td></tr>
+<tr class="memitem:a21d8d7d24c520ebfb8f297f83931b30c"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>synchronized_enqueue</b> (Mutex &amp;mtx, CondVar &amp;cv, pointer new_element)</td></tr>
+<tr class="separator:a21d8d7d24c520ebfb8f297f83931b30c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4506fc67f6f541a2d49624d8549b83da"><td class="memTemplParams" colspan="2"><a class="anchor" id="a4506fc67f6f541a2d49624d8549b83da"></a>
+template&lt;class Mutex , class CondVar , class TimePoint &gt; </td></tr>
+<tr class="memitem:a4506fc67f6f541a2d49624d8549b83da"><td class="memTemplItemLeft" align="right" valign="top">pointer&#160;</td><td class="memTemplItemRight" valign="bottom"><b>synchronized_try_pop</b> (Mutex &amp;mtx, CondVar &amp;cv, const TimePoint &amp;abs_time)</td></tr>
+<tr class="separator:a4506fc67f6f541a2d49624d8549b83da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad418f2446d108ed44767d561d46aec4d"><td class="memTemplParams" colspan="2"><a class="anchor" id="ad418f2446d108ed44767d561d46aec4d"></a>
+template&lt;class Mutex , class CondVar &gt; </td></tr>
+<tr class="memitem:ad418f2446d108ed44767d561d46aec4d"><td class="memTemplItemLeft" align="right" valign="top">pointer&#160;</td><td class="memTemplItemRight" valign="bottom"><b>synchronized_pop</b> (Mutex &amp;mtx, CondVar &amp;cv)</td></tr>
+<tr class="separator:ad418f2446d108ed44767d561d46aec4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade4b8222197f7abdd1f9bd73319bddf8"><td class="memTemplParams" colspan="2"><a class="anchor" id="ade4b8222197f7abdd1f9bd73319bddf8"></a>
+template&lt;class Mutex , class CondVar &gt; </td></tr>
+<tr class="memitem:ade4b8222197f7abdd1f9bd73319bddf8"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>synchronized_await</b> (Mutex &amp;mtx, CondVar &amp;cv)</td></tr>
+<tr class="separator:ade4b8222197f7abdd1f9bd73319bddf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04409dfc9845d16ab19f5f14bab2bec4"><td class="memTemplParams" colspan="2"><a class="anchor" id="a04409dfc9845d16ab19f5f14bab2bec4"></a>
+template&lt;class Mutex , class CondVar , class TimePoint &gt; </td></tr>
+<tr class="memitem:a04409dfc9845d16ab19f5f14bab2bec4"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><b>synchronized_await</b> (Mutex &amp;mtx, CondVar &amp;cv, const TimePoint &amp;timeout)</td></tr>
+<tr class="separator:a04409dfc9845d16ab19f5f14bab2bec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename T, class Delete = std::default_delete&lt;T&gt;&gt;<br/>
 class cppa::intrusive::single_reader_queue&lt; T, Delete &gt;</h3>
 
-<p>An intrusive, thread safe queue implementation. </p>
+<p>An intrusive, thread-safe queue implementation. </p>
 <dl class="section note"><dt>Note</dt><dd>For implementation details see <a href="http://libcppa.blogspot.com/2011/04/mailbox-part-1.html">http://libcppa.blogspot.com/2011/04/mailbox-part-1.html</a> </dd></dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ae9120a065ddbd4ac469b1c47aa4f77c3"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, class Delete = std::default_delete&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classcppa_1_1intrusive_1_1single__reader__queue.html">cppa::intrusive::single_reader_queue</a>&lt; T, Delete &gt;::can_fetch_more </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Queries whether there is new data to read. </p>
+<dl class="section pre"><dt>Precondition</dt><dd>m_stack.load() != reader_blocked_dummy() </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="af99b182adab30f6a9b3c0936fa65ba51"></a>
 <div class="memitem">
 <div class="memproto">
@@ -165,7 +214,7 @@ template&lt;typename T, class Delete = std::default_delete&lt;T&gt;&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a919081cadd494e713c7d0c4ad82cdd62"></a>
+<a class="anchor" id="a2b9f72c8f8f5700f27923a83e8c5fcbc"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -175,11 +224,32 @@ template&lt;typename T, class Delete = std::default_delete&lt;T&gt;&gt; </div>
           <td class="memname">bool <a class="el" href="classcppa_1_1intrusive_1_1single__reader__queue.html">cppa::intrusive::single_reader_queue</a>&lt; T, Delete &gt;::empty </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <dl class="section warning"><dt>Warning</dt><dd>call only from the reader (owner) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad0f8e177fb79e9205949c744e14a25e1"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, class Delete = std::default_delete&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classcppa_1_1intrusive_1_1single__reader__queue.html">cppa::intrusive::single_reader_queue</a>&lt; T, Delete &gt;::try_block </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tries to set this queue from state <code>empty</code> to state <code>blocked</code>. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the state change was successful or if the mailbox was already blocked, otherwise <code>false</code>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function does never fail spuriously. </dd></dl>
 
 </div>
 </div>
@@ -201,13 +271,34 @@ template&lt;typename T, class Delete = std::default_delete&lt;T&gt;&gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="a070d9af5598494f880a1335087674d26"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, class Delete = std::default_delete&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classcppa_1_1intrusive_1_1single__reader__queue.html">cppa::intrusive::single_reader_queue</a>&lt; T, Delete &gt;::try_unblock </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tries to set this queue from state <code>blocked</code> to state <code>empty</code>. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the state change was successful, otherwise <code>false</code>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function does never fail spuriously. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>cppa/intrusive/single_reader_queue.hpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 14 2013 20:08:20 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun May 4 2014 23:48:01 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

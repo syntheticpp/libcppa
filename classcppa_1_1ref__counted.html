@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libcppa
-   &#160;<span id="projectnumber">Version 0.8</span>
+   &#160;<span id="projectnumber">Version 0.9.0</span>
    </div>
   </td>
  </tr>
@@ -106,23 +106,25 @@ Inheritance diagram for cppa::ref_counted:</div>
  <div class="center">
   <img src="classcppa_1_1ref__counted.png" usemap="#cppa::ref_counted_map" alt=""/>
   <map id="cppa::ref_counted_map" name="cppa::ref_counted_map">
-<area href="classcppa_1_1memory__managed.html" title="This base enables derived classes to enforce a different allocation strategy than new/delete by provi..." alt="cppa::memory_managed" shape="rect" coords="668,0,849,24"/>
-<area href="classcppa_1_1channel.html" title="Interface for all message receivers. " alt="cppa::channel" shape="rect" coords="191,112,372,136"/>
-<area href="classcppa_1_1io_1_1input__stream.html" title="An abstract input stream interface. " alt="cppa::io::input_stream" shape="rect" coords="477,112,658,136"/>
-<area href="classcppa_1_1io_1_1output__stream.html" title="An abstract output stream interface. " alt="cppa::io::output_stream" shape="rect" coords="668,112,849,136"/>
-<area href="classcppa_1_1process__information.html" title="Identifies a process. " alt="cppa::process_information" shape="rect" coords="859,112,1040,136"/>
-<area href="classcppa_1_1weak__ptr__anchor.html" title="A storage holding a spinlock and a pointer to a reference counted object. " alt="cppa::weak_ptr_anchor" shape="rect" coords="1050,112,1231,136"/>
-<area href="classcppa_1_1actor.html" title="Base class for all actor implementations. " alt="cppa::actor" shape="rect" coords="95,168,276,192"/>
-<area href="classcppa_1_1group.html" title="A multicast group. " alt="cppa::group" shape="rect" coords="286,168,467,192"/>
-<area href="classcppa_1_1io_1_1stream.html" title="A stream capable of both reading and writing. " alt="cppa::io::stream" shape="rect" coords="477,168,658,192"/>
-<area href="classcppa_1_1io_1_1stream.html" title="A stream capable of both reading and writing. " alt="cppa::io::stream" shape="rect" coords="668,168,849,192"/>
-<area href="classcppa_1_1actor__proxy.html" title="Represents a remote actor. " alt="cppa::actor_proxy" shape="rect" coords="0,224,181,248"/>
-<area href="classcppa_1_1local__actor.html" title="Base class for local running Actors. " alt="cppa::local_actor" shape="rect" coords="191,224,372,248"/>
-<area href="classcppa_1_1io_1_1broker.html" title="A broker mediates between a libcppa-based actor system and other components in the network..." alt="cppa::io::broker" shape="rect" coords="0,280,181,304"/>
-<area href="classcppa_1_1scheduled__actor.html" title="A base class for cooperatively scheduled actors. " alt="cppa::scheduled_actor" shape="rect" coords="191,280,372,304"/>
-<area href="classcppa_1_1thread__mapped__actor.html" title="An actor using the blocking API running in its own thread. " alt="cppa::thread_mapped_actor" shape="rect" coords="382,280,563,304"/>
-<area href="classcppa_1_1context__switching__actor.html" title="Context-switching actor implementation. " alt="cppa::context_switching_actor" shape="rect" coords="95,336,276,360"/>
-<area href="classcppa_1_1event__based__actor.html" title="Base class for all event-based actor implementations. " alt="cppa::event_based_actor" shape="rect" coords="286,336,467,360"/>
+<area href="classcppa_1_1memory__managed.html" title="This base enables derived classes to enforce a different allocation strategy than new/delete by provi..." alt="cppa::memory_managed" shape="rect" coords="988,0,1225,24"/>
+<area href="classcppa_1_1abstract__channel.html" title="Interface for all message receivers. " alt="cppa::abstract_channel" shape="rect" coords="370,112,607,136"/>
+<area href="classcppa_1_1io_1_1input__stream.html" title="An abstract input stream interface. " alt="cppa::io::input_stream" shape="rect" coords="741,112,978,136"/>
+<area href="classcppa_1_1io_1_1output__stream.html" title="An abstract output stream interface. " alt="cppa::io::output_stream" shape="rect" coords="988,112,1225,136"/>
+<area href="classcppa_1_1node__id.html" title="Identifies a process. " alt="cppa::node_id" shape="rect" coords="1235,112,1472,136"/>
+<area href="classcppa_1_1weak__ptr__anchor.html" title="A storage holding a spinlock and a pointer to a reference counted object. " alt="cppa::weak_ptr_anchor" shape="rect" coords="1482,112,1719,136"/>
+<area href="classcppa_1_1abstract__actor.html" title="Base class for all actor implementations. " alt="cppa::abstract_actor" shape="rect" coords="247,168,484,192"/>
+<area href="classcppa_1_1abstract__group.html" title="A multicast group. " alt="cppa::abstract_group" shape="rect" coords="494,168,731,192"/>
+<area href="classcppa_1_1io_1_1stream.html" title="A stream capable of both reading and writing. " alt="cppa::io::stream" shape="rect" coords="741,168,978,192"/>
+<area href="classcppa_1_1io_1_1stream.html" title="A stream capable of both reading and writing. " alt="cppa::io::stream" shape="rect" coords="988,168,1225,192"/>
+<area href="classcppa_1_1actor__proxy.html" title="Represents a remote actor. " alt="cppa::actor_proxy" shape="rect" coords="0,224,237,248"/>
+<area href="classcppa_1_1local__actor.html" title="Base class for local running Actors. " alt="cppa::local_actor" shape="rect" coords="494,224,731,248"/>
+<area href="classcppa_1_1io_1_1tcp__io__stream.html" title="An implementation of the stream interface for TCP sockets. " alt="cppa::io::tcp_io_stream" shape="rect" coords="741,224,978,248"/>
+<area href="classcppa_1_1io_1_1tcp__io__stream.html" title="An implementation of the stream interface for TCP sockets. " alt="cppa::io::tcp_io_stream" shape="rect" coords="988,224,1225,248"/>
+<area href="classcppa_1_1blocking__actor.html" title="A thread-mapped or context-switching actor using a blocking receive rather than a behavior-stack base..." alt="cppa::blocking_actor" shape="rect" coords="0,280,237,304"/>
+<area href="classcppa_1_1event__based__actor.html" title="A cooperatively scheduled, event-based actor implementation. " alt="cppa::event_based_actor" shape="rect" coords="247,280,484,304"/>
+<area href="classcppa_1_1io_1_1broker.html" title="A broker mediates between a libcppa-based actor system and other components in the network..." alt="cppa::io::broker" shape="rect" coords="494,280,731,304"/>
+<area href="classcppa_1_1typed__event__based__actor.html" title="A cooperatively scheduled, event-based actor implementation with strong type checking. " alt="cppa::typed_event_based_actor&lt; Rs &gt;" shape="rect" coords="741,280,978,304"/>
+<area href="classcppa_1_1typed__event__based__actor.html" alt="cppa::typed_event_based_actor&lt; Rs...&gt;" shape="rect" coords="988,280,1225,304"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -161,7 +163,7 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 14 2013 20:08:20 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun May 4 2014 23:48:01 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

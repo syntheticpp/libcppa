@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libcppa
-   &#160;<span id="projectnumber">Version 0.8</span>
+   &#160;<span id="projectnumber">Version 0.9.0</span>
    </div>
   </td>
  </tr>
@@ -101,11 +101,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <tr bgcolor="#f0f0f0"><td class="entry"><b>behavior</b>(const behavior &amp;)=default (defined in <a class="el" href="classcppa_1_1behavior.html">cppa::behavior</a>)</td><td class="entry"><a class="el" href="classcppa_1_1behavior.html">cppa::behavior</a></td><td class="entry"></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>behavior</b>(const partial_function &amp;fun) (defined in <a class="el" href="classcppa_1_1behavior.html">cppa::behavior</a>)</td><td class="entry"><a class="el" href="classcppa_1_1behavior.html">cppa::behavior</a></td><td class="entry"></td></tr>
   <tr bgcolor="#f0f0f0"><td class="entry"><b>behavior</b>(const timeout_definition&lt; F &gt; &amp;arg) (defined in <a class="el" href="classcppa_1_1behavior.html">cppa::behavior</a>)</td><td class="entry"><a class="el" href="classcppa_1_1behavior.html">cppa::behavior</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>behavior</b>(util::duration d, F f) (defined in <a class="el" href="classcppa_1_1behavior.html">cppa::behavior</a>)</td><td class="entry"><a class="el" href="classcppa_1_1behavior.html">cppa::behavior</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>behavior</b>(const match_expr&lt; Cs...&gt; &amp;arg) (defined in <a class="el" href="classcppa_1_1behavior.html">cppa::behavior</a>)</td><td class="entry"><a class="el" href="classcppa_1_1behavior.html">cppa::behavior</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>behavior</b>(const match_expr&lt; Cs...&gt; &amp;arg0, const T &amp;arg1, const Ts &amp;...args) (defined in <a class="el" href="classcppa_1_1behavior.html">cppa::behavior</a>)</td><td class="entry"><a class="el" href="classcppa_1_1behavior.html">cppa::behavior</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>continuation_fun</b> typedef (defined in <a class="el" href="classcppa_1_1behavior.html">cppa::behavior</a>)</td><td class="entry"><a class="el" href="classcppa_1_1behavior.html">cppa::behavior</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classcppa_1_1behavior.html#a4b2fdfd9e6edb7b64844391a6178a2e2">handle_timeout</a>()</td><td class="entry"><a class="el" href="classcppa_1_1behavior.html">cppa::behavior</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>behavior</b>(const util::duration &amp;d, F f) (defined in <a class="el" href="classcppa_1_1behavior.html">cppa::behavior</a>)</td><td class="entry"><a class="el" href="classcppa_1_1behavior.html">cppa::behavior</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>behavior</b>(const T &amp;arg, Ts &amp;&amp;...args) (defined in <a class="el" href="classcppa_1_1behavior.html">cppa::behavior</a>)</td><td class="entry"><a class="el" href="classcppa_1_1behavior.html">cppa::behavior</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>continuation_fun</b> typedef (defined in <a class="el" href="classcppa_1_1behavior.html">cppa::behavior</a>)</td><td class="entry"><a class="el" href="classcppa_1_1behavior.html">cppa::behavior</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classcppa_1_1behavior.html#a4b2fdfd9e6edb7b64844391a6178a2e2">handle_timeout</a>()</td><td class="entry"><a class="el" href="classcppa_1_1behavior.html">cppa::behavior</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>operator bool</b>() const  (defined in <a class="el" href="classcppa_1_1behavior.html">cppa::behavior</a>)</td><td class="entry"><a class="el" href="classcppa_1_1behavior.html">cppa::behavior</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classcppa_1_1behavior.html#a5e4cbc9254d3fd3eb14283fa4d65b687">operator()</a>(T &amp;&amp;arg)</td><td class="entry"><a class="el" href="classcppa_1_1behavior.html">cppa::behavior</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classcppa_1_1behavior.html#a8ce4854bc122e71704ad1980f2fba0ed">operator,</a>(const match_expr&lt; Cs...&gt; &amp;lhs, const timeout_definition&lt; F &gt; &amp;rhs)</td><td class="entry"><a class="el" href="classcppa_1_1behavior.html">cppa::behavior</a></td><td class="entry"><span class="mlabel">related</span></td></tr>
   <tr bgcolor="#f0f0f0"><td class="entry"><b>operator=</b>(behavior &amp;&amp;)=default (defined in <a class="el" href="classcppa_1_1behavior.html">cppa::behavior</a>)</td><td class="entry"><a class="el" href="classcppa_1_1behavior.html">cppa::behavior</a></td><td class="entry"></td></tr>
@@ -115,7 +115,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 14 2013 20:08:20 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun May 4 2014 23:48:00 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

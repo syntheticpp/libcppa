@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libcppa
-   &#160;<span id="projectnumber">Version 0.8</span>
+   &#160;<span id="projectnumber">Version 0.9.0</span>
    </div>
   </td>
  </tr>
@@ -108,56 +108,25 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1message__header.html#aa3ceb478115d74da8a97654fb53be567">message_header</a> ()=default</td></tr>
 <tr class="memdesc:aa3ceb478115d74da8a97654fb53be567"><td class="mdescLeft">&#160;</td><td class="mdescRight">An invalid message header without receiver or sender;. <br/></td></tr>
 <tr class="separator:aa3ceb478115d74da8a97654fb53be567"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a739d4a4129b6d61304c9780cb02d0608"><td class="memTemplParams" colspan="2"><a class="anchor" id="a739d4a4129b6d61304c9780cb02d0608"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a739d4a4129b6d61304c9780cb02d0608"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classcppa_1_1message__header.html#a739d4a4129b6d61304c9780cb02d0608">message_header</a> (<a class="el" href="classcppa_1_1intrusive__ptr.html">intrusive_ptr</a>&lt; T &gt; dest)</td></tr>
-<tr class="memdesc:a739d4a4129b6d61304c9780cb02d0608"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a message header with <code>receiver = dest</code> and <code>sender = self</code>. <br/></td></tr>
-<tr class="separator:a739d4a4129b6d61304c9780cb02d0608"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb250284611789313f28ae59a9b03301"><td class="memTemplParams" colspan="2"><a class="anchor" id="acb250284611789313f28ae59a9b03301"></a>
-template&lt;typename T &gt; </td></tr>
-<tr class="memitem:acb250284611789313f28ae59a9b03301"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><b>message_header</b> (T *dest)</td></tr>
-<tr class="separator:acb250284611789313f28ae59a9b03301"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5f9c1856c123e846939963ca2d7ad10"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac5f9c1856c123e846939963ca2d7ad10"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>message_header</b> (const std::nullptr_t &amp;)</td></tr>
-<tr class="separator:ac5f9c1856c123e846939963ca2d7ad10"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f849acf2e72c523e80052787cf1a96a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9f849acf2e72c523e80052787cf1a96a"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1message__header.html#a9f849acf2e72c523e80052787cf1a96a">message_header</a> (const self_type &amp;)</td></tr>
-<tr class="memdesc:a9f849acf2e72c523e80052787cf1a96a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a message header with <code>receiver = self</code> and <code>sender = self</code>. <br/></td></tr>
-<tr class="separator:a9f849acf2e72c523e80052787cf1a96a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a7cf4b8b176ef5b75b62955b3c0e7f4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6a7cf4b8b176ef5b75b62955b3c0e7f4"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1message__header.html#a6a7cf4b8b176ef5b75b62955b3c0e7f4">message_header</a> (<a class="el" href="classcppa_1_1intrusive__ptr.html">channel_ptr</a> dest, <a class="el" href="classcppa_1_1message__id.html">message_id</a> mid, message_priority prio=message_priority::normal)</td></tr>
-<tr class="memdesc:a6a7cf4b8b176ef5b75b62955b3c0e7f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a message header with <code>receiver = dest</code> and <code>sender = self</code>. <br/></td></tr>
-<tr class="separator:a6a7cf4b8b176ef5b75b62955b3c0e7f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf4a0f3a00cc020efdcf18b3e9b44e96"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaf4a0f3a00cc020efdcf18b3e9b44e96"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1message__header.html#aaf4a0f3a00cc020efdcf18b3e9b44e96">message_header</a> (<a class="el" href="classcppa_1_1intrusive__ptr.html">channel_ptr</a> dest, message_priority prio)</td></tr>
-<tr class="memdesc:aaf4a0f3a00cc020efdcf18b3e9b44e96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a message header with <code>receiver = dest</code> and <code>sender = self</code>. <br/></td></tr>
-<tr class="separator:aaf4a0f3a00cc020efdcf18b3e9b44e96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a986b30851335f3f04e033bb204d1e8a3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a986b30851335f3f04e033bb204d1e8a3"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1message__header.html#a986b30851335f3f04e033bb204d1e8a3">message_header</a> (<a class="el" href="classcppa_1_1intrusive__ptr.html">actor_ptr</a> source, <a class="el" href="classcppa_1_1intrusive__ptr.html">channel_ptr</a> dest, <a class="el" href="classcppa_1_1message__id.html">message_id</a> mid=message_id::invalid, message_priority prio=message_priority::normal)</td></tr>
-<tr class="memdesc:a986b30851335f3f04e033bb204d1e8a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a message header with <code>receiver = dest</code> and <code>sender = source</code>. <br/></td></tr>
-<tr class="separator:a986b30851335f3f04e033bb204d1e8a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a969d8ee5c214f64d7525ae80251000d7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a969d8ee5c214f64d7525ae80251000d7"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1message__header.html#a969d8ee5c214f64d7525ae80251000d7">message_header</a> (<a class="el" href="classcppa_1_1intrusive__ptr.html">actor_ptr</a> source, <a class="el" href="classcppa_1_1intrusive__ptr.html">channel_ptr</a> dest, message_priority prio)</td></tr>
-<tr class="memdesc:a969d8ee5c214f64d7525ae80251000d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a message header with <code>receiver = dest</code> and <code>sender = self</code>. <br/></td></tr>
-<tr class="separator:a969d8ee5c214f64d7525ae80251000d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4079ee989bd85855b4adf632bb8eba44"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4079ee989bd85855b4adf632bb8eba44"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1message__header.html#a4079ee989bd85855b4adf632bb8eba44">message_header</a> (<a class="el" href="classcppa_1_1actor__addr.html">actor_addr</a> source, <a class="el" href="classcppa_1_1channel.html">channel</a> dest, <a class="el" href="classcppa_1_1message__id.html">message_id</a> mid=message_id::invalid)</td></tr>
+<tr class="memdesc:a4079ee989bd85855b4adf632bb8eba44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a message header with <code>receiver = dest</code> and <code>sender = source</code>. <br/></td></tr>
+<tr class="separator:a4079ee989bd85855b4adf632bb8eba44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83ad9d3ee6ada8929da4b586c5a10fe6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a83ad9d3ee6ada8929da4b586c5a10fe6"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>deliver</b> (<a class="el" href="classcppa_1_1any__tuple.html">any_tuple</a> msg) const </td></tr>
 <tr class="separator:a83ad9d3ee6ada8929da4b586c5a10fe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a06bda8c156a16e8cbd86b1bc3d980dc3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a06bda8c156a16e8cbd86b1bc3d980dc3"></a>
-<a class="el" href="classcppa_1_1intrusive__ptr.html">actor_ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><b>sender</b></td></tr>
-<tr class="separator:a06bda8c156a16e8cbd86b1bc3d980dc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a847ae0bf355bf801aec57cbde8215a19"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a847ae0bf355bf801aec57cbde8215a19"></a>
-<a class="el" href="classcppa_1_1intrusive__ptr.html">channel_ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><b>receiver</b></td></tr>
-<tr class="separator:a847ae0bf355bf801aec57cbde8215a19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e0cbb191d120f942d58bcdb82f847d0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9e0cbb191d120f942d58bcdb82f847d0"></a>
+<a class="el" href="classcppa_1_1actor__addr.html">actor_addr</a>&#160;</td><td class="memItemRight" valign="bottom"><b>sender</b></td></tr>
+<tr class="separator:a9e0cbb191d120f942d58bcdb82f847d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa14a2f9f0c70f000aea9d8a04da3888c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa14a2f9f0c70f000aea9d8a04da3888c"></a>
+<a class="el" href="classcppa_1_1channel.html">channel</a>&#160;</td><td class="memItemRight" valign="bottom"><b>receiver</b></td></tr>
+<tr class="separator:aa14a2f9f0c70f000aea9d8a04da3888c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7444cecc4d21e0bbac87be0b9abd2b92"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7444cecc4d21e0bbac87be0b9abd2b92"></a>
 <a class="el" href="classcppa_1_1message__id.html">message_id</a>&#160;</td><td class="memItemRight" valign="bottom"><b>id</b></td></tr>
 <tr class="separator:a7444cecc4d21e0bbac87be0b9abd2b92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae344572b56a7385def4beaf821184f30"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae344572b56a7385def4beaf821184f30"></a>
-message_priority&#160;</td><td class="memItemRight" valign="bottom"><b>priority</b></td></tr>
-<tr class="separator:ae344572b56a7385def4beaf821184f30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Encapsulates information about sender, receiver and (synchronous) message ID of a message. The message itself is usually an <a class="el" href="classcppa_1_1any__tuple.html" title="Describes a fixed-length copy-on-write tuple with elements of any type. ">any_tuple</a>. </p>
@@ -167,7 +136,7 @@ message_priority&#160;</td><td class="memItemRight" valign="bottom"><b>priority<
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 14 2013 20:08:20 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun May 4 2014 23:48:01 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

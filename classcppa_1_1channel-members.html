@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libcppa
-   &#160;<span id="projectnumber">Version 0.8</span>
+   &#160;<span id="projectnumber">Version 0.9.0</span>
    </div>
   </td>
  </tr>
@@ -95,24 +95,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>This is the complete list of members for <a class="el" href="classcppa_1_1channel.html">cppa::channel</a>, including all inherited members.</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>actor</b> (defined in <a class="el" href="classcppa_1_1channel.html">cppa::channel</a>)</td><td class="entry"><a class="el" href="classcppa_1_1channel.html">cppa::channel</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classcppa_1_1channel.html#af7c7b45c7eed552e439262ce32c489e1">chained_enqueue</a>(const message_header &amp;hdr, any_tuple msg)</td><td class="entry"><a class="el" href="classcppa_1_1channel.html">cppa::channel</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classcppa_1_1channel.html#ac7df8ed0bb6003f386e088bb0dedb1df">channel_ptr</a> typedef</td><td class="entry"><a class="el" href="classcppa_1_1channel.html">cppa::channel</a></td><td class="entry"><span class="mlabel">related</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classcppa_1_1ref__counted.html#a9439c57c415af736d7284b160f2f6ec0">deref</a>()</td><td class="entry"><a class="el" href="classcppa_1_1ref__counted.html">cppa::ref_counted</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classcppa_1_1channel.html#a496c76ddab97788642190f677f38da85">enqueue</a>(const message_header &amp;hdr, any_tuple msg)=0</td><td class="entry"><a class="el" href="classcppa_1_1channel.html">cppa::channel</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>get_reference_count</b>() const  (defined in <a class="el" href="classcppa_1_1ref__counted.html">cppa::ref_counted</a>)</td><td class="entry"><a class="el" href="classcppa_1_1ref__counted.html">cppa::ref_counted</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>group</b> (defined in <a class="el" href="classcppa_1_1channel.html">cppa::channel</a>)</td><td class="entry"><a class="el" href="classcppa_1_1channel.html">cppa::channel</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classcppa_1_1ref__counted.html#adde91679876095e34d1ca4502e8c2ee9">ref</a>()</td><td class="entry"><a class="el" href="classcppa_1_1ref__counted.html">cppa::ref_counted</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>ref_counted</b>() (defined in <a class="el" href="classcppa_1_1ref__counted.html">cppa::ref_counted</a>)</td><td class="entry"><a class="el" href="classcppa_1_1ref__counted.html">cppa::ref_counted</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classcppa_1_1memory__managed.html#ae14e5c4be622520c604a9ac69f0c9478">request_deletion</a>()</td><td class="entry"><a class="el" href="classcppa_1_1memory__managed.html">cppa::memory_managed</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classcppa_1_1channel.html#a2e94c1e65bf566fe653263f1996be109">unchain</a>()</td><td class="entry"><a class="el" href="classcppa_1_1channel.html">cppa::channel</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classcppa_1_1ref__counted.html#ace4f2598ce4c746d6a3f5d21edadd9fd">unique</a>() const </td><td class="entry"><a class="el" href="classcppa_1_1ref__counted.html">cppa::ref_counted</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>~channel</b>() (defined in <a class="el" href="classcppa_1_1channel.html">cppa::channel</a>)</td><td class="entry"><a class="el" href="classcppa_1_1channel.html">cppa::channel</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>~memory_managed</b>() (defined in <a class="el" href="classcppa_1_1memory__managed.html">cppa::memory_managed</a>)</td><td class="entry"><a class="el" href="classcppa_1_1memory__managed.html">cppa::memory_managed</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>channel</b>()=default (defined in <a class="el" href="classcppa_1_1channel.html">cppa::channel</a>)</td><td class="entry"><a class="el" href="classcppa_1_1channel.html">cppa::channel</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>channel</b>(const actor &amp;) (defined in <a class="el" href="classcppa_1_1channel.html">cppa::channel</a>)</td><td class="entry"><a class="el" href="classcppa_1_1channel.html">cppa::channel</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>channel</b>(const group &amp;) (defined in <a class="el" href="classcppa_1_1channel.html">cppa::channel</a>)</td><td class="entry"><a class="el" href="classcppa_1_1channel.html">cppa::channel</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>channel</b>(const invalid_actor_t &amp;) (defined in <a class="el" href="classcppa_1_1channel.html">cppa::channel</a>)</td><td class="entry"><a class="el" href="classcppa_1_1channel.html">cppa::channel</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>channel</b>(const invalid_group_t &amp;) (defined in <a class="el" href="classcppa_1_1channel.html">cppa::channel</a>)</td><td class="entry"><a class="el" href="classcppa_1_1channel.html">cppa::channel</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>channel</b>(intrusive_ptr&lt; T &gt; ptr, typename std::enable_if&lt; std::is_base_of&lt; abstract_channel, T &gt;::value &gt;::type *=0) (defined in <a class="el" href="classcppa_1_1channel.html">cppa::channel</a>)</td><td class="entry"><a class="el" href="classcppa_1_1channel.html">cppa::channel</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>channel</b>(abstract_channel *ptr) (defined in <a class="el" href="classcppa_1_1channel.html">cppa::channel</a>)</td><td class="entry"><a class="el" href="classcppa_1_1channel.html">cppa::channel</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>compare</b>(const channel &amp;other) const  (defined in <a class="el" href="classcppa_1_1channel.html">cppa::channel</a>)</td><td class="entry"><a class="el" href="classcppa_1_1channel.html">cppa::channel</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>compare</b>(const actor &amp;other) const  (defined in <a class="el" href="classcppa_1_1channel.html">cppa::channel</a>)</td><td class="entry"><a class="el" href="classcppa_1_1channel.html">cppa::channel</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>compare</b>(const abstract_channel *other) const  (defined in <a class="el" href="classcppa_1_1channel.html">cppa::channel</a>)</td><td class="entry"><a class="el" href="classcppa_1_1channel.html">cppa::channel</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>compare</b>(const abstract_channel *lhs, const abstract_channel *rhs) (defined in <a class="el" href="classcppa_1_1channel.html">cppa::channel</a>)</td><td class="entry"><a class="el" href="classcppa_1_1channel.html">cppa::channel</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>detail::raw_access</b> (defined in <a class="el" href="classcppa_1_1channel.html">cppa::channel</a>)</td><td class="entry"><a class="el" href="classcppa_1_1channel.html">cppa::channel</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>operator bool</b>() const  (defined in <a class="el" href="classcppa_1_1channel.html">cppa::channel</a>)</td><td class="entry"><a class="el" href="classcppa_1_1channel.html">cppa::channel</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>operator!</b>() const  (defined in <a class="el" href="classcppa_1_1channel.html">cppa::channel</a>)</td><td class="entry"><a class="el" href="classcppa_1_1channel.html">cppa::channel</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>operator*</b>() const  (defined in <a class="el" href="classcppa_1_1channel.html">cppa::channel</a>)</td><td class="entry"><a class="el" href="classcppa_1_1channel.html">cppa::channel</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>operator-&gt;</b>() const  (defined in <a class="el" href="classcppa_1_1channel.html">cppa::channel</a>)</td><td class="entry"><a class="el" href="classcppa_1_1channel.html">cppa::channel</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 14 2013 20:08:20 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun May 4 2014 23:48:00 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

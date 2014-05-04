@@ -1,11 +1,16 @@
 var searchData=
 [
+  ['abstract_5factor',['abstract_actor',['../classcppa_1_1abstract__actor.html',1,'cppa']]],
+  ['abstract_5fchannel',['abstract_channel',['../classcppa_1_1abstract__channel.html',1,'cppa']]],
+  ['abstract_5fgroup',['abstract_group',['../classcppa_1_1abstract__group.html',1,'cppa']]],
   ['abstract_5funiform_5ftype_5finfo',['abstract_uniform_type_info',['../classcppa_1_1util_1_1abstract__uniform__type__info.html',1,'cppa::util']]],
   ['acceptor',['acceptor',['../classcppa_1_1io_1_1acceptor.html',1,'cppa::io']]],
+  ['acceptor_5fclosed_5fmsg',['acceptor_closed_msg',['../structcppa_1_1acceptor__closed__msg.html',1,'cppa']]],
   ['actor',['actor',['../classcppa_1_1actor.html',1,'cppa']]],
-  ['actor_5faddressing',['actor_addressing',['../classcppa_1_1actor__addressing.html',1,'cppa']]],
-  ['actor_5fcompanion_5fmixin',['actor_companion_mixin',['../classcppa_1_1actor__companion__mixin.html',1,'cppa']]],
+  ['actor_5faddr',['actor_addr',['../classcppa_1_1actor__addr.html',1,'cppa']]],
+  ['actor_5fcompanion',['actor_companion',['../classcppa_1_1actor__companion.html',1,'cppa']]],
   ['actor_5fexited',['actor_exited',['../classcppa_1_1actor__exited.html',1,'cppa']]],
+  ['actor_5fnamespace',['actor_namespace',['../classcppa_1_1actor__namespace.html',1,'cppa']]],
   ['actor_5fproxy',['actor_proxy',['../classcppa_1_1actor__proxy.html',1,'cppa']]],
   ['all_5fcallable',['all_callable',['../structcppa_1_1util_1_1all__callable.html',1,'cppa::util']]],
   ['any_5ftuple',['any_tuple',['../classcppa_1_1any__tuple.html',1,'cppa']]],

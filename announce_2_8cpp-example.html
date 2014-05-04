@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libcppa
-   &#160;<span id="projectnumber">Version 0.8</span>
+   &#160;<span id="projectnumber">Version 0.9.0</span>
    </div>
   </td>
  </tr>
@@ -123,13 +123,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">           &amp;&amp; lhs.b() == rhs.b();</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> testee() {</div>
-<div class="line">    <a name="a1"></a><a class="code" href="namespacecppa.html#a32d3c95b12475508947918017ead6fac">become</a> (</div>
-<div class="line">        on&lt;foo&gt;() &gt;&gt; [](<span class="keyword">const</span> foo&amp; <a class="code" href="namespacecppa.html#af928936d573122345bc0737615f95f33">val</a>) {</div>
-<div class="line">            aout &lt;&lt; <span class="stringliteral">&quot;foo(&quot;</span></div>
-<div class="line">                 &lt;&lt; val.a() &lt;&lt; <span class="stringliteral">&quot;, &quot;</span></div>
-<div class="line">                 &lt;&lt; val.b() &lt;&lt; <span class="stringliteral">&quot;)&quot;</span></div>
-<div class="line">                 &lt;&lt; endl;</div>
+<div class="line"><span class="keywordtype">void</span> testee(<a name="_a1"></a><a class="code" href="classcppa_1_1event__based__actor.html">event_based_actor</a>* <span class="keyword">self</span>) {</div>
+<div class="line">    <span class="keyword">self</span>-&gt;become (</div>
+<div class="line">        on&lt;foo&gt;() &gt;&gt; [=](<span class="keyword">const</span> foo&amp; <a class="code" href="namespacecppa.html#af928936d573122345bc0737615f95f33">val</a>) {</div>
+<div class="line">            aout(<span class="keyword">self</span>) &lt;&lt; <span class="stringliteral">&quot;foo(&quot;</span></div>
+<div class="line">                       &lt;&lt; val.a() &lt;&lt; <span class="stringliteral">&quot;, &quot;</span></div>
+<div class="line">                       &lt;&lt; val.b() &lt;&lt; <span class="stringliteral">&quot;)&quot;</span></div>
+<div class="line">                       &lt;&lt; endl;</div>
 <div class="line">            <span class="keyword">self</span>-&gt;quit();</div>
 <div class="line">        }</div>
 <div class="line">    );</div>
@@ -140,16 +140,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line">    <span class="comment">// we pass those to the announce function as { getter, setter } pairs.</span></div>
 <div class="line">    announce&lt;foo&gt;(make_pair(&amp;foo::a, &amp;foo::set_a),</div>
 <div class="line">                  make_pair(&amp;foo::b, &amp;foo::set_b));</div>
-<div class="line">    <span class="keyword">auto</span> t = <a name="a2"></a><a class="code" href="group___actor_creation.html#ga64b99980b69ba8e8cdd218e402f48fd6">spawn</a>(testee);</div>
-<div class="line">    <a name="a3"></a><a class="code" href="namespacecppa.html#a8ce9b9bc8666bd339ff6a95065b91d65">send</a>(t, foo{1, 2});</div>
-<div class="line">    <a name="a4"></a><a class="code" href="namespacecppa.html#a185090573ffb146384ccdfa94172c23e">await_all_others_done</a>();</div>
+<div class="line">    {</div>
+<div class="line">        <a name="_a2"></a><a class="code" href="classcppa_1_1scoped__actor.html">scoped_actor</a> <span class="keyword">self</span>;</div>
+<div class="line">        <span class="keyword">auto</span> t = <a name="a3"></a><a class="code" href="group___actor_creation.html#gaba7260e3d070dfd846946305e0fbc31e">spawn</a>(testee);</div>
+<div class="line">        <span class="keyword">self</span>-&gt;send(t, foo{1, 2});</div>
+<div class="line">    }</div>
+<div class="line">    <a name="a4"></a><a class="code" href="namespacecppa.html#a1155a80c876121987be19d4f38c4dacd">await_all_actors_done</a>();</div>
 <div class="line">    <a name="a5"></a><a class="code" href="namespacecppa.html#a8d5daac288a10cc34286f505ea637571">shutdown</a>();</div>
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 14 2013 20:08:20 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun May 4 2014 23:48:00 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

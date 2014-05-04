@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libcppa
-   &#160;<span id="projectnumber">Version 0.8</span>
+   &#160;<span id="projectnumber">Version 0.9.0</span>
    </div>
   </td>
  </tr>
@@ -123,27 +123,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
 <li>id()
-: <a class="el" href="classcppa_1_1actor.html#a1bcf6d0dda3abb9ba1811c62efc998c9">cppa::actor</a>
-, <a class="el" href="classcppa_1_1message__future.html#a540a5e8d20f0cd337d461738d7df36c5">cppa::message_future</a>
+: <a class="el" href="classcppa_1_1abstract__actor.html#a8e6d8f21ca78c3edaee9b67b98af1065">cppa::abstract_actor</a>
 </li>
 <li>identifier()
-: <a class="el" href="classcppa_1_1group.html#a0ca2805302d4af52ed0d5052bbf3bce9">cppa::group</a>
-</li>
-<li>impl_type()
-: <a class="el" href="classcppa_1_1context__switching__actor.html#a913691afbabbef24234a83ed3335a9d8">cppa::context_switching_actor</a>
-, <a class="el" href="classcppa_1_1event__based__actor.html#a3ea546c86e3e519e1bf32223cb0d2a69">cppa::event_based_actor</a>
-, <a class="el" href="classcppa_1_1scheduled__actor.html#ac4ceede9999d6a27c0baa766fe358fe3">cppa::scheduled_actor</a>
+: <a class="el" href="classcppa_1_1abstract__group.html#a89be1b778989671f32398df1d9539f4d">cppa::abstract_group</a>
 </li>
 <li>in()
 : <a class="el" href="structcppa_1_1guard__placeholder.html#a8b43795026dd7457f85d48aaa02d7556">cppa::guard_placeholder&lt; X &gt;</a>
-</li>
-<li>init()
-: <a class="el" href="classcppa_1_1event__based__actor.html#a0a1ccf0896f295551b51e4969b5db0f8">cppa::event_based_actor</a>
-, <a class="el" href="classcppa_1_1local__actor.html#a21d6ca028af18e66fcbce67b7b33eedd">cppa::local_actor</a>
-, <a class="el" href="classcppa_1_1sb__actor.html#ab8f158e17f3679c10af3b51184df7783">cppa::sb_actor&lt; Derived, Base &gt;</a>
-</li>
-<li>initialize()
-: <a class="el" href="classcppa_1_1scheduler.html#a7cba2016e3e0ae4899cd755fc8312dfc">cppa::scheduler</a>
 </li>
 <li>insert()
 : <a class="el" href="classcppa_1_1util_1_1limited__vector.html#a8dd779772ea1be4d9c89f8f039170409">cppa::util::limited_vector&lt; T, MaxSize &gt;</a>
@@ -151,8 +137,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>instances()
 : <a class="el" href="classcppa_1_1uniform__type__info.html#a5190c6fcdbfffdf433d68026cb902002">cppa::uniform_type_info</a>
 </li>
+<li>interface()
+: <a class="el" href="classcppa_1_1typed__event__based__actor.html#aaf7535de7a4813f723d1bf951324dcad">cppa::typed_event_based_actor&lt; Rs &gt;</a>
+, <a class="el" href="classcppa_1_1abstract__actor.html#a93b867f689d829399291953e97d1f76c">cppa::abstract_actor</a>
+</li>
 <li>invalid()
-: <a class="el" href="classcppa_1_1weak__intrusive__ptr.html#a8f3702d1a9f854d69d9106ad5ddb0ef7">cppa::weak_intrusive_ptr&lt; T &gt;</a>
+: <a class="el" href="classcppa_1_1weak__intrusive__ptr.html#a0d8e663794dfe457535589c33b42b190">cppa::weak_intrusive_ptr&lt; typename &gt;</a>
 </li>
 <li>io_failed()
 : <a class="el" href="classcppa_1_1io_1_1continuable.html#a8d2b0d7f4fe5e1a8505c749154361bc1">cppa::io::continuable</a>
@@ -160,11 +150,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>is()
 : <a class="el" href="classcppa_1_1optional__variant.html#a25ed17eea6e3e9b65c86b905a8c9333d">cppa::optional_variant&lt; Ts &gt;</a>
 </li>
-<li>is_hidden()
-: <a class="el" href="classcppa_1_1scheduled__actor.html#ae07d147689b1937b6732797d4048c3c5">cppa::scheduled_actor</a>
-</li>
 <li>is_proxy()
-: <a class="el" href="classcppa_1_1actor.html#a6c2a21b5056fbe82b73ed8e84497b0bd">cppa::actor</a>
+: <a class="el" href="classcppa_1_1abstract__actor.html#a56b3a347a0d5101ad76683982e3ae198">cppa::abstract_actor</a>
+</li>
+<li>is_remote()
+: <a class="el" href="classcppa_1_1actor__addr.html#a48383e9cc20f5efef04022821ab6e264">cppa::actor_addr</a>
 </li>
 <li>is_zero()
 : <a class="el" href="classcppa_1_1util_1_1duration.html#ae133e0bdc6ddd48f0ef118d444c90aca">cppa::util::duration</a>
@@ -173,7 +163,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 14 2013 20:08:21 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun May 4 2014 23:48:01 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

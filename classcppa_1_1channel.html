@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">libcppa
-   &#160;<span id="projectnumber">Version 0.8</span>
+   &#160;<span id="projectnumber">Version 0.9.0</span>
    </div>
   </td>
  </tr>
@@ -90,15 +90,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#friends">Friends</a> &#124;
-<a href="#related">Related Functions</a> &#124;
 <a href="classcppa_1_1channel-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">cppa::channel Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">cppa::channel Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Interface for all message receivers.  
+<p>A handle to instances of <a class="el" href="classcppa_1_1abstract__channel.html">abstract_channel</a>.  
  <a href="classcppa_1_1channel.html#details">More...</a></p>
 
 <p><code>#include &lt;channel.hpp&gt;</code></p>
@@ -108,87 +108,76 @@ Inheritance diagram for cppa::channel:</div>
  <div class="center">
   <img src="classcppa_1_1channel.png" usemap="#cppa::channel_map" alt=""/>
   <map id="cppa::channel_map" name="cppa::channel_map">
-<area href="classcppa_1_1ref__counted.html" title="A (thread safe) base class for reference counted objects with an atomic reference count..." alt="cppa::ref_counted" shape="rect" coords="191,56,372,80"/>
-<area href="classcppa_1_1memory__managed.html" title="This base enables derived classes to enforce a different allocation strategy than new/delete by provi..." alt="cppa::memory_managed" shape="rect" coords="191,0,372,24"/>
-<area href="classcppa_1_1actor.html" title="Base class for all actor implementations. " alt="cppa::actor" shape="rect" coords="95,168,276,192"/>
-<area href="classcppa_1_1group.html" title="A multicast group. " alt="cppa::group" shape="rect" coords="286,168,467,192"/>
-<area href="classcppa_1_1actor__proxy.html" title="Represents a remote actor. " alt="cppa::actor_proxy" shape="rect" coords="0,224,181,248"/>
-<area href="classcppa_1_1local__actor.html" title="Base class for local running Actors. " alt="cppa::local_actor" shape="rect" coords="191,224,372,248"/>
-<area href="classcppa_1_1io_1_1broker.html" title="A broker mediates between a libcppa-based actor system and other components in the network..." alt="cppa::io::broker" shape="rect" coords="0,280,181,304"/>
-<area href="classcppa_1_1scheduled__actor.html" title="A base class for cooperatively scheduled actors. " alt="cppa::scheduled_actor" shape="rect" coords="191,280,372,304"/>
-<area href="classcppa_1_1thread__mapped__actor.html" title="An actor using the blocking API running in its own thread. " alt="cppa::thread_mapped_actor" shape="rect" coords="382,280,563,304"/>
-<area href="classcppa_1_1context__switching__actor.html" title="Context-switching actor implementation. " alt="cppa::context_switching_actor" shape="rect" coords="95,336,276,360"/>
-<area href="classcppa_1_1event__based__actor.html" title="Base class for all event-based actor implementations. " alt="cppa::event_based_actor" shape="rect" coords="286,336,467,360"/>
+<area href="classcppa_1_1util_1_1comparable.html" alt="cppa::util::comparable&lt; channel &gt;" shape="rect" coords="0,0,321,24"/>
+<area href="classcppa_1_1util_1_1comparable.html" alt="cppa::util::comparable&lt; channel, actor &gt;" shape="rect" coords="331,0,652,24"/>
+<area href="classcppa_1_1util_1_1comparable.html" alt="cppa::util::comparable&lt; channel, abstract_channel * &gt;" shape="rect" coords="662,0,983,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a496c76ddab97788642190f677f38da85"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a496c76ddab97788642190f677f38da85"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1channel.html#a496c76ddab97788642190f677f38da85">enqueue</a> (const <a class="el" href="classcppa_1_1message__header.html">message_header</a> &amp;hdr, <a class="el" href="classcppa_1_1any__tuple.html">any_tuple</a> msg)=0</td></tr>
-<tr class="memdesc:a496c76ddab97788642190f677f38da85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enqueues <code>msg</code> to the list of received messages. <br/></td></tr>
-<tr class="separator:a496c76ddab97788642190f677f38da85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7c7b45c7eed552e439262ce32c489e1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af7c7b45c7eed552e439262ce32c489e1"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1channel.html#af7c7b45c7eed552e439262ce32c489e1">chained_enqueue</a> (const <a class="el" href="classcppa_1_1message__header.html">message_header</a> &amp;hdr, <a class="el" href="classcppa_1_1any__tuple.html">any_tuple</a> msg)</td></tr>
-<tr class="memdesc:af7c7b45c7eed552e439262ce32c489e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enqueues <code>msg</code> to the list of received messages and returns true if this is an scheduled actor that successfully changed its state to <code>pending</code> in response to the enqueue operation. <br/></td></tr>
-<tr class="separator:af7c7b45c7eed552e439262ce32c489e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e94c1e65bf566fe653263f1996be109"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2e94c1e65bf566fe653263f1996be109"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1channel.html#a2e94c1e65bf566fe653263f1996be109">unchain</a> ()</td></tr>
-<tr class="memdesc:a2e94c1e65bf566fe653263f1996be109"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the state from <code>pending</code> to <code>ready</code>. <br/></td></tr>
-<tr class="separator:a2e94c1e65bf566fe653263f1996be109"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_classcppa_1_1ref__counted"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classcppa_1_1ref__counted')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classcppa_1_1ref__counted.html">cppa::ref_counted</a></td></tr>
-<tr class="memitem:adde91679876095e34d1ca4502e8c2ee9 inherit pub_methods_classcppa_1_1ref__counted"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adde91679876095e34d1ca4502e8c2ee9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1ref__counted.html#adde91679876095e34d1ca4502e8c2ee9">ref</a> ()</td></tr>
-<tr class="memdesc:adde91679876095e34d1ca4502e8c2ee9 inherit pub_methods_classcppa_1_1ref__counted"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increases reference count by one. <br/></td></tr>
-<tr class="separator:adde91679876095e34d1ca4502e8c2ee9 inherit pub_methods_classcppa_1_1ref__counted"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9439c57c415af736d7284b160f2f6ec0 inherit pub_methods_classcppa_1_1ref__counted"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9439c57c415af736d7284b160f2f6ec0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1ref__counted.html#a9439c57c415af736d7284b160f2f6ec0">deref</a> ()</td></tr>
-<tr class="memdesc:a9439c57c415af736d7284b160f2f6ec0 inherit pub_methods_classcppa_1_1ref__counted"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decreases reference count by one and calls <code>request_deletion</code> when it drops to zero. <br/></td></tr>
-<tr class="separator:a9439c57c415af736d7284b160f2f6ec0 inherit pub_methods_classcppa_1_1ref__counted"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace4f2598ce4c746d6a3f5d21edadd9fd inherit pub_methods_classcppa_1_1ref__counted"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ace4f2598ce4c746d6a3f5d21edadd9fd"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1ref__counted.html#ace4f2598ce4c746d6a3f5d21edadd9fd">unique</a> () const </td></tr>
-<tr class="memdesc:ace4f2598ce4c746d6a3f5d21edadd9fd inherit pub_methods_classcppa_1_1ref__counted"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries whether there is exactly one reference. <br/></td></tr>
-<tr class="separator:ace4f2598ce4c746d6a3f5d21edadd9fd inherit pub_methods_classcppa_1_1ref__counted"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a907a6686023122998f5b2351837c7b37 inherit pub_methods_classcppa_1_1ref__counted"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a907a6686023122998f5b2351837c7b37"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>get_reference_count</b> () const </td></tr>
-<tr class="separator:a907a6686023122998f5b2351837c7b37 inherit pub_methods_classcppa_1_1ref__counted"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbcf2d7bcffabbfa1a2dd95a3fb22f5f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afbcf2d7bcffabbfa1a2dd95a3fb22f5f"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>channel</b> (const <a class="el" href="classcppa_1_1actor.html">actor</a> &amp;)</td></tr>
+<tr class="separator:afbcf2d7bcffabbfa1a2dd95a3fb22f5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07628baa0c8086624cd60663f13a5d6e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a07628baa0c8086624cd60663f13a5d6e"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>channel</b> (const group &amp;)</td></tr>
+<tr class="separator:a07628baa0c8086624cd60663f13a5d6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ed0c773086bd5b0ae5498aef0e643bb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4ed0c773086bd5b0ae5498aef0e643bb"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>channel</b> (const invalid_actor_t &amp;)</td></tr>
+<tr class="separator:a4ed0c773086bd5b0ae5498aef0e643bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb3cf5d5cff0812f9f2eee178a31e8cd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acb3cf5d5cff0812f9f2eee178a31e8cd"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>channel</b> (const invalid_group_t &amp;)</td></tr>
+<tr class="separator:acb3cf5d5cff0812f9f2eee178a31e8cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07c36f9e59d1bba08ec22e1260384d44"><td class="memTemplParams" colspan="2"><a class="anchor" id="a07c36f9e59d1bba08ec22e1260384d44"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a07c36f9e59d1bba08ec22e1260384d44"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><b>channel</b> (<a class="el" href="classcppa_1_1intrusive__ptr.html">intrusive_ptr</a>&lt; T &gt; ptr, typename std::enable_if&lt; std::is_base_of&lt; <a class="el" href="classcppa_1_1abstract__channel.html">abstract_channel</a>, T &gt;::value &gt;::type *=0)</td></tr>
+<tr class="separator:a07c36f9e59d1bba08ec22e1260384d44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3f974a113fcfecc91939c785032739e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac3f974a113fcfecc91939c785032739e"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>channel</b> (<a class="el" href="classcppa_1_1abstract__channel.html">abstract_channel</a> *ptr)</td></tr>
+<tr class="separator:ac3f974a113fcfecc91939c785032739e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ccf6a3d82e0527247c330472d0cb148"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6ccf6a3d82e0527247c330472d0cb148"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>operator bool</b> () const </td></tr>
+<tr class="separator:a6ccf6a3d82e0527247c330472d0cb148"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6322ecefae0dadd04a5b8bc3f90d7766"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6322ecefae0dadd04a5b8bc3f90d7766"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!</b> () const </td></tr>
+<tr class="separator:a6322ecefae0dadd04a5b8bc3f90d7766"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add24558f4e51cfd0d6fae68911c1aca5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="add24558f4e51cfd0d6fae68911c1aca5"></a>
+<a class="el" href="classcppa_1_1abstract__channel.html">abstract_channel</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>operator-&gt;</b> () const </td></tr>
+<tr class="separator:add24558f4e51cfd0d6fae68911c1aca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1cf338c0f41cfa2323c3dc8ddec0549"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae1cf338c0f41cfa2323c3dc8ddec0549"></a>
+<a class="el" href="classcppa_1_1abstract__channel.html">abstract_channel</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator*</b> () const </td></tr>
+<tr class="separator:ae1cf338c0f41cfa2323c3dc8ddec0549"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75e3760f34e8c4efd4e65cd3781e409c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a75e3760f34e8c4efd4e65cd3781e409c"></a>
+intptr_t&#160;</td><td class="memItemRight" valign="bottom"><b>compare</b> (const <a class="el" href="classcppa_1_1channel.html">channel</a> &amp;other) const </td></tr>
+<tr class="separator:a75e3760f34e8c4efd4e65cd3781e409c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaccd4b193ddba8fdddbf46436f86e397"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaccd4b193ddba8fdddbf46436f86e397"></a>
+intptr_t&#160;</td><td class="memItemRight" valign="bottom"><b>compare</b> (const <a class="el" href="classcppa_1_1actor.html">actor</a> &amp;other) const </td></tr>
+<tr class="separator:aaccd4b193ddba8fdddbf46436f86e397"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cfe3f6eb0e09c97c3be1c48cc510df9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5cfe3f6eb0e09c97c3be1c48cc510df9"></a>
+intptr_t&#160;</td><td class="memItemRight" valign="bottom"><b>compare</b> (const <a class="el" href="classcppa_1_1abstract__channel.html">abstract_channel</a> *other) const </td></tr>
+<tr class="separator:a5cfe3f6eb0e09c97c3be1c48cc510df9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:abc47db21ed9218539e270ed96ea9fb01"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abc47db21ed9218539e270ed96ea9fb01"></a>
+static intptr_t&#160;</td><td class="memItemRight" valign="bottom"><b>compare</b> (const <a class="el" href="classcppa_1_1abstract__channel.html">abstract_channel</a> *lhs, const <a class="el" href="classcppa_1_1abstract__channel.html">abstract_channel</a> *rhs)</td></tr>
+<tr class="separator:abc47db21ed9218539e270ed96ea9fb01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
-<tr class="memitem:a492fdf27dc97a2e93a28305e023cfd1d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a492fdf27dc97a2e93a28305e023cfd1d"></a>
-class&#160;</td><td class="memItemRight" valign="bottom"><b>actor</b></td></tr>
-<tr class="separator:a492fdf27dc97a2e93a28305e023cfd1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a670720b16047bf7556aea242ff96a7fb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a670720b16047bf7556aea242ff96a7fb"></a>
-class&#160;</td><td class="memItemRight" valign="bottom"><b>group</b></td></tr>
-<tr class="separator:a670720b16047bf7556aea242ff96a7fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="related"></a>
-Related Functions</h2></td></tr>
-<tr><td class="ititle" colspan="2"><p>(Note that these are not member functions.) </p>
-</td></tr>
-<tr class="memitem:ac7df8ed0bb6003f386e088bb0dedb1df"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac7df8ed0bb6003f386e088bb0dedb1df"></a>
-typedef <a class="el" href="classcppa_1_1intrusive__ptr.html">intrusive_ptr</a>&lt; <a class="el" href="classcppa_1_1channel.html">channel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1channel.html#ac7df8ed0bb6003f386e088bb0dedb1df">channel_ptr</a></td></tr>
-<tr class="memdesc:ac7df8ed0bb6003f386e088bb0dedb1df"><td class="mdescLeft">&#160;</td><td class="mdescRight">A smart pointer type that manages instances of <a class="el" href="classcppa_1_1channel.html">channel</a>. <br/></td></tr>
-<tr class="separator:ac7df8ed0bb6003f386e088bb0dedb1df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pro_methods_classcppa_1_1memory__managed"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classcppa_1_1memory__managed')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classcppa_1_1memory__managed.html">cppa::memory_managed</a></td></tr>
-<tr class="memitem:ae14e5c4be622520c604a9ac69f0c9478 inherit pro_methods_classcppa_1_1memory__managed"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae14e5c4be622520c604a9ac69f0c9478"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcppa_1_1memory__managed.html#ae14e5c4be622520c604a9ac69f0c9478">request_deletion</a> ()</td></tr>
-<tr class="memdesc:ae14e5c4be622520c604a9ac69f0c9478 inherit pro_methods_classcppa_1_1memory__managed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default implementations calls <code>delete this</code>, but can be overriden in case deletion depends on some condition or the class doesn't use default new/delete. <br/></td></tr>
-<tr class="separator:ae14e5c4be622520c604a9ac69f0c9478 inherit pro_methods_classcppa_1_1memory__managed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab15aa07e7555051637eab28abf17dad8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab15aa07e7555051637eab28abf17dad8"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>detail::raw_access</b></td></tr>
+<tr class="separator:ab15aa07e7555051637eab28abf17dad8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Interface for all message receivers. </p>
-<p>This interface describes an entity that can receive messages and is implemented by <a class="el" href="classcppa_1_1actor.html">actor</a> and <a class="el" href="classcppa_1_1group.html">group</a>. </p>
+<div class="textblock"><p>A handle to instances of <a class="el" href="classcppa_1_1abstract__channel.html">abstract_channel</a>. </p>
 </div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>cppa/channel.hpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 14 2013 20:08:20 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun May 4 2014 23:48:00 for libcppa by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>
