@@ -188,6 +188,8 @@ set(LIBCPPA_SRC
     src/input_stream.cpp
     src/ipv4_acceptor.cpp
     src/ipv4_io_stream.cpp
+    src/ip_udp_acceptor.cpp
+    src/ip_udp_io_stream.cpp
     src/local_actor.cpp
     src/logging.cpp
     src/mailbox_element.cpp
