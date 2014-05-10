@@ -46,7 +46,6 @@ if (CURL_FOUND)
 endif (CURL_FOUND)
 
 if (NOT "${CPPA_NO_QT_EXAMPLES}" STREQUAL "yes")
-  find_package(Qt4)
   if (QT4_FOUND)
     include(${QT_USE_FILE})
     QT4_ADD_RESOURCES(GROUP_CHAT_RCS )
